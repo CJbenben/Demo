@@ -24,18 +24,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-
-//    NSMutableArray *arr = [NSMutableArray arrayWithObjects:@"1", @"2", nil];
-//    self.dataAry = arr;
-//    [arr addObject:@"3"];
-//    NSLog(@"%@", self.dataAry);
     
+    
+    
+    //[self startLocation];
     //[self test];
-    
-    
-    [self startLocation];
 }
+
+
 
 - (void)startLocation {
     // 判断定位功是否打开
@@ -71,32 +67,20 @@
             NSLog(@"当前位置==%@", placeMark.subLocality);
             NSLog(@"当前街道==%@", placeMark.thoroughfare);
             NSLog(@"当前具体位置==%@", placeMark.name);
-        }
-        
-        else if (error == nil && placemarks.count == 0){
+        } else if (error == nil && placemarks.count == 0){
             NSLog(@"no location and error return");
-        }
-        
-        else if (error) {
+        } else if (error) {
             NSLog(@"location error %@", error);
         }
     }];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    
+    NSLog(@"location error");
 }
 
-
-
-
-
-
-
-
-
-
-- (void)test{
+#pragma mark - copy 和 strong 的区别
+- (void)test {
     Country * country = [[Country alloc] init];
     country.name = @"countr2";
     
@@ -108,20 +92,20 @@
 
     NSLog(@"%@ %@", self.person.name ,self.person.country.name);
     
-//    self.person1 = [[Person alloc] init];
-//    self.person1.name = @"person 1";
-//    self.person1.country.name =  @"country1";
-//
-//    NSLog(@"%@ %@", self.person1.name ,self.person1.country.name);
-//
-//
-//    self.person.country =  country;
-//
-//    NSLog(@"%@ %@", self.person.name ,self.person.country.name);
-//
-//    self.person1.country =  country;
-//
-//    NSLog(@"%@ %@", self.person1.name ,self.person1.country.name);
+    self.person1 = [[Person alloc] init];
+    self.person1.name = @"person 1";
+    self.person1.country.name =  @"country1";
+
+    NSLog(@"%@ %@", self.person1.name ,self.person1.country.name);
+
+
+    self.person.country =  country;
+
+    NSLog(@"%@ %@", self.person.name ,self.person.country.name);
+
+    self.person1.country =  country;
+
+    NSLog(@"%@ %@", self.person1.name ,self.person1.country.name);
 }
 
 
