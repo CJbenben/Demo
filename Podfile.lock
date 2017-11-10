@@ -20,16 +20,30 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - AMap2DMap-NO-IDFA (4.6.0):
+    - AMapFoundation-NO-IDFA (~> 1.3)
+  - AMapFoundation-NO-IDFA (1.4.2)
+  - AMapLocation-NO-IDFA (2.5.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
+  - AMapSearch-NO-IDFA (5.4.0):
+    - AMapFoundation-NO-IDFA (~> 1.4)
   - MJRefresh (3.1.15)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
+  - AMap2DMap-NO-IDFA
+  - AMapLocation-NO-IDFA
+  - AMapSearch-NO-IDFA
   - MJRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
+  AMap2DMap-NO-IDFA: 01c80e7e93568617b1b1b452cfec71f974f5bc8a
+  AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
+  AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
+  AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
 
-PODFILE CHECKSUM: 7484af5acd458984e430df4f2c697517bee725ca
+PODFILE CHECKSUM: f8ff75d8188b2278174e41e89c242dd2a61d3903
 
 COCOAPODS: 1.4.0.beta.1

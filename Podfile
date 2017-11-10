@@ -6,6 +6,9 @@ pod "AFNetworking", "~> 2.4.1"
 #用法简单的下拉刷新框架
 pod 'MJRefresh'
 
+pod 'AMap2DMap-NO-IDFA'
+pod 'AMapSearch-NO-IDFA'
+pod 'AMapLocation-NO-IDFA'
 
 end
 
