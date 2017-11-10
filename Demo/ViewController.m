@@ -30,10 +30,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self testAlertView];
     
     //[self testMapView];
     //[self startLocation];
     //[self test];
+}
+
+- (void)testAlertView {
+    UIAlertView *alertview1 = [[UIAlertView alloc] initWithTitle:@"title1" message:@"message1" delegate:nil cancelButtonTitle:@"cancle1" otherButtonTitles:@"sure1", nil];
+    UIAlertView *alertview2 = [[UIAlertView alloc] initWithTitle:@"title2" message:@"message2" delegate:nil cancelButtonTitle:@"cancle2" otherButtonTitles:@"sure2", nil];
+    UIAlertView *alertview3 = [[UIAlertView alloc] initWithTitle:@"title3" message:@"message3" delegate:nil cancelButtonTitle:@"cancle3" otherButtonTitles:@"sure3", nil];
+    
+    [alertview3 show];
+    [alertview2 show];
+    [alertview1 show];
 }
 
 - (void)testMapView {
