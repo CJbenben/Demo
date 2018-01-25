@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
-		F522C7781FDFDB570066E0C2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F522C7771FDFDB570066E0C2 /* SecondViewController.m */; };
-		F5499B1E1FC7FE00004B7AA8 /* NNValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5499B1D1FC7FDFF004B7AA8 /* NNValidationCodeView.m */; };
-		F59567791FAB4AD20068A04F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567781FAB4AD20068A04F /* AppDelegate.m */; };
 		F595677C1FAB4AD20068A04F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595677B1FAB4AD20068A04F /* ViewController.m */; };
 		F595677F1FAB4AD20068A04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F595677D1FAB4AD20068A04F /* Main.storyboard */; };
 		F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59567801FAB4AD20068A04F /* Assets.xcassets */; };
@@ -18,8 +15,11 @@
 		F59567871FAB4AD20068A04F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567861FAB4AD20068A04F /* main.m */; };
 		F59567911FAB4AD20068A04F /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567901FAB4AD20068A04F /* DemoTests.m */; };
 		F595679C1FAB4AD20068A04F /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F595679B1FAB4AD20068A04F /* DemoUITests.m */; };
-		F59567AB1FAB4AE60068A04F /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567AA1FAB4AE60068A04F /* Person.m */; };
-		F59567AE1FAB4AFE0068A04F /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567AD1FAB4AFE0068A04F /* Country.m */; };
+		F599D77E2019753800D33834 /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7712019753700D33834 /* Country.m */; };
+		F599D77F2019753800D33834 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7732019753700D33834 /* Person.m */; };
+		F599D7802019753800D33834 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7762019753800D33834 /* SecondViewController.m */; };
+		F599D7812019753800D33834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.m */; };
+		F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D77D2019753800D33834 /* NNValidationCodeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,14 +43,7 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F522C7761FDFDB570066E0C2 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		F522C7771FDFDB570066E0C2 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		F5499B1C1FC7FDFF004B7AA8 /* NNValidationCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNValidationCodeView.h; sourceTree = "<group>"; };
-		F5499B1D1FC7FDFF004B7AA8 /* NNValidationCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNValidationCodeView.m; sourceTree = "<group>"; };
-		F5499B1F1FC7FED4004B7AA8 /* Demo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 		F59567741FAB4AD20068A04F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		F59567771FAB4AD20068A04F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F59567781FAB4AD20068A04F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		F595677A1FAB4AD20068A04F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F595677B1FAB4AD20068A04F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F595677E1FAB4AD20068A04F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,10 +57,17 @@
 		F59567971FAB4AD20068A04F /* DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F595679B1FAB4AD20068A04F /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
 		F595679D1FAB4AD20068A04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F59567A91FAB4AE60068A04F /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		F59567AA1FAB4AE60068A04F /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
-		F59567AC1FAB4AFE0068A04F /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
-		F59567AD1FAB4AFE0068A04F /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		F599D7702019753700D33834 /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
+		F599D7712019753700D33834 /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
+		F599D7722019753700D33834 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		F599D7732019753700D33834 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		F599D7752019753800D33834 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		F599D7762019753800D33834 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		F599D7782019753800D33834 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F599D7792019753800D33834 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F599D77C2019753800D33834 /* NNValidationCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NNValidationCodeView.h; sourceTree = "<group>"; };
+		F599D77D2019753800D33834 /* NNValidationCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NNValidationCodeView.m; sourceTree = "<group>"; };
+		F599D7832019754500D33834 /* Demo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,6 @@
 				F595678F1FAB4AD20068A04F /* DemoTests */,
 				F595679A1FAB4AD20068A04F /* DemoUITests */,
 				F59567751FAB4AD20068A04F /* Products */,
-				F5499B1F1FC7FED4004B7AA8 /* Demo.pch */,
 				9DDA882E3BA37FECE97A620A /* Pods */,
 				988027578FBBDF25E90DE96C /* Frameworks */,
 			);
@@ -139,18 +138,14 @@
 		F59567761FAB4AD20068A04F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				F59567771FAB4AD20068A04F /* AppDelegate.h */,
-				F59567781FAB4AD20068A04F /* AppDelegate.m */,
+				F599D7832019754500D33834 /* Demo.pch */,
+				F599D7772019753800D33834 /* AppDelegate */,
+				F599D77A2019753800D33834 /* CollectionDemo */,
+				F599D7742019753800D33834 /* Controller */,
+				F599D76F2019753700D33834 /* Model */,
+				F599D77B2019753800D33834 /* ValidationCodeDemo */,
 				F595677A1FAB4AD20068A04F /* ViewController.h */,
 				F595677B1FAB4AD20068A04F /* ViewController.m */,
-				F522C7761FDFDB570066E0C2 /* SecondViewController.h */,
-				F522C7771FDFDB570066E0C2 /* SecondViewController.m */,
-				F5499B1C1FC7FDFF004B7AA8 /* NNValidationCodeView.h */,
-				F5499B1D1FC7FDFF004B7AA8 /* NNValidationCodeView.m */,
-				F59567A91FAB4AE60068A04F /* Person.h */,
-				F59567AA1FAB4AE60068A04F /* Person.m */,
-				F59567AC1FAB4AFE0068A04F /* Country.h */,
-				F59567AD1FAB4AFE0068A04F /* Country.m */,
 				F595677D1FAB4AD20068A04F /* Main.storyboard */,
 				F59567801FAB4AD20068A04F /* Assets.xcassets */,
 				F59567821FAB4AD20068A04F /* LaunchScreen.storyboard */,
@@ -176,6 +171,51 @@
 				F595679D1FAB4AD20068A04F /* Info.plist */,
 			);
 			path = DemoUITests;
+			sourceTree = "<group>";
+		};
+		F599D76F2019753700D33834 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F599D7702019753700D33834 /* Country.h */,
+				F599D7712019753700D33834 /* Country.m */,
+				F599D7722019753700D33834 /* Person.h */,
+				F599D7732019753700D33834 /* Person.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F599D7742019753800D33834 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F599D7752019753800D33834 /* SecondViewController.h */,
+				F599D7762019753800D33834 /* SecondViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F599D7772019753800D33834 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				F599D7782019753800D33834 /* AppDelegate.h */,
+				F599D7792019753800D33834 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		F599D77A2019753800D33834 /* CollectionDemo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CollectionDemo;
+			sourceTree = "<group>";
+		};
+		F599D77B2019753800D33834 /* ValidationCodeDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F599D77C2019753800D33834 /* NNValidationCodeView.h */,
+				F599D77D2019753800D33834 /* NNValidationCodeView.m */,
+			);
+			path = ValidationCodeDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,13 +409,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
+				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
+				F599D77E2019753800D33834 /* Country.m in Sources */,
+				F599D77F2019753800D33834 /* Person.m in Sources */,
+				F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
-				F59567AB1FAB4AE60068A04F /* Person.m in Sources */,
-				F522C7781FDFDB570066E0C2 /* SecondViewController.m in Sources */,
-				F59567791FAB4AD20068A04F /* AppDelegate.m in Sources */,
-				F5499B1E1FC7FE00004B7AA8 /* NNValidationCodeView.m in Sources */,
-				F59567AE1FAB4AFE0068A04F /* Country.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

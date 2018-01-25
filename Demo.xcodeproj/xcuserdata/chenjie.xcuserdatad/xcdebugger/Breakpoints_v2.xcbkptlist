@@ -20,13 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Demo/ViewController.m"
-            timestampString = "531887483.796714"
+            timestampString = "537357460.435587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
-            landmarkName = "-test"
-            landmarkType = "7">
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Demo/ViewController.m"
-            timestampString = "531887483.797141"
+            timestampString = "537357460.4357229"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
-            landmarkName = "-locationManager:didUpdateLocations:"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "-startLocation"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
