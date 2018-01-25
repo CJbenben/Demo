@@ -8,12 +8,88 @@
 
 #import "SecondViewController.h"
 #import "AFNetworking.h"
+#import "DemoTableViewCell.h"
 
-@interface SecondViewController ()
+@interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, strong) UITableView *tableview;
+@property (nonatomic, strong) NSArray *dataAry;
 @end
 
 @implementation SecondViewController
+
+- (NSArray *)dataAry {
+    if (_dataAry == nil) {
+        _dataAry = @[@"网络请求", @"CollectionView"];
+    }
+    return _dataAry;
+}
+
+- (UITableView *)tableview {
+    if (_tableview == nil) {
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableview.dataSource = self;
+        _tableview.delegate = self;
+    }
+    return _tableview;
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.view addSubview:self.tableview];
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataAry.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"DemoTableViewCell";
+    DemoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (cell == nil) {
+        cell = [[DemoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = [_dataAry objectAtIndex:indexPath.row];
+    return cell;
+}
+
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        [self httpRequestWithGET];
+    } else if (indexPath.row == 1) {
+        
+    }
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 60;
+}
+
+- (void)httpRequestWithGET {
+    NSString *url = @"https://kyfw.12306.cn/otn/leftTicket/init";
+    NSDictionary *params = @{@"leftTicketDTO.train_date":@"2018-02-06",
+                             @"leftTicketDTO.from_station":@"SHH",
+                             @"leftTicketDTO.to_station":@"UAH"
+                             };
+    AFHTTPSessionManager *manager = [self getManager];
+    
+    //NSLog(@"<-- newRequest -- %@ url --> %@  params --> %@", requestName, url, mutaDict.mj_JSONString);
+    
+    /** 没有做缓存处理，需要添加缓存处理 */
+    [manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+        NSLog(@"responseObject = %@", responseObject);
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+        NSLog(@"error = %@", error);
+    }];
+}
 
 - (AFHTTPSessionManager *)getManager {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -31,28 +107,6 @@
      }];
     
     return manager;
-}
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
-    NSString *url = @"https://kyfw.12306.cn/otn/leftTicket/init";
-    NSDictionary *params = @{@"leftTicketDTO.train_date":@"2018-02-06",
-                             @"leftTicketDTO.from_station":@"SHH",
-                             @"leftTicketDTO.to_station":@"UAH"
-                             };
-    AFHTTPSessionManager *manager = [self getManager];
-    
-    //NSLog(@"<-- newRequest -- %@ url --> %@  params --> %@", requestName, url, mutaDict.mj_JSONString);
-    
-    /** 没有做缓存处理，需要添加缓存处理 */
-    [manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"responseObject = %@", responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"error = %@", error);
-    }];
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
