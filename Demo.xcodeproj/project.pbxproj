@@ -24,6 +24,9 @@
 		F599D78A2019B97400D33834 /* CycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7892019B97300D33834 /* CycleScrollView.m */; };
 		F599D78D2019BA1D00D33834 /* NSTimer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D78B2019BA1C00D33834 /* NSTimer+Add.m */; };
 		F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */; };
+		F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7932019BBC400D33834 /* ATCollectionViewDemoVC.m */; };
+		F599D7992019BC6D00D33834 /* CJCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7972019BC6D00D33834 /* CJCycleScrollView.m */; };
+		F599D79A2019BC6D00D33834 /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = F599D7982019BC6D00D33834 /* 使用方法 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,11 @@
 		F599D78C2019BA1C00D33834 /* NSTimer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Add.h"; sourceTree = "<group>"; };
 		F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AtzucheColor.h"; sourceTree = "<group>"; };
 		F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AtzucheColor.m"; sourceTree = "<group>"; };
+		F599D7922019BBC300D33834 /* ATCollectionViewDemoVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ATCollectionViewDemoVC.h; sourceTree = "<group>"; };
+		F599D7932019BBC400D33834 /* ATCollectionViewDemoVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ATCollectionViewDemoVC.m; sourceTree = "<group>"; };
+		F599D7962019BC6D00D33834 /* CJCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCycleScrollView.h; sourceTree = "<group>"; };
+		F599D7972019BC6D00D33834 /* CJCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJCycleScrollView.m; sourceTree = "<group>"; };
+		F599D7982019BC6D00D33834 /* 使用方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用方法"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,7 +228,10 @@
 		F599D77A2019753800D33834 /* CollectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F599D7952019BC6D00D33834 /* CJCiycleScrollView */,
 				F599D7872019B97300D33834 /* view */,
+				F599D7922019BBC300D33834 /* ATCollectionViewDemoVC.h */,
+				F599D7932019BBC400D33834 /* ATCollectionViewDemoVC.m */,
 			);
 			path = CollectionDemo;
 			sourceTree = "<group>";
@@ -252,6 +263,16 @@
 				F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		F599D7952019BC6D00D33834 /* CJCiycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				F599D7962019BC6D00D33834 /* CJCycleScrollView.h */,
+				F599D7972019BC6D00D33834 /* CJCycleScrollView.m */,
+				F599D7982019BC6D00D33834 /* 使用方法 */,
+			);
+			path = CJCiycleScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -364,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F59567841FAB4AD20068A04F /* LaunchScreen.storyboard in Resources */,
+				F599D79A2019BC6D00D33834 /* 使用方法 in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				F595677F1FAB4AD20068A04F /* Main.storyboard in Resources */,
 			);
@@ -448,12 +470,14 @@
 				F599D78A2019B97400D33834 /* CycleScrollView.m in Sources */,
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
+				F599D7992019BC6D00D33834 /* CJCycleScrollView.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F599D77E2019753800D33834 /* Country.m in Sources */,
 				F599D77F2019753800D33834 /* Person.m in Sources */,
 				F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F599D786201978C400D33834 /* DemoTableViewCell.m in Sources */,
+				F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */,
 				F599D78D2019BA1D00D33834 /* NSTimer+Add.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 			);

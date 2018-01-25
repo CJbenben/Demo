@@ -10,6 +10,9 @@
 #import "AFNetworking.h"
 #import "DemoTableViewCell.h"
 
+
+#import "ATCollectionViewDemoVC.h"
+
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableview;
@@ -18,6 +21,7 @@
 
 @implementation SecondViewController
 
+#pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
         _dataAry = @[@"网络请求", @"CollectionView"];
@@ -36,15 +40,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"笨笨编程";
     
     [self.view addSubview:self.tableview];
 }
 
 #pragma mark - UITableViewDataSource
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataAry.count;
 }
@@ -65,6 +66,9 @@
     if (indexPath.row == 0) {
         [self httpRequestWithGET];
     } else if (indexPath.row == 1) {
+        ATCollectionViewDemoVC *collectionVC = [[ATCollectionViewDemoVC alloc] init];
+        [self.navigationController pushViewController:collectionVC animated:YES];
+    } else if (indexPath.row == 2) {
         
     }
 }
@@ -73,6 +77,7 @@
     return 60;
 }
 
+#pragma mark - indexpath.row == 0
 - (void)httpRequestWithGET {
     NSString *url = @"https://kyfw.12306.cn/otn/leftTicket/init";
     NSDictionary *params = @{@"leftTicketDTO.train_date":@"2018-02-06",

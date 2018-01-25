@@ -45,7 +45,7 @@
 
 - (void)pushNextVC {
     SecondViewController *secondVC = [[SecondViewController alloc] init];
-    [self.navigationController pushViewController:secondVC animated:YES];
+    [self.navigationController pushViewController:secondVC animated:NO];
 }
 
 - (void)testGradient {
