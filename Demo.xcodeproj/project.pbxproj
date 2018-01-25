@@ -138,7 +138,6 @@
 		F59567761FAB4AD20068A04F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				F599D7832019754500D33834 /* Demo.pch */,
 				F599D7772019753800D33834 /* AppDelegate */,
 				F599D77A2019753800D33834 /* CollectionDemo */,
 				F599D7742019753800D33834 /* Controller */,
@@ -151,6 +150,7 @@
 				F59567821FAB4AD20068A04F /* LaunchScreen.storyboard */,
 				F59567851FAB4AD20068A04F /* Info.plist */,
 				F59567861FAB4AD20068A04F /* main.m */,
+				F599D7832019754500D33834 /* Demo.pch */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
