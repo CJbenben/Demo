@@ -15,6 +15,8 @@
 #import <MAMapKit/MAMapKit.h>
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
+#import "NNValidationCodeView.h"
+#import "SecondViewController.h"
 
 @interface ViewController ()<CLLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate>
 
@@ -29,12 +31,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self pushNextVC];
     
-    [self testAlertView];
+    //[self testGradient];
+    
+    //[self testAlertView];
     
     //[self testMapView];
     //[self startLocation];
     //[self test];
+}
+
+- (void)pushNextVC {
+    SecondViewController *secondVC = [[SecondViewController alloc] init];
+    [self.navigationController pushViewController:secondVC animated:YES];
+}
+
+- (void)testGradient {
+    NNValidationCodeView *view = [[NNValidationCodeView alloc] initWithFrame:CGRectMake(80, 100, 300, 45) andLabelCount:6 andLabelDistance:10];
+    [self.view addSubview:view];
+    view.changedColor = [UIColor yellowColor];
+    view.codeBlock = ^(NSString *codeString) {
+        NSLog(@"验证码:%@", codeString);
+    };
 }
 
 - (void)testAlertView {
