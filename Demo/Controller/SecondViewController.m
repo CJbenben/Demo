@@ -10,8 +10,8 @@
 #import "AFNetworking.h"
 #import "DemoTableViewCell.h"
 
-
 #import "ATCollectionViewDemoVC.h"
+#import "HorizontalCollectionViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -24,7 +24,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView"];
     }
     return _dataAry;
 }
@@ -69,7 +69,8 @@
         ATCollectionViewDemoVC *collectionVC = [[ATCollectionViewDemoVC alloc] init];
         [self.navigationController pushViewController:collectionVC animated:YES];
     } else if (indexPath.row == 2) {
-        
+        HorizontalCollectionViewController *horizontalVC = [[HorizontalCollectionViewController alloc] init];
+        [self.navigationController pushViewController:horizontalVC animated:YES];
     }
 }
 
