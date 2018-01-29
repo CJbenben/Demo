@@ -9,6 +9,8 @@
 #import "ATCollectionViewDemoVC.h"
 //#import "CJCycleScrollView.h"
 #import "AtzucheCycleScrollView.h"
+#import "AtzucheHomeTitleCollectionView.h"
+#import "AtzucheFlowLayout.h"
 
 @interface ATCollectionViewDemoVC ()
 
@@ -16,6 +18,8 @@
 @property (nonatomic, strong) AtzucheCycleScrollView *atScrollView;
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
+
+@property (nonatomic, strong) AtzucheHomeTitleCollectionView *homeTitleCollectionView;
 
 @end
 
@@ -31,6 +35,16 @@
     return _imageAry;
 }
 
+- (AtzucheHomeTitleCollectionView *)homeTitleCollectionView {
+    if (_homeTitleCollectionView == nil) {
+        AtzucheFlowLayout *layout = [[AtzucheFlowLayout alloc] initAndSize:CGSizeMake(SCREEN_WIDTH/4.0, 30)];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        
+        _homeTitleCollectionView = [[AtzucheHomeTitleCollectionView alloc] initWithFrame:CGRectMake(0, 320, SCREEN_WIDTH, 30) collectionViewLayout:layout];
+    }
+    return _homeTitleCollectionView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -41,6 +55,15 @@
     //[self addCJScrollViewDemo];
     
     [self addAtzucheScrollViewDemo];
+    [self addAtzucheCustomCollectionView];
+}
+
+- (void)addAtzucheCustomCollectionView {
+    self.homeTitleCollectionView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:self.homeTitleCollectionView];
+    
+    
+    self.homeTitleCollectionView.homeTitleAry = @[@"快捷租车", @"自助找车", @"超值长租", @"坦克时租", @"海外租车"];
 }
 
 - (void)addAtzucheScrollViewDemo {
