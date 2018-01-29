@@ -54,7 +54,7 @@
         AtzucheChooseCarFlowLayout *layout = [[AtzucheChooseCarFlowLayout alloc] initAndSize:CGSizeMake(width, width * 2/3.0 + 110)];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
-        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(15, 300, SCREEN_WIDTH - 30, width * 1.5 + 110) collectionViewLayout:layout];
+        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(0, 300, SCREEN_WIDTH, width * 1.5 + 110) collectionViewLayout:layout];
         _homeChooseCarCollectionView.homeDelegate = self;
     }
     return _homeChooseCarCollectionView;
@@ -77,7 +77,7 @@
     [self.view addSubview:self.homeTitleCollectionView];
     
     [self.view addSubview:self.homeChooseCarCollectionView];
-    
+    self.homeChooseCarCollectionView.backgroundColor = [UIColor purpleColor];
     
     self.homeTitleCollectionView.homeTitleAry = @[@"快捷租车", @"自助找车", @"超值长租", @"坦克时租", @"海外租车"];
     self.homeChooseCarCollectionView.homeChooseCarAry = @[self.imageAry, self.imageAry, self.imageAry];

@@ -40,6 +40,7 @@
     if (_carPriceL == nil) {
         _carPriceL = [[UILabel alloc] initWithFrame:CGRectMake(self.carImageV.x, self.carCardL.bottom, self.carImageV.width, 45)];
         _carPriceL.text = @"$258/天";
+        _carPriceL.backgroundColor = [UIColor yellowColor];
     }
     return _carPriceL;
 }

@@ -12,7 +12,7 @@
 
 - (UILabel *)leftL {
     if (_leftL == nil) {
-        _leftL = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, 200, 50)];
+        _leftL = [[UILabel alloc] initWithFrame:CGRectMake(20, 0, 200, 50)];
         _leftL.text = @"精选优车";
     }
     return _leftL;
@@ -20,7 +20,7 @@
 
 - (NJTitleButton *)allBtn {
     if (_allBtn == nil) {
-        _allBtn = [[NJTitleButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 60 - 40, 0, 60, 50)];
+        _allBtn = [[NJTitleButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 60, 0, 60, 50)];
         [_allBtn setupWithFont:[UIFont systemFontOfSize:14]];
         [_allBtn setImage:[UIImage imageNamed:@"greengou_selected"] forState:UIControlStateNormal];
         [_allBtn setTitle:@"全部" forState:UIControlStateNormal];
