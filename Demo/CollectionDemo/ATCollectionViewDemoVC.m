@@ -33,7 +33,7 @@
         _imageAry = [@[@"http://down.tutu001.com/d/file/20110312/ae15ebaebfa15428826432e50e_560.jpg",
                        @"http://down.tutu001.com/d/file/20120315/29e47a7c992f6f1d978bfc6d8d_560.jpg",
                        @"http://pic23.nipic.com/20120919/10785657_204032524191_2.jpg",
-                       @"http://pic39.nipic.com/20140310/18084329_102707924000_2.jpg"] mutableCopy];
+                       @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517824334&di=a6b1fb22560e3bf02b2a98aa3afd0b28&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F08f790529822720ee889863371cb0a46f31fabb0.jpg"] mutableCopy];
     }
     return _imageAry;
 }

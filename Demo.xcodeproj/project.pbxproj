@@ -35,6 +35,7 @@
 		F5DC82D0201EEFFA005B2EA1 /* AtzucheFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */; };
 		F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */; };
 		F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */; };
+		F5E289CC201F39F400731BCD /* AtzucheHomeNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E289CB201F39F400731BCD /* AtzucheHomeNaviView.m */; };
 		F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A61F201F19B6000851B0 /* NJTitleButton.m */; };
 /* End PBXBuildFile section */
 
@@ -113,6 +114,8 @@
 		F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionCell.m; sourceTree = "<group>"; };
 		F5DC82CE201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionView.h; sourceTree = "<group>"; };
 		F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionView.m; sourceTree = "<group>"; };
+		F5E289CA201F39F400731BCD /* AtzucheHomeNaviView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeNaviView.h; sourceTree = "<group>"; };
+		F5E289CB201F39F400731BCD /* AtzucheHomeNaviView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeNaviView.m; sourceTree = "<group>"; };
 		F5E9A61F201F19B6000851B0 /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
 		F5E9A620201F19B7000851B0 /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -268,6 +271,7 @@
 		F599D77A2019753800D33834 /* CollectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F5E289C9201F39D700731BCD /* AtHomeNaviView */,
 				F50EF958201EFB9100B395BF /* AtHomeChooseCarCollectionView */,
 				F599D7872019B97300D33834 /* view */,
 				F599D7952019BC6D00D33834 /* CJCiycleScrollView */,
@@ -334,6 +338,15 @@
 				F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */,
 			);
 			path = AtHomeTitleCollectionView;
+			sourceTree = "<group>";
+		};
+		F5E289C9201F39D700731BCD /* AtHomeNaviView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E289CA201F39F400731BCD /* AtzucheHomeNaviView.h */,
+				F5E289CB201F39F400731BCD /* AtzucheHomeNaviView.m */,
+			);
+			path = AtHomeNaviView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -528,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5E289CC201F39F400731BCD /* AtzucheHomeNaviView.m in Sources */,
 				F599D78A2019B97400D33834 /* CycleScrollView.m in Sources */,
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
