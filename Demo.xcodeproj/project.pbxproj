@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
+		F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */; };
+		F50EF95E201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */; };
+		F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */; };
+		F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */; };
+		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
 		F595677C1FAB4AD20068A04F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595677B1FAB4AD20068A04F /* ViewController.m */; };
 		F595677F1FAB4AD20068A04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F595677D1FAB4AD20068A04F /* Main.storyboard */; };
 		F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59567801FAB4AD20068A04F /* Assets.xcassets */; };
@@ -30,6 +35,7 @@
 		F5DC82D0201EEFFA005B2EA1 /* AtzucheFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */; };
 		F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */; };
 		F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */; };
+		F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A61F201F19B6000851B0 /* NJTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +59,16 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F50EF959201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheChooseCarFlowLayout.h; sourceTree = "<group>"; };
+		F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheChooseCarFlowLayout.m; sourceTree = "<group>"; };
+		F50EF95C201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionView.h; sourceTree = "<group>"; };
+		F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionView.m; sourceTree = "<group>"; };
+		F50EF95F201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionCell.h; sourceTree = "<group>"; };
+		F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionCell.m; sourceTree = "<group>"; };
+		F535CDE4201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeCollectionHeaderView.h; sourceTree = "<group>"; };
+		F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeCollectionHeaderView.m; sourceTree = "<group>"; };
+		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
+		F57EBFAC201F0BD10062A4AA /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
 		F59567741FAB4AD20068A04F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F595677A1FAB4AD20068A04F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F595677B1FAB4AD20068A04F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
@@ -97,6 +113,8 @@
 		F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionCell.m; sourceTree = "<group>"; };
 		F5DC82CE201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionView.h; sourceTree = "<group>"; };
 		F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionView.m; sourceTree = "<group>"; };
+		F5E9A61F201F19B6000851B0 /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
+		F5E9A620201F19B7000851B0 /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +158,19 @@
 				C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F50EF958201EFB9100B395BF /* AtHomeChooseCarCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F50EF959201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.h */,
+				F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */,
+				F50EF95C201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.h */,
+				F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */,
+				F50EF95F201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.h */,
+				F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */,
+			);
+			path = AtHomeChooseCarCollectionView;
 			sourceTree = "<group>";
 		};
 		F595676B1FAB4AD20068A04F = {
@@ -237,6 +268,7 @@
 		F599D77A2019753800D33834 /* CollectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F50EF958201EFB9100B395BF /* AtHomeChooseCarCollectionView */,
 				F599D7872019B97300D33834 /* view */,
 				F599D7952019BC6D00D33834 /* CJCiycleScrollView */,
 				F5DC82C9201EEFFA005B2EA1 /* AtHomeTitleCollectionView */,
@@ -271,6 +303,10 @@
 			children = (
 				F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */,
 				F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */,
+				F57EBFAC201F0BD10062A4AA /* UIView+AtzucheUIView.h */,
+				F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */,
+				F5E9A620201F19B7000851B0 /* NJTitleButton.h */,
+				F5E9A61F201F19B6000851B0 /* NJTitleButton.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -290,6 +326,8 @@
 			children = (
 				F5DC82CA201EEFFA005B2EA1 /* AtzucheFlowLayout.h */,
 				F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */,
+				F535CDE4201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.h */,
+				F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */,
 				F5DC82CE201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.h */,
 				F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */,
 				F5DC82CC201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.h */,
@@ -492,19 +530,25 @@
 			files = (
 				F599D78A2019B97400D33834 /* CycleScrollView.m in Sources */,
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
+				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
 				F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5DC82D0201EEFFA005B2EA1 /* AtzucheFlowLayout.m in Sources */,
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F599D77E2019753800D33834 /* Country.m in Sources */,
+				F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */,
 				F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				F599D77F2019753800D33834 /* Person.m in Sources */,
+				F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F599D79D2019C09B00D33834 /* AtzucheCycleScrollView.m in Sources */,
+				F50EF95E201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m in Sources */,
 				F599D786201978C400D33834 /* DemoTableViewCell.m in Sources */,
 				F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */,
+				F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */,
 				F599D78D2019BA1D00D33834 /* NSTimer+Add.m in Sources */,
+				F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

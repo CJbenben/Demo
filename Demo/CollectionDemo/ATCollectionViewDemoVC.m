@@ -11,8 +11,10 @@
 #import "AtzucheCycleScrollView.h"
 #import "AtzucheHomeTitleCollectionView.h"
 #import "AtzucheFlowLayout.h"
+#import "AtzucheHomeChooseCarCollectionView.h"
+#import "AtzucheChooseCarFlowLayout.h"
 
-@interface ATCollectionViewDemoVC ()
+@interface ATCollectionViewDemoVC ()<AtzucheHomeCollectionDidSelectDelegate>
 
 //@property (strong, nonatomic) CJCycleScrollView *scrollView;
 @property (nonatomic, strong) AtzucheCycleScrollView *atScrollView;
@@ -20,6 +22,7 @@
 @property (nonatomic, strong) NSMutableArray *imageAry;
 
 @property (nonatomic, strong) AtzucheHomeTitleCollectionView *homeTitleCollectionView;
+@property (nonatomic, strong) AtzucheHomeChooseCarCollectionView *homeChooseCarCollectionView;
 
 @end
 
@@ -40,9 +43,21 @@
         AtzucheFlowLayout *layout = [[AtzucheFlowLayout alloc] initAndSize:CGSizeMake(SCREEN_WIDTH/4.0, 30)];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
-        _homeTitleCollectionView = [[AtzucheHomeTitleCollectionView alloc] initWithFrame:CGRectMake(0, 320, SCREEN_WIDTH, 30) collectionViewLayout:layout];
+        _homeTitleCollectionView = [[AtzucheHomeTitleCollectionView alloc] initWithFrame:CGRectMake(0, 260, SCREEN_WIDTH, 30) collectionViewLayout:layout];
     }
     return _homeTitleCollectionView;
+}
+
+- (AtzucheHomeChooseCarCollectionView *)homeChooseCarCollectionView {
+    if (_homeChooseCarCollectionView == nil) {
+        CGFloat width = (SCREEN_WIDTH - 30)/2.0;
+        AtzucheChooseCarFlowLayout *layout = [[AtzucheChooseCarFlowLayout alloc] initAndSize:CGSizeMake(width, width * 2/3.0 + 110)];
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        
+        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(15, 300, SCREEN_WIDTH - 30, width * 1.5 + 110) collectionViewLayout:layout];
+        _homeChooseCarCollectionView.homeDelegate = self;
+    }
+    return _homeChooseCarCollectionView;
 }
 
 - (void)viewDidLoad {
@@ -59,18 +74,20 @@
 }
 
 - (void)addAtzucheCustomCollectionView {
-    self.homeTitleCollectionView.backgroundColor = [UIColor cyanColor];
     [self.view addSubview:self.homeTitleCollectionView];
+    
+    [self.view addSubview:self.homeChooseCarCollectionView];
     
     
     self.homeTitleCollectionView.homeTitleAry = @[@"快捷租车", @"自助找车", @"超值长租", @"坦克时租", @"海外租车"];
+    self.homeChooseCarCollectionView.homeChooseCarAry = @[self.imageAry, self.imageAry, self.imageAry];
 }
 
 - (void)addAtzucheScrollViewDemo {
-    CGRect scrollviewF = CGRectMake(0, 64 + 20, SCREEN_WIDTH, 220);
-    CGRect frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, 220);
+    CGRect scrollviewF = CGRectMake(0, 64 + 20, SCREEN_WIDTH, 160);
+    CGRect frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, 160);
     
-    self.atScrollView = [AtzucheCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:2.0];
+    self.atScrollView = [AtzucheCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:0.0];
     [self.view addSubview:self.atScrollView];
     
     self.atScrollView.TapActionBlock = ^(NSInteger pageIndex) {
@@ -85,6 +102,19 @@
 //    self.scrollView = [CJCycleScrollView cjCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:5.0 imagePaths:self.imageAry animationDuration:2.0];
 //    [self.view addSubview:self.scrollView];
 //}
+
+#pragma mark -
+- (void)atzucheHomeCollectionDidSelectItemAtIndexPath:(NSIndexPath *)indexPath type:(HomeCollectionType)type {
+    if (type == HomeCollectionTypeChooseCar) {
+        NSLog(@"indexpath.section = %ld & row = %ld", indexPath.section, indexPath.row);
+    }
+}
+
+- (void)atzucheHomeCollectionHeaderViewDidSelectAtSection:(NSInteger)section type:(HomeCollectionType)type {
+    if (type == HomeCollectionTypeChooseCar) {
+        NSLog(@"section = %ld", section);
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
