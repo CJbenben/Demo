@@ -11,6 +11,7 @@
 		F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */; };
 		F50EF95E201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */; };
 		F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */; };
+		F5335DDD2020087E0000C636 /* AtzucheHomeTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */; };
 		F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
 		F595677C1FAB4AD20068A04F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595677B1FAB4AD20068A04F /* ViewController.m */; };
@@ -32,7 +33,7 @@
 		F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7932019BBC400D33834 /* ATCollectionViewDemoVC.m */; };
 		F599D79A2019BC6D00D33834 /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = F599D7982019BC6D00D33834 /* 使用方法 */; };
 		F599D79D2019C09B00D33834 /* AtzucheCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D79C2019C09B00D33834 /* AtzucheCycleScrollView.m */; };
-		F5DC82D0201EEFFA005B2EA1 /* AtzucheFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */; };
+		F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CB201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m */; };
 		F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */; };
 		F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */; };
 		F5E289CC201F39F400731BCD /* AtzucheHomeNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E289CB201F39F400731BCD /* AtzucheHomeNaviView.m */; };
@@ -70,6 +71,8 @@
 		F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionView.m; sourceTree = "<group>"; };
 		F50EF95F201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionCell.h; sourceTree = "<group>"; };
 		F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionCell.m; sourceTree = "<group>"; };
+		F5335DDB2020087E0000C636 /* AtzucheHomeTitleViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleViewController.h; sourceTree = "<group>"; };
+		F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleViewController.m; sourceTree = "<group>"; };
 		F535CDE4201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeCollectionHeaderView.h; sourceTree = "<group>"; };
 		F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeCollectionHeaderView.m; sourceTree = "<group>"; };
 		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
@@ -112,8 +115,8 @@
 		F599D7982019BC6D00D33834 /* 使用方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用方法"; sourceTree = "<group>"; };
 		F599D79B2019C09B00D33834 /* AtzucheCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheCycleScrollView.h; sourceTree = "<group>"; };
 		F599D79C2019C09B00D33834 /* AtzucheCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheCycleScrollView.m; sourceTree = "<group>"; };
-		F5DC82CA201EEFFA005B2EA1 /* AtzucheFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheFlowLayout.h; sourceTree = "<group>"; };
-		F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheFlowLayout.m; sourceTree = "<group>"; };
+		F5DC82CA201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleFlowLayout.h; sourceTree = "<group>"; };
+		F5DC82CB201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleFlowLayout.m; sourceTree = "<group>"; };
 		F5DC82CC201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionCell.h; sourceTree = "<group>"; };
 		F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionCell.m; sourceTree = "<group>"; };
 		F5DC82CE201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionView.h; sourceTree = "<group>"; };
@@ -341,8 +344,10 @@
 		F5DC82C9201EEFFA005B2EA1 /* AtHomeTitleCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				F5DC82CA201EEFFA005B2EA1 /* AtzucheFlowLayout.h */,
-				F5DC82CB201EEFFA005B2EA1 /* AtzucheFlowLayout.m */,
+				F5335DDB2020087E0000C636 /* AtzucheHomeTitleViewController.h */,
+				F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */,
+				F5DC82CA201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.h */,
+				F5DC82CB201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m */,
 				F535CDE4201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.h */,
 				F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */,
 				F5DC82CE201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.h */,
@@ -582,7 +587,7 @@
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
 				F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */,
-				F5DC82D0201EEFFA005B2EA1 /* AtzucheFlowLayout.m in Sources */,
+				F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */,
 				F5E289D7201F3EFC00731BCD /* AtzucheHomeCityCollectionCell.m in Sources */,
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
@@ -599,6 +604,7 @@
 				F599D786201978C400D33834 /* DemoTableViewCell.m in Sources */,
 				F5E289DA201F471D00731BCD /* AtzucheHomeCityFlowLayout.m in Sources */,
 				F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */,
+				F5335DDD2020087E0000C636 /* AtzucheHomeTitleViewController.m in Sources */,
 				F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */,
 				F599D78D2019BA1D00D33834 /* NSTimer+Add.m in Sources */,
 				F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */,

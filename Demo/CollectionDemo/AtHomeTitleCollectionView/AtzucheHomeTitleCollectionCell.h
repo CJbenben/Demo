@@ -10,6 +10,7 @@
 
 @interface AtzucheHomeTitleCollectionCell : UICollectionViewCell
 
+@property (nonatomic, strong) UIImageView *titleImageV;
 @property (nonatomic, strong) UILabel *titleL;
 
 @end

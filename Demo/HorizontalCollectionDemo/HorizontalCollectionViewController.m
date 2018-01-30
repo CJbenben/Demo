@@ -48,8 +48,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor lightGrayColor];
-    
     self.title = @"HorizontalCollectionViewController";
+    self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.homeCityCollectionView.backgroundColor = [UIColor yellowColor];
     [self.view addSubview:self.homeCityCollectionView];

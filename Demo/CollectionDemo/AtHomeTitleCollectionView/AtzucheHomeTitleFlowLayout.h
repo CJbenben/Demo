@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AtzucheFlowLayout : UICollectionViewFlowLayout
+@interface AtzucheHomeTitleFlowLayout : UICollectionViewFlowLayout
 
-- (instancetype)initAndSize:(CGSize)size;
+- (instancetype)initAndSize:(CGSize)size count:(NSInteger)count;
 
 @end

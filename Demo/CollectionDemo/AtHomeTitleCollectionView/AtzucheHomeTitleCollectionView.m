@@ -66,4 +66,13 @@ static NSString *reuseID = @"AtzucheHomeTitleCollectionCell";
     
 }
 
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewFlowLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    
+    NSInteger numberOfItems = [collectionView numberOfItemsInSection:0];
+    CGFloat combinedItemWidth = (numberOfItems * collectionViewLayout.itemSize.width) + ((numberOfItems - 1)*collectionViewLayout.minimumInteritemSpacing);
+    CGFloat padding = (collectionView.frame.size.width - combinedItemWidth)/2;
+    padding = padding > 22.5 ? padding : 22.5;
+    return UIEdgeInsetsMake(0, padding,0, padding);
+}
+
 @end

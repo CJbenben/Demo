@@ -9,8 +9,6 @@
 #import "ATCollectionViewDemoVC.h"
 //#import "CJCycleScrollView.h"
 #import "AtzucheCycleScrollView.h"
-#import "AtzucheHomeTitleCollectionView.h"
-#import "AtzucheFlowLayout.h"
 #import "AtzucheHomeChooseCarCollectionView.h"
 #import "AtzucheChooseCarFlowLayout.h"
 
@@ -21,7 +19,6 @@
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
 
-@property (nonatomic, strong) AtzucheHomeTitleCollectionView *homeTitleCollectionView;
 @property (nonatomic, strong) AtzucheHomeChooseCarCollectionView *homeChooseCarCollectionView;
 
 @end
@@ -36,16 +33,6 @@
                        @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517824334&di=a6b1fb22560e3bf02b2a98aa3afd0b28&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F08f790529822720ee889863371cb0a46f31fabb0.jpg"] mutableCopy];
     }
     return _imageAry;
-}
-
-- (AtzucheHomeTitleCollectionView *)homeTitleCollectionView {
-    if (_homeTitleCollectionView == nil) {
-        AtzucheFlowLayout *layout = [[AtzucheFlowLayout alloc] initAndSize:CGSizeMake(SCREEN_WIDTH/4.0, 30)];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
-        _homeTitleCollectionView = [[AtzucheHomeTitleCollectionView alloc] initWithFrame:CGRectMake(0, 260, SCREEN_WIDTH, 30) collectionViewLayout:layout];
-    }
-    return _homeTitleCollectionView;
 }
 
 - (AtzucheHomeChooseCarCollectionView *)homeChooseCarCollectionView {
@@ -74,12 +61,9 @@
 }
 
 - (void)addAtzucheCustomCollectionView {
-    [self.view addSubview:self.homeTitleCollectionView];
-    
     [self.view addSubview:self.homeChooseCarCollectionView];
     self.homeChooseCarCollectionView.backgroundColor = [UIColor purpleColor];
     
-    self.homeTitleCollectionView.homeTitleAry = @[@"快捷租车", @"自助找车", @"超值长租", @"坦克时租", @"海外租车"];
     self.homeChooseCarCollectionView.homeChooseCarAry = @[self.imageAry, self.imageAry, self.imageAry];
 }
 
