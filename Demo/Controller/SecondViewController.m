@@ -13,6 +13,7 @@
 #import "ATCollectionViewDemoVC.h"
 #import "HorizontalCollectionViewController.h"
 #import "AtzucheHomeTitleViewController.h"
+#import "MJIphoneXViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -25,7 +26,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X"];
     }
     return _dataAry;
 }
@@ -75,6 +76,9 @@
     } else if (indexPath.row == 3) {
         AtzucheHomeTitleViewController *titleVC = [[AtzucheHomeTitleViewController alloc] init];
         [self.navigationController pushViewController:titleVC animated:YES];
+    } else if (indexPath.row == 4) {
+        MJIphoneXViewController *mjIphoneXvc = [[MJIphoneXViewController alloc] init];
+        [self.navigationController pushViewController:mjIphoneXvc animated:YES];
     }
 }
 

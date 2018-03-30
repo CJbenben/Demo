@@ -13,6 +13,7 @@
 		F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */; };
 		F5335DDD2020087E0000C636 /* AtzucheHomeTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */; };
 		F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */; };
+		F5464AAB206DDA400060D2AC /* MJIphoneXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
 		F595677C1FAB4AD20068A04F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595677B1FAB4AD20068A04F /* ViewController.m */; };
 		F595677F1FAB4AD20068A04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F595677D1FAB4AD20068A04F /* Main.storyboard */; };
@@ -75,6 +76,8 @@
 		F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleViewController.m; sourceTree = "<group>"; };
 		F535CDE4201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeCollectionHeaderView.h; sourceTree = "<group>"; };
 		F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeCollectionHeaderView.m; sourceTree = "<group>"; };
+		F5464AA9206DDA400060D2AC /* MJIphoneXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJIphoneXViewController.h; sourceTree = "<group>"; };
+		F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJIphoneXViewController.m; sourceTree = "<group>"; };
 		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
 		F57EBFAC201F0BD10062A4AA /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
 		F59567741FAB4AD20068A04F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +194,15 @@
 			path = AtHomeChooseCarCollectionView;
 			sourceTree = "<group>";
 		};
+		F5464AA8206DD9F20060D2AC /* MJ_IPhoneXDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F5464AA9206DDA400060D2AC /* MJIphoneXViewController.h */,
+				F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */,
+			);
+			path = MJ_IPhoneXDemo;
+			sourceTree = "<group>";
+		};
 		F595676B1FAB4AD20068A04F = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +232,7 @@
 				F599D7772019753800D33834 /* AppDelegate */,
 				F599D77A2019753800D33834 /* CollectionDemo */,
 				F5E289CD201F3E2F00731BCD /* HorizontalCollectionDemo */,
+				F5464AA8206DD9F20060D2AC /* MJ_IPhoneXDemo */,
 				F599D7742019753800D33834 /* Controller */,
 				F599D76F2019753700D33834 /* Model */,
 				F599D77B2019753800D33834 /* ValidationCodeDemo */,
@@ -607,6 +620,7 @@
 				F5335DDD2020087E0000C636 /* AtzucheHomeTitleViewController.m in Sources */,
 				F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */,
 				F599D78D2019BA1D00D33834 /* NSTimer+Add.m in Sources */,
+				F5464AAB206DDA400060D2AC /* MJIphoneXViewController.m in Sources */,
 				F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				F5E289D4201F3EE200731BCD /* AtzucheHomeCityCollectionView.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
@@ -774,7 +788,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RGN8U623GW;
+				DEVELOPMENT_TEAM = 9N3226VTAU;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -791,7 +805,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RGN8U623GW;
+				DEVELOPMENT_TEAM = 9N3226VTAU;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
