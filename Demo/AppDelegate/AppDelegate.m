@@ -15,6 +15,9 @@
 
 @implementation AppDelegate
 
+- (void)testMerge {
+    NSLog(@"testMerge");
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
