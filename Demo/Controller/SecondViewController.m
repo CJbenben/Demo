@@ -88,10 +88,9 @@
 
 #pragma mark - indexpath.row == 0
 - (void)httpRequestWithGET {
-    NSString *url = @"https://kyfw.12306.cn/otn/leftTicket/init";
-    NSDictionary *params = @{@"leftTicketDTO.train_date":@"2018-02-06",
-                             @"leftTicketDTO.from_station":@"SHH",
-                             @"leftTicketDTO.to_station":@"UAH"
+    NSString *url = @"http://v.juhe.cn/toutiao/index";
+    NSDictionary *params = @{@"type":@"top",//类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
+                             @"key":@"ad2908cae6020addf38ffdb5e2255c06"//应用APPKEY
                              };
     AFHTTPSessionManager *manager = [self getManager];
     

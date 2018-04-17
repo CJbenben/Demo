@@ -14,6 +14,8 @@
 		F5335DDD2020087E0000C636 /* AtzucheHomeTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5335DDC2020087E0000C636 /* AtzucheHomeTitleViewController.m */; };
 		F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */; };
 		F5464AAB206DDA400060D2AC /* MJIphoneXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */; };
+		F56E2EA42084A186001A8C27 /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F56E2EA32084A185001A8C27 /* MJDIYHeader.m */; };
+		F56E2EAA2084AB17001A8C27 /* AtzucheRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F56E2EA92084AB17001A8C27 /* AtzucheRefreshStateHeader.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
 		F595677C1FAB4AD20068A04F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F595677B1FAB4AD20068A04F /* ViewController.m */; };
 		F595677F1FAB4AD20068A04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F595677D1FAB4AD20068A04F /* Main.storyboard */; };
@@ -78,6 +80,10 @@
 		F535CDE5201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeCollectionHeaderView.m; sourceTree = "<group>"; };
 		F5464AA9206DDA400060D2AC /* MJIphoneXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJIphoneXViewController.h; sourceTree = "<group>"; };
 		F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJIphoneXViewController.m; sourceTree = "<group>"; };
+		F56E2EA22084A185001A8C27 /* MJDIYHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJDIYHeader.h; sourceTree = "<group>"; };
+		F56E2EA32084A185001A8C27 /* MJDIYHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJDIYHeader.m; sourceTree = "<group>"; };
+		F56E2EA82084AB17001A8C27 /* AtzucheRefreshStateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheRefreshStateHeader.h; sourceTree = "<group>"; };
+		F56E2EA92084AB17001A8C27 /* AtzucheRefreshStateHeader.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheRefreshStateHeader.m; sourceTree = "<group>"; };
 		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
 		F57EBFAC201F0BD10062A4AA /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
 		F59567741FAB4AD20068A04F /* Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Demo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,6 +205,10 @@
 			children = (
 				F5464AA9206DDA400060D2AC /* MJIphoneXViewController.h */,
 				F5464AAA206DDA400060D2AC /* MJIphoneXViewController.m */,
+				F56E2EA82084AB17001A8C27 /* AtzucheRefreshStateHeader.h */,
+				F56E2EA92084AB17001A8C27 /* AtzucheRefreshStateHeader.m */,
+				F56E2EA22084A185001A8C27 /* MJDIYHeader.h */,
+				F56E2EA32084A185001A8C27 /* MJDIYHeader.m */,
 			);
 			path = MJ_IPhoneXDemo;
 			sourceTree = "<group>";
@@ -598,6 +608,7 @@
 				F5E289CC201F39F400731BCD /* AtzucheHomeNaviView.m in Sources */,
 				F599D78A2019B97400D33834 /* CycleScrollView.m in Sources */,
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
+				F56E2EAA2084AB17001A8C27 /* AtzucheRefreshStateHeader.m in Sources */,
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
 				F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */,
@@ -605,6 +616,7 @@
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F599D77E2019753800D33834 /* Country.m in Sources */,
+				F56E2EA42084A186001A8C27 /* MJDIYHeader.m in Sources */,
 				F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */,
 				F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				F599D77F2019753800D33834 /* Person.m in Sources */,
