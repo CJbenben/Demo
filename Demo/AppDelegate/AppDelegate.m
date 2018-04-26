@@ -15,8 +15,8 @@
 
 @implementation AppDelegate
 
-- (void)testTag {
-    NSLog(@"testTag");
+- (void)testTag2 {
+    NSLog(@"testTag2");
 }
 
 - (void)testMerge {
