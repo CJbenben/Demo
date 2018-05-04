@@ -15,12 +15,8 @@
 
 @implementation AppDelegate
 
-- (void)testTag2 {
-    NSLog(@"testTag2");
-}
-
-- (void)testMerge {
-    NSLog(@"testMerge");
+- (void)testGit {
+    NSLog(@"test_cherry-pick");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
