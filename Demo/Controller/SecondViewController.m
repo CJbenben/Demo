@@ -15,6 +15,8 @@
 #import "AtzucheHomeTitleViewController.h"
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
+#import "WKWebViewController.h"
+
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -27,7 +29,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview"];
     }
     return _dataAry;
 }
@@ -83,6 +85,9 @@
     } else if (indexPath.row == 5) {
         PhoneFontViewController *fontVC = [[PhoneFontViewController alloc] init];
         [self.navigationController pushViewController:fontVC animated:YES];
+    } else if (indexPath.row == 6) {
+        WKWebViewController *webview = [[WKWebViewController alloc] init];
+        [self.navigationController pushViewController:webview animated:YES];
     }
 }
 

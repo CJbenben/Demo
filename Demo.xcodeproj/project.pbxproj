@@ -36,6 +36,7 @@
 		F599D7942019BBC400D33834 /* ATCollectionViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7932019BBC400D33834 /* ATCollectionViewDemoVC.m */; };
 		F599D79A2019BC6D00D33834 /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = F599D7982019BC6D00D33834 /* 使用方法 */; };
 		F599D79D2019C09B00D33834 /* AtzucheCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D79C2019C09B00D33834 /* AtzucheCycleScrollView.m */; };
+		F5D8906920A0315C007F5A19 /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D8906820A0315C007F5A19 /* WKWebViewController.m */; };
 		F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CB201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m */; };
 		F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CD201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m */; };
 		F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5DC82CF201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m */; };
@@ -125,6 +126,8 @@
 		F599D7982019BC6D00D33834 /* 使用方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用方法"; sourceTree = "<group>"; };
 		F599D79B2019C09B00D33834 /* AtzucheCycleScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheCycleScrollView.h; sourceTree = "<group>"; };
 		F599D79C2019C09B00D33834 /* AtzucheCycleScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheCycleScrollView.m; sourceTree = "<group>"; };
+		F5D8906720A0315C007F5A19 /* WKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WKWebViewController.h; sourceTree = "<group>"; };
+		F5D8906820A0315C007F5A19 /* WKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WKWebViewController.m; sourceTree = "<group>"; };
 		F5DC82CA201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleFlowLayout.h; sourceTree = "<group>"; };
 		F5DC82CB201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleFlowLayout.m; sourceTree = "<group>"; };
 		F5DC82CC201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionCell.h; sourceTree = "<group>"; };
@@ -314,6 +317,7 @@
 		F599D77A2019753800D33834 /* CollectionDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F5D8906620A0314E007F5A19 /* WKWebView */,
 				F5E289C9201F39D700731BCD /* AtHomeNaviView */,
 				F50EF958201EFB9100B395BF /* AtHomeChooseCarCollectionView */,
 				F599D7872019B97300D33834 /* view */,
@@ -367,6 +371,16 @@
 			);
 			path = CJCiycleScrollView;
 			sourceTree = "<group>";
+		};
+		F5D8906620A0314E007F5A19 /* WKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				F5D8906720A0315C007F5A19 /* WKWebViewController.h */,
+				F5D8906820A0315C007F5A19 /* WKWebViewController.m */,
+			);
+			name = WKWebView;
+			path = Demo/WKWebView;
+			sourceTree = SOURCE_ROOT;
 		};
 		F5DC82C9201EEFFA005B2EA1 /* AtHomeTitleCollectionView */ = {
 			isa = PBXGroup;
@@ -623,6 +637,7 @@
 				F599D7802019753800D33834 /* SecondViewController.m in Sources */,
 				F56E2EAA2084AB17001A8C27 /* AtzucheRefreshStateHeader.m in Sources */,
 				F5FD0E3E208EF00600370196 /* PhoneFontViewController.m in Sources */,
+				F5D8906920A0315C007F5A19 /* WKWebViewController.m in Sources */,
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
 				F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */,
