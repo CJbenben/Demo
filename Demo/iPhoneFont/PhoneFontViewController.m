@@ -67,6 +67,10 @@
     [self.view addSubview:self.label1];
     [self.view addSubview:self.label2];
     [self.view addSubview:self.label3];
+    
+    
+    UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    NSLog(@"当前字体。。。 %@", font);
 }
 
 - (void)didReceiveMemoryWarning {
