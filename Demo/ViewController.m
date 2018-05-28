@@ -32,6 +32,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self pushNextVC];
     
     //[self testGradient];
@@ -41,6 +43,16 @@
     //[self testMapView];
     //[self startLocation];
     //[self test];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self presentVC];
+}
+
+- (void)presentVC {
+    SecondViewController *secondVC = [[SecondViewController alloc] init];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:secondVC];
+    [self presentViewController:navi animated:YES completion:nil];
 }
 
 - (void)pushNextVC {

@@ -7,6 +7,7 @@
 //
 
 #import "PhoneFontViewController.h"
+#import "ViewController.h"
 
 @interface PhoneFontViewController ()
 
@@ -71,6 +72,18 @@
     
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     NSLog(@"当前字体。。。 %@", font);
+    
+    
+    
+    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(backView)];
+}
+
+- (void)backView {
+    for (UIViewController *vc in self.navigationController.viewControllers) {
+        if ([vc isKindOfClass:[ViewController class]]) {
+            [self.navigationController popToViewController:vc animated:YES];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
