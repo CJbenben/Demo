@@ -16,6 +16,7 @@
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
+#import "TableViewDeleteViewController.h"
 
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -29,7 +30,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除"];
     }
     return _dataAry;
 }
@@ -88,6 +89,9 @@
     } else if (indexPath.row == 6) {
         WKWebViewController *webview = [[WKWebViewController alloc] init];
         [self.navigationController pushViewController:webview animated:YES];
+    } else if (indexPath.row == 7) {
+        TableViewDeleteViewController *deleteVC = [[TableViewDeleteViewController alloc] init];
+        [self.navigationController pushViewController:deleteVC animated:YES];
     }
 }
 

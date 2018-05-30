@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
+		F502F3C020BD2D5A00643DF8 /* TableViewDeleteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F502F3BF20BD2D5A00643DF8 /* TableViewDeleteViewController.m */; };
 		F50EF95B201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */; };
 		F50EF95E201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF95D201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m */; };
 		F50EF961201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F50EF960201EFC0B00B395BF /* AtzucheHomeChooseCarCollectionCell.m */; };
@@ -70,6 +71,8 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F502F3BE20BD2D5A00643DF8 /* TableViewDeleteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDeleteViewController.h; sourceTree = "<group>"; };
+		F502F3BF20BD2D5A00643DF8 /* TableViewDeleteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDeleteViewController.m; sourceTree = "<group>"; };
 		F50EF959201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheChooseCarFlowLayout.h; sourceTree = "<group>"; };
 		F50EF95A201EFBAE00B395BF /* AtzucheChooseCarFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheChooseCarFlowLayout.m; sourceTree = "<group>"; };
 		F50EF95C201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionView.h; sourceTree = "<group>"; };
@@ -193,6 +196,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F502F3BD20BD2D4700643DF8 /* TableViewDelete */ = {
+			isa = PBXGroup;
+			children = (
+				F502F3BE20BD2D5A00643DF8 /* TableViewDeleteViewController.h */,
+				F502F3BF20BD2D5A00643DF8 /* TableViewDeleteViewController.m */,
+			);
+			path = TableViewDelete;
+			sourceTree = "<group>";
+		};
 		F50EF958201EFB9100B395BF /* AtHomeChooseCarCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -244,6 +256,7 @@
 		F59567761FAB4AD20068A04F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				F502F3BD20BD2D4700643DF8 /* TableViewDelete */,
 				F599D78E2019BA8D00D33834 /* Category */,
 				F599D7772019753800D33834 /* AppDelegate */,
 				F599D77A2019753800D33834 /* CollectionDemo */,
@@ -649,6 +662,7 @@
 				F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */,
 				F5DC82D1201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				F599D77F2019753800D33834 /* Person.m in Sources */,
+				F502F3C020BD2D5A00643DF8 /* TableViewDeleteViewController.m in Sources */,
 				F5E289D0201F3E5A00731BCD /* HorizontalCollectionViewController.m in Sources */,
 				F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */,
