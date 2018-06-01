@@ -265,7 +265,6 @@
 		F59567761FAB4AD20068A04F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				F5E302F820C12EFA001F11EC /* CellAddCollectionView */,
 				F502F3BD20BD2D4700643DF8 /* TableViewDelete */,
 				F599D78E2019BA8D00D33834 /* Category */,
 				F599D7772019753800D33834 /* AppDelegate */,
@@ -276,6 +275,7 @@
 				F599D7742019753800D33834 /* Controller */,
 				F599D76F2019753700D33834 /* Model */,
 				F599D77B2019753800D33834 /* ValidationCodeDemo */,
+				F5E302F820C12EFA001F11EC /* CellAddCollectionView */,
 				F595677A1FAB4AD20068A04F /* ViewController.h */,
 				F595677B1FAB4AD20068A04F /* ViewController.m */,
 				F595677D1FAB4AD20068A04F /* Main.storyboard */,
