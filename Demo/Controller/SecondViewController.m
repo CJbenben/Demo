@@ -13,6 +13,7 @@
 #import "ATCollectionViewDemoVC.h"
 #import "HorizontalCollectionViewController.h"
 #import "AtzucheHomeTitleViewController.h"
+#import "CellAddCollectionViewController.h"
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
@@ -30,7 +31,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"cell add collectionview", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除"];
     }
     return _dataAry;
 }
@@ -81,15 +82,18 @@
         AtzucheHomeTitleViewController *titleVC = [[AtzucheHomeTitleViewController alloc] init];
         [self.navigationController pushViewController:titleVC animated:YES];
     } else if (indexPath.row == 4) {
+        CellAddCollectionViewController *cellVC = [[CellAddCollectionViewController alloc] init];
+        [self.navigationController pushViewController:cellVC animated:YES];
+    } else if (indexPath.row == 5) {
         MJIphoneXViewController *mjIphoneXvc = [[MJIphoneXViewController alloc] init];
         [self.navigationController pushViewController:mjIphoneXvc animated:YES];
-    } else if (indexPath.row == 5) {
+    } else if (indexPath.row == 6) {
         PhoneFontViewController *fontVC = [[PhoneFontViewController alloc] init];
         [self.navigationController pushViewController:fontVC animated:YES];
-    } else if (indexPath.row == 6) {
+    } else if (indexPath.row == 7) {
         WKWebViewController *webview = [[WKWebViewController alloc] init];
         [self.navigationController pushViewController:webview animated:YES];
-    } else if (indexPath.row == 7) {
+    } else if (indexPath.row == 8) {
         TableViewDeleteViewController *deleteVC = [[TableViewDeleteViewController alloc] init];
         [self.navigationController pushViewController:deleteVC animated:YES];
     }
