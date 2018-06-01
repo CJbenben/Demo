@@ -19,12 +19,15 @@
 @interface HorizontalCollectionViewController ()<UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
+@property (nonatomic, strong) NSMutableArray *itemAry;
 @property (nonatomic, strong) AtzucheHomeCityCollectionView *homeCityCollectionView;
 @property (nonatomic, strong) UITableView *tableview;
 
 @end
 
 @implementation HorizontalCollectionViewController
+
+static NSString *identifier = @"AtItemTableViewCell";
 
 - (NSMutableArray *)imageAry {
     if (_imageAry == nil) {
@@ -36,6 +39,25 @@
                        @"http://pic1.16pic.com/00/17/71/16pic_1771338_b.jpg"] mutableCopy];
     }
     return _imageAry;
+}
+
+- (NSMutableArray *)itemAry {
+    if (_itemAry == nil) {
+        _itemAry = [@[
+                     @[@"1"],
+                     @[@"1", @"2"],
+                     @[@"1", @"2", @"3"],
+                     @[@"1", @"2", @"3", @"4"],
+                     @[@"1", @"2", @"3", @"4", @"5"],
+                     
+                     @[@"1", @"2", @"3", @"4", @"5", @"6"],
+                     @[@"1", @"2", @"3", @"4", @"5"],
+                     @[@"1", @"2", @"3", @"4"],
+                     @[@"1", @"2", @"3"],
+                     @[@"1", @"2"]
+                     ] mutableCopy];
+    }
+    return _itemAry;
 }
 
 - (AtzucheHomeCityCollectionView *)homeCityCollectionView {
@@ -101,7 +123,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.imageAry.count;
+    return self.itemAry.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -111,7 +133,7 @@
     if (cell == nil) {
         cell = [[AtItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.homeCityAry = self.imageAry;
+    cell.homeCityAry = [self.itemAry objectAtIndex:indexPath.row];
     return cell;
 }
 

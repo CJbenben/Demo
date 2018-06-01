@@ -95,14 +95,14 @@
 
 -(void)updateCollectionViewHight:(CGFloat)hight{
     
-    NSLog(@"+%@",self);
-    NSLog(@"++ %f",self.hightED);
-    NSLog(@"+++ %f",hight);
+//    NSLog(@"+%@",self);
+//    NSLog(@"++ %f",self.hightED);
+//    NSLog(@"+++ %f",hight);
     
     if (self.hightED != hight) { //这个判断起到两个作用 第一 以为这个方法被调用多次这样写 保证 每个cell里面调用一次,切只调用一次  第二是当cell被重用从用的cell上的collectionView内容高度不一样的时候重新 更新跟新高度
         self.hightED = hight;
         
-        NSLog(@"+++++%ld",self.indexPath.row);
+        //NSLog(@"+++++%ld",self.indexPath.row);
         [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
             make.height.mas_equalTo(hight);
         }];

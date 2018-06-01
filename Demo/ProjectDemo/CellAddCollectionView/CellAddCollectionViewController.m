@@ -103,8 +103,8 @@
     
     if (![self.dicH[indexPath] isEqualToNumber: @(hight)]) {
         self.dicH[indexPath] = @(hight);
-        NSLog(@"indexPath.row = %ld",indexPath.row);
-        NSLog(@"高度 = %lf",[@(hight) floatValue]);
+        //NSLog(@"indexPath.row = %ld",indexPath.row);
+        //NSLog(@"高度 = %lf",[@(hight) floatValue]);
         [self.tableView reloadData];
     }
 }
