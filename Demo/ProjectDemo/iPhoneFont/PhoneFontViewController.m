@@ -64,6 +64,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    self.title = @"PhoneFontViewController";
     
     [self.view addSubview:self.label1];
     [self.view addSubview:self.label2];

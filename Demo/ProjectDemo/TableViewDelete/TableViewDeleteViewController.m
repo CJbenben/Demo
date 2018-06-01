@@ -41,6 +41,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"TableViewDeleteViewController";
+    
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor cyanColor];

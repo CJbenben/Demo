@@ -294,14 +294,14 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F5E3030E20C13AF3001F11EC /* CellAddCollectionView */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3033620C13AF3001F11EC /* HorizontalCollectionDemo */,
-				F5E3034820C13AF3001F11EC /* iPhoneFont */,
+				F5E3030E20C13AF3001F11EC /* CellAddCollectionView */,
 				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
+				F5E3034820C13AF3001F11EC /* iPhoneFont */,
+				F5E3035820C13AF3001F11EC /* WKWebView */,
 				F5E3035220C13AF3001F11EC /* TableViewDelete */,
 				F5E3035520C13AF3001F11EC /* ValidationCodeDemo */,
-				F5E3035820C13AF3001F11EC /* WKWebView */,
 			);
 			path = ProjectDemo;
 			sourceTree = "<group>";
