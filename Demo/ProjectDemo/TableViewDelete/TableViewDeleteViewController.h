@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DadViewController.h"
 
-@interface TableViewDeleteViewController : UIViewController
+@interface TableViewDeleteViewController : DadViewController
 
 @end
