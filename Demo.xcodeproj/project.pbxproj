@@ -49,6 +49,9 @@
 		F5E302FB20C12F0A001F11EC /* CellAddCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E302FA20C12F0A001F11EC /* CellAddCollectionViewController.m */; };
 		F5E302FE20C12F41001F11EC /* testTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E302FD20C12F41001F11EC /* testTableViewCell.m */; };
 		F5E3030120C12F78001F11EC /* textCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3030020C12F78001F11EC /* textCollectionViewCell.m */; };
+		F5E3030A20C1397E001F11EC /* AtItemCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3030520C1397E001F11EC /* AtItemCollectionView.m */; };
+		F5E3030B20C1397E001F11EC /* AtItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3030720C1397E001F11EC /* AtItemCollectionViewCell.m */; };
+		F5E3030C20C1397E001F11EC /* AtItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3030920C1397E001F11EC /* AtItemTableViewCell.m */; };
 		F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A61F201F19B6000851B0 /* NJTitleButton.m */; };
 		F5FD0E3E208EF00600370196 /* PhoneFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD0E3D208EF00600370196 /* PhoneFontViewController.m */; };
 /* End PBXBuildFile section */
@@ -156,6 +159,12 @@
 		F5E302FD20C12F41001F11EC /* testTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testTableViewCell.m; sourceTree = "<group>"; };
 		F5E302FF20C12F78001F11EC /* textCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = textCollectionViewCell.h; sourceTree = "<group>"; };
 		F5E3030020C12F78001F11EC /* textCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = textCollectionViewCell.m; sourceTree = "<group>"; };
+		F5E3030420C1397E001F11EC /* AtItemCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtItemCollectionView.h; sourceTree = "<group>"; };
+		F5E3030520C1397E001F11EC /* AtItemCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtItemCollectionView.m; sourceTree = "<group>"; };
+		F5E3030620C1397E001F11EC /* AtItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtItemCollectionViewCell.h; sourceTree = "<group>"; };
+		F5E3030720C1397E001F11EC /* AtItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtItemCollectionViewCell.m; sourceTree = "<group>"; };
+		F5E3030820C1397E001F11EC /* AtItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtItemTableViewCell.h; sourceTree = "<group>"; };
+		F5E3030920C1397E001F11EC /* AtItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtItemTableViewCell.m; sourceTree = "<group>"; };
 		F5E9A61F201F19B6000851B0 /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
 		F5E9A620201F19B7000851B0 /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
 		F5FD0E3C208EF00600370196 /* PhoneFontViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneFontViewController.h; sourceTree = "<group>"; };
@@ -436,6 +445,7 @@
 			children = (
 				F5E289CE201F3E5A00731BCD /* HorizontalCollectionViewController.h */,
 				F5E289CF201F3E5A00731BCD /* HorizontalCollectionViewController.m */,
+				F5E3030220C1397E001F11EC /* Cell */,
 				F5E289D1201F3ECB00731BCD /* AtHomeCityCollectionView */,
 			);
 			path = HorizontalCollectionDemo;
@@ -465,6 +475,27 @@
 				F5E3030020C12F78001F11EC /* textCollectionViewCell.m */,
 			);
 			path = CellAddCollectionView;
+			sourceTree = "<group>";
+		};
+		F5E3030220C1397E001F11EC /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3030820C1397E001F11EC /* AtItemTableViewCell.h */,
+				F5E3030920C1397E001F11EC /* AtItemTableViewCell.m */,
+				F5E3030320C1397E001F11EC /* AtItemCollectionView */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		F5E3030320C1397E001F11EC /* AtItemCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				F5E3030420C1397E001F11EC /* AtItemCollectionView.h */,
+				F5E3030520C1397E001F11EC /* AtItemCollectionView.m */,
+				F5E3030620C1397E001F11EC /* AtItemCollectionViewCell.h */,
+				F5E3030720C1397E001F11EC /* AtItemCollectionViewCell.m */,
+			);
+			path = AtItemCollectionView;
 			sourceTree = "<group>";
 		};
 		F5FD0E3B208EEFE100370196 /* iPhoneFont */ = {
@@ -660,9 +691,11 @@
 				F5FD0E3E208EF00600370196 /* PhoneFontViewController.m in Sources */,
 				F5D8906920A0315C007F5A19 /* WKWebViewController.m in Sources */,
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
+				F5E3030C20C1397E001F11EC /* AtItemTableViewCell.m in Sources */,
 				F5DC82D2201EEFFA005B2EA1 /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5DC82D0201EEFFA005B2EA1 /* AtzucheHomeTitleFlowLayout.m in Sources */,
 				F5E289D7201F3EFC00731BCD /* AtzucheHomeCityCollectionCell.m in Sources */,
+				F5E3030B20C1397E001F11EC /* AtItemCollectionViewCell.m in Sources */,
 				F595677C1FAB4AD20068A04F /* ViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F599D77E2019753800D33834 /* Country.m in Sources */,
@@ -677,6 +710,7 @@
 				F535CDE6201F15AB00B1EDE4 /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F5E302FE20C12F41001F11EC /* testTableViewCell.m in Sources */,
 				F599D7822019753800D33834 /* NNValidationCodeView.m in Sources */,
+				F5E3030A20C1397E001F11EC /* AtItemCollectionView.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F599D79D2019C09B00D33834 /* AtzucheCycleScrollView.m in Sources */,
 				F50EF95E201EFBEB00B395BF /* AtzucheHomeChooseCarCollectionView.m in Sources */,

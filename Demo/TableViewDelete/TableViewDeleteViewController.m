@@ -20,7 +20,7 @@
 
 - (UITableView *)tableView {
     if (_tableView == nil) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
         _tableView.dataSource = self;
         _tableView.delegate = self;
         _tableView.allowsMultipleSelection = NO;
@@ -40,7 +40,10 @@
 #pragma mark - viewDidLoad
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    self.view.backgroundColor = [UIColor cyanColor];
     
     [self.view addSubview:self.tableView];
 }
@@ -111,6 +114,17 @@
     if ([sender.currentTitle isEqualToString:@"确认删除"]) {
         [self.dataAry removeObjectAtIndex:self.editingIndexPath.row];
         [self.tableView reloadData];
+        
+        CGFloat height = self.tableView.contentSize.height;
+        NSLog(@"height1 = %.2f", height);
+        
+        [self.tableView layoutIfNeeded];
+        CGFloat height2 = self.tableView.contentSize.height;
+        NSLog(@"height2 = %.2f", height2);
+        
+        CGRect frame = self.tableView.frame;
+        frame.size.height = height2;
+        self.tableView.frame = frame;
     }
 }
 
