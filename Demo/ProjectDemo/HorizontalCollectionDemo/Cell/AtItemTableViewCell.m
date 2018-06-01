@@ -9,13 +9,11 @@
 #import "AtItemTableViewCell.h"
 #import "AtItemCollectionViewCell.h"
 
-@interface AtItemTableViewCell()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface AtItemTableViewCell()
 
 @end
 
 @implementation AtItemTableViewCell
-
-static NSString *reuseID = @"AtItemCollectionViewCell";
 
 - (UIView *)topPromptV {
     if (_topPromptV == nil) {
@@ -25,7 +23,7 @@ static NSString *reuseID = @"AtItemCollectionViewCell";
     return _topPromptV;
 }
 
-- (UICollectionView *)itemCollectionView {
+- (AtItemCollectionView *)itemCollectionView {
     if (_itemCollectionView == nil) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.itemSize = CGSizeMake(SCREEN_WIDTH/3.0, 60);
@@ -34,21 +32,15 @@ static NSString *reuseID = @"AtItemCollectionViewCell";
         //layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         
-        _itemCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, self.topPromptV.bottom, SCREEN_WIDTH, 60 * 2) collectionViewLayout:layout];
-        _itemCollectionView.dataSource = self;
-        _itemCollectionView.delegate = self;
-        
-        [_itemCollectionView registerClass:[AtItemCollectionViewCell class] forCellWithReuseIdentifier:reuseID];
+        _itemCollectionView = [[AtItemCollectionView alloc] initWithFrame:CGRectMake(0, self.topPromptV.bottom, SCREEN_WIDTH, 60 * 2) collectionViewLayout:layout];
         
     }
     return _itemCollectionView;
 }
 
 - (void)setHomeCityAry:(NSArray *)homeCityAry {
-    //self.itemCollectionView.homeCityAry = homeCityAry;
-    
-    [self.itemCollectionView reloadData];
     _homeCityAry = homeCityAry;
+    self.itemCollectionView.homeCityAry = homeCityAry;
 }
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
@@ -57,23 +49,6 @@ static NSString *reuseID = @"AtItemCollectionViewCell";
         [self.contentView addSubview:self.itemCollectionView];
     }
     return self;
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.homeCityAry.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    AtItemCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID forIndexPath:indexPath];
-    return cell;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
 }
 
 - (void)awakeFromNib {

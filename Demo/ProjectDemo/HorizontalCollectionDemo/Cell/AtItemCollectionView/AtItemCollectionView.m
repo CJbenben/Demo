@@ -38,9 +38,9 @@ static NSString *reuseID = @"AtItemCollectionViewCell";
         self.showsHorizontalScrollIndicator = NO;
         self.userInteractionEnabled = YES;
         self.scrollEnabled = YES;
-        
+
         self.backgroundColor = [UIColor whiteColor];
-        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+//        self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.showsHorizontalScrollIndicator = NO;
         self.decelerationRate = UIScrollViewDecelerationRateNormal;
         

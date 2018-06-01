@@ -12,7 +12,7 @@
 @interface AtItemTableViewCell : UITableViewCell
 
 @property (nonatomic, strong) UIView *topPromptV;
-@property (nonatomic, strong) UICollectionView *itemCollectionView;
+@property (nonatomic, strong) AtItemCollectionView *itemCollectionView;
 
 @property (strong, nonatomic) NSArray *homeCityAry;
 
