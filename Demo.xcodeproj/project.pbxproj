@@ -55,6 +55,7 @@
 		F5E3039320C13D59001F11EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E3039120C13D59001F11EC /* Main.storyboard */; };
 		F5E3039620C13FE7001F11EC /* DadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3039520C13FE7001F11EC /* DadViewController.m */; };
 		F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E9A61F201F19B6000851B0 /* NJTitleButton.m */; };
+		F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,8 @@
 		F5E3039520C13FE7001F11EC /* DadViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DadViewController.m; sourceTree = "<group>"; };
 		F5E9A61F201F19B6000851B0 /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
 		F5E9A620201F19B7000851B0 /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
+		F5FD32C320C4D1C90049B79B /* AtzucheCustomTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheCustomTipView.h; sourceTree = "<group>"; };
+		F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AtzucheCustomTipView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -495,6 +498,8 @@
 			children = (
 				F5E3039420C13FE7001F11EC /* DadViewController.h */,
 				F5E3039520C13FE7001F11EC /* DadViewController.m */,
+				F5FD32C320C4D1C90049B79B /* AtzucheCustomTipView.h */,
+				F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */,
 				F5E3038F20C13D59001F11EC /* storyboard */,
 				F5E3037E20C13D09001F11EC /* Controller */,
 				F5E3038520C13D09001F11EC /* Model */,
@@ -720,6 +725,7 @@
 				F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */,
 				F5E3035E20C13AF3001F11EC /* ATCollectionViewDemoVC.m in Sources */,
 				F5E3037020C13AF3001F11EC /* AtItemCollectionViewCell.m in Sources */,
+				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
 				F5E3036E20C13AF3001F11EC /* AtzucheHomeCityFlowLayout.m in Sources */,
 				F5E3038C20C13D09001F11EC /* ViewController.m in Sources */,
 				F5E3037220C13AF3001F11EC /* HorizontalCollectionViewController.m in Sources */,
