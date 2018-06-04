@@ -1,27 +1,11 @@
 .DS_Store
-# Demo.xcodeproj/project.xcworkspace/xcuserdata/chenjie.xcuserdatad/UserInterfaceState.xcuserstate
-# Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad
-# Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcschemes/xcschememanagement.plist
-# Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-
 Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/
-
-# Demo.xcworkspace/xcuserdata/chenjie.xcuserdatad/UserInterfaceState.xcuserstate
-# Demo.xcworkspace/xcuserdata/chenjie.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
-
 Demo.xcworkspace/xcuserdata/
-
 Demo.xcworkspace/xcshareddata/
-
 Pods/Pods.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcschemes/xcschememanagement.plist
-
-
-
-
 
 # *.plist
 # *.xcbkptlist
 # *.xcuserstate
-
 
 
