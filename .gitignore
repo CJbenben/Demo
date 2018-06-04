@@ -4,15 +4,14 @@
 # Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcschemes/xcschememanagement.plist
 # Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 
-Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/*
-Demo.xcworkspace/xcuserdata/chenjie.xcuserdatad/UserInterfaceState.xcuserstate
+Demo.xcodeproj/xcuserdata/chenjie.xcuserdatad/
 
 # Demo.xcworkspace/xcuserdata/chenjie.xcuserdatad/UserInterfaceState.xcuserstate
 # Demo.xcworkspace/xcuserdata/chenjie.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 
-Demo.xcworkspace/xcuserdata/*
+Demo.xcworkspace/xcuserdata/
 
-Demo.xcworkspace/xcshareddata/*
+Demo.xcworkspace/xcshareddata/
 
 Pods/Pods.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcschemes/xcschememanagement.plist
 
@@ -20,9 +19,9 @@ Pods/Pods.xcodeproj/xcuserdata/chenjie.xcuserdatad/xcschemes/xcschememanagement.
 
 
 
-*.plist
-*.xcbkptlist
-*.xcuserstate
+# *.plist
+# *.xcbkptlist
+# *.xcuserstate
 
 
 
