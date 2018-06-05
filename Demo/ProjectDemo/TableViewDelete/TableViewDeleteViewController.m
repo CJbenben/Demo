@@ -14,6 +14,8 @@
 @property (strong, nonatomic) NSIndexPath *editingIndexPath;  //当前左滑cell的index，在代理方法中设置
 @property (nonatomic, strong) NSMutableArray *dataAry;
 
+@property (nonatomic, assign) BOOL isSureDel;
+
 @end
 
 @implementation TableViewDeleteViewController
@@ -63,9 +65,11 @@
         for (UIView *subview in self.tableView.subviews) {
             if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
                 UIButton *readButton = subview.subviews[0];
+
+                [self configDeleteButton:readButton];
                 
-                [readButton setTitle:@"确认删除" forState:UIControlStateNormal];
-                [readButton addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+//                [readButton setTitle:@"确认删除" forState:UIControlStateNormal];
+//                [readButton addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
             }
         }
     } else {
@@ -97,18 +101,42 @@
 }
 
 - (void)configDeleteButton:(UIButton *)sender {
-    [sender setTitle:@"确认删除" forState:UIControlStateNormal];
     
-//    CGRect frame = sender.frame;
-//    frame.size.width += 20;
-//    sender.frame = frame;
-//
-//    CGRect superFrame = sender.superview.frame;
-//    superFrame.size.width += 20;
-//    superFrame.origin.x -= 20;
-//    sender.superview.frame = superFrame;
-    
-    [sender addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+    if (self.isSureDel) {
+        CGRect frame = sender.frame;
+        frame.size.width += 50;
+        sender.frame = frame;
+        
+        CGRect superFrame = sender.superview.frame;
+        superFrame.size.width += 50;
+        superFrame.origin.x -= 50;
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            [sender setTitle:@"确认删除" forState:UIControlStateNormal];
+            sender.superview.frame = superFrame;
+        } completion:^(BOOL finished) {
+            
+        }];
+        
+        [sender addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+    } else {
+        CGRect frame = sender.frame;
+        CGFloat padding = sender.frame.size.width - 50;
+        
+        frame.origin.x += padding;
+        frame.origin.y = 10;
+        frame.size.width -= padding;
+        frame.size.height -= 10;
+        sender.frame = frame;
+        
+        CGRect superFrame = sender.superview.frame;
+        superFrame.size.width += padding;
+        superFrame.origin.x -= padding;
+        sender.superview.frame = superFrame;
+        
+        sender.titleLabel.font = [UIFont systemFontOfSize:14];
+    }
+    sender.backgroundColor = RGBCOLOR(220, 63, 16);
 }
 
 #pragma mark - Action
@@ -160,6 +188,12 @@
     
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row < 3) {
+        return NO;
+    }return YES;
+}
+
 - (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.editingIndexPath = indexPath;
@@ -194,10 +228,16 @@
  *  iOS8 -- iOS11 自定义左侧滑方法
  */
 - (NSArray<UITableViewRowAction*>*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除      " handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+    
+    self.isSureDel = NO;
+    [self.view setNeedsLayout];
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        self.isSureDel = YES;
         [self.view setNeedsLayout];
     }];
-    deleteAction.backgroundColor = RGBCOLOR(220, 63, 16);
+    //deleteAction.backgroundColor = RGBCOLOR(220, 63, 16);
+    deleteAction.backgroundColor = [UIColor clearColor];
     
     return @[deleteAction];
 }
