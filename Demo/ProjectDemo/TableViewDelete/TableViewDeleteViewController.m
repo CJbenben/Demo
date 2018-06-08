@@ -7,6 +7,7 @@
 //
 
 #import "TableViewDeleteViewController.h"
+#import "TableViewDeleteCell.h"
 
 @interface TableViewDeleteViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -66,7 +67,7 @@
             if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
                 UIButton *readButton = subview.subviews[0];
 
-                [self configDeleteButton:readButton];
+                [self configDeleteButton:readButton cell:nil];
                 
 //                [readButton setTitle:@"确认删除" forState:UIControlStateNormal];
 //                [readButton addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
@@ -74,11 +75,17 @@
         }
     } else {
         
-        UITableViewCell *deleteCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
+        TableViewDeleteCell *deleteCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
         for (UIView *subview in deleteCell.subviews) {
             if ([subview isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")]) {
+                
+            
                 UIButton *actionBtn = subview.subviews[0];
-                [self configDeleteButton:actionBtn];
+                [self configDeleteButton:actionBtn cell:deleteCell];
+                
+                
+                //deleteCell.x += 20;
+                
             }
         }
         
@@ -100,43 +107,64 @@
     
 }
 
-- (void)configDeleteButton:(UIButton *)sender {
+- (void)configDeleteButton:(UIButton *)deleteBtn cell:(UITableViewCell *)cell {
     
     if (self.isSureDel) {
-        CGRect frame = sender.frame;
-        frame.size.width += 50;
-        sender.frame = frame;
+        CGRect cellFrame = cell.frame;
+        cellFrame.origin.x -= 50;
         
-        CGRect superFrame = sender.superview.frame;
+        CGRect superFrame = deleteBtn.superview.frame;
         superFrame.size.width += 50;
-        superFrame.origin.x -= 50;
+//        superFrame.origin.x -= 50;
+        
+        CGRect frame = deleteBtn.frame;
+        frame.size.width += 50;
         
         [UIView animateWithDuration:0.3 animations:^{
-            [sender setTitle:@"确认删除" forState:UIControlStateNormal];
-            sender.superview.frame = superFrame;
+            
+            [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
+            
+            cell.frame = cellFrame;
+
+            deleteBtn.superview.frame = superFrame;
+            
+            deleteBtn.frame = frame;
+            
         } completion:^(BOOL finished) {
+            
+            [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
             
         }];
         
-        [sender addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+        
+        
     } else {
-        CGRect frame = sender.frame;
-        CGFloat padding = sender.frame.size.width - 50;
         
-        frame.origin.x += padding;
-        frame.origin.y = 10;
-        frame.size.width -= padding;
-        frame.size.height -= 10;
-        sender.frame = frame;
+//        CGRect cellFrame = cell.frame;
+//        cellFrame.origin.x += 17;
+//        cell.frame = cellFrame;
         
-        CGRect superFrame = sender.superview.frame;
-        superFrame.size.width += padding;
-        superFrame.origin.x -= padding;
-        sender.superview.frame = superFrame;
-        
-        sender.titleLabel.font = [UIFont systemFontOfSize:14];
+//        CGRect frame = deleteBtn.frame;
+//        CGFloat padding = deleteBtn.frame.size.width - 50;
+//        
+//        CGRect superFrame = deleteBtn.superview.frame;
+//        superFrame.size.width -= padding;
+//        superFrame.origin.x += padding;
+//        deleteBtn.superview.frame = superFrame;
+//        deleteBtn.superview.frame = superFrame;
+//
+//
+////        frame.origin.x += padding;
+////        frame.origin.y = 10;
+//        frame.size.width -= padding;
+////        frame.size.height -= 10 * 2;
+//        deleteBtn.frame = frame;
+
+
+
+        deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     }
-    sender.backgroundColor = RGBCOLOR(220, 63, 16);
+    deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
 }
 
 #pragma mark - Action
@@ -164,12 +192,12 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *identifier = @"cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    static NSString *identifier = @"TableViewDeleteCell";
+    TableViewDeleteCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[TableViewDeleteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"第 %@ 行 -- showingDeleteConfirmation = %d", [self.dataAry objectAtIndex:indexPath.row], cell.showingDeleteConfirmation];
+    //cell.textLabel.text = [NSString stringWithFormat:@"第 %@ 行 -- showingDeleteConfirmation = %d", [self.dataAry objectAtIndex:indexPath.row], cell.showingDeleteConfirmation];
     return cell;
 }
 
@@ -180,7 +208,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 60;
+    return 80;
 }
 
 
@@ -188,11 +216,11 @@
     
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row < 3) {
-        return NO;
-    }return YES;
-}
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+//    if (indexPath.row < 3) {
+//        return NO;
+//    }return YES;
+//}
 
 - (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
 {
