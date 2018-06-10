@@ -65,6 +65,7 @@
     if (@available(iOS 11.0, *)) {
         for (UIView *subview in self.tableView.subviews) {
             if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
+                subview.backgroundColor = RGBCOLOR(150, 150, 150);
                 UIButton *readButton = subview.subviews[0];
 
                 [self configDeleteButton:readButton cell:nil];
@@ -139,6 +140,10 @@
         
         
     } else {
+        CGRect frame = deleteBtn.frame;
+        frame.origin.y += 10;
+        frame.size.height -= 20;
+        deleteBtn.frame = frame;
         
 //        CGRect cellFrame = cell.frame;
 //        cellFrame.origin.x += 17;
@@ -238,11 +243,15 @@
  */
 - (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath  API_AVAILABLE(ios(11.0)){
     if (@available(iOS 11.0, *)) {
+        self.isSureDel = NO;
+        [self.view setNeedsLayout];
+        
         UIContextualAction *action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            self.isSureDel = YES;
             [self.view setNeedsLayout];
             //completionHandler(true);
         }];
-        action.backgroundColor = RGBCOLOR(220, 63, 16);
+        action.backgroundColor = [UIColor clearColor];//RGBCOLOR(220, 63, 16);
         UISwipeActionsConfiguration *actionConfig = [UISwipeActionsConfiguration configurationWithActions:@[action]];
         actionConfig.performsFirstActionWithFullSwipe = NO;
         
