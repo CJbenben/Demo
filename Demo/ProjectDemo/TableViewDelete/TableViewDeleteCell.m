@@ -22,7 +22,7 @@
     if (_deleteBtn == nil) {
         _deleteBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         [_deleteBtn setTitle:@"删除" forState:UIControlStateNormal];
-        _deleteBtn.frame = CGRectMake(SCREEN_WIDTH - 20 - 55, 10, 55, 60);
+        _deleteBtn.frame = CGRectMake(SCREEN_WIDTH, 10, 55, 60);
         _deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
     }
     return _deleteBtn;
@@ -35,7 +35,7 @@
         self.contentView.backgroundColor = RGBCOLOR(150, 150, 150);
         //[self.contentView removeFromSuperview];
         
-        [self addSubview:self.deleteBtn];
+        //[self addSubview:self.deleteBtn];
         [self addSubview:self.carInfoView];
         
         

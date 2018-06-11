@@ -66,12 +66,32 @@
         for (UIView *subview in self.tableView.subviews) {
             if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
                 subview.backgroundColor = RGBCOLOR(150, 150, 150);
-                UIButton *readButton = subview.subviews[0];
+                UIButton *deleteBtn = subview.subviews[0];
 
-                [self configDeleteButton:readButton cell:nil];
+                //[self configDeleteButton:readButton cell:nil];
                 
-//                [readButton setTitle:@"确认删除" forState:UIControlStateNormal];
-//                [readButton addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+                if (self.isSureDel) {
+                    
+                    [UIView animateWithDuration:0.3 animations:^{
+                        
+                        [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
+                        
+                    } completion:^(BOOL finished) {
+                        
+                        [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+                        
+                    }];
+                    
+                } else {
+                    
+                    CGRect frame = deleteBtn.frame;
+                    frame.origin.y = 10;
+                    frame.size.height = deleteBtn.superview.height - 20;
+                    deleteBtn.frame = frame;
+                    
+                }
+                deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+                deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
             }
         }
     } else {
@@ -81,29 +101,48 @@
             if ([subview isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")]) {
                 
             
-                UIButton *actionBtn = subview.subviews[0];
-                [self configDeleteButton:actionBtn cell:deleteCell];
+                UIButton *deleteBtn = subview.subviews[0];
+                //[self configDeleteButton:deleteBtn cell:deleteCell];
                 
-                
-                //deleteCell.x += 20;
+                if (self.isSureDel) {
+                    
+                    CGRect cellFrame = deleteCell.frame;
+                    cellFrame.origin.x -= 50;
+                    
+                    CGRect superFrame = deleteBtn.superview.frame;
+                    superFrame.size.width += 50;
+                    
+                    CGRect frame = deleteBtn.frame;
+                    frame.size.width += 50;
+                    
+                    [UIView animateWithDuration:0.3 animations:^{
+                        
+                        [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
+                        
+                        deleteCell.frame = cellFrame;
+                        deleteBtn.superview.frame = superFrame;
+                        deleteBtn.frame = frame;
+                        
+                    } completion:^(BOOL finished) {
+                        
+                        [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
+                        
+                    }];
+                    
+                } else {
+                    
+                    CGRect frame = deleteBtn.frame;
+                    frame.origin.y = 10;
+                    frame.size.height = deleteBtn.superview.height - 20;
+                    deleteBtn.frame = frame;
+                    
+                }
+                deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+                deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
                 
             }
         }
         
-//        for (UIView *subview in self.tableView.subviews) {
-//            if ([subview isKindOfClass:NSClassFromString(@"UITableViewWrapperView")]) {
-//                for (UIView *subsubview in subview.subviews) {
-//                    if ([subsubview isKindOfClass:NSClassFromString(@"UITableViewCell")]) {
-//                        for (UIView *subsubsubview in subsubview.subviews) {
-//                            if ([subsubsubview isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")]) {
-//                                UIButton *actionBtn = subsubsubview.subviews[0];
-//                                [self configDeleteButton:actionBtn];
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
     }
     
 }
@@ -125,11 +164,9 @@
             
             [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
             
-            cell.frame = cellFrame;
-
-            deleteBtn.superview.frame = superFrame;
-            
-            deleteBtn.frame = frame;
+//            cell.frame = cellFrame;
+//            deleteBtn.superview.frame = superFrame;
+//            deleteBtn.frame = frame;
             
         } completion:^(BOOL finished) {
             
@@ -141,31 +178,9 @@
         
     } else {
         CGRect frame = deleteBtn.frame;
-        frame.origin.y += 10;
-        frame.size.height -= 20;
+        frame.origin.y = 10;
+        frame.size.height = deleteBtn.superview.height - 20;
         deleteBtn.frame = frame;
-        
-//        CGRect cellFrame = cell.frame;
-//        cellFrame.origin.x += 17;
-//        cell.frame = cellFrame;
-        
-//        CGRect frame = deleteBtn.frame;
-//        CGFloat padding = deleteBtn.frame.size.width - 50;
-//        
-//        CGRect superFrame = deleteBtn.superview.frame;
-//        superFrame.size.width -= padding;
-//        superFrame.origin.x += padding;
-//        deleteBtn.superview.frame = superFrame;
-//        deleteBtn.superview.frame = superFrame;
-//
-//
-////        frame.origin.x += padding;
-////        frame.origin.y = 10;
-//        frame.size.width -= padding;
-////        frame.size.height -= 10 * 2;
-//        deleteBtn.frame = frame;
-
-
 
         deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
     }
