@@ -16,6 +16,7 @@
 		F595679C1FAB4AD20068A04F /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F595679B1FAB4AD20068A04F /* DemoUITests.m */; };
 		F599D7812019753800D33834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.m */; };
 		F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */; };
+		F5B4D58020D10C8B0088884C /* 1111.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B4D57F20D10C8A0088884C /* 1111.png */; };
 		F5E3035B20C13AF3001F11EC /* CellAddCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031020C13AF3001F11EC /* CellAddCollectionViewController.m */; };
 		F5E3035C20C13AF3001F11EC /* testTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031220C13AF3001F11EC /* testTableViewCell.m */; };
 		F5E3035D20C13AF3001F11EC /* textCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031420C13AF3001F11EC /* textCollectionViewCell.m */; };
@@ -99,6 +100,7 @@
 		F599D7832019754500D33834 /* Demo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 		F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AtzucheColor.h"; sourceTree = "<group>"; };
 		F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AtzucheColor.m"; sourceTree = "<group>"; };
+		F5B4D57F20D10C8A0088884C /* 1111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1111.png; sourceTree = "<group>"; };
 		F5E3030F20C13AF3001F11EC /* CellAddCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAddCollectionViewController.h; sourceTree = "<group>"; };
 		F5E3031020C13AF3001F11EC /* CellAddCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellAddCollectionViewController.m; sourceTree = "<group>"; };
 		F5E3031120C13AF3001F11EC /* testTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testTableViewCell.h; sourceTree = "<group>"; };
@@ -472,6 +474,7 @@
 		F5E3035220C13AF3001F11EC /* TableViewDelete */ = {
 			isa = PBXGroup;
 			children = (
+				F5B4D57F20D10C8A0088884C /* 1111.png */,
 				F5E3035320C13AF3001F11EC /* TableViewDeleteViewController.h */,
 				F5E3035420C13AF3001F11EC /* TableViewDeleteViewController.m */,
 				F55DB6B420CA2DB9003837CA /* TableViewDeleteCell.h */,
@@ -655,6 +658,7 @@
 			files = (
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
+				F5B4D58020D10C8B0088884C /* 1111.png in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 			);
