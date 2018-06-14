@@ -51,7 +51,7 @@
 - (void)willTransitionToState:(UITableViewCellStateMask)state
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.001 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setupSlideBtn];
+        //[self setupSlideBtn];
     });
 }
 // 设置左滑菜单按钮的样式

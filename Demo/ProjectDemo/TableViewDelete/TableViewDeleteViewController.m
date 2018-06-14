@@ -65,28 +65,27 @@
     if (@available(iOS 11.0, *)) {
         for (UIView *subview in self.tableView.subviews) {
             if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
-                subview.backgroundColor = [UIColor clearColor];//RGBCOLOR(150, 150, 150);
+                subview.backgroundColor = [UIColor clearColor];
                 UIButton *deleteBtn = subview.subviews[0];
-
-                //[self configDeleteButton:readButton cell:nil];
                 
                 if (self.isSureDel) {
                     
-//                    CGRect cellFrame = subview.frame;
-//                    cellFrame.origin.x -= 50;
+                    TableViewDeleteCell *deleteCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
                     
-                    CGRect superFrame = deleteBtn.superview.frame;
-                    superFrame.origin.x -= 50;
-                    superFrame.size.width += 50;
+                    CGRect cellFrame = deleteCell.frame;
+                    cellFrame.origin.x -= 50;
                     
-                    CGRect frame = deleteBtn.frame;
-                    frame.size.width += 50;
+                    CGRect deleteBtnFrame = deleteBtn.frame;
+                    deleteBtnFrame.origin.x -= 50;
+                    deleteBtnFrame.size.width += 50;
                     
                     [UIView animateWithDuration:0.3 animations:^{
                         
+                        deleteCell.frame = cellFrame;
+                        deleteBtn.frame = deleteBtnFrame;
+                        
                         [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
-                        deleteBtn.superview.frame = superFrame;
-                        deleteBtn.frame = frame;
+                        deleteBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
                         
                     } completion:^(BOOL finished) {
                         
