@@ -9,7 +9,7 @@
 #import "TableViewDeleteViewController.h"
 #import "TableViewDeleteCell.h"
 
-@interface TableViewDeleteViewController ()<UITableViewDataSource, UITableViewDelegate>
+@interface TableViewDeleteViewController ()<UITableViewDataSource, UITableViewDelegate, ZJSwipeTableViewCellDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (strong, nonatomic) NSIndexPath *editingIndexPath;  //当前左滑cell的index，在代理方法中设置
@@ -53,170 +53,6 @@
     [self.view addSubview:self.tableView];
 }
 
-- (void)viewDidLayoutSubviews {
-    [super viewDidLayoutSubviews];
-    
-    if (self.editingIndexPath) {
-        [self configSwipeButtons];
-    }
-}
-
-- (void)configSwipeButtons {
-    if (@available(iOS 11.0, *)) {
-        for (UIView *subview in self.tableView.subviews) {
-            if ([subview isKindOfClass:NSClassFromString(@"UISwipeActionPullView")]) {
-                subview.backgroundColor = [UIColor clearColor];
-                UIButton *deleteBtn = subview.subviews[0];
-                
-                if (self.isSureDel) {
-                    
-                    TableViewDeleteCell *deleteCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
-                    
-                    CGRect cellFrame = deleteCell.frame;
-                    cellFrame.origin.x -= 50;
-                    
-                    CGRect deleteBtnFrame = deleteBtn.frame;
-                    deleteBtnFrame.origin.x -= 50;
-                    deleteBtnFrame.size.width += 50;
-                    
-                    [UIView animateWithDuration:0.3 animations:^{
-                        
-                        deleteCell.frame = cellFrame;
-                        deleteBtn.frame = deleteBtnFrame;
-                        
-                        [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
-                        deleteBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-                        
-                    } completion:^(BOOL finished) {
-                        
-                        [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
-                        
-                    }];
-                    
-                } else {
-                    
-                    CGRect frame = deleteBtn.frame;
-                    frame.origin.y = 10;
-                    frame.size.height = deleteBtn.superview.height - 20;
-                    deleteBtn.frame = frame;
-                    
-                }
-                deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-                deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
-            }
-        }
-    } else {
-        
-        TableViewDeleteCell *deleteCell = [self.tableView cellForRowAtIndexPath:self.editingIndexPath];
-        for (UIView *subview in deleteCell.subviews) {
-            if ([subview isKindOfClass:NSClassFromString(@"UITableViewCellDeleteConfirmationView")]) {
-                
-            
-                UIButton *deleteBtn = subview.subviews[0];
-                //[self configDeleteButton:deleteBtn cell:deleteCell];
-                
-                if (self.isSureDel) {
-                    
-                    CGRect cellFrame = deleteCell.frame;
-                    cellFrame.origin.x -= 50;
-                    
-                    CGRect superFrame = deleteBtn.superview.frame;
-                    superFrame.size.width += 50;
-                    
-                    CGRect frame = deleteBtn.frame;
-                    frame.size.width += 50;
-                    
-                    [UIView animateWithDuration:0.3 animations:^{
-                        
-                        [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
-                        
-                        deleteCell.frame = cellFrame;
-                        deleteBtn.superview.frame = superFrame;
-                        deleteBtn.frame = frame;
-                        
-                    } completion:^(BOOL finished) {
-                        
-                        [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
-                        
-                    }];
-                    
-                } else {
-                    
-                    CGRect frame = deleteBtn.frame;
-                    frame.origin.y = 10;
-                    frame.size.height = deleteBtn.superview.height - 20;
-                    deleteBtn.frame = frame;
-                    
-                }
-                deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-                deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
-                
-            }
-        }
-        
-    }
-    
-}
-
-- (void)configDeleteButton:(UIButton *)deleteBtn cell:(UITableViewCell *)cell {
-    
-    if (self.isSureDel) {
-        CGRect cellFrame = cell.frame;
-        cellFrame.origin.x -= 50;
-        
-        CGRect superFrame = deleteBtn.superview.frame;
-        superFrame.size.width += 50;
-//        superFrame.origin.x -= 50;
-        
-        CGRect frame = deleteBtn.frame;
-        frame.size.width += 50;
-        
-        [UIView animateWithDuration:0.3 animations:^{
-            
-            [deleteBtn setTitle:@"确认删除" forState:UIControlStateNormal];
-            
-//            cell.frame = cellFrame;
-//            deleteBtn.superview.frame = superFrame;
-//            deleteBtn.frame = frame;
-            
-        } completion:^(BOOL finished) {
-            
-            [deleteBtn addTarget:self action:@selector(sureDelete:) forControlEvents:UIControlEventTouchUpInside];
-            
-        }];
-        
-        
-        
-    } else {
-        CGRect frame = deleteBtn.frame;
-        frame.origin.y = 10;
-        frame.size.height = deleteBtn.superview.height - 20;
-        deleteBtn.frame = frame;
-
-        deleteBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-    }
-    deleteBtn.backgroundColor = RGBCOLOR(255, 60, 47);
-}
-
-#pragma mark - Action
-- (void)sureDelete:(UIButton *)sender {
-    if ([sender.currentTitle isEqualToString:@"确认删除"]) {
-        [self.dataAry removeObjectAtIndex:self.editingIndexPath.row];
-        [self.tableView reloadData];
-        
-        CGFloat height = self.tableView.contentSize.height;
-        NSLog(@"height1 = %.2f", height);
-        
-        [self.tableView layoutIfNeeded];
-        CGFloat height2 = self.tableView.contentSize.height;
-        NSLog(@"height2 = %.2f", height2);
-        
-        CGRect frame = self.tableView.frame;
-        frame.size.height = height2;
-        self.tableView.frame = frame;
-    }
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataAry.count;
@@ -228,6 +64,8 @@
     if (cell == nil) {
         cell = [[TableViewDeleteCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.delegate = self;
+    cell.swipeViewAnimatedStyle = ZJSwipeViewAnimatedStyleNone;
     //cell.textLabel.text = [NSString stringWithFormat:@"第 %@ 行 -- showingDeleteConfirmation = %d", [self.dataAry objectAtIndex:indexPath.row], cell.showingDeleteConfirmation];
     return cell;
 }
@@ -242,67 +80,18 @@
     return 80;
 }
 
+- (NSArray<ZJSwipeButton *> *)tableView:(UITableView *)tableView leftSwipeButtonsAtIndexPath:(NSIndexPath *)indexPath {
+    return nil;
+}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+- (NSArray<ZJSwipeButton *> *)tableView:(UITableView *)tableView rightSwipeButtonsAtIndexPath:(NSIndexPath *)indexPath {
     
-}
-
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.row < 3) {
-//        return NO;
-//    }return YES;
-//}
-
-- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.editingIndexPath = indexPath;
-    //[self.view setNeedsLayout];   // 触发-(void)viewDidLayoutSubviews
-}
-
-- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    self.editingIndexPath = nil;
-}
-
-/**
- *  iOS11 自定义左侧滑方法
- */
-- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath  API_AVAILABLE(ios(11.0)){
-    if (@available(iOS 11.0, *)) {
-        self.isSureDel = NO;
-        [self.view setNeedsLayout];
-        
-        UIContextualAction *action = [UIContextualAction contextualActionWithStyle:UIContextualActionStyleDestructive title:@"删除" handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
-            self.isSureDel = YES;
-            [self.view setNeedsLayout];
-            //completionHandler(true);
-        }];
-        action.backgroundColor = [UIColor clearColor];//RGBCOLOR(220, 63, 16);
-        UISwipeActionsConfiguration *actionConfig = [UISwipeActionsConfiguration configurationWithActions:@[action]];
-        actionConfig.performsFirstActionWithFullSwipe = NO;
-        
-        return actionConfig;
-    } else {
-        return nil;
-    }
-}
-
-/**
- *  iOS8 -- iOS11 自定义左侧滑方法
- */
-- (NSArray<UITableViewRowAction*>*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    self.isSureDel = NO;
-    [self.view setNeedsLayout];
-    
-    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-        self.isSureDel = YES;
-        [self.view setNeedsLayout];
+    ZJSwipeButton *leftBtn = [[ZJSwipeButton alloc] initWithTitle:@"删除" image:nil onClickHandler:^(UIButton *swipeButton) {
+        NSLog(@"点击了检查1: --- %ld", indexPath.row);
+        //[ZJProgressHUD showStatus:[NSString stringWithFormat:@"点击了检查1: --- %ld", indexPath.row] andAutoHideAfterTime:1];
+        [self.tableView reloadData];
     }];
-    //deleteAction.backgroundColor = RGBCOLOR(220, 63, 16);
-    deleteAction.backgroundColor = [UIColor clearColor];
-    
-    return @[deleteAction];
+    return @[leftBtn];
 }
 
 - (void)didReceiveMemoryWarning {

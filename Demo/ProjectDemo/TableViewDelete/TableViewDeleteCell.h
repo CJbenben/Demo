@@ -6,9 +6,9 @@
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ZJSwipeTableViewCell.h"
 
-@interface TableViewDeleteCell : UITableViewCell
+@interface TableViewDeleteCell : ZJSwipeTableViewCell
 
 @property (nonatomic, strong) UIView *carInfoView;
 @property (nonatomic, strong) UIButton *deleteBtn;
