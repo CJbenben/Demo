@@ -24,9 +24,9 @@
         for (ZJSwipeButton *button in [swipeButtons reverseObjectEnumerator]) {
             [self addSubview:button];
             
-            button.frame = CGRectMake(btnX, 0, button.bounds.size.width, height);
-            btnX += button.bounds.size.width;
-            allBtnWidth += button.bounds.size.width;
+            button.frame = CGRectMake(btnX, 10, 55/*button.bounds.size.width*/, height - 20);
+            btnX += button.frame.size.width;
+            allBtnWidth += button.frame.size.width;
         }
         // 设置frame 宽高有效, x, y在swipeTableViewCell中还会相应的调整
         self.frame = CGRectMake(0.f, 0.f, allBtnWidth, height);

@@ -19,7 +19,7 @@
         [self addTarget:self action:@selector(swipeBtnOnClick:) forControlEvents:UIControlEventTouchUpInside];
         [self setTitle:title forState:UIControlStateNormal];
         [self setImage:image forState:UIControlStateNormal];
-        [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         self.backgroundColor = [UIColor redColor];
         CGFloat margin = 10;
         // 计算文字尺寸

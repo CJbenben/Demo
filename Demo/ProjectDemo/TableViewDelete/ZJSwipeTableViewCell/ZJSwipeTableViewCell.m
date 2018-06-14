@@ -51,7 +51,9 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 
 // 用于不同动画类型的时候设置相应的比例
 @property (assign, nonatomic) CGFloat animatedTypePercent;
-
+/**
+ 是否可自动滚动。解决二次确认删除状态，不可滚动。1：可滚动，0：不可滚动
+ */
 @property (nonatomic, assign) BOOL isHaveAutoCycle;
 
 @end
@@ -126,7 +128,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
         }
             break;
         case UIGestureRecognizerStateChanged: {
-            if (self.isHaveAutoCycle) {
+            if (!self.isHaveAutoCycle) {
                 return;
             }
             // 始终同步滚动 snapView
@@ -480,59 +482,56 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             [self handleTapGesture:nil];
         }
     }
-    self.isHaveAutoCycle = NO;
+    self.isHaveAutoCycle = YES;
 }
 
 - (void)setSwipeViewAnimatedStyle:(ZJSwipeViewAnimatedStyle)swipeViewAnimatedStyle {
     _swipeViewAnimatedStyle = swipeViewAnimatedStyle;
     
     [self handleTapGesture:nil];
-    self.isHaveAutoCycle = NO;
 }
 
 - (void)updateUI {
-    self.isHaveAutoCycle = YES;
-    //NSLog(@"self.snapview = %@", self.snapView);
+    self.isHaveAutoCycle = NO;
+    
+    CGFloat leftPadding = 100 - 55;/* 目标宽度 - 现有宽度 */
+    
+    // 截图 view
     if (self.snapView != nil) {
         CGRect snapviewFrame = self.snapView.frame;
-        snapviewFrame.origin.x -= 50;
+        snapviewFrame.origin.x -= leftPadding;
         self.snapView.frame = snapviewFrame;
     }
+    // 按钮数组 view
     if (self.rightView != nil) {
-        
-        
-        ZJSwipeTableViewCell *swipeCell = [self.tableView cellForRowAtIndexPath:[self.tableView indexPathForCell:self]];
-        for (UIView *subview in swipeCell.subviews) {
+
+        for (UIView *subview in self.subviews) {
             
-            NSLog(@"subview = %@", subview);
             if ([subview isKindOfClass:[UIView class]]) {
+            
                 for (UIView *subsubview in subview.subviews) {
+                
                     if ([subsubview isKindOfClass:[ZJSwipeView class]]) {
-                        NSLog(@"subsubview = %@", subsubview);
-                        
+                        // 修改按钮父视图 view frame
                         CGRect leftViewFrame = subsubview.frame;
-                        leftViewFrame.origin.x -= 50;
-                        leftViewFrame.size.width += 50;
+                        leftViewFrame.origin.x -= leftPadding;
+                        leftViewFrame.size.width += leftPadding;
                         subsubview.frame = leftViewFrame;
                         
                         for (UIView *btnView in subsubview.subviews) {
                             if ([btnView isKindOfClass:[ZJSwipeButton class]]) {
+                                // 修改按钮 frame
                                 CGRect btnViewFrame = btnView.frame;
-                                btnViewFrame.size.width += 50;
+                                btnViewFrame.size.width += leftPadding;
                                 btnView.frame = btnViewFrame;
                             }
                         }
                     }
+                    
                 }
             }
             
         }
-//        self.leftView.backgroundColor = [UIColor yellowColor];
-//
-//        CGRect leftViewFrame = self.leftView.frame;
-//        leftViewFrame.origin.x -= 50;
-//        leftViewFrame.size.width += 50;
-//        self.leftView.frame = leftViewFrame;
     }
 }
 
@@ -589,12 +588,14 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             }
         }
 
+        self.rightView.backgroundColor = [UIColor clearColor];
+        
         self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
         self.overlayerContentView.width = overleyContentViewWidth;
         // 先添加overlayerContentView 到cell上, 再添加cell截图, 注意顺序
         [self addSubview:self.overlayerContentView];
 
-        self.overlayerContentView.backgroundColor = [UIColor redColor];
+        self.overlayerContentView.backgroundColor = [UIColor whiteColor];
         
         // 添加截图
         if (self.snapView == nil) {
@@ -608,12 +609,13 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 }
 
 - (void)handleTapGesture:(UITapGestureRecognizer *)tapGesture {
+    self.isHaveAutoCycle = YES;
+    
     if (self.overlayerContentView) {
         if (self.swipeOperation == ZJSwipeOperationOpenLeft) {
             [self animatedCloseLeft];
         }
         else {
-            self.isHaveAutoCycle = NO;
             [self animatedCloseRight];
         }
     }
