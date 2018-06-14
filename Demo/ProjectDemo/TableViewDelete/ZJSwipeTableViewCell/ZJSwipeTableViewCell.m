@@ -7,7 +7,6 @@
 //
 
 #import "ZJSwipeTableViewCell.h"
-#import "UIView+Frame.h"
 
 // 滑动操作的类型
 typedef NS_ENUM(NSUInteger, ZJSwipeOperation) {
@@ -120,8 +119,8 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             [self setupSwipeViewWithSwipeVelocityX:velocityX];
             // 记录初始数据
             _beginX = locationX;
-            _beginSnapViewX = self.snapView.zj_x;
-            _beginContentViewX = self.overlayerContentView.zj_x;
+            _beginSnapViewX = self.snapView.x;
+            _beginContentViewX = self.overlayerContentView.x;
             self.swipeOperation = ZJSwipeOperationNone;
 
         }
@@ -133,13 +132,13 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             // 始终同步滚动 snapView
             CGFloat tempSnapViewX = _beginSnapViewX;
             tempSnapViewX += transitionX;
-            self.snapView.zj_x = tempSnapViewX;
+            self.snapView.x = tempSnapViewX;
             
             // 向右滑动说明是 打开左边 或者关闭右边
             if (transitionX>0) {
                 // 右边菜单存在, 并且开始滑动时截图的x = 右边菜单宽度的负值
                 // 说明这次手势开始的时候右边的菜单是打开的, 正在关闭右边的菜单
-                if (self.rightView && _beginSnapViewX == -self.rightView.zj_width) {
+                if (self.rightView && _beginSnapViewX == -self.rightView.width) {
                     // 记录为正在关闭右边菜单, 便于在手指离开的时候判断
                     self.swipeOperation = ZJSwipeOperationCloseRight;
                     // 影藏左边菜单 显示右边菜单
@@ -147,24 +146,24 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
                     // 手指向右移动的距离 >= 右边菜单的宽度, 说明右边菜单已经完全关闭
                     // 手指再继续右移就变成了打开左边菜单的操作了, 这个时候就要
                     // 将各个变量设置为打开左边菜单的初始值
-                    if (transitionX>=self.rightView.zj_width) {
+                    if (transitionX>=self.rightView.width) {
                         // 右边关闭完成 --- 变为打开左边
                         // 手势设置移动为0
                         [panGesture setTranslation:CGPointZero inView:self];
                         // 重置开始X
-                        _beginContentViewX = -self.leftView.zj_width*self.animatedTypePercent;
+                        _beginContentViewX = -self.leftView.width*self.animatedTypePercent;
                         _beginX = locationX;
                         _beginSnapViewX = 0;
-                        self.overlayerContentView.zj_x = -self.leftView.zj_width*self.animatedTypePercent;
+                        self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
                     }
                     else {
                         // 正在关闭右边 改变overlayerContentView的x
                         CGFloat tempX = _beginContentViewX;
                         tempX += transitionX*self.animatedTypePercent;
-                        self.overlayerContentView.zj_x = tempX;
+                        self.overlayerContentView.x = tempX;
                     }
                     // 这是我们模仿简书的打开和关闭的时候的动画效果进行的frame计算, 需要一点数学能力
-                    [self animateSwipeButtonsWithPercent:transitionX/self.rightView.zj_width];
+                    [self animateSwipeButtonsWithPercent:transitionX/self.rightView.width];
 
                 }
                 else {
@@ -173,53 +172,53 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
                     [self hideAndShowSwipeViewNeededWithShowleft:YES];
 
                     if (_beginContentViewX == 0) { // 左边完全打开的情况下右滑 固定 transitionX
-                        transitionX = self.leftView.zj_width;
+                        transitionX = self.leftView.width;
                     }
                     else {
                         
-                        if (transitionX>=self.leftView.zj_width) {
-                            self.overlayerContentView.zj_x = 0.f; //固定contentView
-                            transitionX = self.leftView.zj_width;
+                        if (transitionX>=self.leftView.width) {
+                            self.overlayerContentView.x = 0.f; //固定contentView
+                            transitionX = self.leftView.width;
                         }
                         else {
 
                             // 滚动overLayerContentView
                             CGFloat tempX = _beginContentViewX;
                             tempX += transitionX*self.animatedTypePercent;
-                            self.overlayerContentView.zj_x = tempX;
+                            self.overlayerContentView.x = tempX;
                         }
                         
                     }
                     
-                    [self animateSwipeButtonsWithPercent:transitionX/self.leftView.zj_width];
+                    [self animateSwipeButtonsWithPercent:transitionX/self.leftView.width];
 
                 }
             }
             if (transitionX<0) {// 关闭左边或者打开右边
                 
-                if (self.leftView && _beginSnapViewX == self.leftView.zj_width) { //左边是打开的
+                if (self.leftView && _beginSnapViewX == self.leftView.width) { //左边是打开的
                     self.swipeOperation = ZJSwipeOperationCloseLeft;
                     [self hideAndShowSwipeViewNeededWithShowleft:YES];
 
                     // 关闭左边
-                    if (transitionX<=-self.leftView.zj_width) {
+                    if (transitionX<=-self.leftView.width) {
                         // 左边关闭完成
                         // 手势设置移动为0
                         [panGesture setTranslation:CGPointZero inView:self];
-                        _beginContentViewX = -self.leftView.zj_width*self.animatedTypePercent;
+                        _beginContentViewX = -self.leftView.width*self.animatedTypePercent;
                         _beginX = locationX;
                         _beginSnapViewX = 0;
-                        transitionX = -self.leftView.zj_width;
-                        self.overlayerContentView.zj_x = -self.leftView.zj_width*self.animatedTypePercent;
+                        transitionX = -self.leftView.width;
+                        self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
                     }
                     else {
                         // 正在关闭左边
                         CGFloat tempX = _beginContentViewX;
                         tempX += transitionX*self.animatedTypePercent;
-                        self.overlayerContentView.zj_x = tempX;
+                        self.overlayerContentView.x = tempX;
                     }
                     
-                    [self animateSwipeButtonsWithPercent:-transitionX/self.leftView.zj_width];
+                    [self animateSwipeButtonsWithPercent:-transitionX/self.leftView.width];
 
                 }
                 else {
@@ -228,24 +227,24 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
                     [self hideAndShowSwipeViewNeededWithShowleft:NO];
 
                     // 打开右边
-                    if (_beginSnapViewX == -self.rightView.zj_width) { // 右边完全打开的情况下右滑 --
-                        transitionX = -self.rightView.zj_width;
+                    if (_beginSnapViewX == -self.rightView.width) { // 右边完全打开的情况下右滑 --
+                        transitionX = -self.rightView.width;
                     }
                     else {
-                        if (transitionX<=-self.rightView.zj_width) {
+                        if (transitionX<=-self.rightView.width) {
                             // 打开右边完成
-                            self.overlayerContentView.zj_x = _beginContentViewX-self.rightView.zj_width*self.animatedTypePercent; //固定contentView
-                            transitionX = -self.rightView.zj_width;
+                            self.overlayerContentView.x = _beginContentViewX-self.rightView.width*self.animatedTypePercent; //固定contentView
+                            transitionX = -self.rightView.width;
 
                         }
                         else {
                             CGFloat tempX = _beginContentViewX;
                             tempX += transitionX*self.animatedTypePercent;
-                            self.overlayerContentView.zj_x = tempX;
+                            self.overlayerContentView.x = tempX;
                         }
                         
                     }
-                    [self animateSwipeButtonsWithPercent:-transitionX/self.rightView.zj_width];
+                    [self animateSwipeButtonsWithPercent:-transitionX/self.rightView.width];
 
                 }
 
@@ -267,7 +266,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
     
     if (self.swipeOperation == ZJSwipeOperationOpenLeft) {
         
-        if (fabs(_beginX - locationX) > self.leftView.zj_width*self.threholdPercent) {
+        if (fabs(_beginX - locationX) > self.leftView.width*self.threholdPercent) {
             [self animatedOpenLeft];
         }
         else {
@@ -280,7 +279,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
         
     }
     else if (self.swipeOperation == ZJSwipeOperationCloseLeft) {
-        if (fabs(_beginX - locationX) > self.leftView.zj_width*self.threholdPercent) {
+        if (fabs(_beginX - locationX) > self.leftView.width*self.threholdPercent) {
             [self animatedCloseLeft];
         }
         else {
@@ -290,7 +289,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
         }
     }
     else if (self.swipeOperation == ZJSwipeOperationOpenRight) {
-        if (fabs(_beginX - locationX) > self.rightView.zj_width*self.threholdPercent) {
+        if (fabs(_beginX - locationX) > self.rightView.width*self.threholdPercent) {
             [self animatedOpenRight];
         }
         else {
@@ -300,7 +299,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
     }
     else if (self.swipeOperation == ZJSwipeOperationCloseRight) {
         // 如果手指移动的距离 > 我们定义的百分比 说明应该执行动画关闭右边菜单
-        if (fabs(_beginX - locationX) > self.rightView.zj_width*self.threholdPercent) {
+        if (fabs(_beginX - locationX) > self.rightView.width*self.threholdPercent) {
             [self animatedCloseRight];
         }
         else {
@@ -340,30 +339,30 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 
     if (self.swipeOperation == ZJSwipeOperationOpenLeft) {
         for (ZJSwipeButton *swipeBtn in [self.leftView.subviews reverseObjectEnumerator]) {
-            swipeBtn.zj_x = (self.leftView.zj_width - swipeBtn.zj_width - x) * (1.0 - percent) + x;
-            x += swipeBtn.zj_width;
+            swipeBtn.x = (self.leftView.width - swipeBtn.width - x) * (1.0 - percent) + x;
+            x += swipeBtn.width;
         }
     }
     else if (self.swipeOperation == ZJSwipeOperationCloseLeft) {
         for (ZJSwipeButton *swipeBtn in [self.leftView.subviews reverseObjectEnumerator]) {
-            swipeBtn.zj_x = (self.leftView.zj_width - swipeBtn.zj_width - x) * percent + x;
-            x += swipeBtn.zj_width;
+            swipeBtn.x = (self.leftView.width - swipeBtn.width - x) * percent + x;
+            x += swipeBtn.width;
         }
         
     }
 
     else if (self.swipeOperation == ZJSwipeOperationOpenRight) {
         for (ZJSwipeButton *swipeBtn in self.rightView.subviews) {
-            swipeBtn.zj_x = x*percent;
-            x += swipeBtn.zj_width;
+            swipeBtn.x = x*percent;
+            x += swipeBtn.width;
         }
 
     }
     else if (self.swipeOperation == ZJSwipeOperationCloseRight) {
         
         for (ZJSwipeButton *swipeBtn in self.rightView.subviews) {
-            swipeBtn.zj_x = x*(1-percent);
-            x += swipeBtn.zj_width;
+            swipeBtn.x = x*(1-percent);
+            x += swipeBtn.width;
         }
     }
 }
@@ -371,16 +370,16 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 - (void)animatedOpenLeft {
     [UIView animateWithDuration:_animatedDuration animations:^{
         // 设置cell截图在左边打开时的最终位置
-        self.snapView.zj_x = self.leftView.zj_width;
+        self.snapView.x = self.leftView.width;
         // 设置左右菜单的容器view在左边打开时的最终位置
-        self.overlayerContentView.zj_x = 0;
+        self.overlayerContentView.x = 0;
         if (_swipeViewAnimatedStyle == ZJSwipeViewAnimatedStyleOverlap) {
             // 设置每个按钮的最终位置
             CGFloat x=0;
             for (ZJSwipeButton *swipeBtn in [self.leftView.subviews reverseObjectEnumerator]) {
                 
-                swipeBtn.zj_x = x;
-                x += swipeBtn.zj_width;
+                swipeBtn.x = x;
+                x += swipeBtn.width;
             }
 
         }
@@ -393,14 +392,14 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 
     [UIView animateWithDuration:_animatedDuration animations:^{
         // 设置cell截图在左边关闭时的最终位置
-        self.snapView.zj_x = 0;
+        self.snapView.x = 0;
         // 设置左右菜单的容器view在左边关闭时的最终位置
-        self.overlayerContentView.zj_x = -self.leftView.zj_width*self.animatedTypePercent;
+        self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
         
         if (_swipeViewAnimatedStyle == ZJSwipeViewAnimatedStyleOverlap) {
             // 设置每个按钮的最终位置
             for (ZJSwipeButton *swipeBtn in [self.leftView.subviews reverseObjectEnumerator]) {
-                swipeBtn.zj_x = self.leftView.zj_width-swipeBtn.zj_width;
+                swipeBtn.x = self.leftView.width-swipeBtn.width;
             }
 
         }
@@ -413,16 +412,16 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 - (void)animatedOpenRight {
     [UIView animateWithDuration:_animatedDuration animations:^{
         // 设置cell截图在右边打开时的最终位置
-        self.snapView.zj_x = -self.rightView.zj_width;
+        self.snapView.x = -self.rightView.width;
         // 设置左右菜单的容器view在右边打开时的最终位置
-        self.overlayerContentView.zj_x = -(self.leftView.zj_width+self.rightView.zj_width)*self.animatedTypePercent;
+        self.overlayerContentView.x = -(self.leftView.width+self.rightView.width)*self.animatedTypePercent;
         if (_swipeViewAnimatedStyle == ZJSwipeViewAnimatedStyleOverlap) {
             // 设置每个按钮的最终位置
             CGFloat x=0;
             for (ZJSwipeButton *swipeBtn in self.rightView.subviews) {
                 
-                swipeBtn.zj_x = x;
-                x += swipeBtn.zj_width;
+                swipeBtn.x = x;
+                x += swipeBtn.width;
             }
         }
     } completion:nil];
@@ -431,13 +430,13 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
 - (void)animatedCloseRight {
     [UIView animateWithDuration:_animatedDuration animations:^{
         // 设置cell截图在右边关闭时的最终位置
-        self.snapView.zj_x = 0;
+        self.snapView.x = 0;
         // 设置左右菜单的容器view在右边关闭时的最终位置
-        self.overlayerContentView.zj_x = -self.leftView.zj_width*self.animatedTypePercent;
+        self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
         if (_swipeViewAnimatedStyle == ZJSwipeViewAnimatedStyleOverlap) {
             // 设置每个按钮的最终位置
             for (ZJSwipeButton *swipeBtn in self.rightView.subviews) {
-                swipeBtn.zj_x = 0;
+                swipeBtn.x = 0;
             }
         }
 
@@ -572,9 +571,9 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             if (leftBtns.count > 0) {
                 self.leftView = [[ZJSwipeView alloc] initWithSwipeButtons:leftBtns height:self.bounds.size.height];
                 
-                self.leftView.zj_x = 0.f;
+                self.leftView.x = 0.f;
 
-                overleyContentViewWidth += (self.leftView.zj_width*self.animatedTypePercent);
+                overleyContentViewWidth += (self.leftView.width*self.animatedTypePercent);
                 
                 [self.overlayerContentView addSubview:self.leftView];
             }
@@ -584,14 +583,14 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
         if (!self.rightView) {
             if (rightBtns.count > 0) {
                 self.rightView = [[ZJSwipeView alloc] initWithSwipeButtons:rightBtns height:self.bounds.size.height];
-                overleyContentViewWidth += (self.rightView.zj_width*self.animatedTypePercent);
-                self.rightView.zj_x = overleyContentViewWidth-self.rightView.zj_width;
+                overleyContentViewWidth += (self.rightView.width*self.animatedTypePercent);
+                self.rightView.x = overleyContentViewWidth-self.rightView.width;
                 [self.overlayerContentView addSubview:self.rightView];
             }
         }
 
-        self.overlayerContentView.zj_x = -self.leftView.zj_width*self.animatedTypePercent;
-        self.overlayerContentView.zj_width = overleyContentViewWidth;
+        self.overlayerContentView.x = -self.leftView.width*self.animatedTypePercent;
+        self.overlayerContentView.width = overleyContentViewWidth;
         // 先添加overlayerContentView 到cell上, 再添加cell截图, 注意顺序
         [self addSubview:self.overlayerContentView];
 

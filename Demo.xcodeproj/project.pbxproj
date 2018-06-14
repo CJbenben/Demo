@@ -10,7 +10,6 @@
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
 		F55DB6B620CA2DB9003837CA /* TableViewDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F55DB6B520CA2DB9003837CA /* TableViewDeleteCell.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
-		F58C811120D1FC480064B9D8 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C810A20D1FC470064B9D8 /* UIView+Frame.m */; };
 		F58C811220D1FC480064B9D8 /* ZJSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C810C20D1FC470064B9D8 /* ZJSwipeButton.m */; };
 		F58C811320D1FC480064B9D8 /* ZJSwipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C810E20D1FC470064B9D8 /* ZJSwipeTableViewCell.m */; };
 		F58C811420D1FC480064B9D8 /* ZJSwipeView.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C811020D1FC470064B9D8 /* ZJSwipeView.m */; };
@@ -89,8 +88,6 @@
 		F55DB6B520CA2DB9003837CA /* TableViewDeleteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDeleteCell.m; sourceTree = "<group>"; };
 		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
 		F57EBFAC201F0BD10062A4AA /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
-		F58C810920D1FC470064B9D8 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
-		F58C810A20D1FC470064B9D8 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
 		F58C810B20D1FC470064B9D8 /* ZJSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSwipeButton.h; sourceTree = "<group>"; };
 		F58C810C20D1FC470064B9D8 /* ZJSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSwipeButton.m; sourceTree = "<group>"; };
 		F58C810D20D1FC470064B9D8 /* ZJSwipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSwipeTableViewCell.h; sourceTree = "<group>"; };
@@ -240,8 +237,6 @@
 		F58C810820D1FC470064B9D8 /* ZJSwipeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				F58C810920D1FC470064B9D8 /* UIView+Frame.h */,
-				F58C810A20D1FC470064B9D8 /* UIView+Frame.m */,
 				F58C810B20D1FC470064B9D8 /* ZJSwipeButton.h */,
 				F58C810C20D1FC470064B9D8 /* ZJSwipeButton.m */,
 				F58C810D20D1FC470064B9D8 /* ZJSwipeTableViewCell.h */,
@@ -788,7 +783,6 @@
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,
 				F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */,
 				F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */,
-				F58C811120D1FC480064B9D8 /* UIView+Frame.m in Sources */,
 				F58C811320D1FC480064B9D8 /* ZJSwipeTableViewCell.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */,
