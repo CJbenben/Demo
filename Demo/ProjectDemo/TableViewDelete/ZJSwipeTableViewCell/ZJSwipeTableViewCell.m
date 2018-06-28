@@ -134,7 +134,13 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
             // 始终同步滚动 snapView
             CGFloat tempSnapViewX = _beginSnapViewX;
             tempSnapViewX += transitionX;
-            self.snapView.x = tempSnapViewX;
+            if (tempSnapViewX > 0) {
+                
+            } else {
+                self.snapView.x = tempSnapViewX;
+            }
+            
+            NSLog(@"self.snapView.x = %.2f", self.snapView.x);
             
             // 向右滑动说明是 打开左边 或者关闭右边
             if (transitionX>0) {
@@ -322,6 +328,7 @@ static NSString *const ZJSwipeCellTableViewGesturePath = @"tableView.panGestureR
     // 移除tap手势
     [self.tableView removeGestureRecognizer:self.tapGesture];
     // 移除添加的view
+    [self.snapView removeFromSuperview];
     self.snapView = nil;
     [self.overlayerContentView removeFromSuperview];
     self.overlayerContentView = nil;
