@@ -12,5 +12,14 @@ pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'
 pod 'AMapLocation-NO-IDFA'
 
+    abstract_target 'Tests' do
+        #inherit! :search_paths
+        target "DemoTests"
+        target "DemoUITests"
+        
+        pod 'Quick'
+        pod 'Nimble'
+    end
+
 end
 
