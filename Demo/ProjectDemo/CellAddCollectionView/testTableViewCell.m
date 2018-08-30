@@ -8,7 +8,7 @@
 
 #import "testTableViewCell.h"
 #import "textCollectionViewCell.h"
-#import <Masonry.h>
+#import "Masonry.h"
 
 @interface testTableViewCell ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 
