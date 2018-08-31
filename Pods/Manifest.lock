@@ -27,6 +27,9 @@ PODS:
     - AMapFoundation-NO-IDFA (~> 1.4)
   - AMapSearch-NO-IDFA (5.4.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
+  - KIF (3.4.2):
+    - KIF/Core (= 3.4.2)
+  - KIF/Core (3.4.2)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15)
   - SDWebImage (3.8.2):
@@ -38,6 +41,7 @@ DEPENDENCIES:
   - AMap2DMap-NO-IDFA
   - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
+  - KIF
   - Masonry
   - MJRefresh
   - SDWebImage (~> 3.8)
@@ -49,6 +53,7 @@ SPEC REPOS:
     - AMapFoundation-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - KIF
     - Masonry
     - MJRefresh
     - SDWebImage
@@ -59,10 +64,11 @@ SPEC CHECKSUMS:
   AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
   AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
   AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
+  KIF: b518c9831453abea5afdbbde3908ec47832d6d56
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 5ca0bc81517f181f11b8a2564a34d59d457eb468
+PODFILE CHECKSUM: 8accc1d572dc8f29f6f0ca97aeced37eb6b19ea5
 
 COCOAPODS: 1.5.2

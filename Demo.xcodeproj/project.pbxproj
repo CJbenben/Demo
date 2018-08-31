@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6C3EB9FE71D9549AD3B88D7B /* libPods-DemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 41FA44A94B50AC05A8767BCF /* libPods-DemoTests.a */; };
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
+		F54FA01C213923D9003F692F /* CellAddCollectionViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FA01B213923D9003F692F /* CellAddCollectionViewControllerTests.m */; };
+		F54FA02121392A23003F692F /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = F54FA02021392A23003F692F /* KIFUITestActor+EXAdditions.m */; };
 		F55DB6B620CA2DB9003837CA /* TableViewDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F55DB6B520CA2DB9003837CA /* TableViewDeleteCell.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
 		F58C811220D1FC480064B9D8 /* ZJSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F58C810C20D1FC470064B9D8 /* ZJSwipeButton.m */; };
@@ -65,6 +67,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F54FA02421393830003F692F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F595676C1FAB4AD20068A04F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F595678B1FAB4AD20068A04F;
+			remoteInfo = DemoTests;
+		};
+		F54FA02621393834003F692F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F595676C1FAB4AD20068A04F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F59567961FAB4AD20068A04F;
+			remoteInfo = DemoUITests;
+		};
 		F595678D1FAB4AD20068A04F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F595676C1FAB4AD20068A04F /* Project object */;
@@ -87,6 +103,10 @@
 		8254F4AFAA6B9E80CCF3A23D /* Pods-DemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoTests/Pods-DemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54FA01A213923D9003F692F /* CellAddCollectionViewControllerTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellAddCollectionViewControllerTests.h; sourceTree = "<group>"; };
+		F54FA01B213923D9003F692F /* CellAddCollectionViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellAddCollectionViewControllerTests.m; sourceTree = "<group>"; };
+		F54FA01F21392A23003F692F /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
+		F54FA02021392A23003F692F /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
 		F55DB6B420CA2DB9003837CA /* TableViewDeleteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDeleteCell.h; sourceTree = "<group>"; };
 		F55DB6B520CA2DB9003837CA /* TableViewDeleteCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewDeleteCell.m; sourceTree = "<group>"; };
 		F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
@@ -295,6 +315,10 @@
 		F595678F1FAB4AD20068A04F /* DemoTests */ = {
 			isa = PBXGroup;
 			children = (
+				F54FA01A213923D9003F692F /* CellAddCollectionViewControllerTests.h */,
+				F54FA01B213923D9003F692F /* CellAddCollectionViewControllerTests.m */,
+				F54FA01F21392A23003F692F /* KIFUITestActor+EXAdditions.h */,
+				F54FA02021392A23003F692F /* KIFUITestActor+EXAdditions.m */,
 				F59567901FAB4AD20068A04F /* DemoTests.m */,
 				F59567921FAB4AD20068A04F /* Info.plist */,
 			);
@@ -595,6 +619,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				F54FA02721393834003F692F /* PBXTargetDependency */,
+				F54FA02521393830003F692F /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -850,7 +876,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F54FA01C213923D9003F692F /* CellAddCollectionViewControllerTests.m in Sources */,
 				F59567911FAB4AD20068A04F /* DemoTests.m in Sources */,
+				F54FA02121392A23003F692F /* KIFUITestActor+EXAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +893,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F54FA02521393830003F692F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F595678B1FAB4AD20068A04F /* DemoTests */;
+			targetProxy = F54FA02421393830003F692F /* PBXContainerItemProxy */;
+		};
+		F54FA02721393834003F692F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F59567961FAB4AD20068A04F /* DemoUITests */;
+			targetProxy = F54FA02621393834003F692F /* PBXContainerItemProxy */;
+		};
 		F595678E1FAB4AD20068A04F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F59567731FAB4AD20068A04F /* Demo */;

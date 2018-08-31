@@ -27,5 +27,7 @@ target 'DemoTests' do
     pod 'AMapSearch-NO-IDFA'
     pod 'AMapLocation-NO-IDFA'
     
+    pod 'KIF', :configurations => ['Debug']
+    
 end
 
