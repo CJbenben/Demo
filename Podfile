@@ -8,6 +8,11 @@ pod 'MJRefresh'
 pod 'SDWebImage', '~>3.8'
 pod 'Masonry'
 
+
+pod 'ReactiveCocoa'
+#pod 'ReactiveCocoa', '~>4.1.0'
+
+
 pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'
 pod 'AMapLocation-NO-IDFA'

@@ -29,6 +29,13 @@ PODS:
     - AMapFoundation-NO-IDFA (~> 1.4)
   - Masonry (1.1.0)
   - MJRefresh (3.1.15)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
@@ -40,6 +47,7 @@ DEPENDENCIES:
   - AMapSearch-NO-IDFA
   - Masonry
   - MJRefresh
+  - ReactiveCocoa
   - SDWebImage (~> 3.8)
 
 SPEC REPOS:
@@ -51,6 +59,7 @@ SPEC REPOS:
     - AMapSearch-NO-IDFA
     - Masonry
     - MJRefresh
+    - ReactiveCocoa
     - SDWebImage
 
 SPEC CHECKSUMS:
@@ -61,8 +70,9 @@ SPEC CHECKSUMS:
   AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 3b4910601e7d0492c6fa48c5d8bf6d11a3c3d301
+PODFILE CHECKSUM: 0cbc122eec286db594a5262e0ba9ed3e6920f393
 
 COCOAPODS: 1.5.2
