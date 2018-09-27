@@ -7,7 +7,7 @@
 //
 
 #import "SecondViewController.h"
-#import "AFNetworking.h"
+
 #import "DemoTableViewCell.h"
 
 #import "ATCollectionViewDemoVC.h"
@@ -18,7 +18,7 @@
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
 #import "TableViewDeleteViewController.h"
-
+#import "MVVMDemoViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -31,7 +31,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"cell add collectionview", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"cell add collectionview", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除", @"自定义左侧滑二次确认删除", @"MVVMDemoViewController"];
     }
     return _dataAry;
 }
@@ -96,6 +96,9 @@
     } else if (indexPath.row == 8) {
         TableViewDeleteViewController *deleteVC = [[TableViewDeleteViewController alloc] init];
         [self.navigationController pushViewController:deleteVC animated:YES];
+    } else if (indexPath.row == 9) {
+        MVVMDemoViewController *mvvmVC = [[MVVMDemoViewController alloc] init];
+        [self.navigationController pushViewController:mvvmVC animated:YES];
     }
 }
 
@@ -109,34 +112,16 @@
     NSDictionary *params = @{@"type":@"top",//类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
                              @"key":@"ad2908cae6020addf38ffdb5e2255c06"//应用APPKEY
                              };
-    AFHTTPSessionManager *manager = [self getManager];
     
-    //NSLog(@"<-- newRequest -- %@ url --> %@  params --> %@", requestName, url, mutaDict.mj_JSONString);
-    
-    /** 没有做缓存处理，需要添加缓存处理 */
-    [manager GET:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"responseObject = %@", responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"error = %@", error);
-    }];
-}
+    [CJHTTPRequest httpRequestWithGETWithUrl:url params:params success:^(id result) {
+        
+        NSLog(@"responseObject = %@", result);
 
-- (AFHTTPSessionManager *)getManager {
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    manager.requestSerializer = [AFJSONRequestSerializer serializer];
-    manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/html",@"text/json", nil];
-    
-    AFSecurityPolicy * securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
-    securityPolicy.allowInvalidCertificates = YES;
-    securityPolicy.validatesDomainName = NO;
-    manager.securityPolicy = securityPolicy;
-    
-    [manager setSessionDidReceiveAuthenticationChallengeBlock:^NSURLSessionAuthChallengeDisposition(NSURLSession * _Nonnull session, NSURLAuthenticationChallenge * _Nonnull challenge, NSURLCredential *__autoreleasing  _Nullable * _Nullable credential)
-     {
-         return NSURLSessionAuthChallengePerformDefaultHandling;
-     }];
-    
-    return manager;
+    } failure:^(NSError *error) {
+        
+        NSLog(@"error = %@", error);
+
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

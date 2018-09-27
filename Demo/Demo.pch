@@ -9,6 +9,7 @@
 #ifndef Demo_pch
 #define Demo_pch
 
+#import "CJHTTPRequest.h"
 #import "UIColor+AtzucheColor.h"
 #import "UIImageView+WebCache.h"
 #import "UIView+AtzucheUIView.h"
