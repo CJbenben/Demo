@@ -18,6 +18,7 @@
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
 #import "TableViewDeleteViewController.h"
+#import "RACViewController.h"
 
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -31,7 +32,7 @@
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"cell add collectionview", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除"];
+        _dataAry = @[@"网络请求", @"CollectionView", @"横向 CollectionView", @"自动居中 CollectionView", @"cell add collectionview", @"MJ 下拉刷新兼容 iPhone X", @"iPhone 字体", @"wkwebview", @"自定义左侧滑二次确认删除", @"RACDemo"];
     }
     return _dataAry;
 }
@@ -96,6 +97,9 @@
     } else if (indexPath.row == 8) {
         TableViewDeleteViewController *deleteVC = [[TableViewDeleteViewController alloc] init];
         [self.navigationController pushViewController:deleteVC animated:YES];
+    } else if (indexPath.row == 9) {
+        RACViewController *racVC = [[RACViewController alloc] init];
+        [self.navigationController pushViewController:racVC animated:YES];
     }
 }
 

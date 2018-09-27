@@ -19,6 +19,8 @@
 		F595679C1FAB4AD20068A04F /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F595679B1FAB4AD20068A04F /* DemoUITests.m */; };
 		F599D7812019753800D33834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.m */; };
 		F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */; };
+		F59F94D721549C1B00CA844F /* RACViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F59F94D621549C1B00CA844F /* RACViewController.m */; };
+		F59F94DA215B831800CA844F /* RACTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = F59F94D9215B831800CA844F /* RACTestView.m */; };
 		F5B4D58020D10C8B0088884C /* 1111.png in Resources */ = {isa = PBXBuildFile; fileRef = F5B4D57F20D10C8A0088884C /* 1111.png */; };
 		F5E3035B20C13AF3001F11EC /* CellAddCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031020C13AF3001F11EC /* CellAddCollectionViewController.m */; };
 		F5E3035C20C13AF3001F11EC /* testTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031220C13AF3001F11EC /* testTableViewCell.m */; };
@@ -109,6 +111,10 @@
 		F599D7832019754500D33834 /* Demo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 		F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AtzucheColor.h"; sourceTree = "<group>"; };
 		F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AtzucheColor.m"; sourceTree = "<group>"; };
+		F59F94D521549C1B00CA844F /* RACViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACViewController.h; sourceTree = "<group>"; };
+		F59F94D621549C1B00CA844F /* RACViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACViewController.m; sourceTree = "<group>"; };
+		F59F94D8215B831800CA844F /* RACTestView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RACTestView.h; sourceTree = "<group>"; };
+		F59F94D9215B831800CA844F /* RACTestView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RACTestView.m; sourceTree = "<group>"; };
 		F5B4D57F20D10C8A0088884C /* 1111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1111.png; sourceTree = "<group>"; };
 		F5E3030F20C13AF3001F11EC /* CellAddCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellAddCollectionViewController.h; sourceTree = "<group>"; };
 		F5E3031020C13AF3001F11EC /* CellAddCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellAddCollectionViewController.m; sourceTree = "<group>"; };
@@ -324,9 +330,21 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
+		F59F94D421549C0500CA844F /* RACDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F59F94D521549C1B00CA844F /* RACViewController.h */,
+				F59F94D621549C1B00CA844F /* RACViewController.m */,
+				F59F94D8215B831800CA844F /* RACTestView.h */,
+				F59F94D9215B831800CA844F /* RACTestView.m */,
+			);
+			path = RACDemo;
+			sourceTree = "<group>";
+		};
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F59F94D421549C0500CA844F /* RACDemo */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3033620C13AF3001F11EC /* HorizontalCollectionDemo */,
 				F5E3030E20C13AF3001F11EC /* CellAddCollectionView */,
@@ -774,12 +792,14 @@
 				F5E3036520C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5E3036320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
+				F59F94DA215B831800CA844F /* RACTestView.m in Sources */,
 				F58C811220D1FC480064B9D8 /* ZJSwipeButton.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
 				F5E3036C20C13AF3001F11EC /* AtzucheHomeCityCollectionCell.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F5E3036B20C13AF3001F11EC /* NSTimer+Add.m in Sources */,
+				F59F94D721549C1B00CA844F /* RACViewController.m in Sources */,
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,
 				F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */,
 				F5E9A621201F19B7000851B0 /* NJTitleButton.m in Sources */,
