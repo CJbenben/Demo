@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
-		F528C692215CDDEE008F7850 /* MVVMDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C691215CDDEE008F7850 /* MVVMDemoViewController.m */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F55DB6B620CA2DB9003837CA /* TableViewDeleteCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F55DB6B520CA2DB9003837CA /* TableViewDeleteCell.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
@@ -86,8 +85,6 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		F528C690215CDDEE008F7850 /* MVVMDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMDemoViewController.h; sourceTree = "<group>"; };
-		F528C691215CDDEE008F7850 /* MVVMDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMDemoViewController.m; sourceTree = "<group>"; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
 		F528C694215CDEA9008F7850 /* CJHTTPRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CJHTTPRequest.m; sourceTree = "<group>"; };
 		F55DB6B420CA2DB9003837CA /* TableViewDeleteCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewDeleteCell.h; sourceTree = "<group>"; };
@@ -240,15 +237,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		F528C68F215CDDD8008F7850 /* MVVMDemo */ = {
-			isa = PBXGroup;
-			children = (
-				F528C690215CDDEE008F7850 /* MVVMDemoViewController.h */,
-				F528C691215CDDEE008F7850 /* MVVMDemoViewController.m */,
-			);
-			path = MVVMDemo;
-			sourceTree = "<group>";
-		};
 		F58C810820D1FC470064B9D8 /* ZJSwipeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +330,6 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F528C68F215CDDD8008F7850 /* MVVMDemo */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3033620C13AF3001F11EC /* HorizontalCollectionDemo */,
 				F5E3030E20C13AF3001F11EC /* CellAddCollectionView */,
@@ -811,7 +798,6 @@
 				F5E3036420C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				F5E3035D20C13AF3001F11EC /* textCollectionViewCell.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
-				F528C692215CDDEE008F7850 /* MVVMDemoViewController.m in Sources */,
 				F5E3039620C13FE7001F11EC /* DadViewController.m in Sources */,
 				F5E3036020C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				F5E3036720C13AF3001F11EC /* AtzucheHomeTitleViewController.m in Sources */,

@@ -18,7 +18,6 @@
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
 #import "TableViewDeleteViewController.h"
-#import "MVVMDemoViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -39,8 +38,7 @@
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体",
                      @"wkwebview",
-                     @"自定义左侧滑二次确认删除",
-                     @"MVVMDemoViewController"];
+                     @"自定义左侧滑二次确认删除"];
     }
     return _dataAry;
 }
@@ -106,8 +104,7 @@
         TableViewDeleteViewController *deleteVC = [[TableViewDeleteViewController alloc] init];
         [self.navigationController pushViewController:deleteVC animated:YES];
     } else if (indexPath.row == 9) {
-        MVVMDemoViewController *mvvmVC = [[MVVMDemoViewController alloc] init];
-        [self.navigationController pushViewController:mvvmVC animated:YES];
+        
     }
 }
 

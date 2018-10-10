@@ -28,6 +28,7 @@ PODS:
   - AMapSearch-NO-IDFA (5.4.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
   - Masonry (1.1.0)
+  - MJExtension (3.0.13)
   - MJRefresh (3.1.15)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
@@ -39,6 +40,7 @@ DEPENDENCIES:
   - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
   - Masonry
+  - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.8)
 
@@ -50,6 +52,7 @@ SPEC REPOS:
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
     - Masonry
+    - MJExtension
     - MJRefresh
     - SDWebImage
 
@@ -60,9 +63,10 @@ SPEC CHECKSUMS:
   AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
   AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 3b4910601e7d0492c6fa48c5d8bf6d11a3c3d301
+PODFILE CHECKSUM: ed0cee4a2335fe0ce5b158adca5b6b6b83cf2317
 
 COCOAPODS: 1.5.2
