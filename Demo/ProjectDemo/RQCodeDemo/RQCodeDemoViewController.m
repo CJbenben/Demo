@@ -6,13 +6,13 @@
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "MVVMDemoViewController.h"
+#import "RQCodeDemoViewController.h"
 
-@interface MVVMDemoViewController ()
+@interface RQCodeDemoViewController ()
 
 @end
 
-@implementation MVVMDemoViewController
+@implementation RQCodeDemoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -21,8 +21,7 @@
     
 }
 
--
-(void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

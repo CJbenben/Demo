@@ -8,6 +8,6 @@
 
 #import "DadViewController.h"
 
-@interface MVVMDemoViewController : DadViewController
+@interface RQCodeDemoViewController : DadViewController
 
 @end
