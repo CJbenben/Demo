@@ -8,6 +8,9 @@
 
 #import "DadViewController.h"
 
+/**
+ *  参考文章：https://github.com/liutongchao/LCQRCodeUtil.git
+ */
 @interface RQCodeDemoViewController : DadViewController
 
 @end
