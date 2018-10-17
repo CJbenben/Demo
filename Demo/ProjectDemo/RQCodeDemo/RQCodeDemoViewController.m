@@ -18,17 +18,17 @@
 
 #define kScanRect CGRectMake(LEFT, TOP, 220, 220)
 
-@interface RQCodeDemoViewController ()<AVCaptureMetadataOutputObjectsDelegate>{
-    int num;
-    BOOL upOrdown;
-    CAShapeLayer *cropLayer;
-}
+@interface RQCodeDemoViewController ()<AVCaptureMetadataOutputObjectsDelegate>
 
-@property ( strong , nonatomic ) AVCaptureDevice * device;
-@property ( strong , nonatomic ) AVCaptureDeviceInput * input;
-@property ( strong , nonatomic ) AVCaptureMetadataOutput * output;
-@property ( strong , nonatomic ) AVCaptureSession * session;
-@property ( strong , nonatomic ) AVCaptureVideoPreviewLayer * previewLayer;
+@property (nonatomic, assign) NSInteger num;
+@property (nonatomic, assign) BOOL upOrdown;
+@property (nonatomic, strong) CAShapeLayer *cropLayer;
+
+@property (nonatomic, strong) AVCaptureDevice * device;
+@property (nonatomic, strong) AVCaptureDeviceInput * input;
+@property (nonatomic, strong) AVCaptureMetadataOutput * output;
+@property (nonatomic, strong) AVCaptureSession * session;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer * previewLayer;
 
 /*** 专门用于保存描边的图层 ***/
 @property (nonatomic,strong) CALayer *containerLayer;
@@ -41,21 +41,53 @@
 
 @implementation RQCodeDemoViewController
 
-- (void)setCropRect:(CGRect)cropRect{
-    cropLayer = [[CAShapeLayer alloc] init];
+- (void)setCropRect:(CGRect)cropRect {
+    self.cropLayer = [[CAShapeLayer alloc] init];
     CGMutablePathRef path = CGPathCreateMutable();
     CGPathAddRect(path, nil, cropRect);
     CGPathAddRect(path, nil, self.view.bounds);
     
-    [cropLayer setFillRule:kCAFillRuleEvenOdd];
-    [cropLayer setPath:path];
-    [cropLayer setFillColor:[UIColor blackColor].CGColor];
-    [cropLayer setOpacity:0.6];
+    [self.cropLayer setFillRule:kCAFillRuleEvenOdd];
+    [self.cropLayer setPath:path];
+    [self.cropLayer setFillColor:[UIColor blackColor].CGColor];
+    [self.cropLayer setOpacity:0.6];
     
     
-    [cropLayer setNeedsDisplay];
+    [self.cropLayer setNeedsDisplay];
     
-    [self.view.layer addSublayer:cropLayer];
+    [self.view.layer addSublayer:self.cropLayer];
+}
+
+-(void)configView{
+    
+    UIImageView * imageView = [[UIImageView alloc]initWithFrame:kScanRect];
+    imageView.image = [UIImage imageNamed:@"pick_bg"];
+    [self.view addSubview:imageView];
+    
+    self.upOrdown = NO;
+    self.num =0;
+    _line = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT, TOP+10, 220, 2)];
+    _line.image = [UIImage imageNamed:@"line.png"];
+    [self.view addSubview:_line];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
+}
+
+- (void)animation1 {
+    if (self.upOrdown == NO) {
+        self.num ++;
+        _line.frame = CGRectMake(LEFT, TOP+10+2*self.num, 220, 2);
+        if (2*self.num == 200) {
+            self.upOrdown = YES;
+        }
+    } else {
+        self.num --;
+        _line.frame = CGRectMake(LEFT, TOP+10+2*self.num, 220, 2);
+        if (self.num == 0) {
+            self.upOrdown = NO;
+        }
+    }
+    
 }
 
 - (void)viewDidLoad {
@@ -65,42 +97,8 @@
     
     [self configView];
     [self setCropRect:kScanRect];
-
+    
     [self startScan];
-}
-
--(void)configView{
-    
-    UIImageView * imageView = [[UIImageView alloc]initWithFrame:kScanRect];
-    imageView.image = [UIImage imageNamed:@"pick_bg"];
-    [self.view addSubview:imageView];
-    
-    upOrdown = NO;
-    num =0;
-    _line = [[UIImageView alloc] initWithFrame:CGRectMake(LEFT, TOP+10, 220, 2)];
-    _line.image = [UIImage imageNamed:@"line.png"];
-    [self.view addSubview:_line];
-    
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:.02 target:self selector:@selector(animation1) userInfo:nil repeats:YES];
-}
-
--(void)animation1
-{
-    if (upOrdown == NO) {
-        num ++;
-        _line.frame = CGRectMake(LEFT, TOP+10+2*num, 220, 2);
-        if (2*num == 200) {
-            upOrdown = YES;
-        }
-    }
-    else {
-        num --;
-        _line.frame = CGRectMake(LEFT, TOP+10+2*num, 220, 2);
-        if (num == 0) {
-            upOrdown = NO;
-        }
-    }
-    
 }
 
 - (void)startScan
@@ -133,7 +131,7 @@
     [self.session startRunning];
 }
 
-#pragma mark --------AVCaptureMetadataOutputObjectsDelegate ---------
+#pragma mark AVCaptureMetadataOutputObjectsDelegate
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     // id 类型不能点语法,所以要先去取出数组中对象
@@ -154,7 +152,7 @@
     [alert addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if (self.session != nil && self.timer != nil) {
             
-            [self clearLayers];
+            //[self clearLayers];
             
             [self.session startRunning];
             [self.timer setFireDate:[NSDate date]];
@@ -163,7 +161,7 @@
     }]];
     [self presentViewController:alert animated:YES completion:nil];
     
-    
+    /*
     NSArray *arry = object.corners;
     for (id temp in arry) {
         NSLog(@"%@",temp);
@@ -177,9 +175,10 @@
     
     // 绘制描边
     [self drawLine:obj];
+     */
 }
+/*
 //7.利用贝塞尔曲线绘制描边
-
 - (void)drawLine:(AVMetadataMachineReadableCodeObject *)objc
 {
     NSArray *array = objc.corners;
@@ -230,7 +229,7 @@
         }
     }
 }
-
+*/
 #pragma mark -------- 懒加载---------
 - (AVCaptureDevice *)device
 {
