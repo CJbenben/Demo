@@ -1,34 +1,22 @@
-
-
 //
-//  DadViewController.m
+//  ARViewController.m
 //  Demo
 //
-//  Created by ChenJie on 2018/6/1.
+//  Created by chenxiaojie on 2018/12/26.
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "ARViewController.h"
 
-@interface DadViewController ()
+@interface ARViewController ()
 
 @end
 
-@implementation DadViewController
+@implementation ARViewController
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor whiteColor];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 /*

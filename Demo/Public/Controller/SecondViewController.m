@@ -15,6 +15,7 @@
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
+#import "ARViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -32,7 +33,8 @@
                      @"自动居中 CollectionView",
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体",
-                     @"wkwebview"];
+                     @"wkwebview",
+                     @"AR"];
     }
     return _dataAry;
 }
@@ -89,7 +91,8 @@
         WKWebViewController *webview = [[WKWebViewController alloc] init];
         [self.navigationController pushViewController:webview animated:YES];
     } else if (indexPath.row == 6) {
-        
+        ARViewController *arVC = [[ARViewController alloc] init];
+        [self.navigationController pushViewController:arVC animated:YES];
     }
 }
 
@@ -99,7 +102,7 @@
 
 #pragma mark - indexpath.row == 0
 - (void)httpRequestWithGET {
-    NSString *url = @"http://v.juhe.cn/toutiao/index";
+    NSString *url = @"http://v.juhe.c n/toutiao/index";
     NSDictionary *params = @{@"type":@"top",//类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
                              @"key":@"ad2908cae6020addf38ffdb5e2255c06"//应用APPKEY
                              };
