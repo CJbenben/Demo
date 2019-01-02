@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7D43DA7B21D319B30099B740 /* ARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D43DA7A21D319B30099B740 /* ARViewController.m */; };
+		7D61B0F721DC56E7008BA602 /* MGFaceLicenseHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D61B0E821DC56E7008BA602 /* MGFaceLicenseHandle.m */; };
+		7D61B0F821DC56E7008BA602 /* libMGLicMgrSDK-0.3.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D61B0EA21DC56E7008BA602 /* libMGLicMgrSDK-0.3.1.a */; };
+		7D61B0F921DC56E7008BA602 /* libMGFacepp-0.5.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D61B0EE21DC56E7008BA602 /* libMGFacepp-0.5.2.a */; };
+		7D61B0FA21DC56E7008BA602 /* megviifacepp_0_5_2_model in Resources */ = {isa = PBXBuildFile; fileRef = 7D61B0F621DC56E7008BA602 /* megviifacepp_0_5_2_model */; };
+		7D61B12F21DC6265008BA602 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D61B12E21DC6265008BA602 /* AVFoundation.framework */; };
+		7D61B13121DC6276008BA602 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D61B13021DC6276008BA602 /* CoreMedia.framework */; };
+		7D61B13321DC627E008BA602 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D61B13221DC627E008BA602 /* CoreMotion.framework */; };
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
@@ -15,7 +22,7 @@
 		F59567871FAB4AD20068A04F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567861FAB4AD20068A04F /* main.m */; };
 		F59567911FAB4AD20068A04F /* DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567901FAB4AD20068A04F /* DemoTests.m */; };
 		F595679C1FAB4AD20068A04F /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F595679B1FAB4AD20068A04F /* DemoUITests.m */; };
-		F599D7812019753800D33834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.m */; };
+		F599D7812019753800D33834 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.mm */; };
 		F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */; };
 		F5E3035E20C13AF3001F11EC /* ATCollectionViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031720C13AF3001F11EC /* ATCollectionViewDemoVC.m */; };
 		F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031A20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m */; };
@@ -70,6 +77,25 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D43DA7921D319B30099B740 /* ARViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARViewController.h; sourceTree = "<group>"; };
 		7D43DA7A21D319B30099B740 /* ARViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARViewController.m; sourceTree = "<group>"; };
+		7D43DA8921D323040099B740 /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		7D61B0E621DC56E7008BA602 /* MGNetAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGNetAccount.h; sourceTree = "<group>"; };
+		7D61B0E721DC56E7008BA602 /* MGFaceLicenseHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceLicenseHandle.h; sourceTree = "<group>"; };
+		7D61B0E821DC56E7008BA602 /* MGFaceLicenseHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGFaceLicenseHandle.m; sourceTree = "<group>"; };
+		7D61B0EA21DC56E7008BA602 /* libMGLicMgrSDK-0.3.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGLicMgrSDK-0.3.1.a"; sourceTree = "<group>"; };
+		7D61B0EB21DC56E7008BA602 /* MGLicenseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseManager.h; sourceTree = "<group>"; };
+		7D61B0EC21DC56E7008BA602 /* MGLicenseCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGLicenseCommon.h; sourceTree = "<group>"; };
+		7D61B0EE21DC56E7008BA602 /* libMGFacepp-0.5.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libMGFacepp-0.5.2.a"; sourceTree = "<group>"; };
+		7D61B0EF21DC56E7008BA602 /* MGFaceppConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppConfig.h; sourceTree = "<group>"; };
+		7D61B0F021DC56E7008BA602 /* MGAlgorithmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGAlgorithmInfo.h; sourceTree = "<group>"; };
+		7D61B0F121DC56E7008BA602 /* MGFacepp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFacepp.h; sourceTree = "<group>"; };
+		7D61B0F221DC56E7008BA602 /* MGDetectRectInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGDetectRectInfo.h; sourceTree = "<group>"; };
+		7D61B0F321DC56E7008BA602 /* MGFaceppCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceppCommon.h; sourceTree = "<group>"; };
+		7D61B0F421DC56E7008BA602 /* MGImageData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGImageData.h; sourceTree = "<group>"; };
+		7D61B0F521DC56E7008BA602 /* MGFaceInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGFaceInfo.h; sourceTree = "<group>"; };
+		7D61B0F621DC56E7008BA602 /* megviifacepp_0_5_2_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_0_5_2_model; sourceTree = "<group>"; };
+		7D61B12E21DC6265008BA602 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		7D61B13021DC6276008BA602 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		7D61B13221DC627E008BA602 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
@@ -87,7 +113,7 @@
 		F595679B1FAB4AD20068A04F /* DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DemoUITests.m; sourceTree = "<group>"; };
 		F595679D1FAB4AD20068A04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F599D7782019753800D33834 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		F599D7792019753800D33834 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F599D7792019753800D33834 /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		F599D7832019754500D33834 /* Demo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 		F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AtzucheColor.h"; sourceTree = "<group>"; };
 		F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AtzucheColor.m"; sourceTree = "<group>"; };
@@ -155,6 +181,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D61B13321DC627E008BA602 /* CoreMotion.framework in Frameworks */,
+				7D61B13121DC6276008BA602 /* CoreMedia.framework in Frameworks */,
+				7D61B12F21DC6265008BA602 /* AVFoundation.framework in Frameworks */,
+				7D61B0F921DC56E7008BA602 /* libMGFacepp-0.5.2.a in Frameworks */,
+				7D61B0F821DC56E7008BA602 /* libMGLicMgrSDK-0.3.1.a in Frameworks */,
 				EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,9 +216,59 @@
 			path = AR;
 			sourceTree = "<group>";
 		};
+		7D61B0D821DC568D008BA602 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				7D61B0E921DC56E7008BA602 /* MegviiLicMgr-iOS-SDK */,
+				7D61B0ED21DC56E7008BA602 /* MGFaceppSDK */,
+				7D61B0E521DC56E7008BA602 /* MGLicenseManagerHelper */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		7D61B0E521DC56E7008BA602 /* MGLicenseManagerHelper */ = {
+			isa = PBXGroup;
+			children = (
+				7D61B0E621DC56E7008BA602 /* MGNetAccount.h */,
+				7D61B0E721DC56E7008BA602 /* MGFaceLicenseHandle.h */,
+				7D61B0E821DC56E7008BA602 /* MGFaceLicenseHandle.m */,
+			);
+			path = MGLicenseManagerHelper;
+			sourceTree = "<group>";
+		};
+		7D61B0E921DC56E7008BA602 /* MegviiLicMgr-iOS-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				7D61B0EA21DC56E7008BA602 /* libMGLicMgrSDK-0.3.1.a */,
+				7D61B0EB21DC56E7008BA602 /* MGLicenseManager.h */,
+				7D61B0EC21DC56E7008BA602 /* MGLicenseCommon.h */,
+			);
+			path = "MegviiLicMgr-iOS-SDK";
+			sourceTree = "<group>";
+		};
+		7D61B0ED21DC56E7008BA602 /* MGFaceppSDK */ = {
+			isa = PBXGroup;
+			children = (
+				7D61B0EE21DC56E7008BA602 /* libMGFacepp-0.5.2.a */,
+				7D61B0EF21DC56E7008BA602 /* MGFaceppConfig.h */,
+				7D61B0F021DC56E7008BA602 /* MGAlgorithmInfo.h */,
+				7D61B0F121DC56E7008BA602 /* MGFacepp.h */,
+				7D61B0F221DC56E7008BA602 /* MGDetectRectInfo.h */,
+				7D61B0F321DC56E7008BA602 /* MGFaceppCommon.h */,
+				7D61B0F421DC56E7008BA602 /* MGImageData.h */,
+				7D61B0F521DC56E7008BA602 /* MGFaceInfo.h */,
+				7D61B0F621DC56E7008BA602 /* megviifacepp_0_5_2_model */,
+			);
+			path = MGFaceppSDK;
+			sourceTree = "<group>";
+		};
 		988027578FBBDF25E90DE96C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D61B13221DC627E008BA602 /* CoreMotion.framework */,
+				7D61B13021DC6276008BA602 /* CoreMedia.framework */,
+				7D61B12E21DC6265008BA602 /* AVFoundation.framework */,
+				7D43DA8921D323040099B740 /* libstdc++.6.0.9.tbd */,
 				D9508E5367DC2F3562C8F578 /* libPods-Demo.a */,
 			);
 			name = Frameworks;
@@ -227,6 +308,7 @@
 		F59567761FAB4AD20068A04F /* Demo */ = {
 			isa = PBXGroup;
 			children = (
+				7D61B0D821DC568D008BA602 /* framework */,
 				F599D7772019753800D33834 /* AppDelegate */,
 				F5E3037D20C13D09001F11EC /* Public */,
 				F599D78E2019BA8D00D33834 /* Category */,
@@ -261,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				F599D7782019753800D33834 /* AppDelegate.h */,
-				F599D7792019753800D33834 /* AppDelegate.m */,
+				F599D7792019753800D33834 /* AppDelegate.mm */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -564,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
+				7D61B0FA21DC56E7008BA602 /* megviifacepp_0_5_2_model in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
@@ -642,6 +725,7 @@
 				F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */,
 				F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */,
 				F5E3036A20C13AF3001F11EC /* CycleScrollView.m in Sources */,
+				7D61B0F721DC56E7008BA602 /* MGFaceLicenseHandle.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
@@ -651,7 +735,7 @@
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
-				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
+				F599D7812019753800D33834 /* AppDelegate.mm in Sources */,
 				F5E3036B20C13AF3001F11EC /* NSTimer+Add.m in Sources */,
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,
 				F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */,
@@ -811,10 +895,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AMX63B8LY9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo/framework",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo/framework/MGFaceppSDK",
+					"$(PROJECT_DIR)/Demo/framework/MegviiLicMgr-iOS-SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -828,10 +922,20 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AMX63B8LY9;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo/framework",
+				);
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Demo/framework/MGFaceppSDK",
+					"$(PROJECT_DIR)/Demo/framework/MegviiLicMgr-iOS-SDK",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
