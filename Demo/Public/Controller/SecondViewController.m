@@ -33,7 +33,8 @@
                      @"自动居中 CollectionView",
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体",
-                     @"wkwebview"];
+                     @"wkwebview",
+                     @"LineChart"];
     }
     return _dataAry;
 }
