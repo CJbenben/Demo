@@ -27,6 +27,9 @@ PODS:
     - AMapFoundation-NO-IDFA (~> 1.4)
   - AMapSearch-NO-IDFA (5.4.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
+  - Charts (3.1.1):
+    - Charts/Core (= 3.1.1)
+  - Charts/Core (3.1.1)
   - Masonry (1.1.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.15)
@@ -39,6 +42,7 @@ DEPENDENCIES:
   - AMap2DMap-NO-IDFA
   - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
+  - Charts
   - Masonry
   - MJExtension
   - MJRefresh
@@ -51,6 +55,7 @@ SPEC REPOS:
     - AMapFoundation-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - Charts
     - Masonry
     - MJExtension
     - MJRefresh
@@ -62,11 +67,12 @@ SPEC CHECKSUMS:
   AMapFoundation-NO-IDFA: 3b9ce87abc6a37c718cc320687469d0b74d5c953
   AMapLocation-NO-IDFA: be669085a8cc0d22820022fc61d58811d24b4e3a
   AMapSearch-NO-IDFA: efddeaa3f62f6adb8f0170ebff3d799bcf637ade
+  Charts: 90a4d61da0f6e06684c591e3bcab11940fe61736
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: e3ec4e27aa84dcda3808bb93b74792a761f8f1d9
+PODFILE CHECKSUM: a79c3867f2d3a4e356f970a7fb46aeb78a3faf84
 
 COCOAPODS: 1.5.3

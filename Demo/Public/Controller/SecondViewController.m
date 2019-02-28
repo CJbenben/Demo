@@ -15,6 +15,7 @@
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
+#import "ChartViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -89,7 +90,8 @@
         WKWebViewController *webview = [[WKWebViewController alloc] init];
         [self.navigationController pushViewController:webview animated:YES];
     } else if (indexPath.row == 6) {
-        
+        ChartViewController *chartVC = [[ChartViewController alloc] init];
+        [self.navigationController pushViewController:chartVC animated:YES];
     }
 }
 
