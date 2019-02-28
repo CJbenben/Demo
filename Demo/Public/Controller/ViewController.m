@@ -16,6 +16,7 @@
 #import <AMapFoundationKit/AMapFoundationKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 #import "NNValidationCodeView.h"
+#import "UITabbarViewController.h"
 #import "SecondViewController.h"
 
 @interface ViewController ()<CLLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate>
@@ -34,7 +35,8 @@
 
     self.view.backgroundColor = [UIColor whiteColor];
     
-    [self pushNextVC];
+    //[self pushNextVC];
+    [self pushTabbarVC];
     
     //[self testGradient];
     
@@ -53,6 +55,11 @@
     SecondViewController *secondVC = [[SecondViewController alloc] init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:secondVC];
     [self presentViewController:navi animated:YES completion:nil];
+}
+
+- (void)pushTabbarVC {
+    UITabbarViewController *tabbarVC = [[UITabbarViewController alloc] init];
+    [self presentViewController:tabbarVC animated:YES completion:nil];
 }
 
 - (void)pushNextVC {
