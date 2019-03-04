@@ -8,6 +8,7 @@ pod 'MJRefresh'
 pod 'MJExtension'
 pod 'SDWebImage', '~>3.8'
 pod 'Masonry'
+pod 'UICountingLabel'
 
 pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'

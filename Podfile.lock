@@ -33,6 +33,7 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - UICountingLabel (1.4.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
@@ -43,6 +44,7 @@ DEPENDENCIES:
   - MJExtension
   - MJRefresh
   - SDWebImage (~> 3.8)
+  - UICountingLabel
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -55,6 +57,7 @@ SPEC REPOS:
     - MJExtension
     - MJRefresh
     - SDWebImage
+    - UICountingLabel
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
@@ -66,7 +69,8 @@ SPEC CHECKSUMS:
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: 9af70f5f9327a2cf87f0fb5929f35fcc2fa638ea
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UICountingLabel: faf890b505d96312e324a86718f031fafffb0ccb
 
-PODFILE CHECKSUM: ed0cee4a2335fe0ce5b158adca5b6b6b83cf2317
+PODFILE CHECKSUM: 3d1138e33884950d33b59704fbfa5ab08474e846
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3

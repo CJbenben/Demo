@@ -7,6 +7,7 @@
 //
 
 #import "PersonViewController.h"
+#import "UICountingLabel.h"
 
 #define paddingY            320
 #define headerViewH         200
@@ -22,6 +23,8 @@
 @property (strong, nonatomic) UIView *cardView;
 @property (assign, nonatomic) BOOL needAnimation;
 
+@property (strong, nonatomic) UICountingLabel *countingLabel;
+
 @end
 
 @implementation PersonViewController
@@ -32,6 +35,12 @@
         _tableview.dataSource = self;
         _tableview.delegate = self;
         _tableview.tableHeaderView = self.headerView;
+        if (@available(iOS 11.0, *)) {
+            _tableview.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }else{
+            self.automaticallyAdjustsScrollViewInsets = NO;
+        }
+        
     }
     return _tableview;
 }
@@ -61,8 +70,19 @@
         _cardView.backgroundColor = [UIColor blackColor];
         _cardView.layer.cornerRadius = 10.0;
         _cardView.layer.masksToBounds = YES;
+        [_cardView addSubview:self.countingLabel];
     }
     return _cardView;
+}
+
+- (UICountingLabel *)countingLabel {
+    if (_countingLabel == nil) {
+        _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 30, self.cardView.width, 50)];
+        _countingLabel.textAlignment = NSTextAlignmentCenter;
+        _countingLabel.format = @"%.2f";
+        _countingLabel.backgroundColor = [UIColor cyanColor];
+    }
+    return _countingLabel;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -103,6 +123,10 @@
     if (scrollView.contentOffset.y < -20 && self.needAnimation) {
         [self runAnimation];//抖动动画
     }
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.countingLabel countFromZeroTo:647.23 withDuration:0.4];
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
