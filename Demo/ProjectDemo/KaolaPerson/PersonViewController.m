@@ -13,6 +13,9 @@
 #define headerViewH         200
 #define headerViewPadding   headerViewH + paddingY
 #define cardViewH           200
+#define cardViewY           headerViewPadding - 40
+
+static CGFloat downMaxPadding = 100;// 可向下展示最大距离
 
 
 @interface PersonViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -21,7 +24,15 @@
 @property (strong, nonatomic) UIView *headerView;
 @property (strong, nonatomic) UIView *headerContentView;
 @property (strong, nonatomic) UIView *cardView;
+@property (strong, nonatomic) UIView *topView;
+
 @property (assign, nonatomic) BOOL needAnimation;
+/** scrollView是否拖动中 */
+@property (nonatomic, assign) BOOL isDraggingScrollView;
+@property (assign, nonatomic) BOOL downDrop;
+/** 下拉到最底部 */
+@property (assign, nonatomic) BOOL downBottomDrop;
+
 
 @property (strong, nonatomic) UICountingLabel *countingLabel;
 
@@ -59,14 +70,23 @@
     if (_headerContentView == nil) {
         _headerContentView = [[UIView alloc] initWithFrame:_headerView.bounds];
         _headerContentView.backgroundColor = [UIColor redColor];
+        [_headerContentView addSubview:self.topView];
         [_headerContentView addSubview:self.cardView];
     }
     return _headerContentView;
 }
 
+- (UIView *)topView {
+    if (_topView == nil) {
+        _topView = [[UIView alloc] initWithFrame:CGRectMake(50, paddingY, SCREEN_WIDTH - 100, 100)];
+        _topView.backgroundColor = [UIColor yellowColor];
+    }
+    return _topView;
+}
+
 - (UIView *)cardView {
     if (_cardView == nil) {
-        _cardView = [[UIView alloc] initWithFrame:CGRectMake(20, headerViewPadding - 30, SCREEN_WIDTH - 40, cardViewH)];
+        _cardView = [[UIView alloc] initWithFrame:CGRectMake(20, cardViewY, SCREEN_WIDTH - 40, cardViewH)];
         _cardView.backgroundColor = [UIColor blackColor];
         _cardView.layer.cornerRadius = 10.0;
         _cardView.layer.masksToBounds = YES;
@@ -77,7 +97,7 @@
 
 - (UICountingLabel *)countingLabel {
     if (_countingLabel == nil) {
-        _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 30, self.cardView.width, 50)];
+        _countingLabel = [[UICountingLabel alloc] initWithFrame:CGRectMake(0, 40, self.cardView.width, 50)];
         _countingLabel.textAlignment = NSTextAlignmentCenter;
         _countingLabel.format = @"%.2f";
         _countingLabel.backgroundColor = [UIColor cyanColor];
@@ -96,36 +116,16 @@
     // Do any additional setup after loading the view.
 
     [self.view addSubview:self.tableview];
+    self.downDrop = YES;
 }
 
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    NSLog(@"########## ==== %.2f", scrollView.contentOffset.y);
-    
-    CGFloat contentOffSetY = -scrollView.contentOffset.y;//下拉的距离
-    CGRect frame = _headerContentView.frame;
-    if (contentOffSetY < 0) {
-        frame.size.height = headerViewPadding;
-        _headerContentView.frame = frame;
-        _cardView.frame = CGRectMake(20, headerViewPadding - 30, SCREEN_WIDTH - 40, cardViewH);
-    }else if (contentOffSetY < 100) {
-        frame.size.height = headerViewPadding + contentOffSetY;
-        _headerContentView.frame = frame;
-        _cardView.frame = CGRectMake(20, headerViewPadding - 30 - contentOffSetY, SCREEN_WIDTH - 40, cardViewH);
-    }else {
-        frame.size.height = headerViewPadding + 100;
-        _headerContentView.frame = frame;
-        _cardView.frame = CGRectMake(20, headerViewPadding - 30 - 100, SCREEN_WIDTH - 40, cardViewH);
-        
-        _tableview.contentOffset = CGPointMake(0, -100);//最多往下拉动的距离，防止漏出白边
-    }
-    
-    if (scrollView.contentOffset.y < -20 && self.needAnimation) {
-        [self runAnimation];//抖动动画
-    }
+    [self handleScrollView:scrollView];
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    self.isDraggingScrollView = YES;
     [self.countingLabel countFromZeroTo:647.23 withDuration:0.4];
 }
 
@@ -133,7 +133,115 @@
     if (scrollView.contentOffset.y < -20) {
         self.needAnimation = YES;
     }
+    self.isDraggingScrollView = NO;
+    [self handleScrollView:scrollView];
 }
+
+
+- (void)handleScrollView:(UIScrollView *)scrollView {
+    NSLog(@"########## ==== %.2f", -scrollView.contentOffset.y);
+    // 偏移量
+    CGFloat contentOffSetY = -scrollView.contentOffset.y;
+    
+    if (contentOffSetY == 0 && self.downBottomDrop) {
+        self.downDrop = NO;
+        return;
+    }
+    CGRect headerContentFrame = self.headerContentView.frame;
+    CGRect topViewFrame = self.topView.frame;
+    CGRect cardFrame = self.cardView.frame;
+    // 向上滚动
+    if (contentOffSetY <= 0) {
+        // 下拉到最底部之后向上滚动
+        if (!self.downDrop) {
+            // 改变 cardview 的 frame 相当于向上滚动了
+            cardFrame.origin.y = cardViewY - contentOffSetY;
+            self.cardView.frame = cardFrame;
+            topViewFrame.origin.y = paddingY - contentOffSetY;
+            self.topView.frame = topViewFrame;
+            // 手指没有离开屏幕
+            if (self.isDraggingScrollView) {
+                if (contentOffSetY < -downMaxPadding) {
+                    self.downDrop = YES;// 设置正常向上滚动（全部向上移动）
+                    self.downBottomDrop = NO;
+                    [self settingHeaderViewBeginState];// 设置 headerview 回到初始状态
+                    [scrollView setContentOffset:CGPointZero];
+                }
+            }
+            // 手指离开屏幕
+            else {
+                // 滚动超过卡片的一半时
+                if (contentOffSetY < -40) {
+                    self.downDrop = YES;// 设置正常向上滚动（全部向上移动）
+                    self.downBottomDrop = NO;
+                    [self settingHeaderViewBeginState];// 设置 headerview 回到初始状态
+                    [scrollView setContentOffset:CGPointZero];
+                }
+                // 向上滚动没有超过卡片一半时，需要回到（滚动到最底部状态）
+                else {
+                    self.downDrop = NO;// 设置卡片可以继续向上滚动
+                    [self settingHeaderViewBottomState];
+                    [scrollView setContentOffset:CGPointZero];
+                }
+            }
+        }
+        // 正常向上滚动（全部向上移动）
+        else {
+            
+        }
+        
+    }
+    // 向下滚动
+    else {
+        // 向下移动不超过最大距离时
+        if (contentOffSetY < downMaxPadding) {
+            // 手指离开屏幕时，超过卡片一半时，自动滚动到最底部
+            if (contentOffSetY > 40 && !self.isDraggingScrollView && self.downDrop) {
+                self.downDrop = NO;// 设置卡片可以继续向上滚动
+                [self settingHeaderViewBottomState];
+                self.downBottomDrop = YES;
+            } else if (!self.downDrop) {
+                headerContentFrame.size.height = headerViewPadding;
+                self.headerContentView.frame = headerContentFrame;
+                self.topView.frame = CGRectMake(self.topView.x, paddingY, self.topView.width, self.topView.height);
+                self.cardView.frame = CGRectMake(self.cardView.x, cardViewY, self.cardView.width, cardViewH);
+                [scrollView setContentOffset:CGPointZero];//最多往下拉动的距离，防止漏出白边
+            } else {
+                headerContentFrame.size.height = headerViewPadding + contentOffSetY;
+                self.headerContentView.frame = headerContentFrame;
+                self.topView.frame = CGRectMake(self.topView.x, paddingY - contentOffSetY, self.topView.width, self.topView.height);
+                self.cardView.frame = CGRectMake(self.cardView.x, cardViewY - contentOffSetY, self.cardView.width, cardViewH);
+            }
+        }
+        // 向下移动超过最大距离时，不允许滚动了
+        else {
+            headerContentFrame.size.height = headerViewPadding + downMaxPadding;
+            self.headerContentView.frame = headerContentFrame;
+            self.topView.frame = CGRectMake(self.topView.x, paddingY - downMaxPadding, self.topView.width, self.topView.height);
+            self.cardView.frame = CGRectMake(self.cardView.x, cardViewY - downMaxPadding, self.cardView.width, cardViewH);
+            [scrollView setContentOffset:CGPointMake(0, -downMaxPadding)];//最多往下拉动的距离，防止漏出白边
+        }
+    }
+    
+    //    if (scrollView.contentOffset.y < -20 && self.needAnimation) {
+    //        [self runAnimation];//抖动动画
+    //    }
+}
+
+- (void)settingHeaderViewBeginState {
+    self.topView.frame = CGRectMake(self.topView.x, paddingY, self.topView.width, self.topView.height);
+    self.cardView.frame = CGRectMake(self.cardView.x, cardViewY, self.cardView.width, cardViewH);
+    self.headerView.height = headerViewPadding;
+    self.tableview.tableHeaderView = self.headerView;
+}
+
+- (void)settingHeaderViewBottomState {
+    self.topView.frame = CGRectMake(self.topView.x, paddingY, self.topView.width, self.topView.height);
+    self.cardView.frame = CGRectMake(self.cardView.x, cardViewY, self.cardView.width, cardViewH);
+    self.headerView.height = headerViewPadding + downMaxPadding;
+    self.tableview.tableHeaderView = self.headerView;
+}
+
 
 - (void)runAnimation {
     self.needAnimation = NO;
@@ -157,7 +265,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 20;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -166,6 +274,7 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.textLabel.text = [NSString stringWithFormat:@"第 %ld 行", indexPath.row + 1];
     return cell;
 }
 
