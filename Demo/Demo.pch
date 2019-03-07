@@ -12,6 +12,7 @@
 #import "CJHTTPRequest.h"
 #import "UIColor+AtzucheColor.h"
 #import "UIImageView+WebCache.h"
+#import "UIView+Toast.h"
 #import "UIView+AtzucheUIView.h"
 #import "Masonry.h"
 
