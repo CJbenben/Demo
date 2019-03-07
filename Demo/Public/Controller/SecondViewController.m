@@ -15,6 +15,7 @@
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
+#import "FingerprintViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -32,7 +33,8 @@
                      @"自动居中 CollectionView",
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体",
-                     @"wkwebview"];
+                     @"wkwebview",
+                     @"指纹"];
     }
     return _dataAry;
 }
@@ -89,7 +91,8 @@
         WKWebViewController *webview = [[WKWebViewController alloc] init];
         [self.navigationController pushViewController:webview animated:YES];
     } else if (indexPath.row == 6) {
-        
+        FingerprintViewController *fingerprintVC = [[FingerprintViewController alloc] init];
+        [self.navigationController pushViewController:fingerprintVC animated:YES];
     }
 }
 

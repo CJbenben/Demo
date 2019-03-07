@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7D07EA922230CC39003277C5 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D07EA912230CC38003277C5 /* UIView+Toast.m */; };
+		7D07EA8E2230B5E4003277C5 /* FingerprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D07EA8C2230B5E4003277C5 /* FingerprintViewController.m */; };
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
@@ -70,6 +71,8 @@
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D07EA902230CC38003277C5 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
 		7D07EA912230CC38003277C5 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
+		7D07EA8B2230B5E4003277C5 /* FingerprintViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FingerprintViewController.h; sourceTree = "<group>"; };
+		7D07EA8C2230B5E4003277C5 /* FingerprintViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FingerprintViewController.m; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
@@ -176,6 +179,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D07EA872230B547003277C5 /* Fingerprint */ = {
+			isa = PBXGroup;
+			children = (
+				7D07EA8B2230B5E4003277C5 /* FingerprintViewController.h */,
+				7D07EA8C2230B5E4003277C5 /* FingerprintViewController.m */,
+			);
+			path = Fingerprint;
+			sourceTree = "<group>";
+		};
 		988027578FBBDF25E90DE96C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,6 +287,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D07EA872230B547003277C5 /* Fingerprint */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
 				F5E3034820C13AF3001F11EC /* iPhoneFont */,
@@ -627,6 +640,7 @@
 				F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */,
 				F5E3037620C13AF3001F11EC /* MJIphoneXViewController.m in Sources */,
 				F5E3038E20C13D09001F11EC /* Person.m in Sources */,
+				7D07EA8E2230B5E4003277C5 /* FingerprintViewController.m in Sources */,
 				F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */,
 				F5E3035E20C13AF3001F11EC /* ATCollectionViewDemoVC.m in Sources */,
 				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
