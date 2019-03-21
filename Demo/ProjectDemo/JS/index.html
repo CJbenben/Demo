@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>iOS UIWwebview 与 JS 交互</title>
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+		<link rel="stylesheet" href="http://cdn.bootcss.com/mobi.css/1.1.0/mobi.min.css" />
+        <script language = "javascript">
+            
+            //! 加载URL
+            function loadURL(url) {
+                window.location.href = url;
+            }
+        
+            //! JS调用OC入口
+            function jsToOc(action, params) {
+                var url = "jsToOc://" + action + "?" + params;
+                loadURL(url);
+            }
+        
+            function connect() {
+                var im_appkey = "im_appkey";
+                var store_qq = "qq123456";
+                jsToOc(im_appkey, store_qq);
+            }
+        
+            //! OC调用JS入口
+            function ocToJs(action, params) {
+                document.getElementById("returnValue").innerHTML = action + '?' + params;
+            }
+        
+            </script>
+	</head>
+
+    <style media="screen">
+        div {
+            margin-left:80px;
+            margin-top:100px;
+        }
+    </style>
+
+	<body>
+		<div class ="" >
+            <button onclick = "connect()" style = "font-size: 18px;">联系客服</button>
+		</div>
+	
+	</body>
+
+</html>
