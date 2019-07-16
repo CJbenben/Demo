@@ -16,6 +16,7 @@
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
 #import "ChartViewController.h"
+#import "PayGestureViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,8 @@
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体",
                      @"wkwebview",
-                     @"LineChart"];
+                     @"LineChart",
+                     @"panGesture"];
     }
     return _dataAry;
 }
@@ -93,6 +95,9 @@
     } else if (indexPath.row == 6) {
         ChartViewController *chartVC = [[ChartViewController alloc] init];
         [self.navigationController pushViewController:chartVC animated:YES];
+    } else if (indexPath.row == 7) {
+        PayGestureViewController *panVC = [[PayGestureViewController alloc] init];
+        [self.navigationController pushViewController:panVC animated:YES];
     }
 }
 

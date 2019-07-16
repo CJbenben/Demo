@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D5DC7EA2276E0D400A91E54 /* NotificationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D5DC7E92276E0D400A91E54 /* NotificationService.m */; };
 		7D5DC7EE2276E0D400A91E54 /* SoundNoti.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7D5DC7E62276E0D300A91E54 /* SoundNoti.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7D6ED5C1228D5D250043519E /* PayGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6ED5C0228D5D250043519E /* PayGestureViewController.m */; };
 		7D8513962227BE3B0058F68C /* SwiftTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8513952227BE3B0058F68C /* SwiftTestViewController.swift */; };
 		7D85139A2227BE7B0058F68C /* ChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8513992227BE7B0058F68C /* ChartViewController.m */; };
 		9298B5AC1D73A8847AB6D80C /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BFCEA84BAF6D3B5AA10EA7 /* Pods_Demo.framework */; };
@@ -96,6 +97,8 @@
 		7D5DC7E82276E0D400A91E54 /* NotificationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationService.h; sourceTree = "<group>"; };
 		7D5DC7E92276E0D400A91E54 /* NotificationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationService.m; sourceTree = "<group>"; };
 		7D5DC7EB2276E0D400A91E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D6ED5BF228D5D250043519E /* PayGestureViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PayGestureViewController.h; sourceTree = "<group>"; };
+		7D6ED5C0228D5D250043519E /* PayGestureViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayGestureViewController.m; sourceTree = "<group>"; };
 		7D8513942227BE3A0058F68C /* Demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Demo-Bridging-Header.h"; sourceTree = "<group>"; };
 		7D8513952227BE3B0058F68C /* SwiftTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftTestViewController.swift; sourceTree = "<group>"; };
 		7D8513982227BE7B0058F68C /* ChartViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChartViewController.h; sourceTree = "<group>"; };
@@ -223,6 +226,15 @@
 			path = SoundNoti;
 			sourceTree = "<group>";
 		};
+		7D6ED5BE228D5D140043519E /* PanGestureDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D6ED5BF228D5D250043519E /* PayGestureViewController.h */,
+				7D6ED5C0228D5D250043519E /* PayGestureViewController.m */,
+			);
+			path = PanGestureDemo;
+			sourceTree = "<group>";
+		};
 		7D8513972227BE6F0058F68C /* ChartDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -331,6 +343,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D6ED5BE228D5D140043519E /* PanGestureDemo */,
 				7D8513972227BE6F0058F68C /* ChartDemo */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
@@ -782,6 +795,7 @@
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */,
 				F5E3036820C13AF3001F11EC /* AtzucheCycleScrollView.m in Sources */,
+				7D6ED5C1228D5D250043519E /* PayGestureViewController.m in Sources */,
 				F5E3036420C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 				F5E3039620C13FE7001F11EC /* DadViewController.m in Sources */,
