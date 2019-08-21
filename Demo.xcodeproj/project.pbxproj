@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
+		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
 		7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */; };
 		7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D921A7AE4100ECC90A /* MVVMView.m */; };
 		7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DC21A7AE5500ECC90A /* MVVMModel.m */; };
 		7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DF21A7AE6000ECC90A /* MVVMViewModel.m */; };
 		7DE533E321A7D99A00ECC90A /* MVVMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */; };
 		7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */; };
-		7DE533E921A7EFEE00ECC90A /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E821A7EFEE00ECC90A /* MVVMTableViewCell.m */; };
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F57EBFAD201F0BD20062A4AA /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = F57EBFAB201F0BD10062A4AA /* UIView+AtzucheUIView.m */; };
@@ -74,6 +75,10 @@
 
 /* Begin PBXFileReference section */
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7D45982A22F44AE0005AA8EC /* MVVMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableViewCell.h; sourceTree = "<group>"; };
+		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
+		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
+		7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
 		7DE533D521A7AAFB00ECC90A /* MVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewController.h; sourceTree = "<group>"; };
 		7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewController.m; sourceTree = "<group>"; };
 		7DE533D821A7AE4100ECC90A /* MVVMView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMView.h; sourceTree = "<group>"; };
@@ -86,8 +91,6 @@
 		7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseModel.m; sourceTree = "<group>"; };
 		7DE533E421A7D9FA00ECC90A /* MVVMItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMItemModel.h; sourceTree = "<group>"; };
 		7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMItemModel.m; sourceTree = "<group>"; };
-		7DE533E721A7EFEE00ECC90A /* MVVMTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMTableViewCell.h; sourceTree = "<group>"; };
-		7DE533E821A7EFEE00ECC90A /* MVVMTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
@@ -194,9 +197,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D45982D22F44B4C005AA8EC /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */,
+				7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		7DE533D021A7A8BD00ECC90A /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				7D45982D22F44B4C005AA8EC /* Base */,
 				7DE533D121A7A8BD00ECC90A /* ViewModel */,
 				7DE533D221A7A8BD00ECC90A /* Controller */,
 				7DE533D321A7A8BD00ECC90A /* Model */,
@@ -219,8 +232,6 @@
 			children = (
 				7DE533D521A7AAFB00ECC90A /* MVVMViewController.h */,
 				7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */,
-				7DE533E721A7EFEE00ECC90A /* MVVMTableViewCell.h */,
-				7DE533E821A7EFEE00ECC90A /* MVVMTableViewCell.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -243,6 +254,8 @@
 			children = (
 				7DE533D821A7AE4100ECC90A /* MVVMView.h */,
 				7DE533D921A7AE4100ECC90A /* MVVMView.m */,
+				7D45982A22F44AE0005AA8EC /* MVVMTableViewCell.h */,
+				7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -655,7 +668,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-resources.sh",
 				"${PODS_ROOT}/AMap2DMap-NO-IDFA/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 			);
@@ -666,7 +679,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FAC01AEF200F8FB48B4E652C /* [CP] Check Pods Manifest.lock */ = {
@@ -705,6 +718,7 @@
 				F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */,
 				F5E3036A20C13AF3001F11EC /* CycleScrollView.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
+				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
@@ -712,11 +726,11 @@
 				F5E3036320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
-				7DE533E921A7EFEE00ECC90A /* MVVMTableViewCell.m in Sources */,
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
 				7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */,
+				7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				F5E3036B20C13AF3001F11EC /* NSTimer+Add.m in Sources */,
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,

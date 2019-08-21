@@ -8,7 +8,26 @@
 
 #import "MVVMViewModel.h"
 
+@interface MVVMViewModel ()
+
+@property (nonatomic, copy) SuccessDictBlock succ;/**<请求成功*/
+
+@property (nonatomic, copy) FailureDictBlock fail;/**<请求成功*/
+
+@end
 @implementation MVVMViewModel
+
+- (instancetype)initWithSucc:(SuccessDictBlock)succ fail:(FailureDictBlock)fail {
+    self = [super init];
+    if (self) {
+        _succ = succ;
+        _fail = fail;
+        //_datas = [NSMutableArray new];
+        //[self addObserver:self forKeyPath:@"selectName" options:NSKeyValueObservingOptionNew context:nil];
+    }
+    return self;
+    
+}
 
 - (void)getHttpDataWithSuccess:(SuccessDictBlock)successBlock failure:(FailureDictBlock)failureBlock {
     
@@ -28,10 +47,5 @@
         
     }];
 }
-//
-//- (void)setBaseModel:(MVVMBaseModel *)baseModel {
-//    _baseModel = baseModel;
-//    
-//}
 
 @end
