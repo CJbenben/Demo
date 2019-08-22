@@ -10,6 +10,7 @@
 #import "CJCommonKit.h"
 #import "CJCategoryKit.h"
 #import "Masonry.h"
+#import "UIViewController+DadBaseHUD.h"
 
 @interface DadViewController : UIViewController
 

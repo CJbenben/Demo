@@ -29,6 +29,7 @@
 		7DE71C4A230E45D200580B47 /* NSString+AtzucheNSString.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE71C44230E45D200580B47 /* NSString+AtzucheNSString.m */; };
 		7DE71C4B230E45D200580B47 /* UIView+AtzucheUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE71C46230E45D200580B47 /* UIView+AtzucheUIView.m */; };
 		7DE71C4C230E45D200580B47 /* NSString+CJMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE71C47230E45D200580B47 /* NSString+CJMD5.m */; };
+		7DE71CA7230E5F8B00580B47 /* UIViewController+DadBaseHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE71CA6230E5F8A00580B47 /* UIViewController+DadBaseHUD.m */; };
 		EA5B67E1D4EA6F0AF71212FD /* libPods-Demo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D9508E5367DC2F3562C8F578 /* libPods-Demo.a */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59567801FAB4AD20068A04F /* Assets.xcassets */; };
@@ -137,6 +138,8 @@
 		7DE71C45230E45D200580B47 /* CJCategoryKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCategoryKit.h; sourceTree = "<group>"; };
 		7DE71C46230E45D200580B47 /* UIView+AtzucheUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+AtzucheUIView.m"; sourceTree = "<group>"; };
 		7DE71C47230E45D200580B47 /* NSString+CJMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+CJMD5.m"; sourceTree = "<group>"; };
+		7DE71CA5230E5F8A00580B47 /* UIViewController+DadBaseHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DadBaseHUD.h"; sourceTree = "<group>"; };
+		7DE71CA6230E5F8A00580B47 /* UIViewController+DadBaseHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DadBaseHUD.m"; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		D9508E5367DC2F3562C8F578 /* libPods-Demo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Demo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
@@ -321,6 +324,8 @@
 				7DE71C27230E45A800580B47 /* DadViewController.m */,
 				7DE71C26230E45A800580B47 /* NaviViewController.h */,
 				7DE71C1E230E45A800580B47 /* NaviViewController.m */,
+				7DE71CA5230E5F8A00580B47 /* UIViewController+DadBaseHUD.h */,
+				7DE71CA6230E5F8A00580B47 /* UIViewController+DadBaseHUD.m */,
 				7DE71C1C230E45A800580B47 /* NJTitleButton.h */,
 				7DE71C1F230E45A800580B47 /* NJTitleButton.m */,
 				7DE71C20230E45A800580B47 /* UIView+Toast.h */,
@@ -825,6 +830,7 @@
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
+				7DE71CA7230E5F8B00580B47 /* UIViewController+DadBaseHUD.m in Sources */,
 				7DE71C2C230E45A800580B47 /* BaseLoadingView.m in Sources */,
 				F5E3036520C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m in Sources */,
 				F5E3036320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m in Sources */,
