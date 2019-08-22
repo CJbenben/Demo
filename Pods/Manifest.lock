@@ -47,12 +47,11 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - Masonry
-  trunk:
     - AMap2DMap-NO-IDFA
     - AMapFoundation-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - Masonry
     - MJExtension
     - MJRefresh
     - SDWebImage
@@ -68,6 +67,6 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: b7cef7c499a4c15b330dbe913ed90da71ee004d5
+PODFILE CHECKSUM: 27bbe1e1809b82b7c17a2bdbb8c690398ebe285a
 
 COCOAPODS: 1.8.0.beta.1

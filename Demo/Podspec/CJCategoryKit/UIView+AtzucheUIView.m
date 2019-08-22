@@ -2,8 +2,8 @@
 //  UIView+AtzucheUIView.m
 //  Autoyol
 //
-//  Created by Ning Gang on 14/11/14.
-//  Copyright (c) 2014年 Atzuche. All rights reserved.
+//  Created by chenxioajie on 14/11/14.
+//  Copyright (c) 2014年 chenxiaojie. All rights reserved.
 //
 
 #import "UIView+AtzucheUIView.h"
@@ -180,6 +180,12 @@
     self.frame = frame;
 }
 
+- (void)settingLayerView:(UIView *)originalView color:(UIColor *)color radius:(CGFloat)radius {
+    originalView.layer.borderWidth = 1.0;
+    originalView.layer.borderColor = color.CGColor;
+    originalView.layer.cornerRadius = radius;
+    originalView.layer.masksToBounds = YES;
+}
 
 - (void)removeAllSubviews
 {
@@ -226,7 +232,7 @@
 }
 -(UIViewController *)getSuperViewController
 {
-      [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];//变黑
+    //[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault animated:NO];//变黑
     UIView *view;
     UIViewController *superVc;
     for (int i=0; i<100; i++) {
@@ -274,4 +280,5 @@
 
     return transition;
 }
+
 @end

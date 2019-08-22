@@ -2,8 +2,8 @@
 //  UIView+AtzucheUIView.h
 //  Autoyol
 //
-//  Created by Ning Gang on 14/11/14.
-//  Copyright (c) 2014年 Atzuche. All rights reserved.
+//  Created by chenxioajie on 14/11/14.
+//  Copyright (c) 2014年 chenxiaojie. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -37,6 +37,7 @@
 @property(nonatomic) CGPoint origin;
 @property(nonatomic) CGSize size;
 
+- (void)settingLayerView:(UIView *)originalView color:(UIColor *)color radius:(CGFloat)radius;
 
 - (void)removeAllSubviews;
 - (UIViewController *)viewController;
@@ -48,6 +49,5 @@
 -(CATransition *)getPushTransition;
 //从上到下覆盖界面
 -(CATransition *)getPopTransition;
-//弹出定位失败信息
--(void)alertErrorInfo;
+
 @end
