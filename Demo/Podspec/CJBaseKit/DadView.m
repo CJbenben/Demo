@@ -7,8 +7,6 @@
 //
 
 #import "DadView.h"
-#import "CJCommonKit.h"
-#import "CJCategoryKit.h"
 
 @implementation DadView
 

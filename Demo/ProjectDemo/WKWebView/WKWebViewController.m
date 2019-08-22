@@ -19,6 +19,7 @@
     // Do any additional setup after loading the view.
     self.naviTitleL.text = @"WKWebViewController";
     
+    self.backImage = [UIImage imageNamed:@"public_navi_left_back"];
 }
 
 - (void)didReceiveMemoryWarning {

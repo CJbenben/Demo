@@ -34,8 +34,8 @@
 
 - (UIImageView *)naviBackIV {
     if (_naviBackIV == nil) {
-        _naviBackIV = [[UIImageView alloc] initWithFrame:CGRectMake(6, 20 + self.iphonexNaviPadding + 2 + 6, 20, 20)];
-        _naviBackIV.image = [UIImage imageNamed:@"hk_home_back"];
+        _naviBackIV = [[UIImageView alloc] initWithFrame:CGRectMake(6, 20 + self.iphonexNaviPadding + 2, 32, 32)];
+        _naviBackIV.image = [UIImage imageNamed:@"public_navi_left_back"];
     }
     return _naviBackIV;
 }
@@ -81,6 +81,8 @@
 - (void)setBackImage:(UIImage *)backImage {
     _backImage = backImage;
     self.naviBackIV.image = backImage;
+    CGFloat backIVY = self.naviTitleL.y + (self.naviTitleL.height - backImage.size.height)/2.0;
+    self.naviBackIV.frame = CGRectMake(16, backIVY, backImage.size.width, backImage.size.height);
 }
 
 - (void)setIsHiddenBottomLine:(BOOL)isHiddenBottomLine {
