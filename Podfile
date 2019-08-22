@@ -8,6 +8,8 @@ pod 'MJRefresh'
 pod 'MJExtension'
 pod 'SDWebImage', '~>4.0'
 pod 'Masonry'
+pod 'ReactiveObjC'
+pod 'Aspects'
 
 pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'

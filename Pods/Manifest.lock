@@ -27,9 +27,11 @@ PODS:
     - AMapFoundation-NO-IDFA (~> 1.4)
   - AMapSearch-NO-IDFA (6.9.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
+  - Aspects (1.4.1)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.2.0)
+  - ReactiveObjC (3.1.1)
   - SDWebImage (4.4.7):
     - SDWebImage/Core (= 4.4.7)
   - SDWebImage/Core (4.4.7)
@@ -39,9 +41,11 @@ DEPENDENCIES:
   - AMap2DMap-NO-IDFA
   - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
+  - Aspects
   - Masonry
   - MJExtension
   - MJRefresh
+  - ReactiveObjC
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
@@ -54,7 +58,10 @@ SPEC REPOS:
     - Masonry
     - MJExtension
     - MJRefresh
+    - ReactiveObjC
     - SDWebImage
+  trunk:
+    - Aspects
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
@@ -62,11 +69,13 @@ SPEC CHECKSUMS:
   AMapFoundation-NO-IDFA: 9088085827c831811bb0fd3afd96b99963a7cf71
   AMapLocation-NO-IDFA: d7792c8c516f415e186f1bc25946f1a58ca6a583
   AMapSearch-NO-IDFA: 264999e6c149383a8f164c2fe49b51513e93d674
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 27bbe1e1809b82b7c17a2bdbb8c690398ebe285a
+PODFILE CHECKSUM: 13755c1dd01b7d1ec09c0ee103015c1b6ed4d755
 
 COCOAPODS: 1.8.0.beta.1
