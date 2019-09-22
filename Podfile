@@ -15,7 +15,7 @@ pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'
 pod 'AMapLocation-NO-IDFA'
 
-#pod 'lottie-ios', '~>2.5.3'
+pod 'lottie-ios', '~>2.5.3'
 
 end
 

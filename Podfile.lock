@@ -28,6 +28,7 @@ PODS:
   - AMapSearch-NO-IDFA (6.9.0):
     - AMapFoundation-NO-IDFA (~> 1.4)
   - Aspects (1.4.1)
+  - lottie-ios (2.5.3)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
   - MJRefresh (3.2.0)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - AMapLocation-NO-IDFA
   - AMapSearch-NO-IDFA
   - Aspects
+  - lottie-ios (~> 2.5.3)
   - Masonry
   - MJExtension
   - MJRefresh
@@ -55,13 +57,14 @@ SPEC REPOS:
     - AMapFoundation-NO-IDFA
     - AMapLocation-NO-IDFA
     - AMapSearch-NO-IDFA
+    - Aspects
     - Masonry
     - MJExtension
     - MJRefresh
     - ReactiveObjC
     - SDWebImage
   trunk:
-    - Aspects
+    - lottie-ios
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
@@ -70,12 +73,13 @@ SPEC CHECKSUMS:
   AMapLocation-NO-IDFA: d7792c8c516f415e186f1bc25946f1a58ca6a583
   AMapSearch-NO-IDFA: 264999e6c149383a8f164c2fe49b51513e93d674
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
+  lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
 
-PODFILE CHECKSUM: 13755c1dd01b7d1ec09c0ee103015c1b6ed4d755
+PODFILE CHECKSUM: 9598fea055842fbaa3b898aa1474a79b84e6dd90
 
 COCOAPODS: 1.8.0.beta.1

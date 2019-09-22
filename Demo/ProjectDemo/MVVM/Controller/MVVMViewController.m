@@ -11,6 +11,7 @@
 #import "MVVMView.h"
 #import "MJExtension.h"
 #import "MVVMTableViewCell.h"
+#import "ReactiveObjC.h"
 
 @interface MVVMViewController ()<MVVMViewDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -31,6 +32,11 @@
     
     self.mvvmView.tableview.dataSource = self;
     self.mvvmView.tableview.delegate = self;
+    
+    
+    [[self.mvvmView.tableview rac_signalForSelector:@selector(tableView:didSelectRowAtIndexPath:) fromProtocol:@protocol(UITableViewDelegate)] subscribeNext:^(RACTuple * _Nullable x) {
+        NSLog(@"x = %@", x);
+    }];
 }
 
 - (void)mvvmViewBtnAction {
