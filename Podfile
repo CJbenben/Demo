@@ -6,7 +6,7 @@ pod "AFNetworking", "~> 2.4.1"
 #用法简单的下拉刷新框架
 pod 'MJRefresh'
 pod 'MJExtension'
-pod 'SDWebImage', '~>4.0'
+pod 'SDWebImage'
 pod 'Masonry'
 pod 'ReactiveObjC'
 pod 'Aspects'

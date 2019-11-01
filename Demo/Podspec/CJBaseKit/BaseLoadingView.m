@@ -8,10 +8,12 @@
 
 #import "BaseLoadingView.h"
 #import <Lottie/Lottie.h>
+#import "UIImage+GIF.h"
 
 #define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
 #define LOADINGWIDTH    60
+#define LOADINGWIDTH_GIF    80
 
 @interface BaseLoadingView ()
 
@@ -64,11 +66,17 @@
         self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.0];
         
         //[self addSubview:self.whiteBgView];
-        [self addSubview:self.whiteIV];
-        [self addSubview:self.animationView];
-        [self.animationView playWithCompletion:^(BOOL animationFinished) {
-            //[self removeFromSuperview];
-        }];
+//        [self addSubview:self.whiteIV];
+//        [self addSubview:self.animationView];
+//        [self.animationView playWithCompletion:^(BOOL animationFinished) {
+//            //[self removeFromSuperview];
+//        }];
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+        NSData *gifData = [NSData dataWithContentsOfFile:path];
+        UIImageView *sdImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
+        sdImageView.image = [UIImage sd_imageWithGIFData:gifData];
+        [self addSubview:sdImageView];
         
         [[UIApplication sharedApplication].keyWindow addSubview:self];
         

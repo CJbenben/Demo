@@ -141,8 +141,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
-    self.iphonexNaviPadding = [UIScreen mainScreen].bounds.size.height == 812.0 ? 24 : 0;
-    self.iphonexBottomPadding = [UIScreen mainScreen].bounds.size.height == 812.0 ? 34 : 0;
+    self.iphonexNaviPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 24 : 0;
+    self.iphonexBottomPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 34 : 0;
     
     self.navigationController.navigationBar.translucent = NO;
     [self initDadSubViews];

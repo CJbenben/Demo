@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
+		7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */; };
+		7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */; };
+		7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */; };
 		7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */; };
 		7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D921A7AE4100ECC90A /* MVVMView.m */; };
 		7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DC21A7AE5500ECC90A /* MVVMModel.m */; };
@@ -94,6 +97,11 @@
 		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
 		7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
+		7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppSystemInfo.m; sourceTree = "<group>"; };
+		7D77D7F5236C13A800238D93 /* CJAppSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppSystemInfo.h; sourceTree = "<group>"; };
+		7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
+		7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPhotoAlbumAuthorizationTool.m; sourceTree = "<group>"; };
+		7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
 		7DE533D521A7AAFB00ECC90A /* MVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewController.h; sourceTree = "<group>"; };
 		7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewController.m; sourceTree = "<group>"; };
 		7DE533D821A7AE4100ECC90A /* MVVMView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMView.h; sourceTree = "<group>"; };
@@ -370,6 +378,10 @@
 			children = (
 				7DE71C2F230E45BC00580B47 /* AtzuchePhotoAlbumAuthorizationTool.h */,
 				7DE71C36230E45BD00580B47 /* AtzuchePhotoAlbumAuthorizationTool.m */,
+				7D77D7F5236C13A800238D93 /* CJAppSystemInfo.h */,
+				7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */,
+				7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */,
+				7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */,
 				7DE71C34230E45BD00580B47 /* CJCommonKit.h */,
 				7DE71C39230E45BD00580B47 /* CJDefaultTool.h */,
 				7DE71C38230E45BD00580B47 /* CJDefaultTool.m */,
@@ -388,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				7DE71CAC230E6CE800580B47 /* public_base_loading_bg@3x.png */,
+				7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -763,6 +776,7 @@
 				7DE71CC7230FF6D200580B47 /* loading.json in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
+				7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -844,6 +858,7 @@
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
 				7DE71C3C230E45BD00580B47 /* CJDefaultTool.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
+				7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
 				7DE71CA7230E5F8B00580B47 /* UIViewController+DadBaseHUD.m in Sources */,
@@ -860,6 +875,7 @@
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				7DE71C4C230E45D200580B47 /* NSString+CJMD5.m in Sources */,
 				F5E3036B20C13AF3001F11EC /* NSTimer+Add.m in Sources */,
+				7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */,
 				7DE71C3A230E45BD00580B47 /* CJGlobalDefine.m in Sources */,
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,
 				F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */,
@@ -1030,7 +1046,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AMX63B8LY9;
+				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1047,7 +1063,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = AMX63B8LY9;
+				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
