@@ -74,6 +74,8 @@
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     NSLog(@"当前字体。。。 %@", font);
     
+    NSString *lldb = @"lldb";
+    NSLog(@"lldb = %@", lldb);
     
     
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(backView)];

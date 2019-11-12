@@ -32,7 +32,7 @@
                      @"CollectionView",
                      @"自动居中 CollectionView",
                      @"MJ 下拉刷新兼容 iPhone X",
-                     @"iPhone 字体",
+                     @"iPhone 字体&LLDB",
                      @"wkwebview",
                      @"MVVM"];
     }
