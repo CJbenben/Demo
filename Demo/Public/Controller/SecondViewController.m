@@ -16,6 +16,7 @@
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
 #import "MVVMViewController.h"
+#import "ScrollViewXibViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -34,7 +35,8 @@
                      @"MJ 下拉刷新兼容 iPhone X",
                      @"iPhone 字体&LLDB",
                      @"wkwebview",
-                     @"MVVM"];
+                     @"MVVM",
+                     @"scrollview xib"];
     }
     return _dataAry;
 }
@@ -92,6 +94,9 @@
         [self.navigationController pushViewController:webview animated:YES];
     } else if (indexPath.row == 6) {
         MVVMViewController *mvvmVC = [[MVVMViewController alloc] init];
+        [self.navigationController pushViewController:mvvmVC animated:YES];
+    } else if (indexPath.row == 7) {
+        ScrollViewXibViewController *mvvmVC = [[ScrollViewXibViewController alloc] init];
         [self.navigationController pushViewController:mvvmVC animated:YES];
     }
 }

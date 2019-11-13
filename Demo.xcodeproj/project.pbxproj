@@ -12,6 +12,9 @@
 		7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */; };
 		7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */; };
 		7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */; };
+		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
+		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
+		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
 		7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */; };
 		7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D921A7AE4100ECC90A /* MVVMView.m */; };
 		7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DC21A7AE5500ECC90A /* MVVMModel.m */; };
@@ -102,6 +105,11 @@
 		7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
 		7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPhotoAlbumAuthorizationTool.m; sourceTree = "<group>"; };
 		7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
+		7D857020237A547F0081C236 /* ScrollViewXibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewXibViewController.h; sourceTree = "<group>"; };
+		7D857021237A547F0081C236 /* ScrollViewXibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewXibViewController.m; sourceTree = "<group>"; };
+		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
+		7D857024237A54A30081C236 /* ScrollViewTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTest.m; sourceTree = "<group>"; };
+		7D857026237A54AD0081C236 /* ScrollViewTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewTest.xib; sourceTree = "<group>"; };
 		7DE533D521A7AAFB00ECC90A /* MVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewController.h; sourceTree = "<group>"; };
 		7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewController.m; sourceTree = "<group>"; };
 		7DE533D821A7AE4100ECC90A /* MVVMView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMView.h; sourceTree = "<group>"; };
@@ -267,6 +275,18 @@
 				7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7D85701F237A545E0081C236 /* ScrollViewXib */ = {
+			isa = PBXGroup;
+			children = (
+				7D857020237A547F0081C236 /* ScrollViewXibViewController.h */,
+				7D857021237A547F0081C236 /* ScrollViewXibViewController.m */,
+				7D857023237A54A30081C236 /* ScrollViewTest.h */,
+				7D857024237A54A30081C236 /* ScrollViewTest.m */,
+				7D857026237A54AD0081C236 /* ScrollViewTest.xib */,
+			);
+			path = ScrollViewXib;
 			sourceTree = "<group>";
 		};
 		7DE533D021A7A8BD00ECC90A /* MVVM */ = {
@@ -492,6 +512,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D85701F237A545E0081C236 /* ScrollViewXib */,
 				7DE533D021A7A8BD00ECC90A /* MVVM */,
 				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
@@ -776,6 +797,7 @@
 				7DE71CC7230FF6D200580B47 /* loading.json in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
+				7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */,
 				7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 			);
@@ -856,7 +878,9 @@
 				F5E3036A20C13AF3001F11EC /* CycleScrollView.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
+				7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */,
 				7DE71C3C230E45BD00580B47 /* CJDefaultTool.m in Sources */,
+				7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
 				7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,

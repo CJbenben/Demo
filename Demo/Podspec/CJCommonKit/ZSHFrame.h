@@ -21,5 +21,15 @@
 #define SCREEN_WIDTH_QUARTER    SCREEN_WIDTH/4.0
 
 
-#define naviHeight              ((SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 88 : 64)
+#define isIphoneX ({\
+BOOL isPhoneX = NO;\
+if (@available(iOS 11.0, *)) {\
+    if (!UIEdgeInsetsEqualToEdgeInsets([UIApplication sharedApplication].delegate.window.safeAreaInsets, UIEdgeInsetsZero)) {\
+    isPhoneX = YES;\
+    }\
+}\
+isPhoneX;\
+})
+
+#define naviHeight              (isIphoneX ? 89 : 64)
 #define iPadNaviHeight          80
