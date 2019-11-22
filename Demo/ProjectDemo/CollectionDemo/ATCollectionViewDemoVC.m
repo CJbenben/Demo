@@ -8,14 +8,14 @@
 
 #import "ATCollectionViewDemoVC.h"
 //#import "CJCycleScrollView.h"
-#import "AtzucheCycleScrollView.h"
+#import "TXCycleScrollView.h"
 #import "AtzucheHomeChooseCarCollectionView.h"
 #import "AtzucheChooseCarFlowLayout.h"
 
 @interface ATCollectionViewDemoVC ()<AtzucheHomeCollectionDidSelectDelegate>
 
 //@property (strong, nonatomic) CJCycleScrollView *scrollView;
-@property (nonatomic, strong) AtzucheCycleScrollView *atScrollView;
+@property (nonatomic, strong) TXCycleScrollView *atScrollView;
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
 
@@ -71,7 +71,7 @@
     CGRect scrollviewF = CGRectMake(0, 64 + 20, SCREEN_WIDTH, 160);
     CGRect frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, 160);
     
-    self.atScrollView = [AtzucheCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:0.0];
+    self.atScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:0.0];
     [self.view addSubview:self.atScrollView];
     
     self.atScrollView.TapActionBlock = ^(NSInteger pageIndex) {

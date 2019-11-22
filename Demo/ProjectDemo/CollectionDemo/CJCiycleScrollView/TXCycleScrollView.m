@@ -1,12 +1,12 @@
 //
-//  AtzucheCycleScrollView.m
+//  TXCycleScrollView.m
 //  Demo
 //
 //  Created by ChenJie on 2018/1/26.
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "AtzucheCycleScrollView.h"
+#import "TXCycleScrollView.h"
 #import "NSTimer+Add.h"
 #import "UIImageView+WebCache.h"
 
@@ -28,7 +28,7 @@
 #define BGPROGRESSCOLOR         [UIColor redColor]
 #define PROGRESSCOLOR           [UIColor yellowColor]
 
-@interface AtzucheCycleScrollView ()<UIScrollViewDelegate>
+@interface TXCycleScrollView ()<UIScrollViewDelegate>
 
 @property (nonatomic, assign) CGRect scrollViewF;
 @property (nonatomic, assign) CGRect imageViewF;
@@ -71,7 +71,7 @@
 
 @end
 
-@implementation AtzucheCycleScrollView
+@implementation TXCycleScrollView
 
 - (UIView *)progressView {
     if (_progressView == nil) {

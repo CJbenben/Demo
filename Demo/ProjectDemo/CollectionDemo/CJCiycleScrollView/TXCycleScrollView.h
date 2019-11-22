@@ -1,5 +1,5 @@
 //
-//  AtzucheCycleScrollView.h
+//  TXCycleScrollView.h
 //  Demo
 //
 //  Created by ChenJie on 2018/1/26.
@@ -26,7 +26,7 @@ typedef NS_ENUM(NSUInteger, PageControlPostion) {
     PageControlPostionNull,
 };
 
-@interface AtzucheCycleScrollView : UIView
+@interface TXCycleScrollView : UIView
 
 /**
  * 当点击的时候，执行的block

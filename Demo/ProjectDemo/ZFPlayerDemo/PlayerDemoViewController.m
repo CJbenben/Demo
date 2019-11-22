@@ -7,6 +7,7 @@
 //
 
 #import "PlayerDemoViewController.h"
+#import "TXCycleScrollView.h"
 #import "ZFPlayer.h"
 #import "ZFAVPlayerManager.h"
 #import "ZFPlayerControlView.h"
@@ -45,6 +46,13 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 
     self.view.backgroundColor = [UIColor whiteColor];
     self.rightBtnTitle = @"Push";
+    
+    CGRect scrollViewF = CGRectMake(0, naviHeight, SCREEN_WIDTH, 200);
+    CGRect imageViewF = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+    
+    NSArray *imagePaths = @[kVideoCover, kVideoCover, kVideoCover, kVideoCover];
+    TXCycleScrollView *cycleScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollViewF imageViewFrame:imageViewF radius:0 imagePaths:imagePaths animationDuration:0];
+    [self.view addSubview:cycleScrollView];
     
     [self.view addSubview:self.scrollView];
     [self.scrollView addSubview:self.containerView];
@@ -100,7 +108,7 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     CGFloat y = 0;
     CGFloat w = CGRectGetWidth(self.view.frame);
     CGFloat h = w*9/16;
-    self.scrollView.frame = CGRectMake(x, naviHeight, w, h);
+    self.scrollView.frame = CGRectMake(x, 300, w, h);
     self.containerView.frame = CGRectMake(x, y, w, h);
     self.containerView2.frame = CGRectMake(self.containerView.width, y, w, h);
     
