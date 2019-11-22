@@ -11,6 +11,8 @@ pod 'Masonry'
 pod 'ReactiveObjC'
 pod 'Aspects'
 
+pod 'ZFPlayer', '~> 3.0'
+
 pod 'AMap2DMap-NO-IDFA'
 pod 'AMapSearch-NO-IDFA'
 pod 'AMapLocation-NO-IDFA'

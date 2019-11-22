@@ -17,6 +17,7 @@
 #import "WKWebViewController.h"
 #import "MVVMViewController.h"
 #import "ScrollViewXibViewController.h"
+#import "PlayerDemoViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -36,7 +37,8 @@
                      @"iPhone 字体&LLDB",
                      @"wkwebview",
                      @"MVVM",
-                     @"scrollview xib"];
+                     @"scrollview xib",
+                     @"ZFPlayerDemo"];
     }
     return _dataAry;
 }
@@ -98,6 +100,9 @@
     } else if (indexPath.row == 7) {
         ScrollViewXibViewController *mvvmVC = [[ScrollViewXibViewController alloc] init];
         [self.navigationController pushViewController:mvvmVC animated:YES];
+    } else if (indexPath.row == 8) {
+       PlayerDemoViewController *mvvmVC = [[PlayerDemoViewController alloc] init];
+       [self.navigationController pushViewController:mvvmVC animated:YES];
     }
 }
 

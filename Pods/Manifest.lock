@@ -36,6 +36,9 @@ PODS:
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
+  - ZFPlayer (3.2.15):
+    - ZFPlayer/Core (= 3.2.15)
+  - ZFPlayer/Core (3.2.15)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
@@ -49,6 +52,7 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveObjC
   - SDWebImage
+  - ZFPlayer (~> 3.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -65,6 +69,7 @@ SPEC REPOS:
   trunk:
     - lottie-ios
     - SDWebImage
+    - ZFPlayer
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
@@ -79,7 +84,8 @@ SPEC CHECKSUMS:
   MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  ZFPlayer: b56371acefedad94678503a28a6d34820cfd0da3
 
-PODFILE CHECKSUM: 73bbdf8aea99c29feb0531ff2734e84ed08a1426
+PODFILE CHECKSUM: 492f7799bc0f7e98e128c0634f173c6e7336e44c
 
 COCOAPODS: 1.8.4
