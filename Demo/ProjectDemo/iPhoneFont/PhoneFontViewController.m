@@ -8,13 +8,15 @@
 
 #import "PhoneFontViewController.h"
 #import "ViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface PhoneFontViewController ()
 
 @property (nonatomic, strong) UILabel *label1;
 @property (nonatomic, strong) UILabel *label2;
 @property (nonatomic, strong) UILabel *label3;
-
+@property (nonatomic, strong) UISlider *volumeViewSlider;
 @end
 
 @implementation PhoneFontViewController
@@ -79,6 +81,29 @@
     
     
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(backView)];
+    
+    MPVolumeView *volumeView = [[MPVolumeView alloc] init];
+    self.volumeViewSlider = nil;
+    for (UIView *view in [volumeView subviews]){
+        if ([view.class.description isEqualToString:@"MPVolumeSlider"]){
+            self.volumeViewSlider = (UISlider *)view;
+            break;
+        }
+    }
+    
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.volumeViewSlider.value   = 0;// 越小幅度越小0-1之间的数值
+}
+
+- (void)volumeChange:(NSNotification *)notification {
+    NSString *volume = [notification.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"];
+    NSLog(@"FlyElephant-系统音量:%@", volume);
+    self.volumeViewSlider.value = [volume floatValue];
 }
 
 - (void)backView {

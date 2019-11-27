@@ -13,6 +13,7 @@
 #import "ZFPlayerControlView.h"
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
+#import "PlayerBannerModel.h"
 
 static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
 
@@ -20,12 +21,11 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) ZFPlayerController *player;
 @property (nonatomic, strong) UIImageView *containerView;
-@property (nonatomic, strong) UIImageView *containerView2;
 @property (nonatomic, strong) ZFPlayerControlView *controlView;
-@property (nonatomic, strong) UIButton *playBtn;
-@property (nonatomic, strong) UIButton *changeBtn;
-@property (nonatomic, strong) UIButton *nextBtn;
 @property (nonatomic, strong) NSArray <NSURL *>*assetURLs;
+
+@property (nonatomic, strong) NSMutableArray *dataAry;
+@property (nonatomic, strong) NSMutableArray *imageAry;
 
 @end
 
@@ -33,12 +33,30 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 
 - (UIScrollView *)scrollView {
     if (_scrollView == nil) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, 200)];
+        CGFloat x = 0;
+        CGFloat y = naviHeight;
+        CGFloat w = CGRectGetWidth(self.view.frame);
+        CGFloat h = w*9/16;
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(x, y, w, h)];
         _scrollView.backgroundColor = [UIColor systemRedColor];
         _scrollView.pagingEnabled = YES;
-        _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 2, 200);
+        _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH * 3, 200);
     }
     return _scrollView;
+}
+
+- (NSMutableArray *)dataAry {
+    if (_dataAry == nil) {
+        _dataAry = [NSMutableArray array];
+    }
+    return _dataAry;
+}
+
+- (NSMutableArray *)imageAry {
+    if (_imageAry == nil) {
+        _imageAry = [NSMutableArray array];
+    }
+    return _imageAry;
 }
 
 - (void)viewDidLoad {
@@ -47,24 +65,57 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     self.view.backgroundColor = [UIColor whiteColor];
     self.rightBtnTitle = @"Push";
     
-    CGRect scrollViewF = CGRectMake(0, naviHeight, SCREEN_WIDTH, 200);
-    CGRect imageViewF = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+//    CGRect scrollViewF = CGRectMake(0, naviHeight, SCREEN_WIDTH, 200);
+//    CGRect imageViewF = CGRectMake(0, 0, SCREEN_WIDTH, 200);
+//    NSArray *imagePaths = @[kVideoCover, kVideoCover, kVideoCover, kVideoCover];
+//    TXCycleScrollView *cycleScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollViewF imageViewFrame:imageViewF radius:0 imagePaths:imagePaths animationDuration:0];
+//    [self.view addSubview:cycleScrollView];
     
-    NSArray *imagePaths = @[kVideoCover, kVideoCover, kVideoCover, kVideoCover];
-    TXCycleScrollView *cycleScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollViewF imageViewFrame:imageViewF radius:0 imagePaths:imagePaths animationDuration:0];
-    [self.view addSubview:cycleScrollView];
+    PlayerBannerModel *bannerModel1 = [[PlayerBannerModel alloc] init];
+    bannerModel1.type = 2;
+    bannerModel1.url = kVideoCover;
+    bannerModel1.videoUrl = self.assetURLs[0];
+    [self.dataAry addObject:bannerModel1];
+    
+    PlayerBannerModel *bannerModel2 = [[PlayerBannerModel alloc] init];
+    bannerModel2.type = 1;
+    bannerModel2.url = kVideoCover;
+    [self.dataAry addObject:bannerModel2];
+    
+    PlayerBannerModel *bannerModel3 = [[PlayerBannerModel alloc] init];
+    bannerModel3.type = 2;
+    bannerModel3.url = kVideoCover;
+    bannerModel3.videoUrl = self.assetURLs[1];
+    [self.dataAry addObject:bannerModel3];
     
     [self.view addSubview:self.scrollView];
-    [self.scrollView addSubview:self.containerView];
-    [self.scrollView addSubview:self.containerView2];
-    
-    [self.containerView addSubview:self.playBtn];
-    [self.view addSubview:self.changeBtn];
-    [self.view addSubview:self.nextBtn];
+    for (NSInteger i = 0; i<self.dataAry.count; i++) {
+        UIImageView *containerView = [UIImageView new];
+        containerView.userInteractionEnabled = YES;
+        
+        containerView.frame = CGRectMake(SCREEN_WIDTH * i, 0, SCREEN_WIDTH, self.scrollView.height);
+        [containerView setImageWithURLString:kVideoCover placeholder:[ZFUtilities imageWithColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1] size:CGSizeMake(1, 1)]];
+        [self.scrollView addSubview:containerView];
+        [self.imageAry addObject:containerView];
+        
+        CGFloat w = 44;
+        CGFloat h = w;
+        CGFloat x = (CGRectGetWidth(containerView.frame)-w)/2;
+        CGFloat y = (CGRectGetHeight(containerView.frame)-h)/2;
+        
+        UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        playBtn.frame = CGRectMake(x, y, w, h);
+        [playBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+        [playBtn addTarget:self action:@selector(playClick:) forControlEvents:UIControlEventTouchUpInside];
+        playBtn.tag = 200 + i;
+        [containerView addSubview:playBtn];
+    }
 
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
+    
+    UIImageView *imageview = safeObjectTxAtIndex(self.imageAry, 0);
     /// 播放器相关
-    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:self.containerView];
+    self.player = [ZFPlayerController playerWithPlayerManager:playerManager containerView:imageview];
     self.player.controlView = self.controlView;
     /// 设置退到后台继续播放
     self.player.pauseWhenAppResignActive = NO;
@@ -100,35 +151,6 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.player.viewControllerDisappear = YES;
-}
-
-- (void)viewWillLayoutSubviews {
-    [super viewWillLayoutSubviews];
-    CGFloat x = 0;
-    CGFloat y = 0;
-    CGFloat w = CGRectGetWidth(self.view.frame);
-    CGFloat h = w*9/16;
-    self.scrollView.frame = CGRectMake(x, 300, w, h);
-    self.containerView.frame = CGRectMake(x, y, w, h);
-    self.containerView2.frame = CGRectMake(self.containerView.width, y, w, h);
-    
-    w = 44;
-    h = w;
-    x = (CGRectGetWidth(self.containerView.frame)-w)/2;
-    y = (CGRectGetHeight(self.containerView.frame)-h)/2;
-    self.playBtn.frame = CGRectMake(x, y, w, h);
-    
-    w = 100;
-    h = 30;
-    x = (CGRectGetWidth(self.view.frame)-w)/2;
-    y = CGRectGetMaxY(self.containerView.frame)+50;
-    self.changeBtn.frame = CGRectMake(x, y, w, h);
-    
-    w = 100;
-    h = 30;
-    x = (CGRectGetWidth(self.view.frame)-w)/2;
-    y = CGRectGetMaxY(self.changeBtn.frame)+50;
-    self.nextBtn.frame = CGRectMake(x, y, w, h);
 }
 
 - (void)changeVideo:(UIButton *)sender {
@@ -194,48 +216,6 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         _controlView.prepareShowControlView = YES;
     }
     return _controlView;
-}
-
-- (UIImageView *)containerView {
-    if (!_containerView) {
-        _containerView = [UIImageView new];
-        [_containerView setImageWithURLString:kVideoCover placeholder:[ZFUtilities imageWithColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1] size:CGSizeMake(1, 1)]];
-    }
-    return _containerView;
-}
-- (UIImageView *)containerView2 {
-    if (!_containerView2) {
-        _containerView2 = [UIImageView new];
-        [_containerView2 setImageWithURLString:kVideoCover placeholder:[ZFUtilities imageWithColor:[UIColor colorWithRed:220/255.0 green:220/255.0 blue:220/255.0 alpha:1] size:CGSizeMake(1, 1)]];
-    }
-    return _containerView2;
-}
-
-- (UIButton *)playBtn {
-    if (!_playBtn) {
-        _playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_playBtn setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-        [_playBtn addTarget:self action:@selector(playClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _playBtn;
-}
-
-- (UIButton *)changeBtn {
-    if (!_changeBtn) {
-        _changeBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_changeBtn setTitle:@"Change video" forState:UIControlStateNormal];
-        [_changeBtn addTarget:self action:@selector(changeVideo:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _changeBtn;
-}
-
-- (UIButton *)nextBtn {
-    if (!_nextBtn) {
-        _nextBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        [_nextBtn setTitle:@"Next" forState:UIControlStateNormal];
-        [_nextBtn addTarget:self action:@selector(nextClick:) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _nextBtn;
 }
 
 - (NSArray<NSURL *> *)assetURLs {

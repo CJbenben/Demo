@@ -25,12 +25,21 @@
 		7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292422387B0DA0007B50F /* ZFVolumeBrightnessView.m */; };
 		7D6292552387B14F0007B50F /* PlayerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292542387B14F0007B50F /* PlayerDemoViewController.m */; };
 		7D62925B2387B4E00007B50F /* NSTimer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62925A2387B4E00007B50F /* NSTimer+Add.m */; };
+		7D62925E2387BD800007B50F /* PlayerBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62925D2387BD800007B50F /* PlayerBannerModel.m */; };
 		7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */; };
 		7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */; };
 		7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */; };
 		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
 		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
+		7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */; };
+		7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */; };
+		7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */; };
+		7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB005A238E471B00AF1DAE /* ZFTableData.m */; };
+		7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB005B238E471C00AF1DAE /* ZFTableViewCellLayout.m */; };
+		7DDB0066238E471C00AF1DAE /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 7DDB005F238E471C00AF1DAE /* data.json */; };
+		7DDB0067238E471C00AF1DAE /* ZFNotAutoPlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0060238E471C00AF1DAE /* ZFNotAutoPlayViewController.m */; };
+		7DDB006A238E477800AF1DAE /* NSString+Size.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0069238E477800AF1DAE /* NSString+Size.m */; };
 		7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */; };
 		7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533D921A7AE4100ECC90A /* MVVMView.m */; };
 		7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DC21A7AE5500ECC90A /* MVVMModel.m */; };
@@ -145,6 +154,8 @@
 		7D6292542387B14F0007B50F /* PlayerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerDemoViewController.m; sourceTree = "<group>"; };
 		7D6292592387B4E00007B50F /* NSTimer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Add.h"; sourceTree = "<group>"; };
 		7D62925A2387B4E00007B50F /* NSTimer+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Add.m"; sourceTree = "<group>"; };
+		7D62925C2387BD800007B50F /* PlayerBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerBannerModel.h; sourceTree = "<group>"; };
+		7D62925D2387BD800007B50F /* PlayerBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerBannerModel.m; sourceTree = "<group>"; };
 		7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppSystemInfo.m; sourceTree = "<group>"; };
 		7D77D7F5236C13A800238D93 /* CJAppSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppSystemInfo.h; sourceTree = "<group>"; };
 		7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
@@ -155,6 +166,21 @@
 		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
 		7D857024237A54A30081C236 /* ScrollViewTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTest.m; sourceTree = "<group>"; };
 		7D857026237A54AD0081C236 /* ScrollViewTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewTest.xib; sourceTree = "<group>"; };
+		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
+		7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerDetailViewController.m; sourceTree = "<group>"; };
+		7DDB0056238E471B00AF1DAE /* ZFNotAutoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNotAutoPlayViewController.h; sourceTree = "<group>"; };
+		7DDB0057238E471B00AF1DAE /* ZFTableViewCellLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableViewCellLayout.h; sourceTree = "<group>"; };
+		7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCell.m; sourceTree = "<group>"; };
+		7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAutoPlayerViewController.m; sourceTree = "<group>"; };
+		7DDB005A238E471B00AF1DAE /* ZFTableData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableData.m; sourceTree = "<group>"; };
+		7DDB005B238E471C00AF1DAE /* ZFTableViewCellLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFTableViewCellLayout.m; sourceTree = "<group>"; };
+		7DDB005C238E471C00AF1DAE /* ZFTableData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableData.h; sourceTree = "<group>"; };
+		7DDB005D238E471C00AF1DAE /* ZFAutoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAutoPlayerViewController.h; sourceTree = "<group>"; };
+		7DDB005E238E471C00AF1DAE /* ZFTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFTableViewCell.h; sourceTree = "<group>"; };
+		7DDB005F238E471C00AF1DAE /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		7DDB0060238E471C00AF1DAE /* ZFNotAutoPlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFNotAutoPlayViewController.m; sourceTree = "<group>"; };
+		7DDB0068238E477800AF1DAE /* NSString+Size.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Size.h"; sourceTree = "<group>"; };
+		7DDB0069238E477800AF1DAE /* NSString+Size.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Size.m"; sourceTree = "<group>"; };
 		7DE533D521A7AAFB00ECC90A /* MVVMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMViewController.h; sourceTree = "<group>"; };
 		7DE533D621A7AAFB00ECC90A /* MVVMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMViewController.m; sourceTree = "<group>"; };
 		7DE533D821A7AE4100ECC90A /* MVVMView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMView.h; sourceTree = "<group>"; };
@@ -381,6 +407,9 @@
 			children = (
 				7D6292532387B14F0007B50F /* PlayerDemoViewController.h */,
 				7D6292542387B14F0007B50F /* PlayerDemoViewController.m */,
+				7D62925C2387BD800007B50F /* PlayerBannerModel.h */,
+				7D62925D2387BD800007B50F /* PlayerBannerModel.m */,
+				7DDB003F238E470C00AF1DAE /* ZFPlayerDemo */,
 			);
 			path = ZFPlayerDemo;
 			sourceTree = "<group>";
@@ -395,6 +424,28 @@
 				7D857026237A54AD0081C236 /* ScrollViewTest.xib */,
 			);
 			path = ScrollViewXib;
+			sourceTree = "<group>";
+		};
+		7DDB003F238E470C00AF1DAE /* ZFPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7DDB005F238E471C00AF1DAE /* data.json */,
+				7DDB005D238E471C00AF1DAE /* ZFAutoPlayerViewController.h */,
+				7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */,
+				7DDB0056238E471B00AF1DAE /* ZFNotAutoPlayViewController.h */,
+				7DDB0060238E471C00AF1DAE /* ZFNotAutoPlayViewController.m */,
+				7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */,
+				7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */,
+				7DDB005C238E471C00AF1DAE /* ZFTableData.h */,
+				7DDB005A238E471B00AF1DAE /* ZFTableData.m */,
+				7DDB005E238E471C00AF1DAE /* ZFTableViewCell.h */,
+				7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */,
+				7DDB0057238E471B00AF1DAE /* ZFTableViewCellLayout.h */,
+				7DDB005B238E471C00AF1DAE /* ZFTableViewCellLayout.m */,
+				7DDB0068238E477800AF1DAE /* NSString+Size.h */,
+				7DDB0069238E477800AF1DAE /* NSString+Size.m */,
+			);
+			path = ZFPlayerDemo;
 			sourceTree = "<group>";
 		};
 		7DE533D021A7A8BD00ECC90A /* MVVM */ = {
@@ -895,6 +946,7 @@
 				7DE71CAD230E6CE900580B47 /* public_base_loading_bg@3x.png in Resources */,
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
 				7DE71CC7230FF6D200580B47 /* loading.json in Resources */,
+				7DDB0066238E471C00AF1DAE /* data.json in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
@@ -981,16 +1033,20 @@
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
 				7D62924A2387B0DA0007B50F /* UIImageView+ZFCache.m in Sources */,
+				7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */,
 				7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */,
 				7D62924D2387B0DA0007B50F /* ZFUtilities.m in Sources */,
 				7DE71C3C230E45BD00580B47 /* CJDefaultTool.m in Sources */,
 				7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
+				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
 				7D62924C2387B0DA0007B50F /* ZFPortraitControlView.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
+				7DDB006A238E477800AF1DAE /* NSString+Size.m in Sources */,
 				7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */,
 				7D62924B2387B0DA0007B50F /* ZFNetworkSpeedMonitor.m in Sources */,
+				7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */,
 				7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */,
 				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
@@ -1007,8 +1063,10 @@
 				7D62924E2387B0DA0007B50F /* ZFPlayerControlView.m in Sources */,
 				7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */,
 				7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */,
+				7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				7DE71C4C230E45D200580B47 /* NSString+CJMD5.m in Sources */,
+				7DDB0067238E471C00AF1DAE /* ZFNotAutoPlayViewController.m in Sources */,
 				7D6292472387B0DA0007B50F /* ZFSliderView.m in Sources */,
 				7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */,
 				7DE71C3A230E45BD00580B47 /* CJGlobalDefine.m in Sources */,
@@ -1020,6 +1078,7 @@
 				7D6292552387B14F0007B50F /* PlayerDemoViewController.m in Sources */,
 				7DE533E321A7D99A00ECC90A /* MVVMBaseModel.m in Sources */,
 				7DE71C49230E45D200580B47 /* UIImage+loadSPBundle.m in Sources */,
+				7D62925E2387BD800007B50F /* PlayerBannerModel.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */,
 				7DE71C2B230E45A800580B47 /* DadView.m in Sources */,
@@ -1035,6 +1094,7 @@
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 				F5E3036020C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				F5E3036720C13AF3001F11EC /* AtzucheHomeTitleViewController.m in Sources */,
+				7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
