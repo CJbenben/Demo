@@ -14,6 +14,8 @@
 #import "UIImageView+ZFCache.h"
 #import "ZFUtilities.h"
 #import "PlayerBannerModel.h"
+#import "ZFAutoPlayerViewController.h"
+#import "ZFNotAutoPlayViewController.h"
 
 static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/635942-14593722fe3f0695.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240";
 
@@ -151,6 +153,12 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.player.viewControllerDisappear = YES;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    ZFAutoPlayerViewController *autoPlayerVC = [[ZFAutoPlayerViewController alloc] init];
+//    ZFNotAutoPlayViewController *autoPlayerVC = [[ZFNotAutoPlayViewController alloc] init];
+    [self.navigationController pushViewController:autoPlayerVC animated:YES];
 }
 
 - (void)changeVideo:(UIButton *)sender {

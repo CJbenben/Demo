@@ -46,10 +46,9 @@ static NSString *kIdentifier = @"kIdentifier";
     self.player = [ZFPlayerController playerWithScrollView:self.tableView playerManager:playerManager containerViewTag:100];
     self.player.controlView = self.controlView;
     self.player.assetURLs = self.urls;
-    /// 0.8是消失80%时候，默认0.5
-    self.player.playerDisapperaPercent = 0.8;
-    /// 移动网络依然自动播放
-    self.player.WWANAutoPlay = YES;
+    self.player.shouldAutoPlay = NO;
+    /// 1.0是完全消失的时候
+    self.player.playerDisapperaPercent = 1.0;
     
     @weakify(self)
     self.player.playerDidToEnd = ^(id  _Nonnull asset) {
@@ -77,14 +76,14 @@ static NSString *kIdentifier = @"kIdentifier";
     self.tableView.frame = CGRectMake(0, y, self.view.frame.size.width, h-y);
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    @weakify(self)
-    [self.tableView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
-        @strongify(self)
-        [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
-    }];
-}
+//- (void)viewDidAppear:(BOOL)animated {
+//    [super viewDidAppear:animated];
+//    @weakify(self)
+//    [self.tableView zf_filterShouldPlayCellWhileScrolled:^(NSIndexPath *indexPath) {
+//        @strongify(self)
+//        [self playTheVideoAtIndexPath:indexPath scrollToTop:NO];
+//    }];
+//}
 
 - (void)requestData {
     self.urls = @[].mutableCopy;
@@ -184,7 +183,11 @@ static NSString *kIdentifier = @"kIdentifier";
     /// 详情页返回的回调
     detailVC.detailVCPopCallback = ^{
         @strongify(self)
-        [self.player addPlayerViewToCell];
+        if (self.player.currentPlayerManager.playState == ZFPlayerPlayStatePlayStopped) {
+            [self.player stopCurrentPlayingCell];
+        } else {
+            [self.player addPlayerViewToCell];
+        }
     };
     /// 详情页点击播放的回调
     detailVC.detailVCPlayCallback = ^{
