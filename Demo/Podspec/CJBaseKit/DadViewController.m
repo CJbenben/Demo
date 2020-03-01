@@ -106,9 +106,10 @@
 
 - (void)setRightBtnImage:(NSString *)rightBtnImage {
     _rightBtnImage = rightBtnImage;
-    [self.naviRightBtn setBackgroundImage:[UIImage imageNamed:rightBtnImage] forState:UIControlStateNormal];
+    UIImage *image = [UIImage imageNamed:rightBtnImage];
+    [self.naviRightBtn setBackgroundImage:image forState:UIControlStateNormal];
     
-    self.naviRightBtn.size = CGSizeMake(20, 20);
+    self.naviRightBtn.size = image.size;
     self.naviRightBtn.x = self.naviView.frame.size.width - 18 - self.naviRightBtn.width;
     self.naviRightBtn.y = self.naviTitleL.frame.origin.y + (self.naviTitleL.frame.size.height - self.naviRightBtn.height)/2.0;
 }
@@ -141,8 +142,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1];
-    self.iphonexNaviPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 24 : 0;
-    self.iphonexBottomPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 34 : 0;
+    self.iphonexNaviPadding = isQiLiuHai ? 24 : 0;
+    self.iphonexBottomPadding = isQiLiuHai ? 34 : 0;
     
     self.navigationController.navigationBar.translucent = NO;
     [self initDadSubViews];

@@ -25,6 +25,7 @@
  */
 + (NSString *)strWithFormatWithAry:(NSArray *)array;
 
+- (NSString *)URLEncodedString;
 
 - (BOOL)isGetter;
 - (BOOL)isSetter;

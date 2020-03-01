@@ -20,16 +20,12 @@
 /* 获取设备的物理宽度四分之一 */
 #define SCREEN_WIDTH_QUARTER    SCREEN_WIDTH/4.0
 
-
-#define isIphoneX ({\
-BOOL isPhoneX = NO;\
+#define isQiLiuHai \
+({BOOL qiLiuHai = NO;\
 if (@available(iOS 11.0, *)) {\
-    if (!UIEdgeInsetsEqualToEdgeInsets([UIApplication sharedApplication].delegate.window.safeAreaInsets, UIEdgeInsetsZero)) {\
-    isPhoneX = YES;\
-    }\
+qiLiuHai = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bottom > 0.0;\
 }\
-isPhoneX;\
-})
+(qiLiuHai);})
 
-#define naviHeight              (isIphoneX ? 89 : 64)
+#define naviHeight              (isQiLiuHai ? 88 : 64)
 #define iPadNaviHeight          80

@@ -21,8 +21,8 @@
 - (instancetype)initWithFrame:(CGRect)frame {
 	if (self = [super initWithFrame:frame]) {
 		
-		self.iphonexNaviPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 24 : 0;
-		self.iphonexBottomPadding = (SCREEN_HEIGHT == 812.0 || SCREEN_HEIGHT == 896) ? 34 : 0;
+        self.iphonexNaviPadding = isQiLiuHai ? 24 : 0;
+        self.iphonexBottomPadding = isQiLiuHai ? 34 : 0;
 		
 	}
 	return self;
