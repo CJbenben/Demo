@@ -16,6 +16,7 @@
 @property (nonatomic, strong) UILabel *label1;
 @property (nonatomic, strong) UILabel *label2;
 @property (nonatomic, strong) UILabel *label3;
+@property (nonatomic, strong) UILabel *label4;
 @property (nonatomic, strong) UISlider *volumeViewSlider;
 @end
 
@@ -63,6 +64,15 @@
     return _label3;
 }
 
+- (UILabel *)label4 {
+    if (_label4 == nil) {
+        _label4 = [[UILabel alloc] initWithFrame:CGRectMake(self.label3.x, self.label3.bottom + 20, SCREEN_WIDTH - 2 * self.label3.x, 60)];
+        _label4.numberOfLines = 2;
+        _label4.font = [UIFont fontWithName:FONTSTYLE_PingFangSC_Regular size:17];
+    }
+    return _label4;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -71,7 +81,11 @@
     [self.view addSubview:self.label1];
     [self.view addSubview:self.label2];
     [self.view addSubview:self.label3];
+    [self.view addSubview:self.label4];
     
+    self.label4.text = @"阿斯顿发开发发觉对方安静得分叫我而烦恼的深V框架啊额案件砥砺奋进安慰阿克苏一二三";
+    CGFloat height = [self.label4.text sizeWithFont:self.label4.font maxSize:CGSizeMake(self.label4.width, CGFLOAT_MAX)].height;
+    NSLog(@"height = %.2f", height);
     
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     NSLog(@"当前字体。。。 %@", font);
