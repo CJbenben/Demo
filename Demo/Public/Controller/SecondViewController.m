@@ -18,6 +18,7 @@
 #import "MVVMViewController.h"
 #import "ScrollViewXibViewController.h"
 #import "PlayerDemoViewController.h"
+#import "TXCollectionViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -38,7 +39,8 @@
                      @"wkwebview",
                      @"MVVM",
                      @"scrollview xib",
-                     @"ZFPlayerDemo"];
+                     @"ZFPlayerDemo",
+                     @"瀑布流&&自适应"];
     }
     return _dataAry;
 }
@@ -103,6 +105,9 @@
     } else if (indexPath.row == 8) {
        PlayerDemoViewController *mvvmVC = [[PlayerDemoViewController alloc] init];
        [self.navigationController pushViewController:mvvmVC animated:YES];
+    } else if (indexPath.row == 9) {
+        TXCollectionViewController *collectionView = [[TXCollectionViewController alloc] init];
+        [self.navigationController pushViewController:collectionView animated:YES];
     }
 }
 

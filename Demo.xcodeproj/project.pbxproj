@@ -29,6 +29,12 @@
 		7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */; };
 		7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */; };
 		7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */; };
+		7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D78D0A9240B844500AD841C /* TXCollectionViewController.m */; };
+		7D78D0AD240B84C000AD841C /* TXWaterFallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D78D0AC240B84C000AD841C /* TXWaterFallLayout.m */; };
+		7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D78D0AF240B873100AD841C /* TXCollectionViewCell.m */; };
+		7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D78D0B0240B873100AD841C /* TXCollectionViewCell.xib */; };
+		7D78D0B6240BA36000AD841C /* TXAutoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D78D0B4240BA36000AD841C /* TXAutoCollectionViewCell.m */; };
+		7D78D0B7240BA36000AD841C /* TXAutoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D78D0B5240BA36000AD841C /* TXAutoCollectionViewCell.xib */; };
 		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
 		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
@@ -161,6 +167,16 @@
 		7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
 		7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPhotoAlbumAuthorizationTool.m; sourceTree = "<group>"; };
 		7D77D7FA236C13D000238D93 /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
+		7D78D0A8240B844500AD841C /* TXCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionViewController.h; sourceTree = "<group>"; };
+		7D78D0A9240B844500AD841C /* TXCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCollectionViewController.m; sourceTree = "<group>"; };
+		7D78D0AB240B84C000AD841C /* TXWaterFallLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXWaterFallLayout.h; sourceTree = "<group>"; };
+		7D78D0AC240B84C000AD841C /* TXWaterFallLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXWaterFallLayout.m; sourceTree = "<group>"; };
+		7D78D0AE240B873100AD841C /* TXCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionViewCell.h; sourceTree = "<group>"; };
+		7D78D0AF240B873100AD841C /* TXCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCollectionViewCell.m; sourceTree = "<group>"; };
+		7D78D0B0240B873100AD841C /* TXCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TXCollectionViewCell.xib; sourceTree = "<group>"; };
+		7D78D0B3240BA36000AD841C /* TXAutoCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXAutoCollectionViewCell.h; sourceTree = "<group>"; };
+		7D78D0B4240BA36000AD841C /* TXAutoCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXAutoCollectionViewCell.m; sourceTree = "<group>"; };
+		7D78D0B5240BA36000AD841C /* TXAutoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TXAutoCollectionViewCell.xib; sourceTree = "<group>"; };
 		7D857020237A547F0081C236 /* ScrollViewXibViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewXibViewController.h; sourceTree = "<group>"; };
 		7D857021237A547F0081C236 /* ScrollViewXibViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewXibViewController.m; sourceTree = "<group>"; };
 		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
@@ -412,6 +428,23 @@
 				7DDB003F238E470C00AF1DAE /* ZFPlayerDemo */,
 			);
 			path = ZFPlayerDemo;
+			sourceTree = "<group>";
+		};
+		7D78D0A7240B842F00AD841C /* TXCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7D78D0A8240B844500AD841C /* TXCollectionViewController.h */,
+				7D78D0A9240B844500AD841C /* TXCollectionViewController.m */,
+				7D78D0AE240B873100AD841C /* TXCollectionViewCell.h */,
+				7D78D0AF240B873100AD841C /* TXCollectionViewCell.m */,
+				7D78D0B0240B873100AD841C /* TXCollectionViewCell.xib */,
+				7D78D0B3240BA36000AD841C /* TXAutoCollectionViewCell.h */,
+				7D78D0B4240BA36000AD841C /* TXAutoCollectionViewCell.m */,
+				7D78D0B5240BA36000AD841C /* TXAutoCollectionViewCell.xib */,
+				7D78D0AB240B84C000AD841C /* TXWaterFallLayout.h */,
+				7D78D0AC240B84C000AD841C /* TXWaterFallLayout.m */,
+			);
+			path = TXCollectionView;
 			sourceTree = "<group>";
 		};
 		7D85701F237A545E0081C236 /* ScrollViewXib */ = {
@@ -672,6 +705,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D78D0A7240B842F00AD841C /* TXCollectionView */,
 				7D6292522387B13D0007B50F /* ZFPlayerDemo */,
 				7D85701F237A545E0081C236 /* ScrollViewXib */,
 				7DE533D021A7A8BD00ECC90A /* MVVM */,
@@ -948,10 +982,12 @@
 				7DE71CC7230FF6D200580B47 /* loading.json in Resources */,
 				7DDB0066238E471C00AF1DAE /* data.json in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
+				7D78D0B7240BA36000AD841C /* TXAutoCollectionViewCell.xib in Resources */,
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */,
 				7D77D7FB236C13D000238D93 /* public_navi_left_back@3x.png in Resources */,
+				7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,6 +1067,7 @@
 				F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */,
 				7D6292492387B0DA0007B50F /* ZFSmallFloatControlView.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
+				7D78D0B6240BA36000AD841C /* TXAutoCollectionViewCell.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
 				7D62924A2387B0DA0007B50F /* UIImageView+ZFCache.m in Sources */,
 				7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */,
@@ -1038,6 +1075,7 @@
 				7D62924D2387B0DA0007B50F /* ZFUtilities.m in Sources */,
 				7DE71C3C230E45BD00580B47 /* CJDefaultTool.m in Sources */,
 				7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */,
+				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
 				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
@@ -1086,7 +1124,9 @@
 				7D6292482387B0DA0007B50F /* ZFSpeedLoadingView.m in Sources */,
 				7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */,
 				7DE71C2A230E45A800580B47 /* UIView+Toast.m in Sources */,
+				7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */,
 				7DE71C4A230E45D200580B47 /* NSString+AtzucheNSString.m in Sources */,
+				7D78D0AD240B84C000AD841C /* TXWaterFallLayout.m in Sources */,
 				7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */,
 				7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */,
 				F5E3036820C13AF3001F11EC /* TXCycleScrollView.m in Sources */,
