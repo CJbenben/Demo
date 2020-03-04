@@ -68,7 +68,7 @@
     if (_label4 == nil) {
         _label4 = [[UILabel alloc] initWithFrame:CGRectMake(self.label3.x, self.label3.bottom + 20, SCREEN_WIDTH - 2 * self.label3.x, 60)];
         _label4.numberOfLines = 2;
-        _label4.font = [UIFont fontWithName:FONTSTYLE_PingFangSC_Regular size:17];
+        _label4.font = [UIFont fontWithName:FONTSTYLE_PingFangSC_Regular size:30];
     }
     return _label4;
 }
@@ -83,9 +83,12 @@
     [self.view addSubview:self.label3];
     [self.view addSubview:self.label4];
     
-    self.label4.text = @"阿斯顿发开发发觉对方安静得分叫我而烦恼的深V框架啊额案件砥砺奋进安慰阿克苏一二三";
+    self.label4.text = @"阿斯一二三四五六七r分叫一二三四五六七八九十砥砺奋一二三四五六七克苏一二三";
     CGFloat height = [self.label4.text sizeWithFont:self.label4.font maxSize:CGSizeMake(self.label4.width, CGFLOAT_MAX)].height;
     NSLog(@"height = %.2f", height);
+    CGFloat height2 = [self.label4 sizeThatFits:CGSizeMake(self.label4.width, MAXFLOAT)].height;
+    self.label4.height = height2;
+    NSLog(@"height2 = %.2f", height2);
     
     UIFont *font = [UIFont systemFontOfSize:[UIFont systemFontSize]];
     NSLog(@"当前字体。。。 %@", font);
@@ -106,6 +109,23 @@
     }
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
+    
+}
+
+- (CGSize )numberOfAdaptiveRowsUILabel:(UILabel *)label systemFontOfSize:(UIFont *)font{
+    label.textAlignment = NSTextAlignmentLeft;
+    
+    label.numberOfLines = 2;
+    
+    label.lineBreakMode = NSLineBreakByWordWrapping;
+    
+    CGSize size = [label sizeThatFits:CGSizeMake(label.frame.size.width, MAXFLOAT)];
+    
+    label.frame =CGRectMake(label.frame.origin.x, label.frame.origin.y, label.frame.size.width, size.height);
+    
+    label.font = font;
+    
+    return size;
     
 }
 

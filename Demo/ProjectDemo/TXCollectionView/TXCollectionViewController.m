@@ -10,6 +10,7 @@
 #import "TXWaterFallLayout.h"
 #import "TXCollectionViewCell.h"
 #import "TXAutoCollectionViewCell.h"
+#import "TXCollectionView.h"
 
 @interface TXCollectionViewController ()<TXWaterFallLayoutDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -25,47 +26,55 @@ static NSString *reuseID2        = @"TXAutoCollectionViewCell";
     // Do any additional setup after loading the view.
     self.naviTitleL.text = @"瀑布流";
     
+    // 瀑布流
     TXWaterFallLayout * layout = [[TXWaterFallLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
     layout.columnCount = 2;
     layout.columnSpacing = 10;
     layout.lineSpacing = 10;
     layout.delegate = self;
-    
-    UICollectionViewFlowLayout *layout2 = [[UICollectionViewFlowLayout alloc] init];
-    layout2.estimatedItemSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width, 200);
-    
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT-naviHeight) collectionViewLayout:layout2];
-    collectionView.backgroundColor = [UIColor lightGrayColor];
-    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TXCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseID];
-    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TXAutoCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseID2];
-    collectionView.dataSource = self;
-    collectionView.delegate = self;
+    TXCollectionView *collectionView = [[TXCollectionView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT - naviHeight) collectionViewLayout:layout];
     [self.view addSubview:collectionView];
-}
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 10;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (indexPath.section == 0) {
-//        TXCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID forIndexPath:indexPath];
-//        cell.backgroundColor = [UIColor redColor];
-//        return cell;
-//    }
-    TXAutoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID2 forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor greenColor];
-    return cell;
+    
+//    // 自适应
+//    UICollectionViewFlowLayout *layout2 = [[UICollectionViewFlowLayout alloc] init];
+//    layout2.estimatedItemSize = CGSizeMake([[UIScreen mainScreen] bounds].size.width, 200);
+//
+//    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT-naviHeight) collectionViewLayout:layout2];
+//    collectionView.backgroundColor = [UIColor lightGrayColor];
+//    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TXCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseID];
+//    [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([TXAutoCollectionViewCell class]) bundle:nil] forCellWithReuseIdentifier:reuseID2];
+//    collectionView.dataSource = self;
+//    collectionView.delegate = self;
+//    [self.view addSubview:collectionView];
+//}
+//
+//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+//    return 2;
+//}
+//
+//- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+//    return 20;
+//}
+//
+//- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+////    if (indexPath.section == 0) {
+////        TXCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID forIndexPath:indexPath];
+////        cell.backgroundColor = [UIColor redColor];
+////        return cell;
+////    }
+//    TXAutoCollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID2 forIndexPath:indexPath];
+//    cell.backgroundColor = [UIColor greenColor];
+//    return cell;
     
 }
 
 - (CGFloat)waterFallLayout:(TXWaterFallLayout *)waterFallLayout heightForItemAtIndex:(NSInteger)index itemWidth:(CGFloat)itemWidth {
-    
+//    if (index % 2 == 0) {
+//        return 100;
+//    } else {
+//        return 150;
+//    }
     return arc4random() % 100 + 100;
 }
 
