@@ -83,7 +83,19 @@
     [self.view addSubview:self.label3];
     [self.view addSubview:self.label4];
     
-    self.label4.text = @"阿斯一二三四五六七r分叫一二三四五六七八九十砥砺奋一二三四五六七克苏一二三";
+    self.label4.text = RMB(@"123.44");
+    self.label4.backgroundColor = [UIColor darkGrayColor];
+//    self.label4.text = @"SDCycleScrollView之前一直在OC中使用觉得很简单又熟悉了所以这次写的Demo依旧搬了过来.SDCycleScrollView之前一直在OC中使用觉得很简单又熟悉了所以这次写的Demo依旧搬了过来.";
+
+    NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:self.label4.text];
+    //设置行间距
+//    NSMutableParagraphStyle *style = [[NSMutableParagraphStyle alloc] init];
+//    style.headIndent = 50;                //每行的左右间距
+//    [attrStr addAttributes:@{NSParagraphStyleAttributeName:style} range:NSMakeRange(0, self.label4.text.length)];
+    //设置字间距
+    [attrStr addAttribute:NSKernAttributeName value:@(-5) range:NSMakeRange(0, 1)];
+    self.label4.attributedText = RMB_Attr(@"1.234");
+    
     CGFloat height = [self.label4.text sizeWithFont:self.label4.font maxSize:CGSizeMake(self.label4.width, CGFLOAT_MAX)].height;
     NSLog(@"height = %.2f", height);
     CGFloat height2 = [self.label4 sizeThatFits:CGSizeMake(self.label4.width, MAXFLOAT)].height;

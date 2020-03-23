@@ -35,5 +35,16 @@
 
 #define HEX_RGB(V)        [UIColor colorWithRGBHex:V]
 
+#define RMB_Attr(priceStr) \
+({NSMutableAttributedString *priceAttr = [[NSMutableAttributedString alloc] init];\
+if (priceStr.floatValue == priceStr.intValue) {\
+priceAttr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"￥%.0f", priceStr.floatValue]];\
+[priceAttr addAttribute:NSKernAttributeName value:@(-5) range:NSMakeRange(0, 1)];\
+}\
+else {\
+priceAttr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"￥%.2f", priceStr.floatValue]];\
+[priceAttr addAttribute:NSKernAttributeName value:@(-5) range:NSMakeRange(0, 1)];\
+}\
+(priceAttr);})
 
 #endif /* Demo_pch */
