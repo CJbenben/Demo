@@ -30,7 +30,6 @@
 		7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */; };
 		7D67FE35240E227800AE76BC /* HMHomeLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE33240E227800AE76BC /* HMHomeLikeCollectionViewCell.m */; };
 		7D6821CF24288BE50059820A /* DadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821C024288BE40059820A /* DadView.m */; };
-		7D6821D024288BE50059820A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821C224288BE40059820A /* BaseLoadingView.m */; };
 		7D6821D124288BE50059820A /* DadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821C324288BE40059820A /* DadViewController.m */; };
 		7D6821D224288BE50059820A /* UIViewController+DadBaseHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821C424288BE40059820A /* UIViewController+DadBaseHUD.m */; };
 		7D6821D324288BE50059820A /* NJTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821C724288BE40059820A /* NJTitleButton.m */; };
@@ -38,6 +37,7 @@
 		7D6821D524288BE50059820A /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6821CB24288BE50059820A /* public_navi_left_back@3x.png */; };
 		7D6821D624288BE50059820A /* public_base_loading_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6821CC24288BE50059820A /* public_base_loading_bg@3x.png */; };
 		7D6821D724288BE50059820A /* NaviViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6821CD24288BE50059820A /* NaviViewController.m */; };
+		7D6821D924288D570059820A /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D6821D824288D570059820A /* loading.png */; };
 		7D77D7F8236C13A800238D93 /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */; };
 		7D77D7F9236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D77D7F7236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.m */; };
 		7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D78D0A9240B844500AD841C /* TXCollectionViewController.m */; };
@@ -49,6 +49,7 @@
 		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
 		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
+		7D900898242A06080037D86A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D900897242A06070037D86A /* BaseLoadingView.m */; };
 		7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */; };
 		7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */; };
 		7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */; };
@@ -174,10 +175,8 @@
 		7D6821BF24288BE40059820A /* UIViewController+DadBaseHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DadBaseHUD.h"; sourceTree = "<group>"; };
 		7D6821C024288BE40059820A /* DadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DadView.m; sourceTree = "<group>"; };
 		7D6821C124288BE40059820A /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
-		7D6821C224288BE40059820A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
 		7D6821C324288BE40059820A /* DadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DadViewController.m; sourceTree = "<group>"; };
 		7D6821C424288BE40059820A /* UIViewController+DadBaseHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+DadBaseHUD.m"; sourceTree = "<group>"; };
-		7D6821C524288BE40059820A /* BaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoadingView.h; sourceTree = "<group>"; };
 		7D6821C624288BE40059820A /* NJTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJTitleButton.h; sourceTree = "<group>"; };
 		7D6821C724288BE40059820A /* NJTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJTitleButton.m; sourceTree = "<group>"; };
 		7D6821C824288BE40059820A /* DadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DadView.h; sourceTree = "<group>"; };
@@ -186,6 +185,7 @@
 		7D6821CC24288BE50059820A /* public_base_loading_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_base_loading_bg@3x.png"; sourceTree = "<group>"; };
 		7D6821CD24288BE50059820A /* NaviViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NaviViewController.m; sourceTree = "<group>"; };
 		7D6821CE24288BE50059820A /* NaviViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaviViewController.h; sourceTree = "<group>"; };
+		7D6821D824288D570059820A /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
 		7D77D7F4236C13A800238D93 /* CJAppSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppSystemInfo.m; sourceTree = "<group>"; };
 		7D77D7F5236C13A800238D93 /* CJAppSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppSystemInfo.h; sourceTree = "<group>"; };
 		7D77D7F6236C13A800238D93 /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
@@ -205,6 +205,8 @@
 		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
 		7D857024237A54A30081C236 /* ScrollViewTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTest.m; sourceTree = "<group>"; };
 		7D857026237A54AD0081C236 /* ScrollViewTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewTest.xib; sourceTree = "<group>"; };
+		7D900896242A06070037D86A /* BaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoadingView.h; sourceTree = "<group>"; };
+		7D900897242A06070037D86A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
 		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
 		7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerDetailViewController.m; sourceTree = "<group>"; };
 		7DDB0056238E471B00AF1DAE /* ZFNotAutoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNotAutoPlayViewController.h; sourceTree = "<group>"; };
@@ -570,8 +572,8 @@
 		7DE71BBD230E456000580B47 /* CJBaseKit */ = {
 			isa = PBXGroup;
 			children = (
-				7D6821C524288BE40059820A /* BaseLoadingView.h */,
-				7D6821C224288BE40059820A /* BaseLoadingView.m */,
+				7D900896242A06070037D86A /* BaseLoadingView.h */,
+				7D900897242A06070037D86A /* BaseLoadingView.m */,
 				7D6821C824288BE40059820A /* DadView.h */,
 				7D6821C024288BE40059820A /* DadView.m */,
 				7D6821BE24288BE40059820A /* DadViewController.h */,
@@ -675,6 +677,7 @@
 				F59567861FAB4AD20068A04F /* main.m */,
 				F599D7832019754500D33834 /* Demo.pch */,
 				7DE71CC6230FF6D200580B47 /* loading.json */,
+				7D6821D824288D570059820A /* loading.png */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				7D78D0B7240BA36000AD841C /* TXAutoCollectionViewCell.xib in Resources */,
 				7D6821D624288BE50059820A /* public_base_loading_bg@3x.png in Resources */,
+				7D6821D924288D570059820A /* loading.png in Resources */,
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */,
@@ -1076,6 +1080,7 @@
 				7D62925B2387B4E00007B50F /* NSTimer+Add.m in Sources */,
 				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
 				F5E3038C20C13D09001F11EC /* ViewController.m in Sources */,
+				7D900898242A06080037D86A /* BaseLoadingView.m in Sources */,
 				7D6821CF24288BE50059820A /* DadView.m in Sources */,
 				F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */,
 				7D6292492387B0DA0007B50F /* ZFSmallFloatControlView.m in Sources */,
@@ -1109,7 +1114,6 @@
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
-				7D6821D024288BE50059820A /* BaseLoadingView.m in Sources */,
 				7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,

@@ -83,6 +83,8 @@
     [self.view addSubview:self.label3];
     [self.view addSubview:self.label4];
     
+    [self showHUDLoading];
+    
     self.label4.text = RMB(@"123.44");
     self.label4.backgroundColor = [UIColor darkGrayColor];
 //    self.label4.text = @"SDCycleScrollView之前一直在OC中使用觉得很简单又熟悉了所以这次写的Demo依旧搬了过来.SDCycleScrollView之前一直在OC中使用觉得很简单又熟悉了所以这次写的Demo依旧搬了过来.";

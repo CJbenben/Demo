@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseLoadingView : UIView
 
+@property (nonatomic, strong) UIImageView *bgImageView;
 + (instancetype)showLoading;
 + (void)hiddenLoading;
 

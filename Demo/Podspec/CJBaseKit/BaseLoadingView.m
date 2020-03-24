@@ -65,18 +65,24 @@
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.0];
         
-        //[self addSubview:self.whiteBgView];
-//        [self addSubview:self.whiteIV];
-//        [self addSubview:self.animationView];
-//        [self.animationView playWithCompletion:^(BOOL animationFinished) {
-//            //[self removeFromSuperview];
-//        }];
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"png"];
         NSData *gifData = [NSData dataWithContentsOfFile:path];
-        UIImageView *sdImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
-        sdImageView.image = [UIImage sd_imageWithGIFData:gifData];
-        [self addSubview:sdImageView];
+        self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
+        self.bgImageView.image = [UIImage imageWithData:gifData];
+        [self addSubview:self.bgImageView];
+        // 添加旋转动画
+        CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+        rotationAnimation.duration = 2;
+        rotationAnimation.cumulative = YES;
+        rotationAnimation.repeatCount = ULLONG_MAX;
+        [self.bgImageView.layer addAnimation:rotationAnimation forKey:@"hmloading_rotationAnimation"];
+        
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+//        NSData *gifData = [NSData dataWithContentsOfFile:path];
+//        UIImageView *sdImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
+//        sdImageView.image = [UIImage sd_imageWithGIFData:gifData];
+//        [self addSubview:sdImageView];
         
         [[UIApplication sharedApplication].keyWindow addSubview:self];
         
@@ -87,6 +93,7 @@
 + (void)hiddenLoading {
     BaseLoadingView *loadingView = [self loadingView];
     if (loadingView != nil) {
+        [loadingView.bgImageView.layer removeAnimationForKey:@"hmloading_rotationAnimation"];
         [loadingView removeLoadingSubViews];
     }
 }
