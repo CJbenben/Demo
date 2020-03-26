@@ -13,13 +13,13 @@
 #define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
 #define LOADINGWIDTH    60
-#define LOADINGWIDTH_GIF    80
+#define LOADINGWIDTH_GIF    45
 
 @interface BaseLoadingView ()
 
 //@property (strong, nonatomic) UIView *whiteBgView;
-@property (strong, nonatomic) UIImageView *whiteIV;
-@property (strong, nonatomic) LOTAnimationView *animationView;
+//@property (strong, nonatomic) UIImageView *whiteIV;
+//@property (strong, nonatomic) LOTAnimationView *animationView;
 
 @end
 
@@ -36,26 +36,26 @@
 //    return _whiteBgView;
 //}
 
-- (UIImageView *)whiteIV {
-    if (_whiteIV == nil) {
-        _whiteIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, LOADINGWIDTH + 20, LOADINGWIDTH + 20)];
-        _whiteIV.center = self.center;
-        _whiteIV.image = [UIImage imageNamed:@"public_base_loading_bg"];
-        _whiteIV.userInteractionEnabled = YES;
-    }
-    return _whiteIV;
-}
+//- (UIImageView *)whiteIV {
+//    if (_whiteIV == nil) {
+//        _whiteIV = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, LOADINGWIDTH + 20, LOADINGWIDTH + 20)];
+//        _whiteIV.center = self.center;
+//        _whiteIV.image = [UIImage imageNamed:@"public_base_loading_bg"];
+//        _whiteIV.userInteractionEnabled = YES;
+//    }
+//    return _whiteIV;
+//}
 
-- (LOTAnimationView *)animationView {
-    if (_animationView == nil) {
-        _animationView = [LOTAnimationView animationNamed:@"loading"];
-        _animationView.loopAnimation = YES;
-        _animationView.frame = CGRectMake(0, 0, LOADINGWIDTH, LOADINGWIDTH);
-        //_animationView.size = CGSizeMake(LOADINGWIDTH, LOADINGWIDTH);
-        _animationView.center = self.center;
-    }
-    return _animationView;
-}
+//- (LOTAnimationView *)animationView {
+//    if (_animationView == nil) {
+//        _animationView = [LOTAnimationView animationNamed:@"loading"];
+//        _animationView.loopAnimation = YES;
+//        _animationView.frame = CGRectMake(0, 0, LOADINGWIDTH, LOADINGWIDTH);
+//        //_animationView.size = CGSizeMake(LOADINGWIDTH, LOADINGWIDTH);
+//        _animationView.center = self.center;
+//    }
+//    return _animationView;
+//}
 
 + (instancetype)showLoading {
     return [[self alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
