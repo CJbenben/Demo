@@ -10,6 +10,7 @@
 #import "ViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
+#import "TXFileCache.h"
 
 @interface PhoneFontViewController ()
 
@@ -83,7 +84,7 @@
     [self.view addSubview:self.label3];
     [self.view addSubview:self.label4];
     
-    [self showHUDLoading];
+//    [self showHUDLoading];
     
     self.label4.text = RMB(@"123.44");
     self.label4.backgroundColor = [UIColor darkGrayColor];
@@ -124,6 +125,18 @@
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
     
+    NSDictionary *testDict = @{@"key": @"value", @"name":@"chenxiaojie"};
+    [[TXFileCache globalCache] writeNetworkDict:testDict forUrlKey:@"key1"];
+    
+    NSDictionary *testDict2 = @{@"key2": @"value2", @"name2":@"chenxiaojie2"};
+    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key2"];
+    
+    
+    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key1"];
+    
+    
+    NSDictionary *dict = [[TXFileCache globalCache] readNetworkDictForKey:@"key11"];
+    NSLog(@"dict = %@", dict);
 }
 
 - (CGSize )numberOfAdaptiveRowsUILabel:(UILabel *)label systemFontOfSize:(UIFont *)font{

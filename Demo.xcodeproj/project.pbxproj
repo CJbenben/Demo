@@ -49,6 +49,7 @@
 		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
 		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
+		7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88EC59242CE44200A049CA /* TXFileCache.m */; };
 		7D900898242A06080037D86A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D900897242A06070037D86A /* BaseLoadingView.m */; };
 		7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */; };
 		7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */; };
@@ -205,6 +206,8 @@
 		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
 		7D857024237A54A30081C236 /* ScrollViewTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTest.m; sourceTree = "<group>"; };
 		7D857026237A54AD0081C236 /* ScrollViewTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewTest.xib; sourceTree = "<group>"; };
+		7D88EC59242CE44200A049CA /* TXFileCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TXFileCache.m; path = /Users/chenxiaojie/Desktop/chenxiaojie/Demo/Demo/Public/TXFileCache.m; sourceTree = "<absolute>"; };
+		7D88EC5A242CE44200A049CA /* TXFileCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TXFileCache.h; path = /Users/chenxiaojie/Desktop/chenxiaojie/Demo/Demo/Public/TXFileCache.h; sourceTree = "<absolute>"; };
 		7D900896242A06070037D86A /* BaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoadingView.h; sourceTree = "<group>"; };
 		7D900897242A06070037D86A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
 		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
@@ -841,6 +844,8 @@
 		F5E3037D20C13D09001F11EC /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				7D88EC5A242CE44200A049CA /* TXFileCache.h */,
+				7D88EC59242CE44200A049CA /* TXFileCache.m */,
 				F5FD32C320C4D1C90049B79B /* AtzucheCustomTipView.h */,
 				F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */,
 				F528C693215CDEA9008F7850 /* CJHTTPRequest.h */,
@@ -1120,6 +1125,7 @@
 				7D62924E2387B0DA0007B50F /* ZFPlayerControlView.m in Sources */,
 				7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */,
 				7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */,
+				7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */,
 				7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				7DE71C4C230E45D200580B47 /* NSString+CJMD5.m in Sources */,
