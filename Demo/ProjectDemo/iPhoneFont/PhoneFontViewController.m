@@ -137,6 +137,42 @@
     
     NSDictionary *dict = [[TXFileCache globalCache] readNetworkDictForKey:@"key11"];
     NSLog(@"dict = %@", dict);
+    
+    
+    // AfnetWorking 处理高精度 bug
+    NSString *jsonStr = @"{\"71.40\":71.40, \"9.70\":9.70, \"69.90\":69.90, \"80.40\":80.40, \"188.40\":188.40}";
+    NSLog(@"json:%@", jsonStr);
+    NSData *jsonData_ = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    NSError *jsonParsingError_ = nil;
+    NSDictionary *dic = [NSMutableDictionary dictionaryWithDictionary:[NSJSONSerialization JSONObjectWithData:jsonData_ options:0 error:&jsonParsingError_]];
+    NSLog(@"dic:%@", dic);
+    
+    
+    NSString *str = [dic objectForKey:@"9.70"];
+    NSLog(@"str:%@", str);
+    NSLog(@"str:%@", decimalNumberWithDouble(str));
+    
+//    double testDouble = [dic[@"Body"] double]; //有问题 90.989999999999994
+//    NSString *convertString = decimalNumberWithString(testDouble);
+//    NSLog(@"%@", convertString);\
+    
+}
+
+NSString *decimalNumberWithDouble(NSString *str){
+    double conversionValue = [str doubleValue];
+    NSString *doubleString        = [NSString stringWithFormat:@"%lf", conversionValue];
+    NSDecimalNumber *decNumber    = [NSDecimalNumber decimalNumberWithString:doubleString];
+    return [decNumber stringValue];
+}
+
+
+-(NSString *)reviseString:(NSString *)str
+{
+    //直接传入精度丢失有问题的Double类型
+    double conversionValue = [str doubleValue];
+    NSString *doubleString = [NSString stringWithFormat:@"%lf", conversionValue];
+    NSDecimalNumber *decNumber = [NSDecimalNumber decimalNumberWithString:doubleString];
+    return [decNumber stringValue];
 }
 
 - (CGSize )numberOfAdaptiveRowsUILabel:(UILabel *)label systemFontOfSize:(UIFont *)font{
