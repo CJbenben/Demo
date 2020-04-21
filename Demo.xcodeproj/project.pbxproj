@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4521FADE56669D37A2586FFA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */; };
+		7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32A497244EC4F300F3EF48 /* TXYBDemoViewController.m */; };
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
 		7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */; };
@@ -129,6 +130,8 @@
 
 /* Begin PBXFileReference section */
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7D32A496244EC4F300F3EF48 /* TXYBDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXYBDemoViewController.h; sourceTree = "<group>"; };
+		7D32A497244EC4F300F3EF48 /* TXYBDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXYBDemoViewController.m; sourceTree = "<group>"; };
 		7D45982A22F44AE0005AA8EC /* MVVMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableViewCell.h; sourceTree = "<group>"; };
 		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
@@ -362,6 +365,15 @@
 				C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D32A495244EC49000F3EF48 /* YBImageDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D32A496244EC4F300F3EF48 /* TXYBDemoViewController.h */,
+				7D32A497244EC4F300F3EF48 /* TXYBDemoViewController.m */,
+			);
+			path = YBImageDemo;
 			sourceTree = "<group>";
 		};
 		7D45982D22F44B4C005AA8EC /* Base */ = {
@@ -724,6 +736,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D32A495244EC49000F3EF48 /* YBImageDemo */,
 				7D78D0A7240B842F00AD841C /* TXCollectionView */,
 				7D6292522387B13D0007B50F /* ZFPlayerDemo */,
 				7D85701F237A545E0081C236 /* ScrollViewXib */,
@@ -1183,6 +1196,7 @@
 				7DE71C4B230E45D200580B47 /* UIView+AtzucheUIView.m in Sources */,
 				7D6292482387B0DA0007B50F /* ZFSpeedLoadingView.m in Sources */,
 				7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */,
+				7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */,
 				7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */,
 				7DE71C4A230E45D200580B47 /* NSString+AtzucheNSString.m in Sources */,
 				7D6821D224288BE50059820A /* UIViewController+DadBaseHUD.m in Sources */,

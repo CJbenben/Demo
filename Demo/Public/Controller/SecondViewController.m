@@ -28,19 +28,24 @@
 
 @implementation SecondViewController
 
+static NSString *kJumpTitle     = @"kJumpTitle";
+static NSString *kJumpClass     = @"kJumpClass";
+
 #pragma mark - 懒加载
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
-        _dataAry = @[@"网络请求",
-                     @"CollectionView",
-                     @"自动居中 CollectionView",
-                     @"MJ 下拉刷新兼容 iPhone X",
-                     @"iPhone 字体&LLDB",
-                     @"wkwebview",
-                     @"MVVM",
-                     @"scrollview xib",
-                     @"ZFPlayerDemo",
-                     @"瀑布流&&自适应"];
+        _dataAry = @[@{kJumpClass: @"", kJumpTitle: @"网络请求"},
+                     @{kJumpClass: @"ATCollectionViewDemoVC", kJumpTitle: @"CollectionView"},
+                     @{kJumpClass: @"AtzucheHomeTitleViewController", kJumpTitle: @"自动居中 CollectionView"},
+                     @{kJumpClass: @"MJIphoneXViewController", kJumpTitle: @"MJ 下拉刷新兼容 iPhone X"},
+                     @{kJumpClass: @"PhoneFontViewController", kJumpTitle: @"iPhone 字体&LLDB"},
+                     @{kJumpClass: @"WKWebViewController", kJumpTitle: @"wkwebview"},
+                     @{kJumpClass: @"MVVMViewController", kJumpTitle: @"MVVM"},
+                     @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
+                     @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
+                     @{kJumpClass: @"TXCollectionViewController", kJumpTitle: @"瀑布流&&自适应"},
+                     @{kJumpClass: @"TXYBDemoViewController", kJumpTitle: @"YBImageBrowser 学习"}
+        ];
     }
     return _dataAry;
 }
@@ -72,42 +77,22 @@
     if (cell == nil) {
         cell = [[DemoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    cell.textLabel.text = [_dataAry objectAtIndex:indexPath.row];
+    NSDictionary *dict = safeObjectTxAtIndex(self.dataAry, indexPath.row);
+    cell.textLabel.text = EncodeStringFromDic(dict, kJumpTitle);
     return cell;
 }
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
-        [self httpRequestWithGET];
-    } else if (indexPath.row == 1) {
-        ATCollectionViewDemoVC *collectionVC = [[ATCollectionViewDemoVC alloc] init];
-        [self.navigationController pushViewController:collectionVC animated:YES];
-    } else if (indexPath.row == 2) {
-        AtzucheHomeTitleViewController *titleVC = [[AtzucheHomeTitleViewController alloc] init];
-        [self.navigationController pushViewController:titleVC animated:YES];
-    } else if (indexPath.row == 3) {
-        MJIphoneXViewController *mjIphoneXvc = [[MJIphoneXViewController alloc] init];
-        [self.navigationController pushViewController:mjIphoneXvc animated:YES];
-    } else if (indexPath.row == 4) {
-        PhoneFontViewController *fontVC = [[PhoneFontViewController alloc] init];
-        [self.navigationController pushViewController:fontVC animated:YES];
-    } else if (indexPath.row == 5) {
-        WKWebViewController *webview = [[WKWebViewController alloc] init];
-        [self.navigationController pushViewController:webview animated:YES];
-    } else if (indexPath.row == 6) {
-        MVVMViewController *mvvmVC = [[MVVMViewController alloc] init];
-        [self.navigationController pushViewController:mvvmVC animated:YES];
-    } else if (indexPath.row == 7) {
-        ScrollViewXibViewController *mvvmVC = [[ScrollViewXibViewController alloc] init];
-        [self.navigationController pushViewController:mvvmVC animated:YES];
-    } else if (indexPath.row == 8) {
-       PlayerDemoViewController *mvvmVC = [[PlayerDemoViewController alloc] init];
-       [self.navigationController pushViewController:mvvmVC animated:YES];
-    } else if (indexPath.row == 9) {
-        TXCollectionViewController *collectionView = [[TXCollectionViewController alloc] init];
-        [self.navigationController pushViewController:collectionView animated:YES];
+    NSDictionary *dict = safeObjectTxAtIndex(self.dataAry, indexPath.row);
+    NSString *className = EncodeStringFromDic(dict, kJumpClass);
+    if (className.length) {
+        Class class = NSClassFromString(className);
+        id vc = [[class alloc] init];
+        if (vc) {
+            [self.navigationController pushViewController:vc animated:YES];
+        }
     }
 }
 
