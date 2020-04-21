@@ -1,4 +1,9 @@
 platform :ios, '9.0'
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+use_frameworks!
+
 target 'Demo' do
     
 #AFNetworking
@@ -6,10 +11,11 @@ pod "AFNetworking", "~> 2.4.1"
 #用法简单的下拉刷新框架
 pod 'MJRefresh'
 pod 'MJExtension'
-pod 'SDWebImage'
+#pod 'SDWebImage'
 pod 'Masonry'
 pod 'ReactiveObjC'
 pod 'Aspects'
+pod 'YBImageBrowser'
 
 pod 'ZFPlayer', '~> 3.0'
 
