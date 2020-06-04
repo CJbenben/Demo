@@ -16,6 +16,8 @@ pod 'Masonry'
 pod 'ReactiveObjC'
 pod 'Aspects'
 pod 'YBImageBrowser'
+# 需要播放视频才添加
+pod 'YBImageBrowser/Video'
 
 pod 'ZFPlayer', '~> 3.0'
 

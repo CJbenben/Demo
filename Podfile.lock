@@ -41,6 +41,8 @@ PODS:
   - YBImageBrowser/Core (3.0.9):
     - SDWebImage (>= 5.0.0)
     - YYImage
+  - YBImageBrowser/Video (3.0.9):
+    - YBImageBrowser/Core
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
@@ -60,6 +62,7 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveObjC
   - YBImageBrowser
+  - YBImageBrowser/Video
   - ZFPlayer (~> 3.0)
 
 SPEC REPOS:
@@ -98,6 +101,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
 
-PODFILE CHECKSUM: 0f58f3d3fb720491333012073430aafff30e383a
+PODFILE CHECKSUM: cf892c9859045f74f6a62769886a51760f505b71
 
 COCOAPODS: 1.8.4
