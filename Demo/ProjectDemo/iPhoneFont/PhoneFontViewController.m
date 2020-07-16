@@ -18,6 +18,7 @@
 @property (nonatomic, strong) UILabel *label2;
 @property (nonatomic, strong) UILabel *label3;
 @property (nonatomic, strong) UILabel *label4;
+@property (nonatomic, strong) UILabel *label5;
 @property (nonatomic, strong) UISlider *volumeViewSlider;
 @end
 
@@ -74,6 +75,14 @@
     return _label4;
 }
 
+- (UILabel *)label5 {
+    if (_label5 == nil) {
+        _label5 = [[UILabel alloc] initWithFrame:CGRectMake(self.label4.x, self.label4.bottom + 20, SCREEN_WIDTH - 2 * self.label4.x, 100)];
+        _label5.numberOfLines = 2;
+    }
+    return _label5;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
@@ -83,6 +92,7 @@
     [self.view addSubview:self.label2];
     [self.view addSubview:self.label3];
     [self.view addSubview:self.label4];
+    [self.view addSubview:self.label5];
     
 //    [self showHUDLoading];
     
@@ -110,6 +120,20 @@
     
     NSString *lldb = @"lldb";
     NSLog(@"lldb = %@", lldb);
+    
+    
+    for (NSString *fontfamilyname in [UIFont familyNames])
+    {
+        NSLog(@"family:'%@'",fontfamilyname);
+        for(NSString *fontName in [UIFont fontNamesForFamilyName:fontfamilyname])
+        {
+            NSLog(@"\tfont:'%@'",fontName);
+        }
+        NSLog(@"-------------");
+    }
+    self.label5.text = @"ABCDEFG ￥0123456789 abcdefg";
+    self.label5.font = [UIFont fontWithName:@"DINAlternate-Bold" size:28];
+    self.label5.font = [UIFont fontWithName:@"DIN-Alternate" size:28];
     
     
     //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(backView)];

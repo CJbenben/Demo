@@ -57,6 +57,8 @@
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
 		7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88EC59242CE44200A049CA /* TXFileCache.m */; };
 		7D900898242A06080037D86A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D900897242A06070037D86A /* BaseLoadingView.m */; };
+		7D9BE671248F22820037A914 /* DIN Alternate Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D9BE670248F22820037A914 /* DIN Alternate Light.otf */; };
+		7DDA07FD2488A070009175AB /* DIN Alternate Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DDA07FC2488A070009175AB /* DIN Alternate Bold.ttf */; };
 		7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */; };
 		7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */; };
 		7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */; };
@@ -222,6 +224,8 @@
 		7D88EC5A242CE44200A049CA /* TXFileCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TXFileCache.h; path = /Users/chenxiaojie/Desktop/chenxiaojie/Demo/Demo/Public/TXFileCache.h; sourceTree = "<absolute>"; };
 		7D900896242A06070037D86A /* BaseLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseLoadingView.h; sourceTree = "<group>"; };
 		7D900897242A06070037D86A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
+		7D9BE670248F22820037A914 /* DIN Alternate Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Light.otf"; sourceTree = "<group>"; };
+		7DDA07FC2488A070009175AB /* DIN Alternate Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Bold.ttf"; sourceTree = "<group>"; };
 		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
 		7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerDetailViewController.m; sourceTree = "<group>"; };
 		7DDB0056238E471B00AF1DAE /* ZFNotAutoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNotAutoPlayViewController.h; sourceTree = "<group>"; };
@@ -709,6 +713,8 @@
 				F599D7832019754500D33834 /* Demo.pch */,
 				7DE71CC6230FF6D200580B47 /* loading.json */,
 				7D6821D824288D570059820A /* loading.png */,
+				7DDA07FC2488A070009175AB /* DIN Alternate Bold.ttf */,
+				7D9BE670248F22820037A914 /* DIN Alternate Light.otf */,
 			);
 			path = Demo;
 			sourceTree = "<group>";
@@ -1029,6 +1035,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
+				7D9BE671248F22820037A914 /* DIN Alternate Light.otf in Resources */,
 				7DE71CC7230FF6D200580B47 /* loading.json in Resources */,
 				7DDB0066238E471C00AF1DAE /* data.json in Resources */,
 				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
@@ -1043,6 +1050,7 @@
 				7D6821D524288BE50059820A /* public_navi_left_back@3x.png in Resources */,
 				7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */,
 				7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */,
+				7DDA07FD2488A070009175AB /* DIN Alternate Bold.ttf in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

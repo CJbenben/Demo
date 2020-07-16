@@ -29,6 +29,11 @@
 	<string>使用应用期间允许访问位置信息</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>一直使用</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DIN Alternate Bold.ttf</string>
+		<string>DIN Alternate Light.otf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
