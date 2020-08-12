@@ -44,6 +44,7 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
                      @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
                      @{kJumpClass: @"TXCollectionViewController", kJumpTitle: @"瀑布流&&自适应"},
+                     @{kJumpClass: @"SocketViewController", kJumpTitle: @"socket学习"},
                      @{kJumpClass: @"TXYBDemoViewController", kJumpTitle: @"YBImageBrowser 学习"}
         ];
     }

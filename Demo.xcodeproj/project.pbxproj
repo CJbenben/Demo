@@ -15,6 +15,7 @@
 		7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32A4A0244EDF3A00F3EF48 /* BaseListCell.m */; };
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
+		7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D473D2724C5A92F00EA2723 /* SocketViewController.m */; };
 		7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */; };
 		7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */; };
 		7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292302387B0D90007B50F /* ZFLandScapeControlView.m */; };
@@ -148,6 +149,8 @@
 		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
 		7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
+		7D473D2624C5A92F00EA2723 /* SocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketViewController.h; sourceTree = "<group>"; };
+		7D473D2724C5A92F00EA2723 /* SocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketViewController.m; sourceTree = "<group>"; };
 		7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAVPlayerManager.m; sourceTree = "<group>"; };
 		7D6292032387B0C00007B50F /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAVPlayerManager.h; sourceTree = "<group>"; };
 		7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFFrame.m"; sourceTree = "<group>"; };
@@ -403,6 +406,15 @@
 				7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		7D473D2524C5A91F00EA2723 /* SocketDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D473D2624C5A92F00EA2723 /* SocketViewController.h */,
+				7D473D2724C5A92F00EA2723 /* SocketViewController.m */,
+			);
+			path = SocketDemo;
 			sourceTree = "<group>";
 		};
 		7D6291FF2387B0C00007B50F /* Third */ = {
@@ -758,6 +770,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D473D2524C5A91F00EA2723 /* SocketDemo */,
 				7D32A495244EC49000F3EF48 /* YBImageDemo */,
 				7D78D0A7240B842F00AD841C /* TXCollectionView */,
 				7D6292522387B13D0007B50F /* ZFPlayerDemo */,
@@ -1081,6 +1094,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-Demo/Pods-Demo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
 				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
@@ -1094,6 +1108,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
@@ -1200,6 +1215,7 @@
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
 				7D62924E2387B0DA0007B50F /* ZFPlayerControlView.m in Sources */,
 				7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */,
+				7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */,
 				7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */,
 				7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */,
 				7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */,

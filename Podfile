@@ -19,6 +19,8 @@ pod 'YBImageBrowser'
 # 需要播放视频才添加
 pod 'YBImageBrowser/Video'
 
+pod 'CocoaAsyncSocket'  
+
 pod 'ZFPlayer', '~> 3.0'
 
 pod 'AMap2DMap-NO-IDFA'
