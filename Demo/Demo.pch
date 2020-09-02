@@ -47,4 +47,12 @@ priceAttr = [[NSMutableAttributedString alloc] initWithString:[NSString stringWi
 }\
 (priceAttr);})
 
+#define STATUS_BAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
+static CGFloat const NAVIGATION_BAR_HEIGHT = 44;
+#define kRGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define IsEnablePersonalCenterVCMainTableViewScroll @"IsEnablePersonalCenterVCMainTableViewScroll"
+#define CurrentSelectedChildViewControllerIndex @"CurrentSelectedChildViewControllerIndex"
+#define PersonalCenterVCBackingStatus @"PersonalCenterVCBackingStatus"
+
+
 #endif /* Demo_pch */

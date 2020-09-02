@@ -86,6 +86,10 @@ static NSString *kJumpClass     = @"kJumpClass";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (indexPath.row == 0) {
+        [self httpRequestWithGET];
+        return;
+    }
     NSDictionary *dict = safeObjectTxAtIndex(self.dataAry, indexPath.row);
     NSString *className = EncodeStringFromDic(dict, kJumpClass);
     if (className.length) {
@@ -104,9 +108,12 @@ static NSString *kJumpClass     = @"kJumpClass";
 #pragma mark - indexpath.row == 0
 - (void)httpRequestWithGET {
     NSString *url = @"http://v.juhe.cn/toutiao/index";
+    url = @"http://172.16.0.94:8588/api/v1/app/floor/floor";
     NSDictionary *params = @{@"type":@"top",//类型,,top(头条，默认),shehui(社会),guonei(国内),guoji(国际),yule(娱乐),tiyu(体育)junshi(军事),keji(科技),caijing(财经),shishang(时尚)
                              @"key":@"ad2908cae6020addf38ffdb5e2255c06"//应用APPKEY
                              };
+    
+    NSLog(@"url = %@", url);
     
     [CJHTTPRequest httpRequestWithGETWithUrl:url params:params success:^(id result) {
         
