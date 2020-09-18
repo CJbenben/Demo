@@ -23,10 +23,6 @@ pod 'CocoaAsyncSocket'
 
 pod 'ZFPlayer', '~> 3.0'
 
-pod 'AMap2DMap-NO-IDFA'
-pod 'AMapSearch-NO-IDFA'
-pod 'AMapLocation-NO-IDFA'
-
 pod 'lottie-ios', '~>2.5.3'
 
 end

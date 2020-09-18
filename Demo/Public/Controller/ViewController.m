@@ -12,13 +12,10 @@
 #import <CoreLocation/CoreLocation.h>
 #import "MJRefresh.h"
 #import "AFNetworking.h"
-#import <MAMapKit/MAMapKit.h>
-#import <AMapFoundationKit/AMapFoundationKit.h>
-#import <AMapSearchKit/AMapSearchKit.h>
 #import "NNValidationCodeView.h"
 #import "SecondViewController.h"
 
-@interface ViewController ()<CLLocationManagerDelegate, MAMapViewDelegate, AMapSearchDelegate>
+@interface ViewController ()<CLLocationManagerDelegate>
 
 @property (nonatomic, copy) Person *person;
 @property (nonatomic, strong) Person *person1;
@@ -78,48 +75,6 @@
     [alertview2 show];
     [alertview1 show];
 }
-
-- (void)testMapView {
-    MAMapView *_mapView = [[MAMapView alloc] initWithFrame:self.view.bounds];
-    
-    ///把地图添加至view
-    [self.view addSubview:_mapView];
-    
-    _mapView.showsUserLocation = YES;
-    _mapView.userTrackingMode = MAUserTrackingModeFollow;
-    _mapView.zoomLevel = 17;
-    _mapView.delegate = self;
-}
-
-- (void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation {
-    
-    CLLocationDegrees latitude = userLocation.coordinate.latitude;
-    CLLocationDegrees longitude = userLocation.coordinate.longitude;
-
-    CLLocationCoordinate2D amapcoord = AMapCoordinateConvert(CLLocationCoordinate2DMake(latitude,longitude), AMapCoordinateTypeGoogle);
-
-    AMapReGeocodeSearchRequest *regeoRequest = [[AMapReGeocodeSearchRequest alloc] init];
-    regeoRequest.location = [AMapGeoPoint locationWithLatitude:amapcoord.latitude longitude:amapcoord.longitude];
-    regeoRequest.radius = 10000;
-    regeoRequest.requireExtension = YES;
-
-    AMapSearchAPI *search = [[AMapSearchAPI alloc] init];
-    search.delegate = self;
-    [search AMapReGoecodeSearch:regeoRequest];
-}
-
-- (void)mapView:(MAMapView *)mapView didFailToLocateUserWithError:(NSError *)error {
-    NSLog(@"location error");
-}
-
-- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:(AMapReGeocodeSearchResponse *)response {
-    NSLog(@"response = %@", response);
-    //response.regeocode.addressComponent.streetNumber
-}
-- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
-    NSLog(@"search error");
-}
-
 
 - (void)startLocation {
     // 判断定位功是否打开

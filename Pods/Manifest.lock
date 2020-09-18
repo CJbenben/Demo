@@ -20,13 +20,6 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - AMap2DMap-NO-IDFA (5.6.1):
-    - AMapFoundation-NO-IDFA (~> 1.4)
-  - AMapFoundation-NO-IDFA (1.5.7)
-  - AMapLocation-NO-IDFA (2.6.2):
-    - AMapFoundation-NO-IDFA (~> 1.4)
-  - AMapSearch-NO-IDFA (6.9.0):
-    - AMapFoundation-NO-IDFA (~> 1.4)
   - Aspects (1.4.1)
   - CocoaAsyncSocket (7.6.4)
   - lottie-ios (2.5.3)
@@ -53,9 +46,6 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
-  - AMap2DMap-NO-IDFA
-  - AMapLocation-NO-IDFA
-  - AMapSearch-NO-IDFA
   - Aspects
   - CocoaAsyncSocket
   - lottie-ios (~> 2.5.3)
@@ -70,10 +60,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - AFNetworking
-    - AMap2DMap-NO-IDFA
-    - AMapFoundation-NO-IDFA
-    - AMapLocation-NO-IDFA
-    - AMapSearch-NO-IDFA
     - Aspects
     - CocoaAsyncSocket
     - Masonry
@@ -89,10 +75,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 41d45d2c14219af0fa5addf3cfd433a002c13c9f
-  AMap2DMap-NO-IDFA: ccecb3e2a044c17e6badb9b91c950e709368be20
-  AMapFoundation-NO-IDFA: 9088085827c831811bb0fd3afd96b99963a7cf71
-  AMapLocation-NO-IDFA: d7792c8c516f415e186f1bc25946f1a58ca6a583
-  AMapSearch-NO-IDFA: 264999e6c149383a8f164c2fe49b51513e93d674
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
@@ -105,6 +87,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
 
-PODFILE CHECKSUM: 945b09ba4bf7ee7a506d00d49e7b53cb4480e63d
+PODFILE CHECKSUM: d74628030b398725657577a9d6a0fb5c4119ff4c
 
 COCOAPODS: 1.8.4
