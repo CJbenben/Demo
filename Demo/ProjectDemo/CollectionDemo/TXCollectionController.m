@@ -1,18 +1,17 @@
 //
-//  ATCollectionViewDemoVC.m
+//  TXCollectionController.m
 //  Demo
 //
 //  Created by ChenJie on 2018/1/25.
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "ATCollectionViewDemoVC.h"
-//#import "CJCycleScrollView.h"
+#import "TXCollectionController.h"
 #import "TXCycleScrollView.h"
 #import "AtzucheHomeChooseCarCollectionView.h"
 #import "AtzucheChooseCarFlowLayout.h"
 
-@interface ATCollectionViewDemoVC ()<AtzucheHomeCollectionDidSelectDelegate>
+@interface TXCollectionController ()<AtzucheHomeCollectionDidSelectDelegate>
 
 //@property (strong, nonatomic) CJCycleScrollView *scrollView;
 @property (nonatomic, strong) TXCycleScrollView *atScrollView;
@@ -23,7 +22,7 @@
 
 @end
 
-@implementation ATCollectionViewDemoVC
+@implementation TXCollectionController
 
 - (NSMutableArray *)imageAry {
     if (_imageAry == nil) {
@@ -51,8 +50,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
-    
-    self.title = @"ATCollectionViewDemoVC";
     
     //[self addCJScrollViewDemo];
     

@@ -7,11 +7,9 @@
 //
 
 #import "SecondViewController.h"
-
 #import "DemoTableViewCell.h"
 
-#import "ATCollectionViewDemoVC.h"
-#import "AtzucheHomeTitleViewController.h"
+#import "TXCollectionController.h"
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
 #import "WKWebViewController.h"
@@ -35,10 +33,9 @@ static NSString *kJumpClass     = @"kJumpClass";
 - (NSArray *)dataAry {
     if (_dataAry == nil) {
         _dataAry = @[@{kJumpClass: @"", kJumpTitle: @"网络请求"},
-                     @{kJumpClass: @"ATCollectionViewDemoVC", kJumpTitle: @"CollectionView"},
-                     @{kJumpClass: @"AtzucheHomeTitleViewController", kJumpTitle: @"自动居中 CollectionView"},
+                     @{kJumpClass: @"TXCollectionController", kJumpTitle: @"TXCollectionViewDemo"},
                      @{kJumpClass: @"MJIphoneXViewController", kJumpTitle: @"MJ 下拉刷新兼容 iPhone X"},
-                     @{kJumpClass: @"PhoneFontViewController", kJumpTitle: @"iPhone 字体&LLDB"},
+                     @{kJumpClass: @"PhoneFontViewController", kJumpTitle: @"iPhone 字体"},
                      @{kJumpClass: @"WKWebViewController", kJumpTitle: @"wkwebview"},
                      @{kJumpClass: @"MVVMViewController", kJumpTitle: @"MVVM"},
                      @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
@@ -53,7 +50,7 @@ static NSString *kJumpClass     = @"kJumpClass";
 
 - (UITableView *)tableview {
     if (_tableview == nil) {
-        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        _tableview = [[UITableView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT-naviHeight) style:UITableViewStylePlain];
         _tableview.dataSource = self;
         _tableview.delegate = self;
     }
@@ -62,7 +59,8 @@ static NSString *kJumpClass     = @"kJumpClass";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"笨笨编程";
+    self.naviTitleL.text = @"笨笨编程";
+    self.backImage = nil;
     
     [self.view addSubview:self.tableview];
 }
@@ -95,6 +93,15 @@ static NSString *kJumpClass     = @"kJumpClass";
     if (className.length) {
         Class class = NSClassFromString(className);
         id vc = [[class alloc] init];
+        for (NSString *key in dict.allKeys) {
+            @try {
+                [vc setValue:[dict objectForKey:key] forKey:key];
+            } @catch (NSException *exception) {
+                
+            } @finally {
+                
+            }
+        }
         if (vc) {
             [self.navigationController pushViewController:vc animated:YES];
         }

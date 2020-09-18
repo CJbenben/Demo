@@ -23,6 +23,11 @@
 		7D52B7C82514A0D60032282E /* DIN Alternate Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C32514A0D60032282E /* DIN Alternate Light.otf */; };
 		7D52B7C92514A0D60032282E /* DIN Alternate Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C42514A0D60032282E /* DIN Alternate Bold.ttf */; };
 		7D52B7CA2514A0D60032282E /* loading.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C52514A0D60032282E /* loading.png */; };
+		7D52B7E72514A5790032282E /* TXBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B7E62514A5790032282E /* TXBaseViewController.m */; };
+		7D52B7F92514AACF0032282E /* TXHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B7F72514AACF0032282E /* TXHomeCollectionHeaderView.m */; };
+		7D52B81B2514AE5D0032282E /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B8162514AE5D0032282E /* 使用方法 */; };
+		7D52B81C2514AE5D0032282E /* TXCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B8172514AE5D0032282E /* TXCycleScrollView.m */; };
+		7D52B81D2514AE5D0032282E /* NSTimer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B8182514AE5D0032282E /* NSTimer+Add.m */; };
 		7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */; };
 		7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */; };
 		7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292302387B0D90007B50F /* ZFLandScapeControlView.m */; };
@@ -38,7 +43,6 @@
 		7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292412387B0DA0007B50F /* ZFLoadingView.m */; };
 		7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292422387B0DA0007B50F /* ZFVolumeBrightnessView.m */; };
 		7D6292552387B14F0007B50F /* PlayerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292542387B14F0007B50F /* PlayerDemoViewController.m */; };
-		7D62925B2387B4E00007B50F /* NSTimer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62925A2387B4E00007B50F /* NSTimer+Add.m */; };
 		7D62925E2387BD800007B50F /* PlayerBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62925D2387BD800007B50F /* PlayerBannerModel.m */; };
 		7D67FE30240E222100AE76BC /* TXCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE2F240E222100AE76BC /* TXCollectionView.m */; };
 		7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */; };
@@ -92,18 +96,10 @@
 		F595679C1FAB4AD20068A04F /* DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F595679B1FAB4AD20068A04F /* DemoUITests.m */; };
 		F599D7812019753800D33834 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7792019753800D33834 /* AppDelegate.m */; };
 		F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */ = {isa = PBXBuildFile; fileRef = F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */; };
-		F5E3035E20C13AF3001F11EC /* ATCollectionViewDemoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031720C13AF3001F11EC /* ATCollectionViewDemoVC.m */; };
+		F5E3035E20C13AF3001F11EC /* TXCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031720C13AF3001F11EC /* TXCollectionController.m */; };
 		F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031A20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m */; };
 		F5E3036020C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031C20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m */; };
 		F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3031E20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m */; };
-		F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032120C13AF3001F11EC /* AtzucheHomeNaviView.m */; };
-		F5E3036320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032420C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m */; };
-		F5E3036420C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032620C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m */; };
-		F5E3036520C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032820C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m */; };
-		F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032A20C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m */; };
-		F5E3036720C13AF3001F11EC /* AtzucheHomeTitleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032C20C13AF3001F11EC /* AtzucheHomeTitleViewController.m */; };
-		F5E3036820C13AF3001F11EC /* TXCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3032F20C13AF3001F11EC /* TXCycleScrollView.m */; };
-		F5E3036920C13AF3001F11EC /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = F5E3033020C13AF3001F11EC /* 使用方法 */; };
 		F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3034A20C13AF3001F11EC /* PhoneFontViewController.m */; };
 		F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3034D20C13AF3001F11EC /* AtzucheRefreshStateHeader.m */; };
 		F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3034F20C13AF3001F11EC /* MJDIYHeader.m */; };
@@ -112,9 +108,6 @@
 		F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3035A20C13AF3001F11EC /* WKWebViewController.m */; };
 		F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3038020C13D09001F11EC /* DemoTableViewCell.m */; };
 		F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3038220C13D09001F11EC /* SecondViewController.m */; };
-		F5E3038C20C13D09001F11EC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3038420C13D09001F11EC /* ViewController.m */; };
-		F5E3038D20C13D09001F11EC /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3038720C13D09001F11EC /* Country.m */; };
-		F5E3038E20C13D09001F11EC /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = F5E3038920C13D09001F11EC /* Person.m */; };
 		F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E3039020C13D59001F11EC /* LaunchScreen.storyboard */; };
 		F5E3039320C13D59001F11EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5E3039120C13D59001F11EC /* Main.storyboard */; };
 		F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */; };
@@ -162,6 +155,15 @@
 		7D52B7C32514A0D60032282E /* DIN Alternate Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Light.otf"; sourceTree = "<group>"; };
 		7D52B7C42514A0D60032282E /* DIN Alternate Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Bold.ttf"; sourceTree = "<group>"; };
 		7D52B7C52514A0D60032282E /* loading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading.png; sourceTree = "<group>"; };
+		7D52B7E52514A5790032282E /* TXBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXBaseViewController.h; sourceTree = "<group>"; };
+		7D52B7E62514A5790032282E /* TXBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXBaseViewController.m; sourceTree = "<group>"; };
+		7D52B7F72514AACF0032282E /* TXHomeCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXHomeCollectionHeaderView.m; sourceTree = "<group>"; };
+		7D52B7F82514AACF0032282E /* TXHomeCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXHomeCollectionHeaderView.h; sourceTree = "<group>"; };
+		7D52B8162514AE5D0032282E /* 使用方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用方法"; sourceTree = "<group>"; };
+		7D52B8172514AE5D0032282E /* TXCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCycleScrollView.m; sourceTree = "<group>"; };
+		7D52B8182514AE5D0032282E /* NSTimer+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Add.m"; sourceTree = "<group>"; };
+		7D52B8192514AE5D0032282E /* TXCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCycleScrollView.h; sourceTree = "<group>"; };
+		7D52B81A2514AE5D0032282E /* NSTimer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Add.h"; sourceTree = "<group>"; };
 		7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAVPlayerManager.m; sourceTree = "<group>"; };
 		7D6292032387B0C00007B50F /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAVPlayerManager.h; sourceTree = "<group>"; };
 		7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFFrame.m"; sourceTree = "<group>"; };
@@ -191,8 +193,6 @@
 		7D6292442387B0DA0007B50F /* ZFLandScapeControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFLandScapeControlView.h; sourceTree = "<group>"; };
 		7D6292532387B14F0007B50F /* PlayerDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerDemoViewController.h; sourceTree = "<group>"; };
 		7D6292542387B14F0007B50F /* PlayerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerDemoViewController.m; sourceTree = "<group>"; };
-		7D6292592387B4E00007B50F /* NSTimer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Add.h"; sourceTree = "<group>"; };
-		7D62925A2387B4E00007B50F /* NSTimer+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Add.m"; sourceTree = "<group>"; };
 		7D62925C2387BD800007B50F /* PlayerBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerBannerModel.h; sourceTree = "<group>"; };
 		7D62925D2387BD800007B50F /* PlayerBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerBannerModel.m; sourceTree = "<group>"; };
 		7D67FE2E240E222100AE76BC /* TXCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionView.h; sourceTree = "<group>"; };
@@ -304,29 +304,14 @@
 		F599D7832019754500D33834 /* Demo.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Demo.pch; sourceTree = "<group>"; };
 		F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+AtzucheColor.h"; sourceTree = "<group>"; };
 		F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AtzucheColor.m"; sourceTree = "<group>"; };
-		F5E3031620C13AF3001F11EC /* ATCollectionViewDemoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ATCollectionViewDemoVC.h; sourceTree = "<group>"; };
-		F5E3031720C13AF3001F11EC /* ATCollectionViewDemoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ATCollectionViewDemoVC.m; sourceTree = "<group>"; };
+		F5E3031620C13AF3001F11EC /* TXCollectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCollectionController.h; sourceTree = "<group>"; };
+		F5E3031720C13AF3001F11EC /* TXCollectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCollectionController.m; sourceTree = "<group>"; };
 		F5E3031920C13AF3001F11EC /* AtzucheChooseCarFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheChooseCarFlowLayout.h; sourceTree = "<group>"; };
 		F5E3031A20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheChooseCarFlowLayout.m; sourceTree = "<group>"; };
 		F5E3031B20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionCell.h; sourceTree = "<group>"; };
 		F5E3031C20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionCell.m; sourceTree = "<group>"; };
 		F5E3031D20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeChooseCarCollectionView.h; sourceTree = "<group>"; };
 		F5E3031E20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeChooseCarCollectionView.m; sourceTree = "<group>"; };
-		F5E3032020C13AF3001F11EC /* AtzucheHomeNaviView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeNaviView.h; sourceTree = "<group>"; };
-		F5E3032120C13AF3001F11EC /* AtzucheHomeNaviView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeNaviView.m; sourceTree = "<group>"; };
-		F5E3032320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeCollectionHeaderView.h; sourceTree = "<group>"; };
-		F5E3032420C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeCollectionHeaderView.m; sourceTree = "<group>"; };
-		F5E3032520C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionCell.h; sourceTree = "<group>"; };
-		F5E3032620C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionCell.m; sourceTree = "<group>"; };
-		F5E3032720C13AF3001F11EC /* AtzucheHomeTitleCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleCollectionView.h; sourceTree = "<group>"; };
-		F5E3032820C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleCollectionView.m; sourceTree = "<group>"; };
-		F5E3032920C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleFlowLayout.h; sourceTree = "<group>"; };
-		F5E3032A20C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleFlowLayout.m; sourceTree = "<group>"; };
-		F5E3032B20C13AF3001F11EC /* AtzucheHomeTitleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheHomeTitleViewController.h; sourceTree = "<group>"; };
-		F5E3032C20C13AF3001F11EC /* AtzucheHomeTitleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AtzucheHomeTitleViewController.m; sourceTree = "<group>"; };
-		F5E3032E20C13AF3001F11EC /* TXCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCycleScrollView.h; sourceTree = "<group>"; };
-		F5E3032F20C13AF3001F11EC /* TXCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCycleScrollView.m; sourceTree = "<group>"; };
-		F5E3033020C13AF3001F11EC /* 使用方法 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "使用方法"; sourceTree = "<group>"; };
 		F5E3034920C13AF3001F11EC /* PhoneFontViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhoneFontViewController.h; sourceTree = "<group>"; };
 		F5E3034A20C13AF3001F11EC /* PhoneFontViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhoneFontViewController.m; sourceTree = "<group>"; };
 		F5E3034C20C13AF3001F11EC /* AtzucheRefreshStateHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AtzucheRefreshStateHeader.h; sourceTree = "<group>"; };
@@ -343,12 +328,6 @@
 		F5E3038020C13D09001F11EC /* DemoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewCell.m; sourceTree = "<group>"; };
 		F5E3038120C13D09001F11EC /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		F5E3038220C13D09001F11EC /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		F5E3038320C13D09001F11EC /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F5E3038420C13D09001F11EC /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		F5E3038620C13D09001F11EC /* Country.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
-		F5E3038720C13D09001F11EC /* Country.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		F5E3038820C13D09001F11EC /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
-		F5E3038920C13D09001F11EC /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		F5E3039020C13D59001F11EC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5E3039120C13D59001F11EC /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F5FD32C320C4D1C90049B79B /* AtzucheCustomTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AtzucheCustomTipView.h; sourceTree = "<group>"; };
@@ -444,6 +423,27 @@
 				7D52B7C52514A0D60032282E /* loading.png */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		7D52B7E42514A5650032282E /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				7D52B7E52514A5790032282E /* TXBaseViewController.h */,
+				7D52B7E62514A5790032282E /* TXBaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		7D52B8152514AE5D0032282E /* CJCycleScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				7D52B8162514AE5D0032282E /* 使用方法 */,
+				7D52B8172514AE5D0032282E /* TXCycleScrollView.m */,
+				7D52B8182514AE5D0032282E /* NSTimer+Add.m */,
+				7D52B8192514AE5D0032282E /* TXCycleScrollView.h */,
+				7D52B81A2514AE5D0032282E /* NSTimer+Add.h */,
+			);
+			path = CJCycleScrollView;
 			sourceTree = "<group>";
 		};
 		7D6291FF2387B0C00007B50F /* Third */ = {
@@ -794,16 +794,16 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7D473D2524C5A91F00EA2723 /* SocketDemo */,
 				7D32A495244EC49000F3EF48 /* YBImageDemo */,
+				7D473D2524C5A91F00EA2723 /* SocketDemo */,
 				7D78D0A7240B842F00AD841C /* TXCollectionView */,
 				7D6292522387B13D0007B50F /* ZFPlayerDemo */,
 				7D85701F237A545E0081C236 /* ScrollViewXib */,
 				7DE533D021A7A8BD00ECC90A /* MVVM */,
-				F5E3031520C13AF3001F11EC /* CollectionDemo */,
-				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
-				F5E3034820C13AF3001F11EC /* iPhoneFont */,
 				F5E3035820C13AF3001F11EC /* WKWebView */,
+				F5E3034820C13AF3001F11EC /* iPhoneFont */,
+				F5E3034B20C13AF3001F11EC /* MJ_IPhoneXDemo */,
+				F5E3031520C13AF3001F11EC /* CollectionDemo */,
 				F5E3035520C13AF3001F11EC /* ValidationCodeDemo */,
 			);
 			path = ProjectDemo;
@@ -812,17 +812,15 @@
 		F5E3031520C13AF3001F11EC /* CollectionDemo */ = {
 			isa = PBXGroup;
 			children = (
-				F5E3031620C13AF3001F11EC /* ATCollectionViewDemoVC.h */,
-				F5E3031720C13AF3001F11EC /* ATCollectionViewDemoVC.m */,
-				F5E3031820C13AF3001F11EC /* AtHomeChooseCarCollectionView */,
-				F5E3031F20C13AF3001F11EC /* AtHomeNaviView */,
-				F5E3032220C13AF3001F11EC /* AtHomeTitleCollectionView */,
-				F5E3032D20C13AF3001F11EC /* CJCiycleScrollView */,
+				F5E3031620C13AF3001F11EC /* TXCollectionController.h */,
+				F5E3031720C13AF3001F11EC /* TXCollectionController.m */,
+				7D52B8152514AE5D0032282E /* CJCycleScrollView */,
+				F5E3031820C13AF3001F11EC /* CollectionView */,
 			);
 			path = CollectionDemo;
 			sourceTree = "<group>";
 		};
-		F5E3031820C13AF3001F11EC /* AtHomeChooseCarCollectionView */ = {
+		F5E3031820C13AF3001F11EC /* CollectionView */ = {
 			isa = PBXGroup;
 			children = (
 				F5E3031920C13AF3001F11EC /* AtzucheChooseCarFlowLayout.h */,
@@ -831,46 +829,10 @@
 				F5E3031C20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m */,
 				F5E3031D20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.h */,
 				F5E3031E20C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m */,
+				7D52B7F82514AACF0032282E /* TXHomeCollectionHeaderView.h */,
+				7D52B7F72514AACF0032282E /* TXHomeCollectionHeaderView.m */,
 			);
-			path = AtHomeChooseCarCollectionView;
-			sourceTree = "<group>";
-		};
-		F5E3031F20C13AF3001F11EC /* AtHomeNaviView */ = {
-			isa = PBXGroup;
-			children = (
-				F5E3032020C13AF3001F11EC /* AtzucheHomeNaviView.h */,
-				F5E3032120C13AF3001F11EC /* AtzucheHomeNaviView.m */,
-			);
-			path = AtHomeNaviView;
-			sourceTree = "<group>";
-		};
-		F5E3032220C13AF3001F11EC /* AtHomeTitleCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				F5E3032320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.h */,
-				F5E3032420C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m */,
-				F5E3032520C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.h */,
-				F5E3032620C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m */,
-				F5E3032720C13AF3001F11EC /* AtzucheHomeTitleCollectionView.h */,
-				F5E3032820C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m */,
-				F5E3032920C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.h */,
-				F5E3032A20C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m */,
-				F5E3032B20C13AF3001F11EC /* AtzucheHomeTitleViewController.h */,
-				F5E3032C20C13AF3001F11EC /* AtzucheHomeTitleViewController.m */,
-			);
-			path = AtHomeTitleCollectionView;
-			sourceTree = "<group>";
-		};
-		F5E3032D20C13AF3001F11EC /* CJCiycleScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				F5E3032E20C13AF3001F11EC /* TXCycleScrollView.h */,
-				F5E3032F20C13AF3001F11EC /* TXCycleScrollView.m */,
-				7D6292592387B4E00007B50F /* NSTimer+Add.h */,
-				7D62925A2387B4E00007B50F /* NSTimer+Add.m */,
-				F5E3033020C13AF3001F11EC /* 使用方法 */,
-			);
-			path = CJCiycleScrollView;
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 		F5E3034820C13AF3001F11EC /* iPhoneFont */ = {
@@ -922,9 +884,9 @@
 				F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */,
 				F528C693215CDEA9008F7850 /* CJHTTPRequest.h */,
 				F528C694215CDEA9008F7850 /* CJHTTPRequest.m */,
+				7D52B7E42514A5650032282E /* Base */,
 				F5E3038F20C13D59001F11EC /* storyboard */,
 				F5E3037E20C13D09001F11EC /* Controller */,
-				F5E3038520C13D09001F11EC /* Model */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -936,21 +898,8 @@
 				F5E3038020C13D09001F11EC /* DemoTableViewCell.m */,
 				F5E3038120C13D09001F11EC /* SecondViewController.h */,
 				F5E3038220C13D09001F11EC /* SecondViewController.m */,
-				F5E3038320C13D09001F11EC /* ViewController.h */,
-				F5E3038420C13D09001F11EC /* ViewController.m */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		F5E3038520C13D09001F11EC /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				F5E3038620C13D09001F11EC /* Country.h */,
-				F5E3038720C13D09001F11EC /* Country.m */,
-				F5E3038820C13D09001F11EC /* Person.h */,
-				F5E3038920C13D09001F11EC /* Person.m */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		F5E3038F20C13D59001F11EC /* storyboard */ = {
@@ -1073,12 +1022,12 @@
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
 				7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */,
 				7DDB0066238E471C00AF1DAE /* data.json in Resources */,
-				F5E3036920C13AF3001F11EC /* 使用方法 in Resources */,
 				7D78D0B7240BA36000AD841C /* TXAutoCollectionViewCell.xib in Resources */,
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				7D32A4A1244EDF3A00F3EF48 /* BaseListCell.xib in Resources */,
 				7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */,
 				7D52B7C92514A0D60032282E /* DIN Alternate Bold.ttf in Resources */,
+				7D52B81B2514AE5D0032282E /* 使用方法 in Resources */,
 				7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
 				7D52B7CA2514A0D60032282E /* loading.png in Resources */,
@@ -1174,16 +1123,12 @@
 			files = (
 				F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */,
 				F5E3037620C13AF3001F11EC /* MJIphoneXViewController.m in Sources */,
-				F5E3038E20C13D09001F11EC /* Person.m in Sources */,
 				F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */,
-				F5E3035E20C13AF3001F11EC /* ATCollectionViewDemoVC.m in Sources */,
-				7D62925B2387B4E00007B50F /* NSTimer+Add.m in Sources */,
+				F5E3035E20C13AF3001F11EC /* TXCollectionController.m in Sources */,
 				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
 				7DD9449F24FFBB030078F37A /* CJAppSystemInfo.m in Sources */,
 				7DD9447F24FFBAE80078F37A /* DadView.m in Sources */,
 				7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */,
-				F5E3038C20C13D09001F11EC /* ViewController.m in Sources */,
-				F5E3036220C13AF3001F11EC /* AtzucheHomeNaviView.m in Sources */,
 				7D6292492387B0DA0007B50F /* ZFSmallFloatControlView.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
 				7D78D0B6240BA36000AD841C /* TXAutoCollectionViewCell.m in Sources */,
@@ -1200,6 +1145,7 @@
 				7DD9448F24FFBAF60078F37A /* UIColor+CJColor.m in Sources */,
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
+				7D52B7F92514AACF0032282E /* TXHomeCollectionHeaderView.m in Sources */,
 				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
 				7D62924C2387B0DA0007B50F /* ZFPortraitControlView.m in Sources */,
@@ -1209,13 +1155,11 @@
 				7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */,
 				7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */,
 				7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */,
-				F5E3038D20C13D09001F11EC /* Country.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
-				F5E3036520C13AF3001F11EC /* AtzucheHomeTitleCollectionView.m in Sources */,
 				7DD944A224FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m in Sources */,
-				F5E3036320C13AF3001F11EC /* AtzucheHomeCollectionHeaderView.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
+				7D52B81D2514AE5D0032282E /* NSTimer+Add.m in Sources */,
 				7D21BF8924E393A500D9FE51 /* XKTargetTableView.m in Sources */,
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DD9448E24FFBAF60078F37A /* NSString+CJMD5.m in Sources */,
@@ -1235,14 +1179,15 @@
 				7DD9449024FFBAF60078F37A /* UIImage+loadSPBundle.m in Sources */,
 				F599D7812019753800D33834 /* AppDelegate.m in Sources */,
 				7DDB0067238E471C00AF1DAE /* ZFNotAutoPlayViewController.m in Sources */,
+				7D52B81C2514AE5D0032282E /* TXCycleScrollView.m in Sources */,
 				7D6292472387B0DA0007B50F /* ZFSliderView.m in Sources */,
 				F5E3036120C13AF3001F11EC /* AtzucheHomeChooseCarCollectionView.m in Sources */,
-				F5E3036620C13AF3001F11EC /* AtzucheHomeTitleFlowLayout.m in Sources */,
 				7D67FE30240E222100AE76BC /* TXCollectionView.m in Sources */,
 				7D6292552387B14F0007B50F /* PlayerDemoViewController.m in Sources */,
 				7DD9447B24FFBAE80078F37A /* UIView+Toast.m in Sources */,
 				7DE533E321A7D99A00ECC90A /* MVVMBaseModel.m in Sources */,
 				7D62925E2387BD800007B50F /* PlayerBannerModel.m in Sources */,
+				7D52B7E72514A5790032282E /* TXBaseViewController.m in Sources */,
 				F599D7912019BA8D00D33834 /* UIColor+AtzucheColor.m in Sources */,
 				F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */,
 				7D6292482387B0DA0007B50F /* ZFSpeedLoadingView.m in Sources */,
@@ -1252,13 +1197,10 @@
 				7D78D0AD240B84C000AD841C /* TXWaterFallLayout.m in Sources */,
 				7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */,
 				7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */,
-				F5E3036820C13AF3001F11EC /* TXCycleScrollView.m in Sources */,
-				F5E3036420C13AF3001F11EC /* AtzucheHomeTitleCollectionCell.m in Sources */,
 				7DD9448D24FFBAF60078F37A /* NSString+AtzucheNSString.m in Sources */,
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 				F5E3036020C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				7D21BF8624E3938200D9FE51 /* XKBaseScrollView.m in Sources */,
-				F5E3036720C13AF3001F11EC /* AtzucheHomeTitleViewController.m in Sources */,
 				7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */,
 				7D67FE35240E227800AE76BC /* HMHomeLikeCollectionViewCell.m in Sources */,
 			);

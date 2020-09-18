@@ -1,5 +1,5 @@
 //
-//  AtzucheHomeCollectionHeaderView.h
+//  TXHomeCollectionHeaderView.h
 //  Demo
 //
 //  Created by ChenJie on 2018/1/29.
@@ -11,7 +11,7 @@
 
 typedef void (^HeaderBlock)(void);
 
-@interface AtzucheHomeCollectionHeaderView : UIView
+@interface TXHomeCollectionHeaderView : UIView
 
 @property (nonatomic, strong) UILabel *leftL;
 @property (nonatomic, strong) NJTitleButton *allBtn;

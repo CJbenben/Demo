@@ -7,7 +7,6 @@
 //
 
 #import "PhoneFontViewController.h"
-#import "ViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import "TXFileCache.h"
@@ -86,7 +85,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.title = @"PhoneFontViewController";
     
     [self.view addSubview:self.label1];
     [self.view addSubview:self.label2];
@@ -134,9 +132,6 @@
     self.label5.text = @"ABCDEFG ￥0123456789 abcdefg";
     self.label5.font = [UIFont fontWithName:@"DINAlternate-Bold" size:28];
     self.label5.font = [UIFont fontWithName:@"DIN-Alternate" size:28];
-    
-    
-    //self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleDone target:self action:@selector(backView)];
     
     MPVolumeView *volumeView = [[MPVolumeView alloc] init];
     self.volumeViewSlider = nil;
@@ -225,14 +220,6 @@ NSString *decimalNumberWithDouble(NSString *str){
     NSString *volume = [notification.userInfo objectForKey:@"AVSystemController_AudioVolumeNotificationParameter"];
     NSLog(@"FlyElephant-系统音量:%@", volume);
     self.volumeViewSlider.value = [volume floatValue];
-}
-
-- (void)backView {
-    for (UIViewController *vc in self.navigationController.viewControllers) {
-        if ([vc isKindOfClass:[ViewController class]]) {
-            [self.navigationController popToViewController:vc animated:YES];
-        }
-    }
 }
 
 - (void)didReceiveMemoryWarning {

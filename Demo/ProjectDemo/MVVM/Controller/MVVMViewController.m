@@ -26,7 +26,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.mvvmView = [[MVVMView alloc] initWithFrame:self.view.frame];
+    self.mvvmView = [[MVVMView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT-naviHeight)];
     [self.view addSubview:self.mvvmView];
     self.mvvmView.delegate = self;
     

@@ -17,11 +17,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.naviTitleL.text = @"WKWebViewController";
-    
     self.backImage = [UIImage imageNamed:@"public_navi_left_back"];
     
     [self showHUDLoading];
+    
+    
+    WS(weakSelf);
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [weakSelf hideHUDLoading];
+    });
 }
 
 - (void)didReceiveMemoryWarning {

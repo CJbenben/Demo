@@ -8,7 +8,7 @@
 
 #import "AtzucheHomeChooseCarCollectionView.h"
 #import "AtzucheHomeChooseCarCollectionCell.h"
-#import "AtzucheHomeCollectionHeaderView.h"
+#import "TXHomeCollectionHeaderView.h"
 
 @interface AtzucheHomeChooseCarCollectionView()<UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -71,7 +71,7 @@ static NSString *reuseHeader    = @"AtzucheHomeChooseCarCollectionCellHeader";
         for (UIView *view in headerView.subviews) {
             [view removeFromSuperview];
         }
-        AtzucheHomeCollectionHeaderView *header = [[AtzucheHomeCollectionHeaderView alloc] initWithHeaderViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
+        TXHomeCollectionHeaderView *header = [[TXHomeCollectionHeaderView alloc] initWithHeaderViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50)];
         header.backgroundColor = [UIColor cyanColor];
         header.headerBlock = ^() {
             [self.homeDelegate atzucheHomeCollectionHeaderViewDidSelectAtSection:indexPath.section type:HomeCollectionTypeChooseCar];

@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "TXBaseViewController.h"
 
-@interface WKWebViewController : DadViewController
+@interface WKWebViewController : TXBaseViewController
 
 @end

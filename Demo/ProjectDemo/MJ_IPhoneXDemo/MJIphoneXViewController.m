@@ -23,7 +23,7 @@
 
 - (UITableView *)mjTestTableView {
     if (_mjTestTableView == nil) {
-        _mjTestTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+        _mjTestTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT-naviHeight) style:UITableViewStylePlain];
         _mjTestTableView.backgroundColor = [UIColor lightGrayColor];
         _mjTestTableView.dataSource = self;
         _mjTestTableView.delegate = self;

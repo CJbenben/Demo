@@ -6,8 +6,8 @@
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "TXBaseViewController.h"
 
-@interface MJIphoneXViewController : DadViewController
+@interface MJIphoneXViewController : TXBaseViewController
 
 @end

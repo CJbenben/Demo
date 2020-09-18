@@ -1,14 +1,14 @@
 //
-//  AtzucheHomeCollectionHeaderView.m
+//  TXHomeCollectionHeaderView.m
 //  Demo
 //
 //  Created by ChenJie on 2018/1/29.
 //  Copyright © 2018年 ChenJie. All rights reserved.
 //
 
-#import "AtzucheHomeCollectionHeaderView.h"
+#import "TXHomeCollectionHeaderView.h"
 
-@implementation AtzucheHomeCollectionHeaderView
+@implementation TXHomeCollectionHeaderView
 
 - (UILabel *)leftL {
     if (_leftL == nil) {

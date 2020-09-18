@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ChenJie. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "DadViewController.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : DadViewController
 
 @end
