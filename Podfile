@@ -18,12 +18,14 @@ pod 'Aspects'
 pod 'YBImageBrowser'
 # 需要播放视频才添加
 pod 'YBImageBrowser/Video'
-
+# socket链接
 pod 'CocoaAsyncSocket'  
 
 pod 'ZFPlayer', '~> 3.0'
 
 pod 'lottie-ios', '~>2.5.3'
+# realm数据库
+pod 'Realm'
 
 end
 

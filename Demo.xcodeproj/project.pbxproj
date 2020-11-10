@@ -28,6 +28,7 @@
 		7D52B81B2514AE5D0032282E /* 使用方法 in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B8162514AE5D0032282E /* 使用方法 */; };
 		7D52B81C2514AE5D0032282E /* TXCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B8172514AE5D0032282E /* TXCycleScrollView.m */; };
 		7D52B81D2514AE5D0032282E /* NSTimer+Add.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B8182514AE5D0032282E /* NSTimer+Add.m */; };
+		7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B83D2514BCA50032282E /* RealmViewController.m */; };
 		7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */; };
 		7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */; };
 		7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292302387B0D90007B50F /* ZFLandScapeControlView.m */; };
@@ -164,6 +165,8 @@
 		7D52B8182514AE5D0032282E /* NSTimer+Add.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Add.m"; sourceTree = "<group>"; };
 		7D52B8192514AE5D0032282E /* TXCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCycleScrollView.h; sourceTree = "<group>"; };
 		7D52B81A2514AE5D0032282E /* NSTimer+Add.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Add.h"; sourceTree = "<group>"; };
+		7D52B83C2514BCA50032282E /* RealmViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmViewController.h; sourceTree = "<group>"; };
+		7D52B83D2514BCA50032282E /* RealmViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmViewController.m; sourceTree = "<group>"; };
 		7D6292022387B0C00007B50F /* ZFAVPlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFAVPlayerManager.m; sourceTree = "<group>"; };
 		7D6292032387B0C00007B50F /* ZFAVPlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFAVPlayerManager.h; sourceTree = "<group>"; };
 		7D62922C2387B0D90007B50F /* UIView+ZFFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZFFrame.m"; sourceTree = "<group>"; };
@@ -444,6 +447,15 @@
 				7D52B81A2514AE5D0032282E /* NSTimer+Add.h */,
 			);
 			path = CJCycleScrollView;
+			sourceTree = "<group>";
+		};
+		7D52B83B2514BC980032282E /* RealmDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D52B83C2514BCA50032282E /* RealmViewController.h */,
+				7D52B83D2514BCA50032282E /* RealmViewController.m */,
+			);
+			path = RealmDemo;
 			sourceTree = "<group>";
 		};
 		7D6291FF2387B0C00007B50F /* Third */ = {
@@ -794,6 +806,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D52B83B2514BC980032282E /* RealmDemo */,
 				7D32A495244EC49000F3EF48 /* YBImageDemo */,
 				7D473D2524C5A91F00EA2723 /* SocketDemo */,
 				7D78D0A7240B842F00AD841C /* TXCollectionView */,
@@ -1072,6 +1085,7 @@
 				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/YBImageBrowser/YBImageBrowser.framework",
 				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
@@ -1086,6 +1100,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YBImageBrowser.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
@@ -1135,6 +1150,7 @@
 				7D32A49B244EC92A00F3EF48 /* TXYBView.m in Sources */,
 				7DD944A024FFBB030078F37A /* CJDefaultTool.m in Sources */,
 				7DD9448024FFBAE80078F37A /* DadViewController.m in Sources */,
+				7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
 				7D62924A2387B0DA0007B50F /* UIImageView+ZFCache.m in Sources */,
 				7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */,

@@ -42,7 +42,8 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
                      @{kJumpClass: @"TXCollectionViewController", kJumpTitle: @"瀑布流&&自适应"},
                      @{kJumpClass: @"SocketViewController", kJumpTitle: @"socket学习"},
-                     @{kJumpClass: @"TXYBDemoViewController", kJumpTitle: @"YBImageBrowser 学习"}
+                     @{kJumpClass: @"TXYBDemoViewController", kJumpTitle: @"YBImageBrowser 学习"},
+                     @{kJumpClass: @"RealmViewController", kJumpTitle: @"Realm 数据库学习"}
         ];
     }
     return _dataAry;
