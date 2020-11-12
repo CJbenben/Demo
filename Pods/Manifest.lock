@@ -43,9 +43,9 @@ PODS:
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
-  - ZFPlayer (3.3.1):
-    - ZFPlayer/Core (= 3.3.1)
-  - ZFPlayer/Core (3.3.1)
+  - ZFPlayer (3.3.3):
+    - ZFPlayer/Core (= 3.3.3)
+  - ZFPlayer/Core (3.3.3)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
@@ -59,7 +59,7 @@ DEPENDENCIES:
   - Realm
   - YBImageBrowser
   - YBImageBrowser/Video
-  - ZFPlayer (~> 3.0)
+  - ZFPlayer (~> 3.3)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -91,8 +91,8 @@ SPEC CHECKSUMS:
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
-  ZFPlayer: 8a6021a3c45e281f2abd24dca5c88915af770a7e
+  ZFPlayer: 1310252c253b9958e4fcd411e706b99c31834eaf
 
-PODFILE CHECKSUM: 84e7d8e4924fd4f9c9d45078665e5c3e2676076b
+PODFILE CHECKSUM: c34b33a0128a4ae6921295395583b5b529bf3a4c
 
 COCOAPODS: 1.8.4

@@ -30,6 +30,8 @@
 #import "ZFReachabilityManager.h"
 #import "ZFPlayer.h"
 
+static NSMutableDictionary <NSString* ,NSNumber *> *_zfPlayRecords;
+
 @interface ZFPlayerController ()
 
 @property (nonatomic, strong) ZFPlayerNotification *notification;
@@ -60,6 +62,10 @@
             }
         }];
         [self configureVolume];
+        static dispatch_once_t onceToken;
+        dispatch_once(&onceToken, ^{
+            _zfPlayRecords = @{}.mutableCopy;
+        });
     }
     return self;
 }
@@ -125,6 +131,10 @@
     @weakify(self)
     self.currentPlayerManager.playerPrepareToPlay = ^(id<ZFPlayerMediaPlayback>  _Nonnull asset, NSURL * _Nonnull assetURL) {
         @strongify(self)
+        if (self.resumePlayRecord && [_zfPlayRecords valueForKey:assetURL.absoluteString]) {
+            NSTimeInterval seekTime = [_zfPlayRecords valueForKey:assetURL.absoluteString].doubleValue;
+            self.currentPlayerManager.seekTime = seekTime;
+        }
         self.currentPlayerManager.view.hidden = NO;
         [self.notification addNotification];
         [self addDeviceOrientationObserver];
@@ -154,6 +164,9 @@
         if (self.playerPlayTimeChanged) self.playerPlayTimeChanged(asset,currentTime,duration);
         if ([self.controlView respondsToSelector:@selector(videoPlayer:currentTime:totalTime:)]) {
             [self.controlView videoPlayer:self currentTime:currentTime totalTime:duration];
+        }
+        if (self.currentPlayerManager.assetURL.absoluteString) {
+            [_zfPlayRecords setValue:@(currentTime) forKey:self.currentPlayerManager.assetURL.absoluteString];
         }
     };
     
@@ -186,6 +199,9 @@
         if (self.playerDidToEnd) self.playerDidToEnd(asset);
         if ([self.controlView respondsToSelector:@selector(videoPlayerPlayEnd:)]) {
             [self.controlView videoPlayerPlayEnd:self];
+        }
+        if (self.currentPlayerManager.assetURL.absoluteString) {
+            [_zfPlayRecords setValue:@(0) forKey:self.currentPlayerManager.assetURL.absoluteString];
         }
     };
     
@@ -461,6 +477,10 @@
 
 #pragma mark - getter
 
+- (BOOL)resumePlayRecord {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
 - (NSURL *)assetURL {
     return objc_getAssociatedObject(self, _cmd);
 }
@@ -571,6 +591,10 @@
 }
 
 #pragma mark - setter
+
+- (void)setResumePlayRecord:(BOOL)resumePlayRecord {
+    objc_setAssociatedObject(self, @selector(resumePlayRecord), @(resumePlayRecord), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 - (void)setAssetURL:(NSURL *)assetURL {
     objc_setAssociatedObject(self, @selector(assetURL), assetURL, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
@@ -915,7 +939,8 @@
 
 @implementation ZFPlayerController (ZFPlayerScrollView)
 
-+ (void)load {
++ (void)initialize {
+    [super initialize];
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         SEL selectors[] = {
@@ -982,6 +1007,16 @@
         if ([self.controlView respondsToSelector:@selector(playerDidDisappearInScrollView:)]) {
             [self.controlView playerDidDisappearInScrollView:self];
         }
+       
+        if (self.stopWhileNotVisible) { /// stop playing
+            if (self.containerType == ZFPlayerContainerTypeView) {
+                [self stopCurrentPlayingView];
+            } else if (self.containerType == ZFPlayerContainerTypeCell) {
+                [self stopCurrentPlayingCell];
+            }
+        } else { /// add to window
+            [self addPlayerViewToKeyWindow];
+        }
     };
     
     scrollView.zf_playerAppearingInScrollView = ^(NSIndexPath * _Nonnull indexPath, CGFloat playerApperaPercent) {
@@ -1007,16 +1042,17 @@
         if ([self.controlView respondsToSelector:@selector(playerDisappearingInScrollView:playerDisapperaPercent:)]) {
             [self.controlView playerDisappearingInScrollView:self playerDisapperaPercent:playerDisapperaPercent];
         }
-        /// stop playing
-        if (self.stopWhileNotVisible && playerDisapperaPercent >= self.playerDisapperaPercent) {
-            if (self.containerType == ZFPlayerContainerTypeView) {
-                [self stopCurrentPlayingView];
-            } else if (self.containerType == ZFPlayerContainerTypeCell) {
-                [self stopCurrentPlayingCell];
+        if (playerDisapperaPercent >= self.playerDisapperaPercent) {
+            if (self.stopWhileNotVisible) { /// stop playing
+                if (self.containerType == ZFPlayerContainerTypeView) {
+                    [self stopCurrentPlayingView];
+                } else if (self.containerType == ZFPlayerContainerTypeCell) {
+                    [self stopCurrentPlayingCell];
+                }
+            } else {  /// add to window
+                [self addPlayerViewToKeyWindow];
             }
         }
-        /// add to window
-        if (!self.stopWhileNotVisible && playerDisapperaPercent >= self.playerDisapperaPercent) [self addPlayerViewToKeyWindow];
     };
     
     scrollView.zf_playerShouldPlayInScrollView = ^(NSIndexPath * _Nonnull indexPath) {
@@ -1223,6 +1259,78 @@
     self.assetURL = assetURL;
 }
 
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition animated:(BOOL)animated {
+    [self playTheIndexPath:indexPath scrollPosition:scrollPosition animated:animated completionHandler:nil];
+}
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition animated:(BOOL)animated completionHandler:(void (^ __nullable)(void))completionHandler {
+    NSURL *assetURL;
+    if (self.sectionAssetURLs.count) {
+        assetURL = self.sectionAssetURLs[indexPath.section][indexPath.row];
+    } else if (self.assetURLs.count) {
+        assetURL = self.assetURLs[indexPath.row];
+        self.currentPlayIndex = indexPath.row;
+    }
+    @weakify(self)
+    [self.scrollView zf_scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:animated completionHandler:^{
+        @strongify(self)
+        if (completionHandler) completionHandler();
+        self.playingIndexPath = indexPath;
+        self.assetURL = assetURL;
+    }];
+}
+
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath assetURL:(NSURL *)assetURL {
+    self.playingIndexPath = indexPath;
+    self.assetURL = assetURL;
+}
+
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+                assetURL:(NSURL *)assetURL
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated {
+    [self playTheIndexPath:indexPath assetURL:assetURL scrollPosition:scrollPosition animated:animated completionHandler:nil];
+}
+
+
+- (void)playTheIndexPath:(NSIndexPath *)indexPath
+                assetURL:(NSURL *)assetURL
+          scrollPosition:(ZFPlayerScrollViewScrollPosition)scrollPosition
+                animated:(BOOL)animated
+       completionHandler:(void (^ __nullable)(void))completionHandler {
+    @weakify(self)
+    [self.scrollView zf_scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:animated completionHandler:^{
+        @strongify(self)
+        if (completionHandler) completionHandler();
+        self.playingIndexPath = indexPath;
+        self.assetURL = assetURL;
+    }];
+}
+
+@end
+
+@implementation ZFPlayerController (ZFPlayerDeprecated)
+
+- (void)updateScrollViewPlayerToCell {
+    if (self.currentPlayerManager.view && self.playingIndexPath && self.containerViewTag) {
+        UIView *cell = [self.scrollView zf_getCellForIndexPath:self.playingIndexPath];
+        self.containerView = [cell viewWithTag:self.containerViewTag];
+        [self.orientationObserver cellModelRotateView:self.currentPlayerManager.view rotateViewAtCell:cell playerViewTag:self.containerViewTag];
+        [self layoutPlayerSubViews];
+    }
+}
+
+- (void)updateNoramlPlayerWithContainerView:(UIView *)containerView {
+    if (self.currentPlayerManager.view && self.containerView) {
+        self.containerView = containerView;
+        [self.orientationObserver cellOtherModelRotateView:self.currentPlayerManager.view containerView:self.containerView];
+        [self layoutPlayerSubViews];
+    }
+}
+
 - (void)playTheIndexPath:(NSIndexPath *)indexPath scrollToTop:(BOOL)scrollToTop completionHandler:(void (^ _Nullable)(void))completionHandler {
     NSURL *assetURL;
     if (self.sectionAssetURLs.count) {
@@ -1264,27 +1372,6 @@
     self.assetURL = assetURL;
     if (scrollToTop) {
         [self.scrollView zf_scrollToRowAtIndexPath:indexPath completionHandler:nil];
-    }
-}
-
-@end
-
-@implementation ZFPlayerController (ZFPlayerDeprecated)
-
-- (void)updateScrollViewPlayerToCell {
-    if (self.currentPlayerManager.view && self.playingIndexPath && self.containerViewTag) {
-        UIView *cell = [self.scrollView zf_getCellForIndexPath:self.playingIndexPath];
-        self.containerView = [cell viewWithTag:self.containerViewTag];
-        [self.orientationObserver cellModelRotateView:self.currentPlayerManager.view rotateViewAtCell:cell playerViewTag:self.containerViewTag];
-        [self layoutPlayerSubViews];
-    }
-}
-
-- (void)updateNoramlPlayerWithContainerView:(UIView *)containerView {
-    if (self.currentPlayerManager.view && self.containerView) {
-        self.containerView = containerView;
-        [self.orientationObserver cellOtherModelRotateView:self.currentPlayerManager.view containerView:self.containerView];
-        [self layoutPlayerSubViews];
     }
 }
 
