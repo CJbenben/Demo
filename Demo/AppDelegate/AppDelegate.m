@@ -22,6 +22,15 @@
     NSLog(@"正在开发其他功能ing");
 }
 
+/// 在这里写支持的旋转方向，为了防止横屏方向，应用启动时候界面变为横屏模式
+- (UIInterfaceOrientationMask)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window {
+    // 可以这么写
+    if (self.allowOrentitaionRotation) {
+        return UIInterfaceOrientationMaskAllButUpsideDown;
+    }
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     

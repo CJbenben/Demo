@@ -113,7 +113,10 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
         [containerView addSubview:playBtn];
     }
 
+    
+    
     ZFAVPlayerManager *playerManager = [[ZFAVPlayerManager alloc] init];
+    playerManager.shouldAutoPlay = YES;
     
     UIImageView *imageview = safeObjectTxAtIndex(self.imageAry, 0);
     /// 播放器相关
@@ -123,18 +126,16 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
     self.player.pauseWhenAppResignActive = NO;
     self.player.disableGestureTypes = ZFPlayerDisableGestureTypesPan;
     
-    @weakify(self)
+    @zf_weakify(self)
     self.player.orientationWillChange = ^(ZFPlayerController * _Nonnull player, BOOL isFullScreen) {
-        @strongify(self)
-        [self setNeedsStatusBarAppearanceUpdate];
+        kAPPDelegate.allowOrentitaionRotation = isFullScreen;
     };
     
     /// 播放完成
     self.player.playerDidToEnd = ^(id  _Nonnull asset) {
-        @strongify(self)
-        [self.player.currentPlayerManager replay];
-        [self.player playTheNext];
+        @zf_strongify(self)
         if (!self.player.isLastAssetURL) {
+            [self.player playTheNext];
             NSString *title = [NSString stringWithFormat:@"视频标题%zd",self.player.currentPlayIndex];
             [self.controlView showTitle:title coverURLString:kVideoCover fullScreenMode:ZFFullScreenModeLandscape];
         } else {
@@ -188,29 +189,22 @@ static NSString *kVideoCover = @"https://upload-images.jianshu.io/upload_images/
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-    if (self.player.isFullScreen) {
-        return UIStatusBarStyleLightContent;
-    }
     return UIStatusBarStyleDefault;
 }
 
 - (BOOL)prefersStatusBarHidden {
-    /// 如果只是支持iOS9+ 那直接return NO即可，这里为了适配iOS8
-    return self.player.isStatusBarHidden;
+    return NO;
 }
 
 - (UIStatusBarAnimation)preferredStatusBarUpdateAnimation {
-    return UIStatusBarAnimationSlide;
+    return UIStatusBarAnimationNone;
 }
 
 - (BOOL)shouldAutorotate {
-    return self.player.shouldAutorotate;
+    return NO;
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    if (self.player.isFullScreen) {
-        return UIInterfaceOrientationMaskLandscape;
-    }
     return UIInterfaceOrientationMaskPortrait;
 }
 

@@ -14,11 +14,16 @@
 #import "UIImageView+WebCache.h"
 #import "UIView+AtzucheUIView.h"
 #import "Masonry.h"
+#import "AppDelegate.h"
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 #define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define kAPPDelegate ((AppDelegate*)[[UIApplication sharedApplication] delegate])
+
+/// 播放器view的tag，列表中UI控件唯一tag值
+#define kPlayerViewTag 100
 
 #define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
