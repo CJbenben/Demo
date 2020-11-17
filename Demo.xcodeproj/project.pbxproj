@@ -15,6 +15,9 @@
 		7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D32A49C244EC93200F3EF48 /* TXYBView.xib */; };
 		7D32A4A1244EDF3A00F3EF48 /* BaseListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D32A49E244EDF3900F3EF48 /* BaseListCell.xib */; };
 		7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32A4A0244EDF3A00F3EF48 /* BaseListCell.m */; };
+		7D3392892563726B00C9FCBF /* 123456.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D3392882563726B00C9FCBF /* 123456.pdf */; };
+		7D339290256372F600C9FCBF /* PrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D33928E256372F600C9FCBF /* PrinterDemoViewController.m */; };
+		7D339291256372F600C9FCBF /* PrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */; };
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
 		7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D473D2724C5A92F00EA2723 /* SocketViewController.m */; };
@@ -145,6 +148,10 @@
 		7D32A49E244EDF3900F3EF48 /* BaseListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseListCell.xib; sourceTree = "<group>"; };
 		7D32A49F244EDF3900F3EF48 /* BaseListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseListCell.h; sourceTree = "<group>"; };
 		7D32A4A0244EDF3A00F3EF48 /* BaseListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseListCell.m; sourceTree = "<group>"; };
+		7D3392882563726B00C9FCBF /* 123456.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 123456.pdf; sourceTree = "<group>"; };
+		7D33928D256372F600C9FCBF /* PrinterDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterDemoViewController.h; sourceTree = "<group>"; };
+		7D33928E256372F600C9FCBF /* PrinterDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterDemoViewController.m; sourceTree = "<group>"; };
+		7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrinterDemoViewController.xib; sourceTree = "<group>"; };
 		7D45982A22F44AE0005AA8EC /* MVVMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableViewCell.h; sourceTree = "<group>"; };
 		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
@@ -397,6 +404,16 @@
 			path = YBImageDemo;
 			sourceTree = "<group>";
 		};
+		7D33927E2563721B00C9FCBF /* PrintDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D33928D256372F600C9FCBF /* PrinterDemoViewController.h */,
+				7D33928E256372F600C9FCBF /* PrinterDemoViewController.m */,
+				7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */,
+			);
+			path = PrintDemo;
+			sourceTree = "<group>";
+		};
 		7D45982D22F44B4C005AA8EC /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -424,6 +441,7 @@
 				7D52B7C32514A0D60032282E /* DIN Alternate Light.otf */,
 				7D52B7C42514A0D60032282E /* DIN Alternate Bold.ttf */,
 				7D52B7C52514A0D60032282E /* loading.png */,
+				7D3392882563726B00C9FCBF /* 123456.pdf */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -806,6 +824,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D33927E2563721B00C9FCBF /* PrintDemo */,
 				7D52B83B2514BC980032282E /* RealmDemo */,
 				7D32A495244EC49000F3EF48 /* YBImageDemo */,
 				7D473D2524C5A91F00EA2723 /* SocketDemo */,
@@ -1043,10 +1062,12 @@
 				7D52B81B2514AE5D0032282E /* 使用方法 in Resources */,
 				7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */,
 				F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */,
+				7D339291256372F600C9FCBF /* PrinterDemoViewController.xib in Resources */,
 				7D52B7CA2514A0D60032282E /* loading.png in Resources */,
 				7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */,
 				7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */,
 				7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */,
+				7D3392892563726B00C9FCBF /* 123456.pdf in Resources */,
 				7D52B7C72514A0D60032282E /* loading.gif in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
 				7D52B7C82514A0D60032282E /* DIN Alternate Light.otf in Resources */,
@@ -1210,6 +1231,7 @@
 				7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */,
 				7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */,
 				7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */,
+				7D339290256372F600C9FCBF /* PrinterDemoViewController.m in Sources */,
 				7D78D0AD240B84C000AD841C /* TXWaterFallLayout.m in Sources */,
 				7DE533DD21A7AE5500ECC90A /* MVVMModel.m in Sources */,
 				7D62921E2387B0C00007B50F /* ZFAVPlayerManager.m in Sources */,
