@@ -31,7 +31,7 @@ static NSString *reuseID2        = @"TXAutoCollectionViewCell";
     layout.sectionInset = UIEdgeInsetsMake(15, 15, 15, 15);
     layout.columnCount = 2;
     layout.columnSpacing = 10;
-    layout.lineSpacing = 10;
+    layout.lineSpacing = 20;
     layout.delegate = self;
     TXCollectionView *collectionView = [[TXCollectionView alloc] initWithFrame:CGRectMake(0, naviHeight, SCREEN_WIDTH, SCREEN_HEIGHT - naviHeight) collectionViewLayout:layout];
     [self.view addSubview:collectionView];
