@@ -7,13 +7,13 @@
 //
 
 #import "BaseLoadingView.h"
-#import <Lottie/Lottie.h>
+//#import <Lottie/Lottie.h>
 #import "UIImage+GIF.h"
 
 #define SCREEN_WIDTH    [UIScreen mainScreen].bounds.size.width
 #define SCREEN_HEIGHT   [UIScreen mainScreen].bounds.size.height
-#define LOADINGWIDTH    60
-#define LOADINGWIDTH_GIF    45
+#define LOADINGWIDTH_PNG    45
+#define LOADINGWIDTH_GIF    256
 
 @interface BaseLoadingView ()
 
@@ -64,25 +64,26 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.0];
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"png"];
-        NSData *gifData = [NSData dataWithContentsOfFile:path];
-        self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
-        self.bgImageView.image = [UIImage imageWithData:gifData];
-        [self addSubview:self.bgImageView];
-        // 添加旋转动画
-        CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
-        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
-        rotationAnimation.duration = 2;
-        rotationAnimation.cumulative = YES;
-        rotationAnimation.repeatCount = ULLONG_MAX;
-        [self.bgImageView.layer addAnimation:rotationAnimation forKey:@"hmloading_rotationAnimation"];
-        
-//        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+        // 此方式用于展示静态图
+//        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"png"];
 //        NSData *gifData = [NSData dataWithContentsOfFile:path];
-//        UIImageView *sdImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
-//        sdImageView.image = [UIImage sd_imageWithGIFData:gifData];
-//        [self addSubview:sdImageView];
+//        self.bgImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
+//        self.bgImageView.image = [UIImage imageWithData:gifData];
+//        [self addSubview:self.bgImageView];
+//        // 添加旋转动画
+//        CABasicAnimation* rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+//        rotationAnimation.toValue = [NSNumber numberWithFloat: M_PI * 2.0 ];
+//        rotationAnimation.duration = 2;
+//        rotationAnimation.cumulative = YES;
+//        rotationAnimation.repeatCount = ULLONG_MAX;
+//        [self.bgImageView.layer addAnimation:rotationAnimation forKey:@"hmloading_rotationAnimation"];
+        
+        // 此方式用于展示gif
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"loading" ofType:@"gif"];
+        NSData *gifData = [NSData dataWithContentsOfFile:path];
+        UIImageView *sdImageView = [[UIImageView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH - LOADINGWIDTH_GIF)/2.0, (SCREEN_HEIGHT - LOADINGWIDTH_GIF)/2.0, LOADINGWIDTH_GIF, LOADINGWIDTH_GIF)];
+        sdImageView.image = [UIImage sd_imageWithGIFData:gifData];
+        [self addSubview:sdImageView];
         
         [[UIApplication sharedApplication].keyWindow addSubview:self];
         

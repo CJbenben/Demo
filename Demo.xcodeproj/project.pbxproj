@@ -93,6 +93,7 @@
 		7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DF21A7AE6000ECC90A /* MVVMViewModel.m */; };
 		7DE533E321A7D99A00ECC90A /* MVVMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */; };
 		7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */; };
+		7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDAEBA256BA14D0033264A /* CJConst.h */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59567801FAB4AD20068A04F /* Assets.xcassets */; };
 		F59567871FAB4AD20068A04F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F59567861FAB4AD20068A04F /* main.m */; };
@@ -255,19 +256,19 @@
 		7DD9448A24FFBAF60078F37A /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
 		7DD9448B24FFBAF60078F37A /* UIImage+loadSPBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+loadSPBundle.h"; sourceTree = "<group>"; };
 		7DD9449124FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
-		7DD9449224FFBB030078F37A /* ZSHAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHAppInfo.h; sourceTree = "<group>"; };
-		7DD9449324FFBB030078F37A /* ZSHFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHFrame.h; sourceTree = "<group>"; };
+		7DD9449224FFBB030078F37A /* CJAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppInfo.h; sourceTree = "<group>"; };
+		7DD9449324FFBB030078F37A /* CJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFrame.h; sourceTree = "<group>"; };
 		7DD9449424FFBB030078F37A /* CJCommonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonKit.h; sourceTree = "<group>"; };
 		7DD9449524FFBB030078F37A /* CJGlobalDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJGlobalDefine.h; sourceTree = "<group>"; };
 		7DD9449624FFBB030078F37A /* CJAppSystemInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppSystemInfo.h; sourceTree = "<group>"; };
 		7DD9449724FFBB030078F37A /* CJAppSystemInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJAppSystemInfo.m; sourceTree = "<group>"; };
-		7DD9449824FFBB030078F37A /* ZSHTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHTool.h; sourceTree = "<group>"; };
-		7DD9449924FFBB030078F37A /* ZSHFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHFont.h; sourceTree = "<group>"; };
+		7DD9449824FFBB030078F37A /* CJTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJTool.h; sourceTree = "<group>"; };
+		7DD9449924FFBB030078F37A /* CJFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFont.h; sourceTree = "<group>"; };
 		7DD9449A24FFBB030078F37A /* CJDefaultTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultTool.m; sourceTree = "<group>"; };
 		7DD9449B24FFBB030078F37A /* CJDefaultTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultTool.h; sourceTree = "<group>"; };
 		7DD9449C24FFBB030078F37A /* CJGlobalDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJGlobalDefine.m; sourceTree = "<group>"; };
 		7DD9449D24FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPhotoAlbumAuthorizationTool.m; sourceTree = "<group>"; };
-		7DD9449E24FFBB030078F37A /* ZSHColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZSHColor.h; sourceTree = "<group>"; };
+		7DD9449E24FFBB030078F37A /* CJColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJColor.h; sourceTree = "<group>"; };
 		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
 		7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerDetailViewController.m; sourceTree = "<group>"; };
 		7DDB0056238E471B00AF1DAE /* ZFNotAutoPlayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFNotAutoPlayViewController.h; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseModel.m; sourceTree = "<group>"; };
 		7DE533E421A7D9FA00ECC90A /* MVVMItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMItemModel.h; sourceTree = "<group>"; };
 		7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMItemModel.m; sourceTree = "<group>"; };
+		7DEDAEBA256BA14D0033264A /* CJConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJConst.h; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F528C693215CDEA9008F7850 /* CJHTTPRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJHTTPRequest.h; sourceTree = "<group>"; };
@@ -586,17 +588,18 @@
 				7DD9449624FFBB030078F37A /* CJAppSystemInfo.h */,
 				7DD9449724FFBB030078F37A /* CJAppSystemInfo.m */,
 				7DD9449424FFBB030078F37A /* CJCommonKit.h */,
+				7DEDAEBA256BA14D0033264A /* CJConst.h */,
 				7DD9449B24FFBB030078F37A /* CJDefaultTool.h */,
 				7DD9449A24FFBB030078F37A /* CJDefaultTool.m */,
 				7DD9449524FFBB030078F37A /* CJGlobalDefine.h */,
 				7DD9449C24FFBB030078F37A /* CJGlobalDefine.m */,
 				7DD9449124FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.h */,
 				7DD9449D24FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m */,
-				7DD9449224FFBB030078F37A /* ZSHAppInfo.h */,
-				7DD9449E24FFBB030078F37A /* ZSHColor.h */,
-				7DD9449924FFBB030078F37A /* ZSHFont.h */,
-				7DD9449324FFBB030078F37A /* ZSHFrame.h */,
-				7DD9449824FFBB030078F37A /* ZSHTool.h */,
+				7DD9449224FFBB030078F37A /* CJAppInfo.h */,
+				7DD9449E24FFBB030078F37A /* CJColor.h */,
+				7DD9449924FFBB030078F37A /* CJFont.h */,
+				7DD9449324FFBB030078F37A /* CJFrame.h */,
+				7DD9449824FFBB030078F37A /* CJTool.h */,
 			);
 			path = CJCommonKit;
 			sourceTree = "<group>";
@@ -1193,6 +1196,7 @@
 				7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */,
 				7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
+				7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */,
 				7DD944A224FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,

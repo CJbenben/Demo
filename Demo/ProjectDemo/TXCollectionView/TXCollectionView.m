@@ -60,21 +60,9 @@ static NSString *homeReuseID        = @"HMHomeLikeCollectionViewCell";
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if (self.isFromHome) {
-        HMHomeLikeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:homeReuseID forIndexPath:indexPath];
-//        cell.shopInfoModel = safeObjectTxAtIndex(self.dataAry, indexPath.row);
-//
-//        WS(weakSelf)
-//        [[cell.shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
-//            if (weakSelf.shareClickBlock) {
-//                weakSelf.shareClickBlock(indexPath.row);
-//            }
-//        }];
-        return cell;
-//    }
-//    HMLikeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseID forIndexPath:indexPath];
-//    cell.shopInfoModel = safeObjectTxAtIndex(self.dataAry, indexPath.row);
-//    return cell;
+    NSLog(@"indexPath = %@", indexPath);
+    HMHomeLikeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:homeReuseID forIndexPath:indexPath];
+    return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
