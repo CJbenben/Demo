@@ -18,6 +18,8 @@
 		7D3392892563726B00C9FCBF /* 123456.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 7D3392882563726B00C9FCBF /* 123456.pdf */; };
 		7D339290256372F600C9FCBF /* PrinterDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D33928E256372F600C9FCBF /* PrinterDemoViewController.m */; };
 		7D339291256372F600C9FCBF /* PrinterDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */; };
+		7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D37B1E725709B9B00A403E3 /* SpeechDemoViewController.m */; };
+		7D37B1EA25709B9B00A403E3 /* SpeechDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D37B1E825709B9B00A403E3 /* SpeechDemoViewController.xib */; };
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
 		7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D473D2724C5A92F00EA2723 /* SocketViewController.m */; };
@@ -153,6 +155,9 @@
 		7D33928D256372F600C9FCBF /* PrinterDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrinterDemoViewController.h; sourceTree = "<group>"; };
 		7D33928E256372F600C9FCBF /* PrinterDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrinterDemoViewController.m; sourceTree = "<group>"; };
 		7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrinterDemoViewController.xib; sourceTree = "<group>"; };
+		7D37B1E625709B9B00A403E3 /* SpeechDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpeechDemoViewController.h; sourceTree = "<group>"; };
+		7D37B1E725709B9B00A403E3 /* SpeechDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechDemoViewController.m; sourceTree = "<group>"; };
+		7D37B1E825709B9B00A403E3 /* SpeechDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeechDemoViewController.xib; sourceTree = "<group>"; };
 		7D45982A22F44AE0005AA8EC /* MVVMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MVVMTableViewCell.h; sourceTree = "<group>"; };
 		7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MVVMTableViewCell.m; sourceTree = "<group>"; };
 		7D45982E22F44B85005AA8EC /* MVVMBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMBaseViewModel.h; sourceTree = "<group>"; };
@@ -414,6 +419,16 @@
 				7D33928F256372F600C9FCBF /* PrinterDemoViewController.xib */,
 			);
 			path = PrintDemo;
+			sourceTree = "<group>";
+		};
+		7D37B1E525709B8100A403E3 /* SpeechDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D37B1E625709B9B00A403E3 /* SpeechDemoViewController.h */,
+				7D37B1E725709B9B00A403E3 /* SpeechDemoViewController.m */,
+				7D37B1E825709B9B00A403E3 /* SpeechDemoViewController.xib */,
+			);
+			path = SpeechDemo;
 			sourceTree = "<group>";
 		};
 		7D45982D22F44B4C005AA8EC /* Base */ = {
@@ -827,6 +842,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D37B1E525709B8100A403E3 /* SpeechDemo */,
 				7D33927E2563721B00C9FCBF /* PrintDemo */,
 				7D52B83B2514BC980032282E /* RealmDemo */,
 				7D32A495244EC49000F3EF48 /* YBImageDemo */,
@@ -1061,6 +1077,7 @@
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				7D32A4A1244EDF3A00F3EF48 /* BaseListCell.xib in Resources */,
 				7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */,
+				7D37B1EA25709B9B00A403E3 /* SpeechDemoViewController.xib in Resources */,
 				7D52B7C92514A0D60032282E /* DIN Alternate Bold.ttf in Resources */,
 				7D52B81B2514AE5D0032282E /* 使用方法 in Resources */,
 				7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */,
@@ -1205,6 +1222,7 @@
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DD9448E24FFBAF60078F37A /* NSString+CJMD5.m in Sources */,
 				7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */,
+				7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
 				7DD9447D24FFBAE80078F37A /* UIViewController+DadBaseHUD.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
@@ -1330,7 +1348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1381,7 +1399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1397,7 +1415,7 @@
 				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1414,7 +1432,7 @@
 				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
