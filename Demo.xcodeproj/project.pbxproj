@@ -62,7 +62,17 @@
 		7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857021237A547F0081C236 /* ScrollViewXibViewController.m */; };
 		7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D857024237A54A30081C236 /* ScrollViewTest.m */; };
 		7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D857026237A54AD0081C236 /* ScrollViewTest.xib */; };
-		7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D88EC59242CE44200A049CA /* TXFileCache.m */; };
+		7D8BCD4E258AFB7300324367 /* ZJPageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD42258AFB7300324367 /* ZJPageTableViewController.m */; };
+		7D8BCD4F258AFB7300324367 /* ZJPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD43258AFB7300324367 /* ZJPageViewController.m */; };
+		7D8BCD6C258AFB9200324367 /* ZJScrollPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD5C258AFB9100324367 /* ZJScrollPageView.m */; };
+		7D8BCD6D258AFB9200324367 /* ZJScrollSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD5F258AFB9100324367 /* ZJScrollSegmentView.m */; };
+		7D8BCD6E258AFB9200324367 /* ZJCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD61258AFB9100324367 /* ZJCollectionView.m */; };
+		7D8BCD6F258AFB9200324367 /* UIView+ZJFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD62258AFB9200324367 /* UIView+ZJFrame.m */; };
+		7D8BCD70258AFB9200324367 /* ZJSegmentStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD65258AFB9200324367 /* ZJSegmentStyle.m */; };
+		7D8BCD71258AFB9200324367 /* ZJTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD66258AFB9200324367 /* ZJTitleView.m */; };
+		7D8BCD72258AFB9200324367 /* UIViewController+ZJScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD67258AFB9200324367 /* UIViewController+ZJScrollPageController.m */; };
+		7D8BCD73258AFB9200324367 /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD6B258AFB9200324367 /* ZJContentView.m */; };
+		7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */; };
 		7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */; };
 		7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */; };
 		7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */; };
@@ -231,8 +241,29 @@
 		7D857023237A54A30081C236 /* ScrollViewTest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScrollViewTest.h; sourceTree = "<group>"; };
 		7D857024237A54A30081C236 /* ScrollViewTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScrollViewTest.m; sourceTree = "<group>"; };
 		7D857026237A54AD0081C236 /* ScrollViewTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollViewTest.xib; sourceTree = "<group>"; };
-		7D88EC59242CE44200A049CA /* TXFileCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TXFileCache.m; path = /Users/chenxiaojie/Desktop/chenxiaojie/Demo/Demo/Public/TXFileCache.m; sourceTree = "<absolute>"; };
-		7D88EC5A242CE44200A049CA /* TXFileCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TXFileCache.h; path = /Users/chenxiaojie/Desktop/chenxiaojie/Demo/Demo/Public/TXFileCache.h; sourceTree = "<absolute>"; };
+		7D8BCD40258AFB7300324367 /* ZJPageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPageTableViewController.h; sourceTree = "<group>"; };
+		7D8BCD41258AFB7300324367 /* ZJPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJPageViewController.h; sourceTree = "<group>"; };
+		7D8BCD42258AFB7300324367 /* ZJPageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPageTableViewController.m; sourceTree = "<group>"; };
+		7D8BCD43258AFB7300324367 /* ZJPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJPageViewController.m; sourceTree = "<group>"; };
+		7D8BCD5B258AFB9100324367 /* ZJContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJContentView.h; sourceTree = "<group>"; };
+		7D8BCD5C258AFB9100324367 /* ZJScrollPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJScrollPageView.m; sourceTree = "<group>"; };
+		7D8BCD5D258AFB9100324367 /* ZJCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJCollectionView.h; sourceTree = "<group>"; };
+		7D8BCD5E258AFB9100324367 /* UIViewController+ZJScrollPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ZJScrollPageController.h"; sourceTree = "<group>"; };
+		7D8BCD5F258AFB9100324367 /* ZJScrollSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJScrollSegmentView.m; sourceTree = "<group>"; };
+		7D8BCD60258AFB9100324367 /* ZJScrollPageViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollPageViewDelegate.h; sourceTree = "<group>"; };
+		7D8BCD61258AFB9100324367 /* ZJCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJCollectionView.m; sourceTree = "<group>"; };
+		7D8BCD62258AFB9200324367 /* UIView+ZJFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZJFrame.m"; sourceTree = "<group>"; };
+		7D8BCD63258AFB9200324367 /* UIView+ZJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZJFrame.h"; sourceTree = "<group>"; };
+		7D8BCD64258AFB9200324367 /* ZJTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJTitleView.h; sourceTree = "<group>"; };
+		7D8BCD65258AFB9200324367 /* ZJSegmentStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJSegmentStyle.m; sourceTree = "<group>"; };
+		7D8BCD66258AFB9200324367 /* ZJTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJTitleView.m; sourceTree = "<group>"; };
+		7D8BCD67258AFB9200324367 /* UIViewController+ZJScrollPageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ZJScrollPageController.m"; sourceTree = "<group>"; };
+		7D8BCD68258AFB9200324367 /* ZJScrollPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollPageView.h; sourceTree = "<group>"; };
+		7D8BCD69258AFB9200324367 /* ZJScrollSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJScrollSegmentView.h; sourceTree = "<group>"; };
+		7D8BCD6A258AFB9200324367 /* ZJSegmentStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZJSegmentStyle.h; sourceTree = "<group>"; };
+		7D8BCD6B258AFB9200324367 /* ZJContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJContentView.m; sourceTree = "<group>"; };
+		7D8BCD77258AFBDD00324367 /* HMPageScrollTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMPageScrollTestViewController.h; sourceTree = "<group>"; };
+		7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMPageScrollTestViewController.m; sourceTree = "<group>"; };
 		7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
 		7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_base_loading_bg@3x.png"; sourceTree = "<group>"; };
 		7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
@@ -597,6 +628,44 @@
 			path = ScrollViewXib;
 			sourceTree = "<group>";
 		};
+		7D8BCD31258AFB7300324367 /* ZJScrollPageView */ = {
+			isa = PBXGroup;
+			children = (
+				7D8BCD63258AFB9200324367 /* UIView+ZJFrame.h */,
+				7D8BCD62258AFB9200324367 /* UIView+ZJFrame.m */,
+				7D8BCD5E258AFB9100324367 /* UIViewController+ZJScrollPageController.h */,
+				7D8BCD67258AFB9200324367 /* UIViewController+ZJScrollPageController.m */,
+				7D8BCD5D258AFB9100324367 /* ZJCollectionView.h */,
+				7D8BCD61258AFB9100324367 /* ZJCollectionView.m */,
+				7D8BCD5B258AFB9100324367 /* ZJContentView.h */,
+				7D8BCD6B258AFB9200324367 /* ZJContentView.m */,
+				7D8BCD68258AFB9200324367 /* ZJScrollPageView.h */,
+				7D8BCD5C258AFB9100324367 /* ZJScrollPageView.m */,
+				7D8BCD60258AFB9100324367 /* ZJScrollPageViewDelegate.h */,
+				7D8BCD69258AFB9200324367 /* ZJScrollSegmentView.h */,
+				7D8BCD5F258AFB9100324367 /* ZJScrollSegmentView.m */,
+				7D8BCD6A258AFB9200324367 /* ZJSegmentStyle.h */,
+				7D8BCD65258AFB9200324367 /* ZJSegmentStyle.m */,
+				7D8BCD64258AFB9200324367 /* ZJTitleView.h */,
+				7D8BCD66258AFB9200324367 /* ZJTitleView.m */,
+				7D8BCD3F258AFB7300324367 /* TestDemo */,
+			);
+			path = ZJScrollPageView;
+			sourceTree = "<group>";
+		};
+		7D8BCD3F258AFB7300324367 /* TestDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D8BCD77258AFBDD00324367 /* HMPageScrollTestViewController.h */,
+				7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */,
+				7D8BCD41258AFB7300324367 /* ZJPageViewController.h */,
+				7D8BCD43258AFB7300324367 /* ZJPageViewController.m */,
+				7D8BCD42258AFB7300324367 /* ZJPageTableViewController.m */,
+				7D8BCD40258AFB7300324367 /* ZJPageTableViewController.h */,
+			);
+			path = TestDemo;
+			sourceTree = "<group>";
+		};
 		7DD9442D24FFBAD20078F37A /* CJCommonKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -842,6 +911,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D8BCD31258AFB7300324367 /* ZJScrollPageView */,
 				7D37B1E525709B8100A403E3 /* SpeechDemo */,
 				7D33927E2563721B00C9FCBF /* PrintDemo */,
 				7D52B83B2514BC980032282E /* RealmDemo */,
@@ -929,8 +999,6 @@
 		F5E3037D20C13D09001F11EC /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				7D88EC5A242CE44200A049CA /* TXFileCache.h */,
-				7D88EC59242CE44200A049CA /* TXFileCache.m */,
 				F5FD32C320C4D1C90049B79B /* AtzucheCustomTipView.h */,
 				F5FD32C420C4D1C90049B79B /* AtzucheCustomTipView.m */,
 				F528C693215CDEA9008F7850 /* CJHTTPRequest.h */,
@@ -1178,6 +1246,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */,
+				7D8BCD4F258AFB7300324367 /* ZJPageViewController.m in Sources */,
 				F5E3037620C13AF3001F11EC /* MJIphoneXViewController.m in Sources */,
 				F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */,
 				F5E3035E20C13AF3001F11EC /* TXCollectionController.m in Sources */,
@@ -1185,11 +1254,13 @@
 				7DD9449F24FFBB030078F37A /* CJAppSystemInfo.m in Sources */,
 				7DD9447F24FFBAE80078F37A /* DadView.m in Sources */,
 				7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */,
+				7D8BCD6D258AFB9200324367 /* ZJScrollSegmentView.m in Sources */,
 				7D6292492387B0DA0007B50F /* ZFSmallFloatControlView.m in Sources */,
 				F5E3037520C13AF3001F11EC /* MJDIYHeader.m in Sources */,
 				7D78D0B6240BA36000AD841C /* TXAutoCollectionViewCell.m in Sources */,
 				7D32A49B244EC92A00F3EF48 /* TXYBView.m in Sources */,
 				7DD944A024FFBB030078F37A /* CJDefaultTool.m in Sources */,
+				7D8BCD4E258AFB7300324367 /* ZJPageTableViewController.m in Sources */,
 				7DD9448024FFBAE80078F37A /* DadViewController.m in Sources */,
 				7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
@@ -1197,8 +1268,10 @@
 				7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */,
 				7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */,
 				7D62924D2387B0DA0007B50F /* ZFUtilities.m in Sources */,
+				7D8BCD71258AFB9200324367 /* ZJTitleView.m in Sources */,
 				7DD9448C24FFBAF60078F37A /* UIView+AtzucheUIView.m in Sources */,
 				7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */,
+				7D8BCD72258AFB9200324367 /* UIViewController+ZJScrollPageController.m in Sources */,
 				7DD9448F24FFBAF60078F37A /* UIColor+CJColor.m in Sources */,
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
@@ -1208,20 +1281,25 @@
 				7D62924C2387B0DA0007B50F /* ZFPortraitControlView.m in Sources */,
 				F5E3037920C13AF3001F11EC /* WKWebViewController.m in Sources */,
 				7DDB006A238E477800AF1DAE /* NSString+Size.m in Sources */,
+				7D8BCD73258AFB9200324367 /* ZJContentView.m in Sources */,
 				7D62924B2387B0DA0007B50F /* ZFNetworkSpeedMonitor.m in Sources */,
 				7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */,
 				7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */,
 				7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */,
+				7D8BCD70258AFB9200324367 /* ZJSegmentStyle.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
 				7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */,
 				7DD944A224FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m in Sources */,
+				7D8BCD6C258AFB9200324367 /* ZJScrollPageView.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
 				7D52B81D2514AE5D0032282E /* NSTimer+Add.m in Sources */,
 				7D21BF8924E393A500D9FE51 /* XKTargetTableView.m in Sources */,
+				7D8BCD6F258AFB9200324367 /* UIView+ZJFrame.m in Sources */,
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DD9448E24FFBAF60078F37A /* NSString+CJMD5.m in Sources */,
 				7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */,
+				7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */,
 				7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
 				7DD9447D24FFBAE80078F37A /* UIViewController+DadBaseHUD.m in Sources */,
@@ -1231,7 +1309,6 @@
 				7DD944A124FFBB030078F37A /* CJGlobalDefine.m in Sources */,
 				7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */,
 				7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */,
-				7D88EC5B242CE44300A049CA /* TXFileCache.m in Sources */,
 				7DD9447E24FFBAE80078F37A /* NJTitleButton.m in Sources */,
 				7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */,
 				7DD9447C24FFBAE80078F37A /* NaviViewController.m in Sources */,
@@ -1251,6 +1328,7 @@
 				F5E3037320C13AF3001F11EC /* PhoneFontViewController.m in Sources */,
 				7D6292482387B0DA0007B50F /* ZFSpeedLoadingView.m in Sources */,
 				7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */,
+				7D8BCD6E258AFB9200324367 /* ZJCollectionView.m in Sources */,
 				7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */,
 				7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */,
 				7D339290256372F600C9FCBF /* PrinterDemoViewController.m in Sources */,
@@ -1412,7 +1490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1429,7 +1507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7HC98Z7ZA2;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -1445,7 +1523,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q792YXFN33;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				INFOPLIST_FILE = DemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benben.DemoTests;
@@ -1460,7 +1538,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q792YXFN33;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				INFOPLIST_FILE = DemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benben.DemoTests;
@@ -1474,7 +1552,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q792YXFN33;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				INFOPLIST_FILE = DemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benben.DemoUITests;
@@ -1488,7 +1566,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q792YXFN33;
+				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				INFOPLIST_FILE = DemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = benben.DemoUITests;

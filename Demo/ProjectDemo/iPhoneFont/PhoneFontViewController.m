@@ -9,7 +9,7 @@
 #import "PhoneFontViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-#import "TXFileCache.h"
+//#import "TXFileCache.h"
 
 @interface PhoneFontViewController ()
 
@@ -144,18 +144,18 @@
     
 //    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(volumeChange:) name:@"AVSystemController_SystemVolumeDidChangeNotification" object:nil];
     
-    NSDictionary *testDict = @{@"key": @"value", @"name":@"chenxiaojie"};
-    [[TXFileCache globalCache] writeNetworkDict:testDict forUrlKey:@"key1"];
-    
-    NSDictionary *testDict2 = @{@"key2": @"value2", @"name2":@"chenxiaojie2"};
-    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key2"];
-    
-    
-    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key1"];
-    
-    
-    NSDictionary *dict = [[TXFileCache globalCache] readNetworkDictForKey:@"key11"];
-    NSLog(@"dict = %@", dict);
+//    NSDictionary *testDict = @{@"key": @"value", @"name":@"chenxiaojie"};
+//    [[TXFileCache globalCache] writeNetworkDict:testDict forUrlKey:@"key1"];
+//
+//    NSDictionary *testDict2 = @{@"key2": @"value2", @"name2":@"chenxiaojie2"};
+//    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key2"];
+//
+//
+//    [[TXFileCache globalCache] writeNetworkDict:testDict2 forUrlKey:@"key1"];
+//
+//
+//    NSDictionary *dict = [[TXFileCache globalCache] readNetworkDictForKey:@"key11"];
+//    NSLog(@"dict = %@", dict);
     
     
     // AfnetWorking 处理高精度 bug
