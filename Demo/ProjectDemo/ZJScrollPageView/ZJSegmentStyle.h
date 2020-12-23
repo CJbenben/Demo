@@ -14,6 +14,12 @@ typedef NS_ENUM(NSInteger, TitleImagePosition) {
     TitleImagePositionCenter
 };
 
+typedef NS_ENUM(NSInteger, CoverShowPosition) {
+    CoverShowPositionTop,
+    CoverShowPositionBottom,
+    CoverShowPositionCenter
+};
+
 typedef NS_OPTIONS(NSInteger, SegmentViewComponent) {
     SegmentViewComponentShowCover = 1 << 0,
     SegmentViewComponentShowLine = 1 << 1,
@@ -73,9 +79,11 @@ typedef NS_OPTIONS(NSInteger, SegmentViewComponent) {
 @property (strong, nonatomic) UIColor *scrollLineColor;
 /** 遮盖的颜色 */
 @property (strong, nonatomic) UIColor *coverBackgroundColor;
-/** 遮盖的圆角 默认为14*/
+/** 遮盖位置 默认居中 */
+@property (assign, nonatomic) CoverShowPosition coverPosition;
+/** 遮盖的圆角 默认为14 coverPosition=center 时生效 */
 @property (assign, nonatomic) CGFloat coverCornerRadius;
-/** 遮盖的高度 默认为28*/
+/** 遮盖的高度 默认为28 coverPosition=center 时生效 */
 @property (assign, nonatomic) CGFloat coverHeight;
 /** 标题之间的间隙 默认为15.0 */
 @property (assign, nonatomic) CGFloat titleMargin;
@@ -83,6 +91,8 @@ typedef NS_OPTIONS(NSInteger, SegmentViewComponent) {
 @property (strong, nonatomic) UIFont *titleFont;
 /** 详情的字体 默认为13 */
 @property (strong, nonatomic) UIFont *detailFont;
+/** title 与 detail 之间边距 默认 0 */
+@property (assign, nonatomic) CGFloat padding;
 /** 标题缩放倍数, 默认1.3 */
 @property (assign, nonatomic) CGFloat titleBigScale;
 /** 标题一般状态的颜色 */

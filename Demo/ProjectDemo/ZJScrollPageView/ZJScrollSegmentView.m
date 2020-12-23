@@ -38,10 +38,10 @@
 @property (strong, nonatomic) NSArray *normalColorRGBA;
 /** 缓存所有标题label */
 @property (nonatomic, strong) NSMutableArray *titleViews;
-// 缓存计算出来的每个标题的宽度
-@property (nonatomic, strong) NSMutableArray *titleWidths;
-// 缓存计算出来的每个副标题的宽度
-@property (nonatomic, strong) NSMutableArray *detailWidths;
+// 缓存计算出来的每个标题的size
+@property (nonatomic, strong) NSMutableArray *titleSizeAry;
+// 缓存计算出来的每个副标题的size
+@property (nonatomic, strong) NSMutableArray *detailSizeAry;
 // 响应标题点击
 @property (copy, nonatomic) TitleBtnOnClickBlock titleBtnOnClick;
 
@@ -50,7 +50,9 @@
 @implementation ZJScrollSegmentView
 
 static CGFloat const xGap = 5.0;
+static CGFloat const yGap = 1.5;
 static CGFloat const wGap = 2*xGap;
+static CGFloat const hGap = 2*yGap;
 static CGFloat const contentSizeXOff = 20.0;
 
 #pragma mark - life cycle
@@ -171,6 +173,7 @@ static CGFloat const contentSizeXOff = 20.0;
         
         titleView.font = self.segmentStyle.titleFont;
         titleView.detailFont = self.segmentStyle.detailFont;
+        titleView.padding = self.segmentStyle.padding;
         titleView.text = title;
         titleView.detail = detail;
         titleView.textColor = self.segmentStyle.normalTitleColor;
@@ -184,10 +187,10 @@ static CGFloat const contentSizeXOff = 20.0;
         UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleLabelOnClick:)];
         [titleView addGestureRecognizer:tapGes];
         
-        CGFloat titleViewWidth = [titleView titleViewWidth];
-        [self.titleWidths addObject:@(titleViewWidth)];
-        CGFloat detailViewWidth = [titleView detailViewWidth];
-        [self.detailWidths addObject:@(detailViewWidth)];
+        CGSize titleViewSize = [titleView titleViewSize];
+        [self.titleSizeAry addObject:@(titleViewSize)];
+        CGSize detailViewSize = [titleView detailViewSize];
+        [self.detailSizeAry addObject:@(detailViewSize)];
         
         [self.titleViews addObject:titleView];
         [self.scrollView addSubview:titleView];
@@ -271,16 +274,14 @@ static CGFloat const contentSizeXOff = 20.0;
         if (self.segmentStyle.isAutoAdjustTitlesWidth) {
             
             float allTitlesWidth = self.segmentStyle.titleMargin;
-            for (int i = 0; i<self.titleWidths.count; i++) {
-                allTitlesWidth = allTitlesWidth + [self.titleWidths[i] floatValue] + self.segmentStyle.titleMargin;
+            for (int i = 0; i<self.titleSizeAry.count; i++) {
+                allTitlesWidth = allTitlesWidth + [self.titleSizeAry[i] CGSizeValue].width + self.segmentStyle.titleMargin;
             }
-            
-            
-            addedMargin = allTitlesWidth < self.scrollView.bounds.size.width ? (self.scrollView.bounds.size.width - allTitlesWidth)/self.titleWidths.count : 0 ;
+            addedMargin = allTitlesWidth < self.scrollView.bounds.size.width ? (self.scrollView.bounds.size.width - allTitlesWidth)/self.titleSizeAry.count : 0 ;
         }
 
         for (ZJTitleView *titleView in self.titleViews) {
-            titleW = [self.titleWidths[index] floatValue];
+            titleW = [self.titleSizeAry[index] CGSizeValue].width;
             titleX = lastLableMaxX + addedMargin/2;
 
             lastLableMaxX += (titleW + addedMargin + self.segmentStyle.titleMargin);
@@ -330,7 +331,7 @@ static CGFloat const contentSizeXOff = 20.0;
 
         } else {
             if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                coverW = [self.titleWidths[_currentIndex] floatValue] + wGap;
+                coverW = [self.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
                 coverX = (firstLabel.zj_width - coverW) * 0.5;
             }
 
@@ -342,39 +343,51 @@ static CGFloat const contentSizeXOff = 20.0;
     }
     
     if (self.coverLayer) {
-        
-        if (self.details.count) {
-            coverY = self.bounds.size.height/2.0 + 5 -10 + (14 - coverH)/2.0;
-            coverW = [self.detailWidths[_currentIndex] floatValue];
+        CGFloat titleH = [self.titleSizeAry[_currentIndex] CGSizeValue].height;
+        CGFloat detailH = [self.detailSizeAry[_currentIndex] CGSizeValue].height;
+        if (self.segmentStyle.coverPosition == CoverShowPositionCenter) {
             if (self.segmentStyle.isScrollTitle) {
                 self.coverLayer.frame = CGRectMake(coverX - xGap, coverY, coverW + wGap, coverH);
-                
             } else {
                 if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                    coverW = [self.titleWidths[_currentIndex] floatValue] + wGap;
+                    coverW = [self.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
                     coverX = (firstLabel.zj_width - coverW) * 0.5;
                 }
-
                 self.coverLayer.frame = CGRectMake(coverX, coverY, coverW, coverH);
-                
             }
-        } else {
-            
-        if (self.segmentStyle.isScrollTitle) {
-            self.coverLayer.frame = CGRectMake(coverX - xGap, coverY, coverW + wGap, coverH);
-            
-        } else {
-            if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                coverW = [self.titleWidths[_currentIndex] floatValue] + wGap;
-                coverX = (firstLabel.zj_width - coverW) * 0.5;
+        } else if (self.segmentStyle.coverPosition == CoverShowPositionTop) {
+            CGFloat y = (self.bounds.size.height - titleH - detailH - self.segmentStyle.padding)/2.0;
+            coverY = y;
+            coverW = [self.titleSizeAry[_currentIndex] CGSizeValue].width;
+            coverX = firstLabel.zj_x + (firstLabel.zj_width - coverW) * 0.5;
+            coverH = titleH;
+            if (self.segmentStyle.isScrollTitle) {
+                self.coverLayer.frame = CGRectMake(coverX - xGap, coverY - yGap, coverW + wGap, coverH + hGap);
+            } else {
+                if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                    coverW = [self.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
+                    coverX = (firstLabel.zj_width - coverW) * 0.5;
+                }
+                self.coverLayer.frame = CGRectMake(coverX - xGap, coverY - yGap, coverW + wGap, coverH + hGap);
             }
-
-            self.coverLayer.frame = CGRectMake(coverX, coverY, coverW, coverH);
-            
+            self.coverLayer.layer.cornerRadius = self.coverLayer.zj_height/2.0;
+        } else if (self.segmentStyle.coverPosition == CoverShowPositionBottom) {
+            CGFloat y = (self.bounds.size.height - titleH - detailH - self.segmentStyle.padding)/2.0;
+            coverY = y + titleH + self.segmentStyle.padding;
+            coverW = [self.detailSizeAry[_currentIndex] CGSizeValue].width;
+            coverX = firstLabel.zj_x + (firstLabel.zj_width - coverW)/2.0;
+            coverH = detailH;
+            if (self.segmentStyle.isScrollTitle) {
+                self.coverLayer.frame = CGRectMake(coverX - xGap, coverY - yGap, coverW + wGap, coverH + hGap);
+            } else {
+                if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                    coverW = [self.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
+                    coverX = (firstLabel.zj_width - coverW) * 0.5;
+                }
+                self.coverLayer.frame = CGRectMake(coverX - xGap, coverY - yGap, coverW + wGap, coverH + hGap);
+            }
+            self.coverLayer.layer.cornerRadius = self.coverLayer.zj_height/2.0;
         }
-        
-        }
-        
     }
         
 }
@@ -417,16 +430,16 @@ static CGFloat const contentSizeXOff = 20.0;
                 coverW = currentTitleView.zj_width;
             }
             if (weakSelf.segmentStyle.isScrollTitle) {
-                weakSelf.scrollLine.zj_x = currentTitleView.zj_x + (currentTitleView.zj_width - coverW)/2.0;
+                weakSelf.scrollLine.zj_x = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
                 weakSelf.scrollLine.zj_width = coverW;
             } else {
                 if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                    CGFloat scrollLineW = [weakSelf.titleWidths[_currentIndex] floatValue] + wGap;
+                    CGFloat scrollLineW = [weakSelf.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
                     CGFloat scrollLineX = currentTitleView.zj_x + (currentTitleView.zj_width - scrollLineW) * 0.5;
                     weakSelf.scrollLine.zj_x = scrollLineX;
                     weakSelf.scrollLine.zj_width = scrollLineW;
                 } else {
-                    weakSelf.scrollLine.zj_x = currentTitleView.zj_x + (currentTitleView.zj_width - coverW)/2.0;
+                    weakSelf.scrollLine.zj_x = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
                     weakSelf.scrollLine.zj_width = coverW;
                 }
                 
@@ -435,19 +448,54 @@ static CGFloat const contentSizeXOff = 20.0;
         }
         
         if (weakSelf.coverLayer) {
-            if (weakSelf.segmentStyle.isScrollTitle) {
-                
-                weakSelf.coverLayer.zj_x = currentTitleView.zj_x - xGap;
-                weakSelf.coverLayer.zj_width = currentTitleView.zj_width + wGap;
-            } else {
-                if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                    CGFloat coverW = [self.titleWidths[_currentIndex] floatValue] + wGap;
-                    CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
-                    weakSelf.coverLayer.zj_x = coverX;
-                    weakSelf.coverLayer.zj_width = coverW;
+            if (self.segmentStyle.coverPosition == CoverShowPositionCenter) {
+                if (weakSelf.segmentStyle.isScrollTitle) {
+                    weakSelf.coverLayer.zj_x = currentTitleView.zj_x - xGap;
+                    weakSelf.coverLayer.zj_width = currentTitleView.zj_width + wGap;
                 } else {
-                    weakSelf.coverLayer.zj_x = currentTitleView.zj_x;
-                    weakSelf.coverLayer.zj_width = currentTitleView.zj_width;
+                    if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                        CGFloat coverW = [weakSelf.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
+                        CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
+                        weakSelf.coverLayer.zj_x = coverX;
+                        weakSelf.coverLayer.zj_width = coverW;
+                    } else {
+                        weakSelf.coverLayer.zj_x = currentTitleView.zj_x;
+                        weakSelf.coverLayer.zj_width = currentTitleView.zj_width;
+                    }
+                }
+            } else if (self.segmentStyle.coverPosition == CoverShowPositionTop) {
+                CGFloat coverW = [weakSelf.titleSizeAry[_currentIndex] CGSizeValue].width;
+                CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
+                if (weakSelf.segmentStyle.isScrollTitle) {
+                    weakSelf.coverLayer.zj_x = coverX - xGap;
+                    weakSelf.coverLayer.zj_width = coverW + wGap;
+                } else {
+                    if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                        CGFloat coverW = [weakSelf.titleSizeAry[_currentIndex] CGSizeValue].width;
+                        CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
+                        weakSelf.coverLayer.zj_x = coverX - xGap;
+                        weakSelf.coverLayer.zj_width = coverW + wGap;
+                    } else {
+                        weakSelf.coverLayer.zj_x = coverX - xGap;
+                        weakSelf.coverLayer.zj_width = coverW + wGap;
+                    }
+                }
+            } else if (self.segmentStyle.coverPosition == CoverShowPositionBottom) {
+                CGFloat coverW = [weakSelf.detailSizeAry[_currentIndex] CGSizeValue].width;
+                CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
+                if (weakSelf.segmentStyle.isScrollTitle) {
+                    weakSelf.coverLayer.zj_x = coverX - xGap;
+                    weakSelf.coverLayer.zj_width = coverW + wGap;
+                } else {
+                    if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                        CGFloat coverW = [weakSelf.titleSizeAry[_currentIndex] CGSizeValue].width + wGap;
+                        CGFloat coverX = currentTitleView.zj_x + (currentTitleView.zj_width - coverW) * 0.5;
+                        weakSelf.coverLayer.zj_x = coverX;
+                        weakSelf.coverLayer.zj_width = coverW;
+                    } else {
+                        weakSelf.coverLayer.zj_x = coverX - xGap;
+                        weakSelf.coverLayer.zj_width = coverW + wGap;
+                    }
                 }
             }
             
@@ -488,8 +536,8 @@ static CGFloat const contentSizeXOff = 20.0;
             self.scrollLine.zj_width = oldTitleView.zj_width + wDistance * progress;
         } else {
             if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                CGFloat oldScrollLineW = [self.titleWidths[oldIndex] floatValue] + wGap;
-                CGFloat currentScrollLineW = [self.titleWidths[currentIndex] floatValue] + wGap;
+                CGFloat oldScrollLineW = [self.titleSizeAry[oldIndex] CGSizeValue].width + wGap;
+                CGFloat currentScrollLineW = [self.titleSizeAry[currentIndex] CGSizeValue].width + wGap;
                 wDistance = currentScrollLineW - oldScrollLineW;
                 
                 CGFloat oldScrollLineX = oldTitleView.zj_x + (oldTitleView.zj_width - oldScrollLineW) * 0.5;
@@ -506,23 +554,43 @@ static CGFloat const contentSizeXOff = 20.0;
     }
     
     if (self.coverLayer) {
-        if (self.segmentStyle.isScrollTitle) {
-            self.coverLayer.zj_x = oldTitleView.zj_x + xDistance * progress - xGap;
-            self.coverLayer.zj_width = oldTitleView.zj_width + wDistance * progress + wGap;
-        } else {
-            if (self.segmentStyle.isAdjustCoverOrLineWidth) {
-                CGFloat oldCoverW = [self.titleWidths[oldIndex] floatValue] + wGap;
-                CGFloat currentCoverW = [self.titleWidths[currentIndex] floatValue] + wGap;
-                wDistance = currentCoverW - oldCoverW;
-                CGFloat oldCoverX = oldTitleView.zj_x + (oldTitleView.zj_width - oldCoverW) * 0.5;
-                CGFloat currentCoverX = currentTitleView.zj_x + (currentTitleView.zj_width - currentCoverW) * 0.5;
-                xDistance = currentCoverX - oldCoverX;
-                self.coverLayer.zj_x = oldCoverX + xDistance * progress;
-                self.coverLayer.zj_width = oldCoverW + wDistance * progress;
+        if (self.segmentStyle.coverPosition == CoverShowPositionCenter) {
+            if (self.segmentStyle.isScrollTitle) {
+                self.coverLayer.zj_x = oldTitleView.zj_x + xDistance * progress - xGap;
+                self.coverLayer.zj_width = oldTitleView.zj_width + wDistance * progress + wGap;
             } else {
-                self.coverLayer.zj_x = oldTitleView.zj_x + xDistance * progress;
-                self.coverLayer.zj_width = oldTitleView.zj_width + wDistance * progress;
+                if (self.segmentStyle.isAdjustCoverOrLineWidth) {
+                    CGFloat oldCoverW = [self.titleSizeAry[oldIndex] CGSizeValue].width + wGap;
+                    CGFloat currentCoverW = [self.titleSizeAry[currentIndex] CGSizeValue].width + wGap;
+                    wDistance = currentCoverW - oldCoverW;
+                    CGFloat oldCoverX = oldTitleView.zj_x + (oldTitleView.zj_width - oldCoverW) * 0.5;
+                    CGFloat currentCoverX = currentTitleView.zj_x + (currentTitleView.zj_width - currentCoverW) * 0.5;
+                    xDistance = currentCoverX - oldCoverX;
+                    self.coverLayer.zj_x = oldCoverX + xDistance * progress;
+                    self.coverLayer.zj_width = oldCoverW + wDistance * progress;
+                } else {
+                    self.coverLayer.zj_x = oldTitleView.zj_x + xDistance * progress;
+                    self.coverLayer.zj_width = oldTitleView.zj_width + wDistance * progress;
+                }
             }
+        } else if (self.segmentStyle.coverPosition == CoverShowPositionTop) {
+            CGFloat oldCoverW = [self.titleSizeAry[oldIndex] CGSizeValue].width + wGap;
+            CGFloat currentCoverW = [self.titleSizeAry[currentIndex] CGSizeValue].width + wGap;
+            wDistance = currentCoverW - oldCoverW;
+            CGFloat oldCoverX = oldTitleView.zj_x + (oldTitleView.zj_width - oldCoverW) * 0.5;
+            CGFloat currentCoverX = currentTitleView.zj_x + (currentTitleView.zj_width - currentCoverW) * 0.5;
+            xDistance = currentCoverX - oldCoverX;
+            self.coverLayer.zj_x = oldCoverX + xDistance * progress;
+            self.coverLayer.zj_width = oldCoverW + wDistance * progress;
+        } else if (self.segmentStyle.coverPosition == CoverShowPositionBottom) {
+            CGFloat oldCoverW = [self.detailSizeAry[oldIndex] CGSizeValue].width + wGap;
+            CGFloat currentCoverW = [self.detailSizeAry[currentIndex] CGSizeValue].width + wGap;
+            wDistance = currentCoverW - oldCoverW;
+            CGFloat oldCoverX = oldTitleView.zj_x + (oldTitleView.zj_width - oldCoverW) * 0.5;
+            CGFloat currentCoverX = currentTitleView.zj_x + (currentTitleView.zj_width - currentCoverW) * 0.5;
+            xDistance = currentCoverX - oldCoverX;
+            self.coverLayer.zj_x = oldCoverX + xDistance * progress;
+            self.coverLayer.zj_width = oldCoverW + wDistance * progress;
         }
     }
     
@@ -637,7 +705,8 @@ static CGFloat const contentSizeXOff = 20.0;
     
     _currentIndex = 0;
     _oldIndex = 0;
-    self.titleWidths = nil;
+    self.titleSizeAry = nil;
+    self.detailSizeAry = nil;
     self.titleViews = nil;
     self.titles = nil;
     self.titles = [titles copy];
@@ -758,20 +827,20 @@ static CGFloat const contentSizeXOff = 20.0;
     return _titleViews;
 }
 
-- (NSMutableArray *)titleWidths
+- (NSMutableArray *)titleSizeAry
 {
-    if (_titleWidths == nil) {
-        _titleWidths = [NSMutableArray array];
+    if (_titleSizeAry == nil) {
+        _titleSizeAry = [NSMutableArray array];
     }
-    return _titleWidths;
+    return _titleSizeAry;
 }
 
-- (NSMutableArray *)detailWidths
+- (NSMutableArray *)detailSizeAry
 {
-    if (_detailWidths == nil) {
-        _detailWidths = [NSMutableArray array];
+    if (_detailSizeAry == nil) {
+        _detailSizeAry = [NSMutableArray array];
     }
-    return _detailWidths;
+    return _detailSizeAry;
 }
 
 - (NSArray *)deltaRGBA {

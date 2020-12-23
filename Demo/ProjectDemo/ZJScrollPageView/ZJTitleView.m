@@ -7,6 +7,7 @@
 //
 
 #import "ZJTitleView.h"
+#import "UILabel+ZJTextAlign.h"
 
 @interface ZJTitleView() {
     CGSize _titleSize;
@@ -55,10 +56,14 @@
     
     if (!_isShowImage) {
         if (_detail.length) {
-            CGFloat h = self.bounds.size.height/2.0 + 5;
-            self.label.frame = CGRectMake(0, 0, self.bounds.size.width, h);
-            CGFloat x = (self.bounds.size.width - _detailSize.width - 10)/2.0;
-            self.detailL.frame = CGRectMake(x, CGRectGetMaxY(self.label.frame)-10, _detailSize.width + 10, 14);
+            CGFloat x = (self.bounds.size.width - _titleSize.width) * 0.5;
+            CGFloat y = (self.bounds.size.height - _titleSize.height - _detailSize.height - self.padding) * 0.5;
+            self.label.frame = CGRectMake(x, y, _titleSize.width, _titleSize.height);
+            self.label.isBottom = YES;
+            
+            x = (self.bounds.size.width - _detailSize.width) * 0.5;
+            self.detailL.frame = CGRectMake(x, CGRectGetMaxY(self.label.frame) + self.padding, _detailSize.width, _detailSize.height);
+            self.detailL.isTop = YES;
         } else {
             self.label.frame = self.bounds;
         }
@@ -69,8 +74,8 @@
     _isShowImage = YES;
 
     CGRect contentViewFrame = self.bounds;
-    contentViewFrame.size.width = [self titleViewWidth];
-    contentViewFrame.origin.x = (self.frame.size.width - contentViewFrame.size.width)/2;
+    contentViewFrame.size.width = [self titleViewSize].width;
+    contentViewFrame.origin.x = (self.frame.size.width - contentViewFrame.size.width) * 0.5;
     self.contentView.frame = contentViewFrame;
     self.label.frame = self.contentView.bounds;
     
@@ -141,7 +146,7 @@
 
 
 
-- (CGFloat)titleViewWidth {
+- (CGSize)titleViewSize {
     CGFloat width = 0.0f;
     switch (self.imagePosition) {
         case TitleImagePositionLeft:
@@ -158,10 +163,10 @@
             break;
     }
     
-    return width;
+    return CGSizeMake(width, _titleSize.height);
 }
 
-- (CGFloat)detailViewWidth {
+- (CGSize)detailViewSize {
     CGFloat width = 0.0f;
     switch (self.imagePosition) {
         case TitleImagePositionLeft:
@@ -178,7 +183,7 @@
             break;
     }
     
-    return width;
+    return CGSizeMake(width, _detailSize.height);
 }
 
 

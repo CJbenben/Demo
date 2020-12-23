@@ -31,9 +31,11 @@
         _coverBackgroundColor = [UIColor lightGrayColor];
         _coverCornerRadius = 14.0;
         _coverHeight = 28.0;
+        _coverPosition = CoverShowPositionCenter;
         _titleMargin = 15.0;
         _titleFont = [UIFont systemFontOfSize:15.0];
         _detailFont = [UIFont systemFontOfSize:13.0];
+        _padding = 0;
         _titleBigScale = 1.3;
         _normalTitleColor = [UIColor colorWithRed:51.0/255.0 green:53.0/255.0 blue:75/255.0 alpha:1.0];
         _selectedTitleColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:121/255.0 alpha:1.0];

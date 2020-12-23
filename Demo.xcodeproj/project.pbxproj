@@ -73,6 +73,7 @@
 		7D8BCD72258AFB9200324367 /* UIViewController+ZJScrollPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD67258AFB9200324367 /* UIViewController+ZJScrollPageController.m */; };
 		7D8BCD73258AFB9200324367 /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD6B258AFB9200324367 /* ZJContentView.m */; };
 		7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */; };
+		7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */; };
 		7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */; };
 		7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */; };
 		7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */; };
@@ -264,6 +265,8 @@
 		7D8BCD6B258AFB9200324367 /* ZJContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZJContentView.m; sourceTree = "<group>"; };
 		7D8BCD77258AFBDD00324367 /* HMPageScrollTestViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMPageScrollTestViewController.h; sourceTree = "<group>"; };
 		7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMPageScrollTestViewController.m; sourceTree = "<group>"; };
+		7D8BCDA2258B02A300324367 /* UILabel+ZJTextAlign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZJTextAlign.h"; sourceTree = "<group>"; };
+		7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJTextAlign.m"; sourceTree = "<group>"; };
 		7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
 		7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_base_loading_bg@3x.png"; sourceTree = "<group>"; };
 		7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
@@ -635,6 +638,8 @@
 				7D8BCD62258AFB9200324367 /* UIView+ZJFrame.m */,
 				7D8BCD5E258AFB9100324367 /* UIViewController+ZJScrollPageController.h */,
 				7D8BCD67258AFB9200324367 /* UIViewController+ZJScrollPageController.m */,
+				7D8BCDA2258B02A300324367 /* UILabel+ZJTextAlign.h */,
+				7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */,
 				7D8BCD5D258AFB9100324367 /* ZJCollectionView.h */,
 				7D8BCD61258AFB9100324367 /* ZJCollectionView.m */,
 				7D8BCD5B258AFB9100324367 /* ZJContentView.h */,
@@ -660,8 +665,8 @@
 				7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */,
 				7D8BCD41258AFB7300324367 /* ZJPageViewController.h */,
 				7D8BCD43258AFB7300324367 /* ZJPageViewController.m */,
-				7D8BCD42258AFB7300324367 /* ZJPageTableViewController.m */,
 				7D8BCD40258AFB7300324367 /* ZJPageTableViewController.h */,
+				7D8BCD42258AFB7300324367 /* ZJPageTableViewController.m */,
 			);
 			path = TestDemo;
 			sourceTree = "<group>";
@@ -1275,6 +1280,7 @@
 				7DD9448F24FFBAF60078F37A /* UIColor+CJColor.m in Sources */,
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
+				7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */,
 				7D52B7F92514AACF0032282E /* TXHomeCollectionHeaderView.m in Sources */,
 				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
