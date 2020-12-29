@@ -19,6 +19,7 @@
         _segmentViewBounces = YES;
         _contentViewBounces = YES;
         _gradualChangeTitleColor = NO;
+        _gradualChangeDetailColor = NO;
         _showExtraButton = NO;
         _scrollContentView = YES;
         _adjustCoverOrLineWidth = NO;
@@ -39,6 +40,8 @@
         _titleBigScale = 1.3;
         _normalTitleColor = [UIColor colorWithRed:51.0/255.0 green:53.0/255.0 blue:75/255.0 alpha:1.0];
         _selectedTitleColor = [UIColor colorWithRed:255.0/255.0 green:0.0/255.0 blue:121/255.0 alpha:1.0];
+        _normalDetailColor = [UIColor colorWithRed:51.0/255.0 green:51.0/255.0 blue:51.0/255.0 alpha:1.0];
+        _selectedDetailColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
         
         _segmentHeight = 44.0;
 

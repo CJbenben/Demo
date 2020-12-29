@@ -33,9 +33,14 @@
 
 
 // 用于懒加载计算文字的rgba差值, 用于颜色渐变的时候设置
+/** title */
 @property (strong, nonatomic) NSArray *deltaRGBA;
 @property (strong, nonatomic) NSArray *selectedColorRGBA;
 @property (strong, nonatomic) NSArray *normalColorRGBA;
+/** detail */
+@property (strong, nonatomic) NSArray *deltaDetailRGBA;
+@property (strong, nonatomic) NSArray *selectedDetailColorRGBA;
+@property (strong, nonatomic) NSArray *normalDetailColorRGBA;
 /** 缓存所有标题label */
 @property (nonatomic, strong) NSMutableArray *titleViews;
 // 缓存计算出来的每个标题的size
@@ -177,6 +182,7 @@ static CGFloat const contentSizeXOff = 20.0;
         titleView.text = title;
         titleView.detail = detail;
         titleView.textColor = self.segmentStyle.normalTitleColor;
+        titleView.detailColor = self.segmentStyle.normalDetailColor;
         titleView.imagePosition = self.segmentStyle.imagePosition;
 
         
@@ -239,7 +245,7 @@ static CGFloat const contentSizeXOff = 20.0;
         self.rightCustomView.layer.shadowColor = [UIColor blackColor].CGColor;
         self.rightCustomView.layer.shadowPath = [UIBezierPath bezierPathWithRect:self.rightCustomView.bounds].CGPath;
     }
-    self.scrollView.frame = CGRectMake(0.0, 0.0, scrollW, self.zj_height);
+    self.scrollView.frame = CGRectMake(0.0, 0.0, scrollW, self.bgView.zj_height);
 
     if (self.extraBtn) {
         self.extraBtn.frame = CGRectMake(scrollW , extraBtnY, extraBtnW, self.zj_height - 2*extraBtnY);
@@ -306,6 +312,7 @@ static CGFloat const contentSizeXOff = 20.0;
         }
         // 设置初始状态文字的颜色
         currentTitleView.textColor = self.segmentStyle.selectedTitleColor;
+        currentTitleView.detailColor = self.segmentStyle.selectedDetailColor;
         if (self.segmentStyle.isShowImage) {
             currentTitleView.selected = YES;
         }
@@ -416,7 +423,9 @@ static CGFloat const contentSizeXOff = 20.0;
     
     [UIView animateWithDuration:animatedTime animations:^{
         oldTitleView.textColor = weakSelf.segmentStyle.normalTitleColor;
+        oldTitleView.detailColor = weakSelf.segmentStyle.normalDetailColor;
         currentTitleView.textColor = weakSelf.segmentStyle.selectedTitleColor;
+        currentTitleView.detailColor = weakSelf.segmentStyle.selectedDetailColor;
         oldTitleView.selected = NO;
         currentTitleView.selected = YES;
         if (weakSelf.segmentStyle.isScaleTitle) {
@@ -610,6 +619,19 @@ static CGFloat const contentSizeXOff = 20.0;
                                       alpha:[self.normalColorRGBA[3] floatValue] - [self.deltaRGBA[3] floatValue] * progress];
         
     }
+    if (self.segmentStyle.isGradualChangeDetailColor) {
+        oldTitleView.detailColor = [UIColor
+                                    colorWithRed:[self.selectedDetailColorRGBA[0] floatValue] + [self.deltaDetailRGBA[0] floatValue] * progress
+                                    green:[self.selectedDetailColorRGBA[1] floatValue] + [self.deltaDetailRGBA[1] floatValue] * progress
+                                    blue:[self.selectedDetailColorRGBA[2] floatValue] + [self.deltaDetailRGBA[2] floatValue] * progress
+                                    alpha:[self.selectedDetailColorRGBA[3] floatValue] + [self.deltaDetailRGBA[3] floatValue] * progress];
+        
+        currentTitleView.detailColor = [UIColor
+                                        colorWithRed:[self.normalDetailColorRGBA[0] floatValue] - [self.deltaDetailRGBA[0] floatValue] * progress
+                                        green:[self.normalDetailColorRGBA[1] floatValue] - [self.deltaDetailRGBA[1] floatValue] * progress
+                                        blue:[self.normalDetailColorRGBA[2] floatValue] - [self.deltaDetailRGBA[2] floatValue] * progress
+                                        alpha:[self.normalDetailColorRGBA[3] floatValue] - [self.deltaDetailRGBA[3] floatValue] * progress];
+    }
     
     if (!self.segmentStyle.isScaleTitle) {
         return;
@@ -629,12 +651,14 @@ static CGFloat const contentSizeXOff = 20.0;
     for (ZJTitleView *titleView in _titleViews) {
         if (index != currentIndex) {
             titleView.textColor = self.segmentStyle.normalTitleColor;
+            titleView.detailColor = self.segmentStyle.normalDetailColor;
             titleView.currentTransformSx = 1.0;
             titleView.selected = NO;
             
         }
         else {
             titleView.textColor = self.segmentStyle.selectedTitleColor;
+            titleView.detailColor = self.segmentStyle.selectedDetailColor;
             if (self.segmentStyle.isScaleTitle) {
                 titleView.currentTransformSx = self.segmentStyle.titleBigScale;
             }
@@ -880,6 +904,45 @@ static CGFloat const contentSizeXOff = 20.0;
         
     }
     return  _selectedColorRGBA;
+}
+
+- (NSArray *)deltaDetailRGBA {
+    if (_deltaDetailRGBA == nil) {
+        NSArray *normalColorRgb = self.normalDetailColorRGBA;
+        NSArray *selectedColorRgb = self.selectedDetailColorRGBA;
+        
+        NSArray *delta;
+        if (normalColorRgb && selectedColorRgb) {
+            CGFloat deltaR = [normalColorRgb[0] floatValue] - [selectedColorRgb[0] floatValue];
+            CGFloat deltaG = [normalColorRgb[1] floatValue] - [selectedColorRgb[1] floatValue];
+            CGFloat deltaB = [normalColorRgb[2] floatValue] - [selectedColorRgb[2] floatValue];
+            CGFloat deltaA = [normalColorRgb[3] floatValue] - [selectedColorRgb[3] floatValue];
+            delta = [NSArray arrayWithObjects:@(deltaR), @(deltaG), @(deltaB), @(deltaA), nil];
+            _deltaDetailRGBA = delta;
+
+        }
+    }
+    return _deltaDetailRGBA;
+}
+
+- (NSArray *)normalDetailColorRGBA {
+    if (!_normalDetailColorRGBA) {
+        NSArray *normalColorRGBA = [self getColorRGBA:self.segmentStyle.normalDetailColor];
+        NSAssert(normalColorRGBA, @"设置普通状态的文字颜色时 请使用RGBA空间的颜色值");
+        _normalDetailColorRGBA = normalColorRGBA;
+        
+    }
+    return  _normalDetailColorRGBA;
+}
+
+- (NSArray *)selectedDetailColorRGBA {
+    if (!_selectedDetailColorRGBA) {
+        NSArray *selectedColorRGBA = [self getColorRGBA:self.segmentStyle.selectedDetailColor];
+        NSAssert(selectedColorRGBA, @"设置选中状态的文字颜色时 请使用RGBA空间的颜色值");
+        _selectedDetailColorRGBA = selectedColorRGBA;
+        
+    }
+    return  _selectedDetailColorRGBA;
 }
 
 - (NSArray *)getColorRGBA:(UIColor *)color {

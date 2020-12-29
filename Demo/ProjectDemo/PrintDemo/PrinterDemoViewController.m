@@ -10,6 +10,11 @@
 
 @interface PrinterDemoViewController ()<UIPrintInteractionControllerDelegate>
 
+@property (nonatomic, strong) UITextField *textField;
+@property (nonatomic, strong) UIView *customInputView;
+@property (nonatomic, strong) UIToolbar *customAccessoryView;
+
+
 @end
 
 @implementation PrinterDemoViewController
@@ -17,6 +22,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self createUI];
+}
+
+- (void)createUI{
+    [self.view addSubview:self.textField];
+//    self.textField.inputView = self.customInputView;
+    self.textField.inputAccessoryView = self.customAccessoryView;
+    
+}
+- (UITextField *)textField{
+    if (!_textField) {
+        _textField = [[UITextField alloc]initWithFrame:CGRectMake(50, naviHeight + 20, SCREEN_WIDTH - 100, 30)];
+        _textField.layer.borderWidth = 1.0;
+        _textField.layer.borderColor = [UIColor lightGrayColor].CGColor;
+        _textField.layer.cornerRadius = 4.0;
+        _textField.placeholder = @"测试";
+    }
+    return _textField;
+}
+
+- (UIView *)customInputView{
+    if (!_customInputView) {
+        _customInputView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 261)];
+        _customInputView.backgroundColor = [UIColor lightGrayColor];
+        UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 100, SCREEN_WIDTH, 40)];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.text = @"自定义inputView";
+        [_customInputView addSubview:label];
+//        _customInputView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_BOUNDS.size.width, 300)];
+//        _customInputView.backgroundColor = [UIColor redColor];
+        
+    }
+    return _customInputView;
+}
+
+- (UIToolbar *)customAccessoryView{
+    if (!_customAccessoryView) {
+        _customAccessoryView = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 40)];
+        _customAccessoryView.barTintColor = [UIColor orangeColor];
+        UIBarButtonItem *space = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *finish = [[UIBarButtonItem alloc]initWithTitle:@"完成" style:UIBarButtonItemStyleDone target:self action:@selector(done)];
+        [_customAccessoryView setItems:@[space,space,finish]];
+    }
+    return _customAccessoryView;
+}
+
+- (void)done{
+    [self.textField resignFirstResponder];
 }
 
 // 打印PDF

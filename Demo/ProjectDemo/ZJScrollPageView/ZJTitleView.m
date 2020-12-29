@@ -230,6 +230,11 @@
     
 }
 
+- (void)setDetailColor:(UIColor *)detailColor {
+    _detailColor = detailColor;
+    self.detailL.textColor = detailColor;
+}
+
 - (void)setSelected:(BOOL)selected {
     _selected = selected;
     self.imageView.highlighted = selected;
@@ -255,7 +260,6 @@
     if (_detailL == nil) {
         _detailL = [[UILabel alloc] init];
         _detailL.textAlignment = NSTextAlignmentCenter;
-        _detailL.textColor = [UIColor whiteColor];
     }
     return _detailL;
 }

@@ -53,8 +53,10 @@ typedef NS_OPTIONS(NSInteger, SegmentViewComponent) {
 /** contentView是否有弹性 默认为YES*/
 @property (assign, nonatomic, getter=isContentViewBounces) BOOL contentViewBounces;
 
-/** 是否颜色渐变 默认为NO*/
+/** 标题是否颜色渐变 默认为NO*/
 @property (assign, nonatomic, getter=isGradualChangeTitleColor) BOOL gradualChangeTitleColor;
+/** 副标题颜色渐变 默认为NO*/
+@property (assign, nonatomic, getter=isGradualChangeDetailColor) BOOL gradualChangeDetailColor;
 
 /** 内容view是否能滑动 默认为YES*/
 @property (assign, nonatomic, getter=isScrollContentView) BOOL scrollContentView;
@@ -99,6 +101,10 @@ typedef NS_OPTIONS(NSInteger, SegmentViewComponent) {
 @property (strong, nonatomic) UIColor *normalTitleColor;
 /** 标题选中状态的颜色 */
 @property (strong, nonatomic) UIColor *selectedTitleColor;
+/** 副标题一般状态的颜色 */
+@property (strong, nonatomic) UIColor *normalDetailColor;
+/** 副标题选中状态的颜色 */
+@property (strong, nonatomic) UIColor *selectedDetailColor;
 /** segmentVIew的高度, 这个属性只在使用ZJScrollPageVIew的时候设置生效 */
 @property (assign, nonatomic) CGFloat segmentHeight;
 /** 标题中图片的位置 */
