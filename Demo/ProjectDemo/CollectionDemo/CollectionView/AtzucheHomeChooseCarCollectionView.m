@@ -99,9 +99,9 @@ static NSString *reuseHeader    = @"AtzucheHomeChooseCarCollectionCellHeader";
     [self.homeDelegate atzucheHomeCollectionDidSelectItemAtIndexPath:indexPath type:HomeCollectionTypeChooseCar];
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
-    return CGSizeMake(SCREEN_WIDTH, 50);
-}
+//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section{
+//    return CGSizeMake(SCREEN_WIDTH, 50);
+//}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout referenceSizeForFooterInSection:(NSInteger)section {
     return CGSizeZero;

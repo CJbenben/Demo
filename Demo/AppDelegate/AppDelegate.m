@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HMWebViewController.h"
 
 @interface AppDelegate ()
 
@@ -34,10 +35,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.window makeKeyAndVisible];
-//    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
-//    self.window.rootViewController = navi;
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [self.window makeKeyAndVisible];
+    
+    HMWebViewController *webview = [[HMWebViewController alloc] init];
+    [webview loadWebURLString:@"https://www.tebimktg.com/mobile/" naviTitle:@"title"];
+    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:webview];
+    self.window.rootViewController = navi;
     
     return YES;
 }

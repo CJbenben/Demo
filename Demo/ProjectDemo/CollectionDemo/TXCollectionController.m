@@ -37,10 +37,10 @@
 - (AtzucheHomeChooseCarCollectionView *)homeChooseCarCollectionView {
     if (_homeChooseCarCollectionView == nil) {
         CGFloat width = (SCREEN_WIDTH - 30)/2.0;
-        AtzucheChooseCarFlowLayout *layout = [[AtzucheChooseCarFlowLayout alloc] initAndSize:CGSizeMake(width, width * 2/3.0 + 110)];
-        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        AtzucheChooseCarFlowLayout *layout = [[AtzucheChooseCarFlowLayout alloc] initAndSize:CGSizeMake(width, width * 2/3.0 + 80)];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         
-        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(0, 300, SCREEN_WIDTH, width * 1.5 + 110) collectionViewLayout:layout];
+        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(0, 300, SCREEN_WIDTH, width * 1.5 + 80) collectionViewLayout:layout];
         _homeChooseCarCollectionView.homeDelegate = self;
     }
     return _homeChooseCarCollectionView;
@@ -62,6 +62,41 @@
     self.homeChooseCarCollectionView.backgroundColor = [UIColor purpleColor];
     
     self.homeChooseCarCollectionView.homeChooseCarAry = @[self.imageAry, self.imageAry, self.imageAry];
+    [self changeBackViewCornerWithCornerType:self.homeChooseCarCollectionView];
+}
+
+
+-(void)changeBackViewCornerWithCornerType:(UIView *)iv
+{
+    
+    UIBezierPath *maskPath;
+
+    maskPath = [UIBezierPath bezierPathWithRoundedRect:iv.bounds
+
+                                          cornerRadius:20];
+
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+
+    maskLayer.frame = iv.bounds;
+
+    maskLayer.path = maskPath.CGPath;
+
+    iv.layer.mask = maskLayer;
+//    CAShapeLayer *maskLayer = [CAShapeLayer layer];
+//       maskLayer.frame = CGRectMake(0, 0, cellWidth, cellHeight);
+//
+//       CAShapeLayer *borderLayer = [CAShapeLayer layer];
+//       borderLayer.frame = CGRectMake(0, 0, cellWidth, cellHeight);
+//       borderLayer.lineWidth = 1.f;
+//       borderLayer.strokeColor = lineColor.CGColor;
+//       borderLayer.fillColor = [UIColor clearColor].CGColor;
+//
+//       UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, cellWidth, cellHeight) cornerRadius:cornerRadius];
+//       maskLayer.path = bezierPath.CGPath;
+//       borderLayer.path = bezierPath.CGPath;
+//
+//       [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
+//       [cell.contentView.layer setMask:maskLayer];
 }
 
 - (void)addAtzucheScrollViewDemo {

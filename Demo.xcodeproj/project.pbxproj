@@ -23,6 +23,7 @@
 		7D45982C22F44AE0005AA8EC /* MVVMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982B22F44AE0005AA8EC /* MVVMTableViewCell.m */; };
 		7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */; };
 		7D473D2824C5A92F00EA2723 /* SocketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D473D2724C5A92F00EA2723 /* SocketViewController.m */; };
+		7D49C27E25F7409300350449 /* HMWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D49C27C25F7409300350449 /* HMWebViewController.m */; };
 		7D52B7C62514A0D60032282E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C12514A0D60032282E /* loading.json */; };
 		7D52B7C72514A0D60032282E /* loading.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C22514A0D60032282E /* loading.gif */; };
 		7D52B7C82514A0D60032282E /* DIN Alternate Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7D52B7C32514A0D60032282E /* DIN Alternate Light.otf */; };
@@ -74,6 +75,7 @@
 		7D8BCD73258AFB9200324367 /* ZJContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD6B258AFB9200324367 /* ZJContentView.m */; };
 		7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */; };
 		7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */; };
+		7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2FB1B25A7F122001C331E /* TXPageViewController.m */; };
 		7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */; };
 		7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */; };
 		7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */; };
@@ -106,6 +108,8 @@
 		7DE533E021A7AE6000ECC90A /* MVVMViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533DF21A7AE6000ECC90A /* MVVMViewModel.m */; };
 		7DE533E321A7D99A00ECC90A /* MVVMBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */; };
 		7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */; };
+		7DED7C7325B28C170096BC7A /* UIView+Corner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DED7C7225B28C170096BC7A /* UIView+Corner.m */; };
+		7DED7C7925B28E5D0096BC7A /* UIImage+ImgSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DED7C7825B28E5D0096BC7A /* UIImage+ImgSize.m */; };
 		7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDAEBA256BA14D0033264A /* CJConst.h */; };
 		F528C695215CDEA9008F7850 /* CJHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F528C694215CDEA9008F7850 /* CJHTTPRequest.m */; };
 		F59567811FAB4AD20068A04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F59567801FAB4AD20068A04F /* Assets.xcassets */; };
@@ -175,6 +179,8 @@
 		7D45982F22F44B85005AA8EC /* MVVMBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseViewModel.m; sourceTree = "<group>"; };
 		7D473D2624C5A92F00EA2723 /* SocketViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketViewController.h; sourceTree = "<group>"; };
 		7D473D2724C5A92F00EA2723 /* SocketViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketViewController.m; sourceTree = "<group>"; };
+		7D49C27C25F7409300350449 /* HMWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMWebViewController.m; sourceTree = "<group>"; };
+		7D49C27D25F7409300350449 /* HMWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMWebViewController.h; sourceTree = "<group>"; };
 		7D52B7C12514A0D60032282E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		7D52B7C22514A0D60032282E /* loading.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = loading.gif; sourceTree = "<group>"; };
 		7D52B7C32514A0D60032282E /* DIN Alternate Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIN Alternate Light.otf"; sourceTree = "<group>"; };
@@ -267,6 +273,8 @@
 		7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMPageScrollTestViewController.m; sourceTree = "<group>"; };
 		7D8BCDA2258B02A300324367 /* UILabel+ZJTextAlign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZJTextAlign.h"; sourceTree = "<group>"; };
 		7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJTextAlign.m"; sourceTree = "<group>"; };
+		7DA2FB1A25A7F122001C331E /* TXPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXPageViewController.h; sourceTree = "<group>"; };
+		7DA2FB1B25A7F122001C331E /* TXPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXPageViewController.m; sourceTree = "<group>"; };
 		7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
 		7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_base_loading_bg@3x.png"; sourceTree = "<group>"; };
 		7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
@@ -335,6 +343,10 @@
 		7DE533E221A7D99A00ECC90A /* MVVMBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMBaseModel.m; sourceTree = "<group>"; };
 		7DE533E421A7D9FA00ECC90A /* MVVMItemModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MVVMItemModel.h; sourceTree = "<group>"; };
 		7DE533E521A7D9FA00ECC90A /* MVVMItemModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MVVMItemModel.m; sourceTree = "<group>"; };
+		7DED7C7125B28C170096BC7A /* UIView+Corner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Corner.h"; sourceTree = "<group>"; };
+		7DED7C7225B28C170096BC7A /* UIView+Corner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Corner.m"; sourceTree = "<group>"; };
+		7DED7C7725B28E5D0096BC7A /* UIImage+ImgSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImgSize.h"; sourceTree = "<group>"; };
+		7DED7C7825B28E5D0096BC7A /* UIImage+ImgSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImgSize.m"; sourceTree = "<group>"; };
 		7DEDAEBA256BA14D0033264A /* CJConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CJConst.h; sourceTree = "<group>"; };
 		C1A3EC334A534427B4F75C41 /* Pods-Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.release.xcconfig"; sourceTree = "<group>"; };
 		C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -671,6 +683,15 @@
 			path = TestDemo;
 			sourceTree = "<group>";
 		};
+		7DA2FB1625A7F10D001C331E /* TXPageView */ = {
+			isa = PBXGroup;
+			children = (
+				7DA2FB1A25A7F122001C331E /* TXPageViewController.h */,
+				7DA2FB1B25A7F122001C331E /* TXPageViewController.m */,
+			);
+			path = TXPageView;
+			sourceTree = "<group>";
+		};
 		7DD9442D24FFBAD20078F37A /* CJCommonKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -909,6 +930,10 @@
 			children = (
 				F599D78F2019BA8D00D33834 /* UIColor+AtzucheColor.h */,
 				F599D7902019BA8D00D33834 /* UIColor+AtzucheColor.m */,
+				7DED7C7125B28C170096BC7A /* UIView+Corner.h */,
+				7DED7C7225B28C170096BC7A /* UIView+Corner.m */,
+				7DED7C7725B28E5D0096BC7A /* UIImage+ImgSize.h */,
+				7DED7C7825B28E5D0096BC7A /* UIImage+ImgSize.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -916,6 +941,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7DA2FB1625A7F10D001C331E /* TXPageView */,
 				7D8BCD31258AFB7300324367 /* ZJScrollPageView */,
 				7D37B1E525709B8100A403E3 /* SpeechDemo */,
 				7D33927E2563721B00C9FCBF /* PrintDemo */,
@@ -997,6 +1023,8 @@
 			children = (
 				F5E3035920C13AF3001F11EC /* WKWebViewController.h */,
 				F5E3035A20C13AF3001F11EC /* WKWebViewController.m */,
+				7D49C27D25F7409300350449 /* HMWebViewController.h */,
+				7D49C27C25F7409300350449 /* HMWebViewController.m */,
 			);
 			path = WKWebView;
 			sourceTree = "<group>";
@@ -1258,6 +1286,7 @@
 				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
 				7DD9449F24FFBB030078F37A /* CJAppSystemInfo.m in Sources */,
 				7DD9447F24FFBAE80078F37A /* DadView.m in Sources */,
+				7DED7C7925B28E5D0096BC7A /* UIImage+ImgSize.m in Sources */,
 				7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */,
 				7D8BCD6D258AFB9200324367 /* ZJScrollSegmentView.m in Sources */,
 				7D6292492387B0DA0007B50F /* ZFSmallFloatControlView.m in Sources */,
@@ -1269,6 +1298,7 @@
 				7DD9448024FFBAE80078F37A /* DadViewController.m in Sources */,
 				7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
+				7DED7C7325B28C170096BC7A /* UIView+Corner.m in Sources */,
 				7D62924A2387B0DA0007B50F /* UIImageView+ZFCache.m in Sources */,
 				7DDB0065238E471C00AF1DAE /* ZFTableViewCellLayout.m in Sources */,
 				7D857025237A54A30081C236 /* ScrollViewTest.m in Sources */,
@@ -1281,6 +1311,7 @@
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
 				7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */,
+				7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */,
 				7D52B7F92514AACF0032282E /* TXHomeCollectionHeaderView.m in Sources */,
 				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
@@ -1345,6 +1376,7 @@
 				F59567871FAB4AD20068A04F /* main.m in Sources */,
 				F5E3036020C13AF3001F11EC /* AtzucheHomeChooseCarCollectionCell.m in Sources */,
 				7D21BF8624E3938200D9FE51 /* XKBaseScrollView.m in Sources */,
+				7D49C27E25F7409300350449 /* HMWebViewController.m in Sources */,
 				7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */,
 				7D67FE35240E227800AE76BC /* HMHomeLikeCollectionViewCell.m in Sources */,
 			);

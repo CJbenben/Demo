@@ -12,7 +12,7 @@
 #import "TXCollectionController.h"
 #import "MJIphoneXViewController.h"
 #import "PhoneFontViewController.h"
-#import "WKWebViewController.h"
+#import "HMWebViewController.h"
 #import "MVVMViewController.h"
 #import "ScrollViewXibViewController.h"
 #import "PlayerDemoViewController.h"
@@ -36,7 +36,7 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"TXCollectionController", kJumpTitle: @"TXCollectionViewDemo"},
                      @{kJumpClass: @"MJIphoneXViewController", kJumpTitle: @"MJ 下拉刷新兼容 iPhone X"},
                      @{kJumpClass: @"PhoneFontViewController", kJumpTitle: @"iPhone 字体"},
-                     @{kJumpClass: @"WKWebViewController", kJumpTitle: @"wkwebview"},
+                     @{kJumpClass: @"HMWebViewController", kJumpTitle: @"wkwebview"},
                      @{kJumpClass: @"MVVMViewController", kJumpTitle: @"MVVM"},
                      @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
                      @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
@@ -46,6 +46,7 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"RealmViewController", kJumpTitle: @"Realm 数据库学习"},
                      @{kJumpClass: @"PrinterDemoViewController", kJumpTitle: @"iOS 链接打印机"},
                      @{kJumpClass: @"HMPageScrollTestViewController", kJumpTitle: @"zjpageview"},
+                     @{kJumpClass: @"TXPageViewController", kJumpTitle: @"TXPageView"},
                      @{kJumpClass: @"SpeechDemoViewController", kJumpTitle: @"语音转文字"}
         ];
     }
@@ -95,6 +96,12 @@ static NSString *kJumpClass     = @"kJumpClass";
     NSDictionary *dict = safeObjectTxAtIndex(self.dataAry, indexPath.row);
     NSString *className = EncodeStringFromDic(dict, kJumpClass);
     if (className.length) {
+        if ([className isEqualToString:@"HMWebViewController"]) {
+            HMWebViewController *webview = [[HMWebViewController alloc] init];
+            [webview loadWebURLString:@"https://www.tebimktg.com/mobile/" naviTitle:@"title"];
+            [self.navigationController  pushViewController:webview animated:YES];
+            return;
+        }
         Class class = NSClassFromString(className);
         id vc = [[class alloc] init];
         for (NSString *key in dict.allKeys) {
