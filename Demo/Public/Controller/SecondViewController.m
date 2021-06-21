@@ -47,6 +47,7 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"PrinterDemoViewController", kJumpTitle: @"iOS 链接打印机"},
                      @{kJumpClass: @"HMPageScrollTestViewController", kJumpTitle: @"zjpageview"},
                      @{kJumpClass: @"TXPageViewController", kJumpTitle: @"TXPageView"},
+                     @{kJumpClass: @"MSViewController", kJumpTitle: @"升级版"},
                      @{kJumpClass: @"SpeechDemoViewController", kJumpTitle: @"语音转文字"}
         ];
     }

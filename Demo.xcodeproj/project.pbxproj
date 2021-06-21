@@ -76,6 +76,12 @@
 		7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */; };
 		7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */; };
 		7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2FB1B25A7F122001C331E /* TXPageViewController.m */; };
+		7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52ABF265C9BCB005A4624 /* MSViewController.m */; };
+		7DC52AC2265C9BCB005A4624 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC52AC0265C9BCB005A4624 /* MSViewController.xib */; };
+		7DC52AC9265CA441005A4624 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52AC7265CA441005A4624 /* GCDViewController.m */; };
+		7DC52ACA265CA441005A4624 /* GCDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC52AC8265CA441005A4624 /* GCDViewController.xib */; };
+		7DC52ACE265DE1A6005A4624 /* ClickActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52ACC265DE1A6005A4624 /* ClickActionViewController.m */; };
+		7DC52ACF265DE1A6005A4624 /* ClickActionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC52ACD265DE1A6005A4624 /* ClickActionViewController.xib */; };
 		7DD9446424FFBAD30078F37A /* public_navi_left_back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */; };
 		7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */; };
 		7DD9447A24FFBAE80078F37A /* BaseLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */; };
@@ -275,6 +281,15 @@
 		7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJTextAlign.m"; sourceTree = "<group>"; };
 		7DA2FB1A25A7F122001C331E /* TXPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXPageViewController.h; sourceTree = "<group>"; };
 		7DA2FB1B25A7F122001C331E /* TXPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXPageViewController.m; sourceTree = "<group>"; };
+		7DC52ABE265C9BCB005A4624 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
+		7DC52ABF265C9BCB005A4624 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
+		7DC52AC0265C9BCB005A4624 /* MSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
+		7DC52AC6265CA441005A4624 /* GCDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		7DC52AC7265CA441005A4624 /* GCDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
+		7DC52AC8265CA441005A4624 /* GCDViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GCDViewController.xib; sourceTree = "<group>"; };
+		7DC52ACB265DE1A6005A4624 /* ClickActionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickActionViewController.h; sourceTree = "<group>"; };
+		7DC52ACC265DE1A6005A4624 /* ClickActionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickActionViewController.m; sourceTree = "<group>"; };
+		7DC52ACD265DE1A6005A4624 /* ClickActionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClickActionViewController.xib; sourceTree = "<group>"; };
 		7DD9444D24FFBAD30078F37A /* public_navi_left_back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_navi_left_back@3x.png"; sourceTree = "<group>"; };
 		7DD9444E24FFBAD30078F37A /* public_base_loading_bg@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public_base_loading_bg@3x.png"; sourceTree = "<group>"; };
 		7DD9446C24FFBAE70078F37A /* BaseLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseLoadingView.m; sourceTree = "<group>"; };
@@ -692,6 +707,22 @@
 			path = TXPageView;
 			sourceTree = "<group>";
 		};
+		7DC52ABD265C9BAA005A4624 /* MSDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7DC52ABE265C9BCB005A4624 /* MSViewController.h */,
+				7DC52ABF265C9BCB005A4624 /* MSViewController.m */,
+				7DC52AC0265C9BCB005A4624 /* MSViewController.xib */,
+				7DC52AC6265CA441005A4624 /* GCDViewController.h */,
+				7DC52AC7265CA441005A4624 /* GCDViewController.m */,
+				7DC52AC8265CA441005A4624 /* GCDViewController.xib */,
+				7DC52ACB265DE1A6005A4624 /* ClickActionViewController.h */,
+				7DC52ACC265DE1A6005A4624 /* ClickActionViewController.m */,
+				7DC52ACD265DE1A6005A4624 /* ClickActionViewController.xib */,
+			);
+			path = MSDemo;
+			sourceTree = "<group>";
+		};
 		7DD9442D24FFBAD20078F37A /* CJCommonKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -941,6 +972,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7DC52ABD265C9BAA005A4624 /* MSDemo */,
 				7DA2FB1625A7F10D001C331E /* TXPageView */,
 				7D8BCD31258AFB7300324367 /* ZJScrollPageView */,
 				7D37B1E525709B8100A403E3 /* SpeechDemo */,
@@ -1174,9 +1206,11 @@
 				F5E3039220C13D59001F11EC /* LaunchScreen.storyboard in Resources */,
 				7DD9446524FFBAD30078F37A /* public_base_loading_bg@3x.png in Resources */,
 				7DDB0066238E471C00AF1DAE /* data.json in Resources */,
+				7DC52ACA265CA441005A4624 /* GCDViewController.xib in Resources */,
 				7D78D0B7240BA36000AD841C /* TXAutoCollectionViewCell.xib in Resources */,
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				7D32A4A1244EDF3A00F3EF48 /* BaseListCell.xib in Resources */,
+				7DC52ACF265DE1A6005A4624 /* ClickActionViewController.xib in Resources */,
 				7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */,
 				7D37B1EA25709B9B00A403E3 /* SpeechDemoViewController.xib in Resources */,
 				7D52B7C92514A0D60032282E /* DIN Alternate Bold.ttf in Resources */,
@@ -1187,6 +1221,7 @@
 				7D52B7CA2514A0D60032282E /* loading.png in Resources */,
 				7D857027237A54AD0081C236 /* ScrollViewTest.xib in Resources */,
 				7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */,
+				7DC52AC2265C9BCB005A4624 /* MSViewController.xib in Resources */,
 				7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */,
 				7D3392892563726B00C9FCBF /* 123456.pdf in Resources */,
 				7D52B7C72514A0D60032282E /* loading.gif in Resources */,
@@ -1295,6 +1330,7 @@
 				7D32A49B244EC92A00F3EF48 /* TXYBView.m in Sources */,
 				7DD944A024FFBB030078F37A /* CJDefaultTool.m in Sources */,
 				7D8BCD4E258AFB7300324367 /* ZJPageTableViewController.m in Sources */,
+				7DC52ACE265DE1A6005A4624 /* ClickActionViewController.m in Sources */,
 				7DD9448024FFBAE80078F37A /* DadViewController.m in Sources */,
 				7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */,
 				7D45983022F44B85005AA8EC /* MVVMBaseViewModel.m in Sources */,
@@ -1313,6 +1349,7 @@
 				7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */,
 				7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */,
 				7D52B7F92514AACF0032282E /* TXHomeCollectionHeaderView.m in Sources */,
+				7DC52AC9265CA441005A4624 /* GCDViewController.m in Sources */,
 				7DDB0064238E471C00AF1DAE /* ZFTableData.m in Sources */,
 				7D6292452387B0DA0007B50F /* UIView+ZFFrame.m in Sources */,
 				7D62924C2387B0DA0007B50F /* ZFPortraitControlView.m in Sources */,
@@ -1336,6 +1373,7 @@
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DD9448E24FFBAF60078F37A /* NSString+CJMD5.m in Sources */,
 				7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */,
+				7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */,
 				7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */,
 				7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
