@@ -99,7 +99,7 @@
 		7DD9449F24FFBB030078F37A /* CJAppSystemInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9449724FFBB030078F37A /* CJAppSystemInfo.m */; };
 		7DD944A024FFBB030078F37A /* CJDefaultTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9449A24FFBB030078F37A /* CJDefaultTool.m */; };
 		7DD944A124FFBB030078F37A /* CJGlobalDefine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9449C24FFBB030078F37A /* CJGlobalDefine.m */; };
-		7DD944A224FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9449D24FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m */; };
+		7DD944A224FFBB030078F37A /* CJPrivacyPermissionsTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD9449D24FFBB030078F37A /* CJPrivacyPermissionsTool.m */; };
 		7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */; };
 		7DDB0062238E471C00AF1DAE /* ZFTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0058238E471B00AF1DAE /* ZFTableViewCell.m */; };
 		7DDB0063238E471C00AF1DAE /* ZFAutoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DDB0059238E471B00AF1DAE /* ZFAutoPlayerViewController.m */; };
@@ -317,7 +317,7 @@
 		7DD9448924FFBAF50078F37A /* NSString+AtzucheNSString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AtzucheNSString.h"; sourceTree = "<group>"; };
 		7DD9448A24FFBAF60078F37A /* UIView+AtzucheUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+AtzucheUIView.h"; sourceTree = "<group>"; };
 		7DD9448B24FFBAF60078F37A /* UIImage+loadSPBundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+loadSPBundle.h"; sourceTree = "<group>"; };
-		7DD9449124FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPhotoAlbumAuthorizationTool.h; sourceTree = "<group>"; };
+		7DD9449124FFBB030078F37A /* CJPrivacyPermissionsTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJPrivacyPermissionsTool.h; sourceTree = "<group>"; };
 		7DD9449224FFBB030078F37A /* CJAppInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJAppInfo.h; sourceTree = "<group>"; };
 		7DD9449324FFBB030078F37A /* CJFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJFrame.h; sourceTree = "<group>"; };
 		7DD9449424FFBB030078F37A /* CJCommonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJCommonKit.h; sourceTree = "<group>"; };
@@ -329,7 +329,7 @@
 		7DD9449A24FFBB030078F37A /* CJDefaultTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJDefaultTool.m; sourceTree = "<group>"; };
 		7DD9449B24FFBB030078F37A /* CJDefaultTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJDefaultTool.h; sourceTree = "<group>"; };
 		7DD9449C24FFBB030078F37A /* CJGlobalDefine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJGlobalDefine.m; sourceTree = "<group>"; };
-		7DD9449D24FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPhotoAlbumAuthorizationTool.m; sourceTree = "<group>"; };
+		7DD9449D24FFBB030078F37A /* CJPrivacyPermissionsTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CJPrivacyPermissionsTool.m; sourceTree = "<group>"; };
 		7DD9449E24FFBB030078F37A /* CJColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CJColor.h; sourceTree = "<group>"; };
 		7DDB0054238E471B00AF1DAE /* ZFPlayerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZFPlayerDetailViewController.h; sourceTree = "<group>"; };
 		7DDB0055238E471B00AF1DAE /* ZFPlayerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZFPlayerDetailViewController.m; sourceTree = "<group>"; };
@@ -734,8 +734,8 @@
 				7DD9449A24FFBB030078F37A /* CJDefaultTool.m */,
 				7DD9449524FFBB030078F37A /* CJGlobalDefine.h */,
 				7DD9449C24FFBB030078F37A /* CJGlobalDefine.m */,
-				7DD9449124FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.h */,
-				7DD9449D24FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m */,
+				7DD9449124FFBB030078F37A /* CJPrivacyPermissionsTool.h */,
+				7DD9449D24FFBB030078F37A /* CJPrivacyPermissionsTool.m */,
 				7DD9449224FFBB030078F37A /* CJAppInfo.h */,
 				7DD9449E24FFBB030078F37A /* CJColor.h */,
 				7DD9449924FFBB030078F37A /* CJFont.h */,
@@ -1363,7 +1363,7 @@
 				7D8BCD70258AFB9200324367 /* ZJSegmentStyle.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
 				7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */,
-				7DD944A224FFBB030078F37A /* CJPhotoAlbumAuthorizationTool.m in Sources */,
+				7DD944A224FFBB030078F37A /* CJPrivacyPermissionsTool.m in Sources */,
 				7D8BCD6C258AFB9200324367 /* ZJScrollPageView.m in Sources */,
 				F5E3037420C13AF3001F11EC /* AtzucheRefreshStateHeader.m in Sources */,
 				F5E3035F20C13AF3001F11EC /* AtzucheChooseCarFlowLayout.m in Sources */,
