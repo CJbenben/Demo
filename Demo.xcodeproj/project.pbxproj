@@ -76,6 +76,7 @@
 		7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCD78258AFBDD00324367 /* HMPageScrollTestViewController.m */; };
 		7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */; };
 		7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2FB1B25A7F122001C331E /* TXPageViewController.m */; };
+		7DAED1E6269844950067C9CE /* TXCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAED1E4269844950067C9CE /* TXCommonUtils.m */; };
 		7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52ABF265C9BCB005A4624 /* MSViewController.m */; };
 		7DC52AC2265C9BCB005A4624 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC52AC0265C9BCB005A4624 /* MSViewController.xib */; };
 		7DC52AC9265CA441005A4624 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52AC7265CA441005A4624 /* GCDViewController.m */; };
@@ -281,6 +282,8 @@
 		7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZJTextAlign.m"; sourceTree = "<group>"; };
 		7DA2FB1A25A7F122001C331E /* TXPageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXPageViewController.h; sourceTree = "<group>"; };
 		7DA2FB1B25A7F122001C331E /* TXPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXPageViewController.m; sourceTree = "<group>"; };
+		7DAED1E4269844950067C9CE /* TXCommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCommonUtils.m; sourceTree = "<group>"; };
+		7DAED1E5269844950067C9CE /* TXCommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCommonUtils.h; sourceTree = "<group>"; };
 		7DC52ABE265C9BCB005A4624 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		7DC52ABF265C9BCB005A4624 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
 		7DC52AC0265C9BCB005A4624 /* MSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
@@ -707,6 +710,15 @@
 			path = TXPageView;
 			sourceTree = "<group>";
 		};
+		7DAED1E3269844950067C9CE /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				7DAED1E5269844950067C9CE /* TXCommonUtils.h */,
+				7DAED1E4269844950067C9CE /* TXCommonUtils.m */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		7DC52ABD265C9BAA005A4624 /* MSDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -916,6 +928,7 @@
 			children = (
 				7DE71BBC230E456000580B47 /* Podspec */,
 				F599D7772019753800D33834 /* AppDelegate */,
+				7DAED1E3269844950067C9CE /* Util */,
 				F5E3037D20C13D09001F11EC /* Public */,
 				F599D78E2019BA8D00D33834 /* Category */,
 				F5E3030D20C13AF3001F11EC /* ProjectDemo */,
@@ -1371,6 +1384,7 @@
 				7D21BF8924E393A500D9FE51 /* XKTargetTableView.m in Sources */,
 				7D8BCD6F258AFB9200324367 /* UIView+ZJFrame.m in Sources */,
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
+				7DAED1E6269844950067C9CE /* TXCommonUtils.m in Sources */,
 				7DD9448E24FFBAF60078F37A /* NSString+CJMD5.m in Sources */,
 				7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */,
 				7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */,

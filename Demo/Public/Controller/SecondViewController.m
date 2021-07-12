@@ -36,7 +36,7 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"TXCollectionController", kJumpTitle: @"TXCollectionViewDemo"},
                      @{kJumpClass: @"MJIphoneXViewController", kJumpTitle: @"MJ 下拉刷新兼容 iPhone X"},
                      @{kJumpClass: @"PhoneFontViewController", kJumpTitle: @"iPhone 字体"},
-                     @{kJumpClass: @"HMWebViewController", kJumpTitle: @"wkwebview"},
+                     @{kJumpClass: @"WKWebViewController", kJumpTitle: @"wkwebview"},
                      @{kJumpClass: @"MVVMViewController", kJumpTitle: @"MVVM"},
                      @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
                      @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
