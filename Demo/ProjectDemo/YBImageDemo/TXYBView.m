@@ -41,7 +41,6 @@
     
     NSMutableArray *datas = [NSMutableArray array];
     [self.imageAry enumerateObjectsUsingBlock:^(NSString *_Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        obj = @"http://lv-vod.szgreenleaf.com/4f9297569a8c4e1686493e07b9d7f137/5a2469b8d695486aa4c0acbf6ac431ad-3d3ede145a9e511539b96ce77f9a3f9d-ld.mp4";
         if ([obj hasSuffix:@".mp4"] && [obj hasPrefix:@"http"]) {
             
             // 网络视频

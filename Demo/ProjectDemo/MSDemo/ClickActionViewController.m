@@ -84,11 +84,6 @@
 
 - (void)testAction {
     NSLog(@"白色");
-    
-    NSString *str = @"https://lv-img.szgreenleaf.com/brandImg/卫生巾日用-89781590495936929.jpg?Expires=1905855936&OSSAccessKeyId=LTAIfEz63bW0rbAT&Signature=sKdsE1a36iRS%2FWzLI4xRpnu7%2Bmw%3D";
-    NSString *str2 = [self URLEncodedString:str];
-    NSString *str3 = [self URLDecodedString:str];
-    NSLog(@"1111");
 }
 /*
 #pragma mark - Navigation
