@@ -77,6 +77,11 @@
 		7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D8BCDA3258B02A300324367 /* UILabel+ZJTextAlign.m */; };
 		7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA2FB1B25A7F122001C331E /* TXPageViewController.m */; };
 		7DAED1E6269844950067C9CE /* TXCommonUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DAED1E4269844950067C9CE /* TXCommonUtils.m */; };
+		7DB42AD6279008A900C03B6E /* TXChildDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB42AD5279008A900C03B6E /* TXChildDemoViewController.m */; };
+		7DB42ADA279008EB00C03B6E /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB42AD8279008EB00C03B6E /* AViewController.m */; };
+		7DB42ADB279008EB00C03B6E /* AViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB42AD9279008EB00C03B6E /* AViewController.xib */; };
+		7DB42ADF279008F800C03B6E /* BViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DB42ADD279008F800C03B6E /* BViewController.m */; };
+		7DB42AE0279008F800C03B6E /* BViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DB42ADE279008F800C03B6E /* BViewController.xib */; };
 		7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52ABF265C9BCB005A4624 /* MSViewController.m */; };
 		7DC52AC2265C9BCB005A4624 /* MSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DC52AC0265C9BCB005A4624 /* MSViewController.xib */; };
 		7DC52AC9265CA441005A4624 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DC52AC7265CA441005A4624 /* GCDViewController.m */; };
@@ -284,6 +289,14 @@
 		7DA2FB1B25A7F122001C331E /* TXPageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXPageViewController.m; sourceTree = "<group>"; };
 		7DAED1E4269844950067C9CE /* TXCommonUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TXCommonUtils.m; sourceTree = "<group>"; };
 		7DAED1E5269844950067C9CE /* TXCommonUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TXCommonUtils.h; sourceTree = "<group>"; };
+		7DB42AD4279008A900C03B6E /* TXChildDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXChildDemoViewController.h; sourceTree = "<group>"; };
+		7DB42AD5279008A900C03B6E /* TXChildDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXChildDemoViewController.m; sourceTree = "<group>"; };
+		7DB42AD7279008EB00C03B6E /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		7DB42AD8279008EB00C03B6E /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		7DB42AD9279008EB00C03B6E /* AViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AViewController.xib; sourceTree = "<group>"; };
+		7DB42ADC279008F800C03B6E /* BViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BViewController.h; sourceTree = "<group>"; };
+		7DB42ADD279008F800C03B6E /* BViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BViewController.m; sourceTree = "<group>"; };
+		7DB42ADE279008F800C03B6E /* BViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BViewController.xib; sourceTree = "<group>"; };
 		7DC52ABE265C9BCB005A4624 /* MSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSViewController.h; sourceTree = "<group>"; };
 		7DC52ABF265C9BCB005A4624 /* MSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSViewController.m; sourceTree = "<group>"; };
 		7DC52AC0265C9BCB005A4624 /* MSViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MSViewController.xib; sourceTree = "<group>"; };
@@ -719,6 +732,21 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		7DB42AD32790088600C03B6E /* ChildVCDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7DB42AD4279008A900C03B6E /* TXChildDemoViewController.h */,
+				7DB42AD5279008A900C03B6E /* TXChildDemoViewController.m */,
+				7DB42AD7279008EB00C03B6E /* AViewController.h */,
+				7DB42AD8279008EB00C03B6E /* AViewController.m */,
+				7DB42AD9279008EB00C03B6E /* AViewController.xib */,
+				7DB42ADC279008F800C03B6E /* BViewController.h */,
+				7DB42ADD279008F800C03B6E /* BViewController.m */,
+				7DB42ADE279008F800C03B6E /* BViewController.xib */,
+			);
+			path = ChildVCDemo;
+			sourceTree = "<group>";
+		};
 		7DC52ABD265C9BAA005A4624 /* MSDemo */ = {
 			isa = PBXGroup;
 			children = (
@@ -985,6 +1013,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7DB42AD32790088600C03B6E /* ChildVCDemo */,
 				7DC52ABD265C9BAA005A4624 /* MSDemo */,
 				7DA2FB1625A7F10D001C331E /* TXPageView */,
 				7D8BCD31258AFB7300324367 /* ZJScrollPageView */,
@@ -1224,6 +1253,7 @@
 				7D62924F2387B0DA0007B50F /* ZFPlayer.bundle in Resources */,
 				7D32A4A1244EDF3A00F3EF48 /* BaseListCell.xib in Resources */,
 				7DC52ACF265DE1A6005A4624 /* ClickActionViewController.xib in Resources */,
+				7DB42ADB279008EB00C03B6E /* AViewController.xib in Resources */,
 				7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */,
 				7D37B1EA25709B9B00A403E3 /* SpeechDemoViewController.xib in Resources */,
 				7D52B7C92514A0D60032282E /* DIN Alternate Bold.ttf in Resources */,
@@ -1236,6 +1266,7 @@
 				7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */,
 				7DC52AC2265C9BCB005A4624 /* MSViewController.xib in Resources */,
 				7D78D0B2240B873100AD841C /* TXCollectionViewCell.xib in Resources */,
+				7DB42AE0279008F800C03B6E /* BViewController.xib in Resources */,
 				7D3392892563726B00C9FCBF /* 123456.pdf in Resources */,
 				7D52B7C72514A0D60032282E /* loading.gif in Resources */,
 				F5E3039320C13D59001F11EC /* Main.storyboard in Resources */,
@@ -1332,6 +1363,7 @@
 				F5E3038B20C13D09001F11EC /* SecondViewController.m in Sources */,
 				F5E3035E20C13AF3001F11EC /* TXCollectionController.m in Sources */,
 				F5FD32C520C4D1C90049B79B /* AtzucheCustomTipView.m in Sources */,
+				7DB42ADA279008EB00C03B6E /* AViewController.m in Sources */,
 				7DD9449F24FFBB030078F37A /* CJAppSystemInfo.m in Sources */,
 				7DD9447F24FFBAE80078F37A /* DadView.m in Sources */,
 				7DED7C7925B28E5D0096BC7A /* UIImage+ImgSize.m in Sources */,
@@ -1358,6 +1390,7 @@
 				7D8BCD72258AFB9200324367 /* UIViewController+ZJScrollPageController.m in Sources */,
 				7DD9448F24FFBAF60078F37A /* UIColor+CJColor.m in Sources */,
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
+				7DB42AD6279008A900C03B6E /* TXChildDemoViewController.m in Sources */,
 				7D6292502387B0DA0007B50F /* ZFLoadingView.m in Sources */,
 				7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */,
 				7DA2FB1C25A7F122001C331E /* TXPageViewController.m in Sources */,
@@ -1373,6 +1406,7 @@
 				7DDB0061238E471C00AF1DAE /* ZFPlayerDetailViewController.m in Sources */,
 				7D6292462387B0DA0007B50F /* ZFLandScapeControlView.m in Sources */,
 				7D32A4A2244EDF3A00F3EF48 /* BaseListCell.m in Sources */,
+				7DB42ADF279008F800C03B6E /* BViewController.m in Sources */,
 				7D8BCD70258AFB9200324367 /* ZJSegmentStyle.m in Sources */,
 				F5E3038A20C13D09001F11EC /* DemoTableViewCell.m in Sources */,
 				7DEDAEBB256BA14D0033264A /* CJConst.h in Sources */,
