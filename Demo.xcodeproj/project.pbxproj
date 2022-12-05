@@ -10,6 +10,7 @@
 		4521FADE56669D37A2586FFA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */; };
 		7D21BF8624E3938200D9FE51 /* XKBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D21BF8524E3938200D9FE51 /* XKBaseScrollView.m */; };
 		7D21BF8924E393A500D9FE51 /* XKTargetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D21BF8824E393A500D9FE51 /* XKTargetTableView.m */; };
+		7D301F332930607B0020577D /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D301F322930607B0020577D /* UniformTypeIdentifiers.framework */; };
 		7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32A497244EC4F300F3EF48 /* TXYBDemoViewController.m */; };
 		7D32A49B244EC92A00F3EF48 /* TXYBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D32A49A244EC92A00F3EF48 /* TXYBView.m */; };
 		7D32A49D244EC93200F3EF48 /* TXYBView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D32A49C244EC93200F3EF48 /* TXYBView.xib */; };
@@ -170,6 +171,7 @@
 		7D21BF8524E3938200D9FE51 /* XKBaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKBaseScrollView.m; sourceTree = "<group>"; };
 		7D21BF8724E393A500D9FE51 /* XKTargetTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKTargetTableView.h; sourceTree = "<group>"; };
 		7D21BF8824E393A500D9FE51 /* XKTargetTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKTargetTableView.m; sourceTree = "<group>"; };
+		7D301F322930607B0020577D /* UniformTypeIdentifiers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UniformTypeIdentifiers.framework; path = System/Library/Frameworks/UniformTypeIdentifiers.framework; sourceTree = SDKROOT; };
 		7D32A496244EC4F300F3EF48 /* TXYBDemoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXYBDemoViewController.h; sourceTree = "<group>"; };
 		7D32A497244EC4F300F3EF48 /* TXYBDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXYBDemoViewController.m; sourceTree = "<group>"; };
 		7D32A499244EC92A00F3EF48 /* TXYBView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXYBView.h; sourceTree = "<group>"; };
@@ -433,6 +435,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D301F332930607B0020577D /* UniformTypeIdentifiers.framework in Frameworks */,
 				4521FADE56669D37A2586FFA /* Pods_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +460,7 @@
 		2D0A32D185645163E52B81EE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7D301F322930607B0020577D /* UniformTypeIdentifiers.framework */,
 				C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
@@ -1550,7 +1554,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1601,7 +1605,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1617,7 +1621,7 @@
 				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1634,7 +1638,7 @@
 				DEVELOPMENT_TEAM = T7C7TQD6VN;
 				GCC_PREFIX_HEADER = Demo/Demo.pch;
 				INFOPLIST_FILE = Demo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
