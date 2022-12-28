@@ -15,7 +15,6 @@
 #import "HMWebViewController.h"
 #import "MVVMViewController.h"
 #import "ScrollViewXibViewController.h"
-#import "PlayerDemoViewController.h"
 #import "TXCollectionViewController.h"
 
 @interface SecondViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -39,7 +38,6 @@ static NSString *kJumpClass     = @"kJumpClass";
                      @{kJumpClass: @"WKWebViewController", kJumpTitle: @"wkwebview"},
                      @{kJumpClass: @"MVVMViewController", kJumpTitle: @"MVVM"},
                      @{kJumpClass: @"ScrollViewXibViewController", kJumpTitle: @"scrollview xib"},
-                     @{kJumpClass: @"PlayerDemoViewController", kJumpTitle: @"ZFPlayerDemo"},
                      @{kJumpClass: @"TXCollectionViewController", kJumpTitle: @"瀑布流&&自适应"},
                      @{kJumpClass: @"SocketViewController", kJumpTitle: @"socket学习"},
                      @{kJumpClass: @"TXYBDemoViewController", kJumpTitle: @"YBImageBrowser 学习"},
