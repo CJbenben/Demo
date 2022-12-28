@@ -9,7 +9,7 @@
 #import "PhoneFontViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
-//#import "TXFileCache.h"
+#import "HMPriceFormateConfig.h"
 
 @interface PhoneFontViewController ()
 
@@ -22,21 +22,6 @@
 @end
 
 @implementation PhoneFontViewController
-
-#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 90000
-
-//字体样式
-#define FONTSTYLE_PingFangSC_Light @"PingFangSC-Light"
-#define FONTSTYLE_PingFangSC_Medium @"PingFangSC-Medium"
-#define FONTSTYLE_PingFangSC_Regular @"PingFangSC-Regular"
-
-#else
-
-#define FONTSTYLE_PingFangSC_Light @"Helvetica-Light"
-#define FONTSTYLE_PingFangSC_Medium @"Helvetica-Bold"
-#define FONTSTYLE_PingFangSC_Regular @"Helvetica"
-
-#endif
 
 - (UILabel *)label1 {
     if (_label1 == nil) {

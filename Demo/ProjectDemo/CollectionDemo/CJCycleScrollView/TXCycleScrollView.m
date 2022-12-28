@@ -9,7 +9,7 @@
 #import "TXCycleScrollView.h"
 #import "NSTimer+Add.h"
 #import "UIImageView+WebCache.h"
-
+#import "TXCommonKit.h"
 /**
  *  系统 pageControl 大小
  */

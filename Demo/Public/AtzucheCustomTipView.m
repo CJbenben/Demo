@@ -7,6 +7,7 @@
 //
 
 #import "AtzucheCustomTipView.h"
+#import "TXCommonKit.h"
 
 @interface AtzucheCustomTipView()
 

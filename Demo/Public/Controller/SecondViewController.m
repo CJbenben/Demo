@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "DemoTableViewCell.h"
+#import "CJHTTPRequest.h"
 
 #import "TXCollectionController.h"
 #import "MJIphoneXViewController.h"

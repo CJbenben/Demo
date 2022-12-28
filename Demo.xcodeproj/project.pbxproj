@@ -167,6 +167,7 @@
 		7D6730B0295C389E0043E6E6 /* HMRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMRefreshNormalHeader.m; sourceTree = "<group>"; };
 		7D6730B1295C389E0043E6E6 /* HMRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRefreshNormalHeader.h; sourceTree = "<group>"; };
 		7D6730B3295C3E230043E6E6 /* HMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMConst.h; sourceTree = "<group>"; };
+		7D6730B4295C41C70043E6E6 /* HMPriceFormateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPriceFormateConfig.h; sourceTree = "<group>"; };
 		7D67FE2E240E222100AE76BC /* TXCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionView.h; sourceTree = "<group>"; };
 		7D67FE2F240E222100AE76BC /* TXCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCollectionView.m; sourceTree = "<group>"; };
 		7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMHomeLikeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -789,6 +790,7 @@
 				F528C693215CDEA9008F7850 /* CJHTTPRequest.h */,
 				F528C694215CDEA9008F7850 /* CJHTTPRequest.m */,
 				7D6730B3295C3E230043E6E6 /* HMConst.h */,
+				7D6730B4295C41C70043E6E6 /* HMPriceFormateConfig.h */,
 				7D52B7E42514A5650032282E /* Base */,
 				F5E3038F20C13D59001F11EC /* storyboard */,
 				F5E3037E20C13D09001F11EC /* Controller */,
