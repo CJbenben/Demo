@@ -52,6 +52,7 @@
 		7D6292512387B0DA0007B50F /* ZFVolumeBrightnessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292422387B0DA0007B50F /* ZFVolumeBrightnessView.m */; };
 		7D6292552387B14F0007B50F /* PlayerDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6292542387B14F0007B50F /* PlayerDemoViewController.m */; };
 		7D62925E2387BD800007B50F /* PlayerBannerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D62925D2387BD800007B50F /* PlayerBannerModel.m */; };
+		7D6730AF295C349F0043E6E6 /* UIImage+HMGrayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6730AE295C349F0043E6E6 /* UIImage+HMGrayImage.m */; };
 		7D67FE30240E222100AE76BC /* TXCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE2F240E222100AE76BC /* TXCollectionView.m */; };
 		7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */; };
 		7D67FE35240E227800AE76BC /* HMHomeLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE33240E227800AE76BC /* HMHomeLikeCollectionViewCell.m */; };
@@ -242,6 +243,8 @@
 		7D6292542387B14F0007B50F /* PlayerDemoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerDemoViewController.m; sourceTree = "<group>"; };
 		7D62925C2387BD800007B50F /* PlayerBannerModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerBannerModel.h; sourceTree = "<group>"; };
 		7D62925D2387BD800007B50F /* PlayerBannerModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerBannerModel.m; sourceTree = "<group>"; };
+		7D6730AD295C349F0043E6E6 /* UIImage+HMGrayImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+HMGrayImage.h"; sourceTree = "<group>"; };
+		7D6730AE295C349F0043E6E6 /* UIImage+HMGrayImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+HMGrayImage.m"; sourceTree = "<group>"; };
 		7D67FE2E240E222100AE76BC /* TXCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionView.h; sourceTree = "<group>"; };
 		7D67FE2F240E222100AE76BC /* TXCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCollectionView.m; sourceTree = "<group>"; };
 		7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMHomeLikeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -557,9 +560,9 @@
 			isa = PBXGroup;
 			children = (
 				7D52B8162514AE5D0032282E /* 使用方法 */,
+				7D52B8192514AE5D0032282E /* TXCycleScrollView.h */,
 				7D52B8172514AE5D0032282E /* TXCycleScrollView.m */,
 				7D52B8182514AE5D0032282E /* NSTimer+Add.m */,
-				7D52B8192514AE5D0032282E /* TXCycleScrollView.h */,
 				7D52B81A2514AE5D0032282E /* NSTimer+Add.h */,
 			);
 			path = CJCycleScrollView;
@@ -1010,6 +1013,8 @@
 				7DED7C7225B28C170096BC7A /* UIView+Corner.m */,
 				7DED7C7725B28E5D0096BC7A /* UIImage+ImgSize.h */,
 				7DED7C7825B28E5D0096BC7A /* UIImage+ImgSize.m */,
+				7D6730AD295C349F0043E6E6 /* UIImage+HMGrayImage.h */,
+				7D6730AE295C349F0043E6E6 /* UIImage+HMGrayImage.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1428,6 +1433,7 @@
 				7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */,
 				7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */,
 				7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */,
+				7D6730AF295C349F0043E6E6 /* UIImage+HMGrayImage.m in Sources */,
 				7DE533DA21A7AE4100ECC90A /* MVVMView.m in Sources */,
 				7DD9447D24FFBAE80078F37A /* UIViewController+DadBaseHUD.m in Sources */,
 				F5E3037820C13AF3001F11EC /* NNValidationCodeView.m in Sources */,
@@ -1623,7 +1629,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxiaojie.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1640,7 +1646,7 @@
 				INFOPLIST_FILE = Demo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = chenxiaojie.GDSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chenxiaojie.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

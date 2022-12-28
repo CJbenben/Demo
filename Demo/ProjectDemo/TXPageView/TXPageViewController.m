@@ -7,6 +7,7 @@
 //
 
 #import "TXPageViewController.h"
+#import "UIImage+HMGrayImage.h"
 
 @interface TXPageViewController ()<UIScrollViewDelegate>
 
@@ -20,6 +21,10 @@
     [super viewDidLoad];
     [self setupUI];
     
+    UIImageView *imageView = [[UIImageView alloc]initWithFrame:CGRectMake(100, 100, 200, 100)];
+    imageView.image = [[UIImage imageNamed:@"ic_test"] grayImage];
+//    imageView.image = [UIImage imageNamed:@"icon_home_tab_shadow"];
+    [self.view addSubview:imageView];
     
     [CJPrivacyPermissionsTool isContactAuthhorization];
 }
