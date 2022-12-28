@@ -6,8 +6,8 @@
 //  Copyright © 2017年 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "TXBaseViewController.h"
 
-@interface SecondViewController : DadViewController
+@interface SecondViewController : TXBaseViewController
 
 @end

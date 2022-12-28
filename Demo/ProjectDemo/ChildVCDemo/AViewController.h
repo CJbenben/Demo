@@ -6,11 +6,11 @@
 //  Copyright © 2022 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "TXBaseViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AViewController : DadViewController
+@interface AViewController : TXBaseViewController
 
 @end
 

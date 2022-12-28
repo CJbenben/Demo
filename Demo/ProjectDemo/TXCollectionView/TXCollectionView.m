@@ -8,10 +8,9 @@
 
 #import "TXCollectionView.h"
 #import "HMHomeLikeCollectionViewCell.h"
-#import "CJCommonKit.h"
-#import "CJCategoryKit.h"
+#import "TXCommonKit.h"
+#import "TXCategoryKit.h"
 #import "Masonry.h"
-#import "UIViewController+DadBaseHUD.h"
 
 @interface TXCollectionView ()<UICollectionViewDataSource, UICollectionViewDelegate>
 

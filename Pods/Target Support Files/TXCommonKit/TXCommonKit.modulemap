@@ -1,0 +1,6 @@
+framework module TXCommonKit {
+  umbrella header "TXCommonKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

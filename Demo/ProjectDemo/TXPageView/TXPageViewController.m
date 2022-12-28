@@ -26,7 +26,7 @@
 //    imageView.image = [UIImage imageNamed:@"icon_home_tab_shadow"];
     [self.view addSubview:imageView];
     
-    [CJPrivacyPermissionsTool isContactAuthhorization];
+    [TXPrivacyPermissionsTool isContactAuthhorization];
 }
 
 - (void)setupUI {

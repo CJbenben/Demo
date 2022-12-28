@@ -1,0 +1,6 @@
+framework module TXCategoryKit {
+  umbrella header "TXCategoryKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -6,11 +6,11 @@
 //  Copyright © 2020 ChenJie. All rights reserved.
 //
 
-#import "DadView.h"
+#import "TXDadView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TXYBView : DadView
+@interface TXYBView : TXDadView
 
 @end
 

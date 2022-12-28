@@ -6,11 +6,11 @@
 //  Copyright © 2019 ChenJie. All rights reserved.
 //
 
-#import "DadView.h"
+#import "TXDadView.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ScrollViewTest : DadView
+@interface ScrollViewTest : TXDadView
 
 @end
 

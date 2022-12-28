@@ -6,11 +6,14 @@
 //  Copyright © 2020 ChenJie. All rights reserved.
 //
 
-#import "DadViewController.h"
+#import "TXDadViewController.h"
+#import "TXCategoryKit.h"
+#import "TXCommonKit.h"
+#import "HMConst.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TXBaseViewController : DadViewController
+@interface TXBaseViewController : TXDadViewController
 
 @property (nonatomic, strong) NSString *kJumpTitle;
 

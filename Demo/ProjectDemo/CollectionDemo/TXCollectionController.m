@@ -8,17 +8,13 @@
 
 #import "TXCollectionController.h"
 #import "TXCycleScrollView.h"
-#import "AtzucheHomeChooseCarCollectionView.h"
-#import "AtzucheChooseCarFlowLayout.h"
 
-@interface TXCollectionController ()<AtzucheHomeCollectionDidSelectDelegate>
+@interface TXCollectionController ()
 
 //@property (strong, nonatomic) CJCycleScrollView *scrollView;
 @property (nonatomic, strong) TXCycleScrollView *atScrollView;
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
-
-@property (nonatomic, strong) AtzucheHomeChooseCarCollectionView *homeChooseCarCollectionView;
 
 @end
 
@@ -34,18 +30,6 @@
     return _imageAry;
 }
 
-- (AtzucheHomeChooseCarCollectionView *)homeChooseCarCollectionView {
-    if (_homeChooseCarCollectionView == nil) {
-        CGFloat width = (SCREEN_WIDTH - 30)/2.0;
-        AtzucheChooseCarFlowLayout *layout = [[AtzucheChooseCarFlowLayout alloc] initAndSize:CGSizeMake(width, width * 2/3.0 + 80)];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        
-        _homeChooseCarCollectionView = [[AtzucheHomeChooseCarCollectionView alloc] initWithFrame:CGRectMake(0, 300, SCREEN_WIDTH, width * 1.5 + 80) collectionViewLayout:layout];
-        _homeChooseCarCollectionView.homeDelegate = self;
-    }
-    return _homeChooseCarCollectionView;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -54,15 +38,6 @@
     //[self addCJScrollViewDemo];
     
     [self addAtzucheScrollViewDemo];
-    [self addAtzucheCustomCollectionView];
-}
-
-- (void)addAtzucheCustomCollectionView {
-    [self.view addSubview:self.homeChooseCarCollectionView];
-    self.homeChooseCarCollectionView.backgroundColor = [UIColor purpleColor];
-    
-    self.homeChooseCarCollectionView.homeChooseCarAry = @[self.imageAry, self.imageAry, self.imageAry];
-    [self changeBackViewCornerWithCornerType:self.homeChooseCarCollectionView];
 }
 
 
@@ -118,19 +93,6 @@
 //    self.scrollView = [CJCycleScrollView cjCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:5.0 imagePaths:self.imageAry animationDuration:2.0];
 //    [self.view addSubview:self.scrollView];
 //}
-
-#pragma mark -
-- (void)atzucheHomeCollectionDidSelectItemAtIndexPath:(NSIndexPath *)indexPath type:(HomeCollectionType)type {
-    if (type == HomeCollectionTypeChooseCar) {
-        NSLog(@"indexpath.section = %ld & row = %ld", indexPath.section, indexPath.row);
-    }
-}
-
-- (void)atzucheHomeCollectionHeaderViewDidSelectAtSection:(NSInteger)section type:(HomeCollectionType)type {
-    if (type == HomeCollectionTypeChooseCar) {
-        NSLog(@"section = %ld", section);
-    }
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

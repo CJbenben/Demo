@@ -25,7 +25,7 @@ PODS:
   - lottie-ios (2.5.3)
   - Masonry (1.1.0)
   - MJExtension (3.0.15.1)
-  - MJRefresh (3.2.0)
+  - MJRefresh (3.7.5)
   - ReactiveObjC (3.1.1)
   - Realm (5.3.5):
     - Realm/Headers (= 5.3.5)
@@ -33,6 +33,31 @@ PODS:
   - SDWebImage (5.7.2):
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
+  - TXBaseKit (0.2.8)
+  - TXCategoryKit (0.3.1):
+    - Aspects
+    - TXCategoryKit/Foundation (= 0.3.1)
+    - TXCategoryKit/UIKit (= 0.3.1)
+  - TXCategoryKit/Foundation (0.3.1):
+    - Aspects
+    - TXCategoryKit/Foundation/NSString (= 0.3.1)
+  - TXCategoryKit/Foundation/NSString (0.3.1):
+    - Aspects
+  - TXCategoryKit/UIKit (0.3.1):
+    - Aspects
+    - TXCategoryKit/UIKit/UIButton (= 0.3.1)
+    - TXCategoryKit/UIKit/UIColor (= 0.3.1)
+    - TXCategoryKit/UIKit/UIImage (= 0.3.1)
+    - TXCategoryKit/UIKit/UIView (= 0.3.1)
+  - TXCategoryKit/UIKit/UIButton (0.3.1):
+    - Aspects
+  - TXCategoryKit/UIKit/UIColor (0.3.1):
+    - Aspects
+  - TXCategoryKit/UIKit/UIImage (0.3.1):
+    - Aspects
+  - TXCategoryKit/UIKit/UIView (0.3.1):
+    - Aspects
+  - TXCommonKit (0.2.3)
   - YBImageBrowser (3.0.9):
     - YBImageBrowser/Core (= 3.0.9)
   - YBImageBrowser/Core (3.0.9):
@@ -43,9 +68,6 @@ PODS:
   - YYImage (1.0.4):
     - YYImage/Core (= 1.0.4)
   - YYImage/Core (1.0.4)
-  - ZFPlayer (4.0.1):
-    - ZFPlayer/Core (= 4.0.1)
-  - ZFPlayer/Core (4.0.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.4.1)
@@ -57,9 +79,11 @@ DEPENDENCIES:
   - MJRefresh
   - ReactiveObjC
   - Realm
+  - TXBaseKit (= 0.2.8)
+  - TXCategoryKit (= 0.3.1)
+  - TXCommonKit (= 0.2.3)
   - YBImageBrowser
   - YBImageBrowser/Video
-  - ZFPlayer (~> 4.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -72,9 +96,11 @@ SPEC REPOS:
     - ReactiveObjC
     - Realm
     - SDWebImage
+    - TXBaseKit
+    - TXCategoryKit
+    - TXCommonKit
     - YBImageBrowser
     - YYImage
-    - ZFPlayer
   trunk:
     - lottie-ios
 
@@ -85,14 +111,16 @@ SPEC CHECKSUMS:
   lottie-ios: a50d5c0160425cd4b01b852bb9578963e6d92d31
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MJExtension: 19bc33ce2eee2d319760f5622562cf581a6ff756
-  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
   Realm: 2b52fcc86fc0ed3d75a56ac0eb1e73c4f1a60e16
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
+  TXBaseKit: b07d14c7c48a863e8a5a1796b76dfc4992ee8397
+  TXCategoryKit: e5d1cce2e9d64fdfc1bc3ef69aa8e19747815880
+  TXCommonKit: fb9d0826ec8a854fd72e98382a1514641becdba4
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
-  ZFPlayer: f88787c815f7b0801279c42f131a89e2823e669e
 
-PODFILE CHECKSUM: 4c0a4ad532977ac044daf8c899b1d1906372fb2d
+PODFILE CHECKSUM: a541b3d0277e3e08a657a0b2a8f9dbcf98db81ec
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3

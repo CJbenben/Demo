@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ZJSegmentStyle.h"
 #import "ZJScrollPageViewDelegate.h"
+#import "TXCategoryKit.h"
 @class ZJSegmentStyle;
 @class ZJTitleView;
 

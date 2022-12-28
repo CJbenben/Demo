@@ -9,8 +9,8 @@
 #import "HMWebViewController.h"
 #import <WebKit/WKWebView.h>
 #import <WebKit/WebKit.h>
-//#import "HMOrderListViewController.h"
-//#import "HMLocationManager.h"
+#import "UIImage+imgSize.h"
+#import "TXCommonUtils.h"
 static void *WkwebBrowserContext = &WkwebBrowserContext;
 
 /** webview 加载类型 */
@@ -39,7 +39,6 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 /** 保存请求链接 */
 @property (nonatomic, strong) NSMutableArray* snapShotsArray;
 
-@property (nonatomic,assign) BOOL needDealloc;
 @property (nonatomic, assign) BOOL isHiddenNavi;
 @property (nonatomic, assign) BOOL isHiddenStatusBar;
 /** 状态栏颜色（1：白色 0：黑色 默认0） */
@@ -47,8 +46,6 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 
 /** 上次是否登录状态 */
 @property (nonatomic, assign) BOOL lastLoginStatus;
-
-//@property (nonatomic, strong) HMLocationManager *locationManager;
 
 @end
 
@@ -91,15 +88,16 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
         configuration.processPool = [[WKProcessPool alloc] init];
         //自定义配置,一般用于 js调用oc方法(OC拦截URL中的数据做自定义操作)
         WKUserContentController * userContentController = [[WKUserContentController alloc]init];
-        [userContentController addScriptMessageHandler:self name:@"lotteryFinish"];
-        [userContentController addScriptMessageHandler:self name:@"hmJsCallNative"];
-        [userContentController addScriptMessageHandler:self name:@"callBack"];
+        // 这样写会导致循环引用的问题
+//        [userContentController addScriptMessageHandler:self name:@"lotteryFinish"];
+//        [userContentController addScriptMessageHandler:self name:@"hmJsCallNative"];
+//        [userContentController addScriptMessageHandler:self name:@"callBack"];
         // 是否支持记忆读取
         configuration.suppressesIncrementalRendering = YES;
         // 允许用户更改网页的设置
         configuration.userContentController = userContentController;
         
-        CGRect webViewF = CGRectMake(0, 20 + self.iphonexNaviPadding, SCREEN_WIDTH, SCREEN_HEIGHT - 20 - self.iphonexNaviPadding);
+        CGRect webViewF = CGRectMake(0, 20 + SafeAreaTopSpace, SCREEN_WIDTH, SCREEN_HEIGHT - 20 - SafeAreaTopSpace);
         if (self.isHiddenNavi) {
             
         } else {
@@ -125,7 +123,7 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
     if (!_progressView) {
         _progressView = [[UIProgressView alloc]initWithProgressViewStyle:UIProgressViewStyleDefault];
         if (self.isHiddenNavi == YES) {
-            _progressView.frame = CGRectMake(0, self.iphonexNaviPadding + 20, self.view.bounds.size.width, 3);
+            _progressView.frame = CGRectMake(0, SafeAreaTopSpace + 20, self.view.bounds.size.width, 3);
         }else{
             _progressView.frame = CGRectMake(0, naviHeight, self.view.bounds.size.width, 3);
         }
@@ -147,6 +145,11 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
     [super viewWillDisappear:animated];
     [self.wkWebView setNavigationDelegate:nil];
     [self.wkWebView setUIDelegate:nil];
+    if (self.wkWebView) {
+        [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"lotteryFinish"];
+        [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"hmJsCallNative"];
+        [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"callBack"];
+    }
 }
 
 - (void)loadWebURLString:(NSString *)urlStr {
@@ -186,7 +189,7 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 }
 
 - (void)loadWebHTMLSring:(NSString *)htmlStr {
-//    self.URLString = [TXCommonUtils htmlEntityDecode:htmlStr];
+    self.URLString = [TXCommonUtils htmlEntityDecode:htmlStr];
     self.loadType = WKWebLoadTypeHTMLStr;
 }
 
@@ -199,7 +202,7 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    self.needDealloc = YES;
+    //self.needDealloc = YES;
     // 非登录情况下 viewDidLoad 里面加载，登录情况下 viewWillAppear 处理加载
 //    if (![HMUtils isLogin]) {
         //加载web页面
@@ -214,6 +217,11 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (self.wkWebView) {
+        [self.wkWebView.configuration.userContentController addScriptMessageHandler:self name:@"lotteryFinish"];
+        [self.wkWebView.configuration.userContentController addScriptMessageHandler:self name:@"hmJsCallNative"];
+        [self.wkWebView.configuration.userContentController addScriptMessageHandler:self name:@"callBack"];
+    }
     
     if (self.isHiddenNavi) {
         self.naviView.hidden = YES;
@@ -448,12 +456,12 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
 // 拦截执行网页中的JS方法
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     NSDictionary *dict = message.body;
+    
+#ifdef kDevTest
     NSLog(@"jsCallNative = %@", dict);
+#endif
     
-//#ifdef kDevTest
-//    [self showHUDMessage:[NSString stringWithFormat:@"%@", message.body]];
-//#endif
-    
+    WS(weakSelf)
     if ([message.name isEqualToString:@"hmJsCallNative"]) {
 //        HMBaseModel *jumpModel = [HMBaseModel mj_objectWithKeyValues:dict];
 //        if ([jumpModel.jumpUrl isEqualToString:@"HMLoginViewController"]) {
@@ -575,18 +583,6 @@ typedef NS_ENUM(NSUInteger, WKWebLoadType) {
         
     }];
 }
-
-- (void)dealloc{
-    //191025_chenxiaojie_放置 viewDidDisappear 方法中处理
-    //[self.wkWebView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
-    
-    if(self.needDealloc) {
-        [[self.wkWebView configuration].userContentController removeScriptMessageHandlerForName:@"hmJsCallNative"];
-        [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"lotteryFinish"];
-        [self.wkWebView.configuration.userContentController removeScriptMessageHandlerForName:@"callBack"];
-    }
-}
-
 
 /*
 #pragma mark - Navigation

@@ -8,7 +8,7 @@
 
 #import "MJIphoneXViewController.h"
 #import "MJDIYHeader.h"
-#import "AtzucheRefreshStateHeader.h"
+#import "HMRefreshNormalHeader.h"
 #import "AFNetworking.h"
 
 @interface MJIphoneXViewController ()<UITableViewDataSource, UITableViewDelegate>
@@ -27,6 +27,7 @@
         _mjTestTableView.backgroundColor = [UIColor lightGrayColor];
         _mjTestTableView.dataSource = self;
         _mjTestTableView.delegate = self;
+        _mjTestTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
     return _mjTestTableView;
 }
@@ -35,12 +36,6 @@
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
-    
-    if (@available(iOS 11.0, *)) {
-        self.mjTestTableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    } else {
-        self.automaticallyAdjustsScrollViewInsets = NO;
-    }
 }
 
 - (void)viewDidLoad {
@@ -92,7 +87,7 @@
 }
 
 - (void)example01 {
-    AtzucheRefreshStateHeader *header = [AtzucheRefreshStateHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
+    HMRefreshNormalHeader *header = [HMRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(loadNewData)];
     header.lastUpdatedTimeLabel.hidden = YES;
     self.mjTestTableView.mj_header = header;
 }
