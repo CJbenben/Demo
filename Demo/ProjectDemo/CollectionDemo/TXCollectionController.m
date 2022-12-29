@@ -8,11 +8,13 @@
 
 #import "TXCollectionController.h"
 #import "TXCycleScrollView.h"
+#import "HMCycleScrollView.h"
 
 @interface TXCollectionController ()
 
 //@property (strong, nonatomic) CJCycleScrollView *scrollView;
 @property (nonatomic, strong) TXCycleScrollView *atScrollView;
+@property (nonatomic, strong) HMCycleScrollView *hmScrollView;
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
 
@@ -22,10 +24,9 @@
 
 - (NSMutableArray *)imageAry {
     if (_imageAry == nil) {
-        _imageAry = [@[@"http://down.tutu001.com/d/file/20110312/ae15ebaebfa15428826432e50e_560.jpg",
-                       @"http://down.tutu001.com/d/file/20120315/29e47a7c992f6f1d978bfc6d8d_560.jpg",
-                       @"http://pic23.nipic.com/20120919/10785657_204032524191_2.jpg",
-                       @"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517824334&di=a6b1fb22560e3bf02b2a98aa3afd0b28&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2F08f790529822720ee889863371cb0a46f31fabb0.jpg"] mutableCopy];
+        _imageAry = [@[@"https://t7.baidu.com/it/u=1956604245,3662848045&fm=193&f=GIF",
+                       @"https://t7.baidu.com/it/u=2529476510,3041785782&fm=193&f=GIF",
+                       @"https://t7.baidu.com/it/u=3569419905,626536365&fm=193&f=GIF"] mutableCopy];
     }
     return _imageAry;
 }
@@ -35,55 +36,21 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    //[self addCJScrollViewDemo];
-    
-    [self addAtzucheScrollViewDemo];
-}
-
-
--(void)changeBackViewCornerWithCornerType:(UIView *)iv
-{
-    
-    UIBezierPath *maskPath;
-
-    maskPath = [UIBezierPath bezierPathWithRoundedRect:iv.bounds
-
-                                          cornerRadius:20];
-
-    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-
-    maskLayer.frame = iv.bounds;
-
-    maskLayer.path = maskPath.CGPath;
-
-    iv.layer.mask = maskLayer;
-//    CAShapeLayer *maskLayer = [CAShapeLayer layer];
-//       maskLayer.frame = CGRectMake(0, 0, cellWidth, cellHeight);
-//
-//       CAShapeLayer *borderLayer = [CAShapeLayer layer];
-//       borderLayer.frame = CGRectMake(0, 0, cellWidth, cellHeight);
-//       borderLayer.lineWidth = 1.f;
-//       borderLayer.strokeColor = lineColor.CGColor;
-//       borderLayer.fillColor = [UIColor clearColor].CGColor;
-//
-//       UIBezierPath *bezierPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, cellWidth, cellHeight) cornerRadius:cornerRadius];
-//       maskLayer.path = bezierPath.CGPath;
-//       borderLayer.path = bezierPath.CGPath;
-//
-//       [cell.contentView.layer insertSublayer:borderLayer atIndex:0];
-//       [cell.contentView.layer setMask:maskLayer];
-}
-
-- (void)addAtzucheScrollViewDemo {
-    CGRect scrollviewF = CGRectMake(0, 64 + 20, SCREEN_WIDTH, 160);
+    CGRect scrollviewF = CGRectMake(0, naviHeight, SCREEN_WIDTH, 160);
     CGRect frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, 160);
     
-    self.atScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:0.0];
+    self.atScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:2.0];
     [self.view addSubview:self.atScrollView];
     
     self.atScrollView.TapActionBlock = ^(NSInteger pageIndex) {
         NSLog(@"index = %ld", pageIndex);
     };
+    
+    
+    scrollviewF = CGRectMake(0, naviHeight+200, SCREEN_WIDTH, 160);
+    self.hmScrollView = [HMCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:2.0];
+    [self.view addSubview:self.hmScrollView];
+    
     
 }
 

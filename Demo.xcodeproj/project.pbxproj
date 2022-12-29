@@ -37,6 +37,8 @@
 		7D52B83E2514BCA50032282E /* RealmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52B83D2514BCA50032282E /* RealmViewController.m */; };
 		7D6730AF295C349F0043E6E6 /* UIImage+HMGrayImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6730AE295C349F0043E6E6 /* UIImage+HMGrayImage.m */; };
 		7D6730B2295C389E0043E6E6 /* HMRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6730B0295C389E0043E6E6 /* HMRefreshNormalHeader.m */; };
+		7D6730B9295D2CF40043E6E6 /* HMCustomPageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6730B7295D2CF40043E6E6 /* HMCustomPageView.m */; };
+		7D6730BA295D2CF40043E6E6 /* HMCycleScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D6730B8295D2CF40043E6E6 /* HMCycleScrollView.m */; };
 		7D67FE30240E222100AE76BC /* TXCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE2F240E222100AE76BC /* TXCollectionView.m */; };
 		7D67FE34240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */; };
 		7D67FE35240E227800AE76BC /* HMHomeLikeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D67FE33240E227800AE76BC /* HMHomeLikeCollectionViewCell.m */; };
@@ -168,6 +170,10 @@
 		7D6730B1295C389E0043E6E6 /* HMRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMRefreshNormalHeader.h; sourceTree = "<group>"; };
 		7D6730B3295C3E230043E6E6 /* HMConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMConst.h; sourceTree = "<group>"; };
 		7D6730B4295C41C70043E6E6 /* HMPriceFormateConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPriceFormateConfig.h; sourceTree = "<group>"; };
+		7D6730B5295D2CF40043E6E6 /* HMCycleScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCycleScrollView.h; sourceTree = "<group>"; };
+		7D6730B6295D2CF40043E6E6 /* HMCustomPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCustomPageView.h; sourceTree = "<group>"; };
+		7D6730B7295D2CF40043E6E6 /* HMCustomPageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCustomPageView.m; sourceTree = "<group>"; };
+		7D6730B8295D2CF40043E6E6 /* HMCycleScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCycleScrollView.m; sourceTree = "<group>"; };
 		7D67FE2E240E222100AE76BC /* TXCollectionView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TXCollectionView.h; sourceTree = "<group>"; };
 		7D67FE2F240E222100AE76BC /* TXCollectionView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TXCollectionView.m; sourceTree = "<group>"; };
 		7D67FE31240E227800AE76BC /* HMHomeLikeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HMHomeLikeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -418,6 +424,10 @@
 				7D52B8162514AE5D0032282E /* 使用方法 */,
 				7D52B8192514AE5D0032282E /* TXCycleScrollView.h */,
 				7D52B8172514AE5D0032282E /* TXCycleScrollView.m */,
+				7D6730B5295D2CF40043E6E6 /* HMCycleScrollView.h */,
+				7D6730B8295D2CF40043E6E6 /* HMCycleScrollView.m */,
+				7D6730B6295D2CF40043E6E6 /* HMCustomPageView.h */,
+				7D6730B7295D2CF40043E6E6 /* HMCustomPageView.m */,
 				7D52B8182514AE5D0032282E /* NSTimer+Add.m */,
 				7D52B81A2514AE5D0032282E /* NSTimer+Add.h */,
 			);
@@ -1080,6 +1090,7 @@
 				7DE533E621A7D9FA00ECC90A /* MVVMItemModel.m in Sources */,
 				7DAED1E6269844950067C9CE /* TXCommonUtils.m in Sources */,
 				7DC52AC1265C9BCB005A4624 /* MSViewController.m in Sources */,
+				7D6730BA295D2CF40043E6E6 /* HMCycleScrollView.m in Sources */,
 				7D8BCD79258AFBDD00324367 /* HMPageScrollTestViewController.m in Sources */,
 				7D37B1E925709B9B00A403E3 /* SpeechDemoViewController.m in Sources */,
 				7D6730AF295C349F0043E6E6 /* UIImage+HMGrayImage.m in Sources */,
@@ -1097,6 +1108,7 @@
 				7DE533D721A7AAFB00ECC90A /* MVVMViewController.m in Sources */,
 				7D8BCD6E258AFB9200324367 /* ZJCollectionView.m in Sources */,
 				7D32A498244EC4F300F3EF48 /* TXYBDemoViewController.m in Sources */,
+				7D6730B9295D2CF40043E6E6 /* HMCustomPageView.m in Sources */,
 				7D78D0AA240B844500AD841C /* TXCollectionViewController.m in Sources */,
 				7D339290256372F600C9FCBF /* PrinterDemoViewController.m in Sources */,
 				7D78D0AD240B84C000AD841C /* TXWaterFallLayout.m in Sources */,
