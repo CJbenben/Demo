@@ -7,7 +7,7 @@ use_frameworks!
 target 'Demo' do
   
   pod 'TXBaseKit', '= 0.2.8'
-  pod 'TXCategoryKit', '= 0.3.1'
+  pod 'TXCategoryKit', '= 0.3.2'
   pod 'TXCommonKit', '= 0.2.3'
   
   #AFNetworking

@@ -34,28 +34,28 @@ PODS:
     - SDWebImage/Core (= 5.7.2)
   - SDWebImage/Core (5.7.2)
   - TXBaseKit (0.2.8)
-  - TXCategoryKit (0.3.1):
+  - TXCategoryKit (0.3.2):
     - Aspects
-    - TXCategoryKit/Foundation (= 0.3.1)
-    - TXCategoryKit/UIKit (= 0.3.1)
-  - TXCategoryKit/Foundation (0.3.1):
+    - TXCategoryKit/Foundation (= 0.3.2)
+    - TXCategoryKit/UIKit (= 0.3.2)
+  - TXCategoryKit/Foundation (0.3.2):
     - Aspects
-    - TXCategoryKit/Foundation/NSString (= 0.3.1)
-  - TXCategoryKit/Foundation/NSString (0.3.1):
+    - TXCategoryKit/Foundation/NSString (= 0.3.2)
+  - TXCategoryKit/Foundation/NSString (0.3.2):
     - Aspects
-  - TXCategoryKit/UIKit (0.3.1):
+  - TXCategoryKit/UIKit (0.3.2):
     - Aspects
-    - TXCategoryKit/UIKit/UIButton (= 0.3.1)
-    - TXCategoryKit/UIKit/UIColor (= 0.3.1)
-    - TXCategoryKit/UIKit/UIImage (= 0.3.1)
-    - TXCategoryKit/UIKit/UIView (= 0.3.1)
-  - TXCategoryKit/UIKit/UIButton (0.3.1):
+    - TXCategoryKit/UIKit/UIButton (= 0.3.2)
+    - TXCategoryKit/UIKit/UIColor (= 0.3.2)
+    - TXCategoryKit/UIKit/UIImage (= 0.3.2)
+    - TXCategoryKit/UIKit/UIView (= 0.3.2)
+  - TXCategoryKit/UIKit/UIButton (0.3.2):
     - Aspects
-  - TXCategoryKit/UIKit/UIColor (0.3.1):
+  - TXCategoryKit/UIKit/UIColor (0.3.2):
     - Aspects
-  - TXCategoryKit/UIKit/UIImage (0.3.1):
+  - TXCategoryKit/UIKit/UIImage (0.3.2):
     - Aspects
-  - TXCategoryKit/UIKit/UIView (0.3.1):
+  - TXCategoryKit/UIKit/UIView (0.3.2):
     - Aspects
   - TXCommonKit (0.2.3)
   - YBImageBrowser (3.0.9):
@@ -80,7 +80,7 @@ DEPENDENCIES:
   - ReactiveObjC
   - Realm
   - TXBaseKit (= 0.2.8)
-  - TXCategoryKit (= 0.3.1)
+  - TXCategoryKit (= 0.3.2)
   - TXCommonKit (= 0.2.3)
   - YBImageBrowser
   - YBImageBrowser/Video
@@ -116,11 +116,11 @@ SPEC CHECKSUMS:
   Realm: 2b52fcc86fc0ed3d75a56ac0eb1e73c4f1a60e16
   SDWebImage: d9ea4959d99c52276dfada481987018fcaea3d58
   TXBaseKit: b07d14c7c48a863e8a5a1796b76dfc4992ee8397
-  TXCategoryKit: e5d1cce2e9d64fdfc1bc3ef69aa8e19747815880
+  TXCategoryKit: 0f2775a5f96e970e87bac13f6b6ab77b4abeb72f
   TXCommonKit: fb9d0826ec8a854fd72e98382a1514641becdba4
   YBImageBrowser: 7ecc8bf33ffa5f3b94c397c29b4f3638dd37f527
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
-PODFILE CHECKSUM: a541b3d0277e3e08a657a0b2a8f9dbcf98db81ec
+PODFILE CHECKSUM: 5c3c9c2cbe546d4a6ed72cdd7072f9c84f4e292d
 
 COCOAPODS: 1.11.3

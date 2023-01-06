@@ -18,6 +18,7 @@
 #import "UIButton+TXKitButton.h"
 #import "UIColor+TXColor.h"
 #import "UIImage+TXCompress.h"
+#import "UIImage+TXGrayImage.h"
 #import "UIImage+TXImage.h"
 #import "UIView+Toast.h"
 #import "UIView+TXCorner.h"

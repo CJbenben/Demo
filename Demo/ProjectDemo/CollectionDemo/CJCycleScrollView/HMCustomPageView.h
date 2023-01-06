@@ -12,23 +12,24 @@ NS_ASSUME_NONNULL_BEGIN
 
 /** pageControl 类型 */
 typedef NS_ENUM(NSUInteger, PageControlType) {
-    PageControlTypeSystem = 0,          // 系统 pageControl
-    PageControlTypeCustom               // 自定义 pageControl
+    PageControlTypeCustom = 0,          // 自定义 pageControl
+    PageControlTypeSystem,              // 系统 pageControl
+    PageControlTypeNone                 // 不需要 pageControl
 };
 
-typedef NS_ENUM(NSUInteger, PageControlPostion) {
+typedef NS_ENUM(NSUInteger, PageControlPosition) {
     /** Center position. */
-    PageControlPostionCenter = 0,
+    PageControlPositionCenter = 0,
     /** top position. */
-    PageControlPostionTop,
+    PageControlPositionTop,
     /** left position. */
-    PageControlPostionLeft,
+    PageControlPositionLeft,
     /** bottom position. */
-    PageControlPostionBottom,
+    PageControlPositionBottom,
     /** right position. */
-    PageControlPostionRight,
+    PageControlPositionRight,
     /** null position. */
-    PageControlPostionNull,
+    PageControlPositionNull,
 };
 
 @interface HMCustomPageStyle : NSObject
@@ -43,7 +44,7 @@ typedef NS_ENUM(NSUInteger, PageControlPostion) {
 @interface HMCustomPageView : UIView
 
 /** 小数点位置（自定义 pageControl 情况下可用） */
-@property (assign, nonatomic) PageControlPostion pageControllPostion;
+@property (assign, nonatomic) PageControlPosition pageControlPosition;
 
 /** 当前页 为了更新进度 */
 @property (nonatomic, assign) CGFloat progressIndex;

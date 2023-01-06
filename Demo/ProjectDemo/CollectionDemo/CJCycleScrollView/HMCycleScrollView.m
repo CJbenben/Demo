@@ -9,93 +9,58 @@
 #import "HMCycleScrollView.h"
 #import "UIImageView+WebCache.h"
 #import "UIImage+GIF.h"
-#import "HMCustomPageView.h"
-//#import "UIImageView+SDCategory.h"
 #import "TXCommonUtils.h"
-#import "TXCommonKit.h"
+#import "HMGrayImageView.h"
 
 @interface HMCycleScrollView ()<UIScrollViewDelegate>
 
-@property(nonatomic,strong) UIScrollView *scrollView;
+@property (nonatomic, strong) UIScrollView *scrollView;
 
 @property (nonatomic, strong) HMCustomPageView *customPageView;
-
-/**
- *  滚动图片总数
- */
+/** 展示图片总数 */
 @property (assign, nonatomic) NSInteger imageCount;
-
-/**
- *  当前页
- */
+/** 当前页 */
 @property (assign, nonatomic) CGFloat currentIndex;
-
-@property (assign, nonatomic) CGFloat x;
-
-/**
- *  动画时间
- */
-@property (nonatomic , assign) NSTimeInterval animationDuration;
+/** 图片在 scrollview 中的 frame */
+@property (nonatomic, assign) CGRect imageViewF;
+/** 图片圆角 */
+@property (nonatomic, assign) CGFloat radius;
+/** 是否循环轮播（默认：NO） */
+@property (nonatomic, assign) BOOL repeats;
+/** 自动轮播秒数（设置为 0 则不自动轮播） */
+@property (nonatomic, assign) NSTimeInterval autoScrollDuration;
 
 @end
 
 @implementation HMCycleScrollView
 
-+ (instancetype)atzucheCycleScrollViewFrame:(CGRect)scrollViewF imagePaths:(NSArray<NSString *> *)imagePaths {
-    return [self atzucheCycleScrollViewFrame:scrollViewF imagePaths:imagePaths animationDuration:0.0];
++ (instancetype)cycleScrollViewFrame:(CGRect)frame radius:(CGFloat)radius repeats:(BOOL)repeats autoScrollDuration:(NSTimeInterval)autoScrollDuration {
+    CGRect imageViewF = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    return [self cycleScrollViewFrame:frame imageViewFrame:imageViewF radius:radius repeats:repeats autoScrollDuration:autoScrollDuration];
 }
 
-+ (instancetype)atzucheCycleScrollViewFrame:(CGRect)scrollViewF imagePaths:(NSArray<NSString *> *)imagePaths animationDuration:(NSTimeInterval)animationDuration {
-    CGRect imageViewF = CGRectMake(0, 0, scrollViewF.size.width, scrollViewF.size.height);
-    return [self atzucheCycleScrollViewFrame:scrollViewF imageViewFrame:imageViewF radius:0.0 imagePaths:imagePaths animationDuration:animationDuration];
++ (instancetype)cycleScrollViewFrame:(CGRect)frame imageViewFrame:(CGRect)imageViewF radius:(CGFloat)radius repeats:(BOOL)repeats autoScrollDuration:(NSTimeInterval)autoScrollDuration {
+    return [[self alloc] initWithFrame:frame imageViewFrame:imageViewF radius:radius repeats:repeats autoScrollDuration:autoScrollDuration];
 }
 
-+ (instancetype)atzucheCycleScrollViewFrame:(CGRect)scrollViewF imageViewFrame:(CGRect)imageViewF radius:(CGFloat)radius imagePaths:(NSArray *)imagePaths animationDuration:(NSTimeInterval)animationDuration {
-    return [[self alloc] initWithFrame:scrollViewF imageViewFrame:imageViewF radius:radius imagePaths:imagePaths animationDuration:animationDuration];
-}
-
-- (instancetype)initWithFrame:(CGRect)frame imageViewFrame:(CGRect)imageViewF radius:(CGFloat)radius imagePaths:(NSArray *)imagePaths animationDuration:(NSTimeInterval)animationDuration {
+- (instancetype)initWithFrame:(CGRect)frame imageViewFrame:(CGRect)imageViewF radius:(CGFloat)radius repeats:(BOOL)repeats autoScrollDuration:(NSTimeInterval)autoScrollDuration {
     if (self = [super initWithFrame:frame]) {
-        if (imagePaths.count == 0) {
-            return self;
-        }
-        self.imageCount = imagePaths.count;
-        self.x = SCREEN_WIDTH;
-        CGRect scrollFrame = CGRectMake(0, 0, SCREEN_WIDTH, frame.size.height);
+        self.imageViewF = imageViewF;
+        self.radius  = radius;
+        self.repeats = repeats;
+        self.autoScrollDuration = autoScrollDuration;
         
-        NSMutableArray *imageAry = [imagePaths mutableCopy];
-        if (imagePaths.count > 1) {
-            // 修改数据源、完成循环轮播
-            NSString *firstObj = [imageAry firstObject];
-            NSString *lastObj = [imageAry lastObject];
-            [imageAry insertObject:lastObj atIndex:0];
-            [imageAry insertObject:firstObj atIndex:imageAry.count];
-        }
-        self.scrollView = [self createScrollViewWithPath:imageAry scrollViewFrame:scrollFrame imageViewFrame:imageViewF radius:radius];
-        // 只有一张图片情况 不可滚动，也无 pageControl
-        if (imagePaths.count > 1) {
-            // 设置自动滚动
-            if (animationDuration) {
-                self.timer = [NSTimer scheduledTimerWithTimeInterval:(self.animationDuration = animationDuration) target:self selector:@selector(updateCycleScrollImagesLocation) userInfo:nil repeats:YES];
-            }
-            self.scrollView.scrollEnabled = YES;
-            self.scrollView.delegate = self;
-            
-            CGRect frame = scrollFrame;
-            frame.origin.x = frame.size.width;
-            [self addSubview:self.scrollView];
-            
-            // 添加自定义 pageControl view
-            CGFloat customPageViewY = (frame.size.height - (frame.size.height - imageViewF.size.height)/2.0) - 10;
-            self.customPageView = [[HMCustomPageView alloc] initWithFrame:CGRectMake(0, customPageViewY, SCREEN_WIDTH, 3) pageCount:self.imageCount pageControlType:PageControlTypeCustom];
-            self.customPageView.pageControllPostion = PageControlPostionBottom;
-            [self addSubview:self.customPageView];
-            
-            [self.scrollView scrollRectToVisible:frame animated:NO];
-        } else {
-            self.scrollView.scrollEnabled = NO;
-            [self addSubview:self.scrollView];
-        }
+        CGRect scrollViewF = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
+        self.scrollView = [[UIScrollView alloc] initWithFrame:scrollViewF];
+        self.scrollView.delegate = self;
+        // 设置整屏滚动
+        self.scrollView.pagingEnabled = YES;
+        // 设置边缘无弹跳
+        self.scrollView.bounces = NO;
+        // 不显示水平、竖直滚动条
+        self.scrollView.showsHorizontalScrollIndicator = NO;
+        self.scrollView.showsVerticalScrollIndicator = NO;
+        [self addSubview:self.scrollView];
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(contentViewTapAction:)];
         [self.scrollView addGestureRecognizer:tapGesture];
@@ -103,93 +68,37 @@
     return self;
 }
 
-#pragma mark - Action
-- (void)updateCycleScrollImagesLocation{
+- (void)setImageArray:(NSArray<NSString *> *)imageArray {
+    if (imageArray.count == 0) return;
     
-    self.x +=  SCREEN_WIDTH;
+    self.imageCount = imageArray.count;
     
-    int count = (int)self.x % (int)SCREEN_WIDTH;
-    
-    NSInteger scrollAbnormalCount = self.x/SCREEN_WIDTH;
-    
-    if (count == 0) {
-        [self.scrollView setContentOffset:CGPointMake(self.x, 0) animated:YES];
-    }else{
-        [self.scrollView setContentOffset:CGPointMake(SCREEN_WIDTH * (scrollAbnormalCount + 1), 0) animated:YES];
+    NSMutableArray *imageArrayNew = [imageArray mutableCopy];
+    // 只有一张图片情况 不可滚动
+    if (self.repeats && imageArray.count != 1) {
+        // 修改数据源、完成循环轮播
+        NSString *firstObj = [imageArray firstObject];
+        NSString *lastObj = [imageArray lastObject];
+        [imageArrayNew insertObject:lastObj atIndex:0];
+        [imageArrayNew insertObject:firstObj atIndex:imageArrayNew.count];
     }
+    imageArray = imageArrayNew;
+    _imageArray = imageArray;
     
-    if (self.x == SCREEN_WIDTH * (self.imageCount + 1)) {
-        self.x = SCREEN_WIDTH;
-    }
-}
-
-- (void)contentViewTapAction:(UITapGestureRecognizer *)gr{
-    if (self.TapActionBlock) {
-        self.TapActionBlock(self.currentIndex);
-    }
-}
-
-#pragma mark - UIScrollViewDelegate
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    self.currentIndex = scrollView.contentOffset.x / SCREEN_WIDTH - 1;
-    // 更新当前需要显示 pageControl 位置
-    self.customPageView.progressIndex = self.currentIndex;
-    //NSLog(@"self.currentIndex:%.2f",self.currentIndex);
+    self.scrollView.contentSize = CGSizeMake(self.frame.size.width * imageArray.count, self.frame.size.height);
     
-    CGRect frame = CGRectMake(SCREEN_WIDTH, 0, SCREEN_WIDTH, scrollView.frame.size.height);
-    
-    if (scrollView == self.scrollView) {
-        
-        if ((NSInteger)self.currentIndex == self.currentIndex) {//判断整数
-            if (self.currentIndex == self.imageCount) {
-                frame.origin.x = SCREEN_WIDTH;
-                self.x = frame.origin.x;
-                [self.scrollView scrollRectToVisible:frame animated:NO];
-            }else if (self.currentIndex == -1){
-                frame.origin.x = SCREEN_WIDTH * self.imageCount;
-                self.x = frame.origin.x;
-                [self.scrollView scrollRectToVisible:frame animated:NO];
-            }else{
-                self.x = self.currentIndex * SCREEN_WIDTH;
-            }
-            
+    for (int i = 0; i<imageArray.count; i++) {
+        CGRect imageViewF = CGRectMake(self.scrollView.frame.size.width * i + self.imageViewF.origin.x, self.imageViewF.origin.y, self.imageViewF.size.width, self.imageViewF.size.height);
+        HMGrayImageView *imageView = [[HMGrayImageView alloc] initWithFrame:imageViewF];
+        imageView.used = self.grayImageView;
+        imageView.contentMode = UIViewContentModeScaleToFill;
+        if (self.radius > 0) {
+            imageView.layer.cornerRadius = self.radius;
+            imageView.layer.masksToBounds = YES;
         }
-    }else if (scrollView == self.scrollView){//预留
-        
-    }
-    
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
-    [self.timer pauseTimer];
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
-    [self.timer resumeTimerAfterTimeInterval:self.animationDuration];
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    NSInteger currIndex = scrollView.contentOffset.x/SCREEN_WIDTH;
-    
-    if (currIndex == self.imageCount + 1) {
-        currIndex = 1;
-    } else if (currIndex == 0) {
-        currIndex = self.imageCount;
-    }
-    if (self.ScrollActionBlock) {
-        self.ScrollActionBlock(currIndex);
-    }
-}
-
-- (UIScrollView *)createScrollViewWithPath:(NSMutableArray *)imagesPathAry scrollViewFrame:(CGRect)scrollViewF imageViewFrame:(CGRect)imageViewF radius:(CGFloat)radius{
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:scrollViewF];
-    scrollView.contentSize = CGSizeMake(scrollViewF.size.width * imagesPathAry.count, scrollViewF.size.height);
-    CGFloat imageViewX = imageViewF.origin.x;
-    CGFloat imageViewY = imageViewF.origin.y;
-    for (int i = 0; i<imagesPathAry.count; i++) {
-        UIImageView *imageView = [[UIImageView alloc] init];
-        if ([safeObjectTxAtIndex(imagesPathAry, i) containsString:@".gif?"]) {
-            [TXCommonUtils downloadPic:safeObjectTxAtIndex(imagesPathAry, i) successBlock:^(NSString * _Nonnull filepath) {
+        // gif
+        if ([imageArray[i] containsString:@".gif?"]) {
+            [TXCommonUtils downloadPic:imageArray[i] successBlock:^(NSString * _Nonnull filepath) {
                 UIImage *image;
                 if ([filepath containsString:@"gif"]) {
                     image = [UIImage sd_imageWithGIFData:[NSData dataWithContentsOfFile:filepath]];
@@ -201,27 +110,111 @@
                 }
             }];
         } else {
-            [imageView sd_setImageWithURL:[NSURL URLWithString:imagesPathAry[i]] placeholderImage:[UIImage imageNamed:@"pageLoading.jpg"] options:SDWebImageRefreshCached];
+            [imageView sd_setImageWithURL:[NSURL URLWithString:imageArray[i]] placeholderImage:[UIImage imageNamed:@"pageLoading.jpg"] options:SDWebImageRefreshCached];
         }
-        imageView.contentMode = UIViewContentModeScaleToFill;
-        
-        if (radius != 0) {
-            imageView.layer.borderColor = [UIColor clearColor].CGColor;
-            imageView.layer.borderWidth = 1.0;
-            imageView.layer.cornerRadius = radius;
-            imageView.layer.masksToBounds = YES;
-        }
-        
-        imageViewF.origin = CGPointMake(scrollView.frame.size.width * i + imageViewX, imageViewY);
-        imageViewF.size = imageViewF.size;
-        imageView.frame = imageViewF;
-        [scrollView addSubview:imageView];
+        [self.scrollView addSubview:imageView];
     }
-    scrollView.pagingEnabled = YES;//设置整屏滚动
-    scrollView.bounces = NO;//设置边缘无弹跳
-    scrollView.showsHorizontalScrollIndicator = NO;//水平滚动条
-    scrollView.showsVerticalScrollIndicator = NO;//竖直滚动条
-    return scrollView;
+    if (self.repeats) {
+        [self.scrollView scrollRectToVisible:CGRectMake(self.frame.size.width, 0, self.frame.size.width, self.frame.size.height) animated:NO];
+    }
+    
+    if (self.autoScrollDuration > 0) {
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:self.autoScrollDuration target:self selector:@selector(updateCycleScrollImagesLocation) userInfo:nil repeats:YES];
+    }
 }
+
+- (void)setPageControlType:(PageControlType)pageControlType {
+    _pageControlType = pageControlType;
+}
+
+- (void)setPageControlPosition:(PageControlPosition)pageControlPosition {
+    _pageControlPosition = pageControlPosition;
+    // 只有一张图片情况, 无 pageControl
+    if (self.imageCount == 1) return;
+    
+    CGFloat customPageViewY = (self.frame.size.height - (self.frame.size.height - self.imageViewF.size.height)/2.0) - 10;
+    HMCustomPageStyle *pageStyle = [[HMCustomPageStyle alloc] init];
+    if (self.grayImageView) {
+        pageStyle.normalColor = [UIColor whiteColor];
+        pageStyle.selectedColor = [UIColor grayColor];
+    }
+    self.customPageView = [[HMCustomPageView alloc] initWithFrame:CGRectMake(0, customPageViewY, self.frame.size.width, 3) pageCount:self.imageCount pageControlType:self.pageControlType pageStyle:pageStyle];
+    self.customPageView.pageControlPosition = pageControlPosition;
+    [self addSubview:self.customPageView];
+}
+
+#pragma mark - Action
+- (void)updateCycleScrollImagesLocation {
+    self.currentIndex += 1;
+    NSLog(@"定时器开始工作 = %.2f", self.currentIndex);
+    if (self.currentIndex == self.imageCount + 1) {
+        CGRect frame = CGRectMake(self.frame.size.width, 0, self.frame.size.width, self.frame.size.height);
+        [self.scrollView scrollRectToVisible:frame animated:NO];
+    } else {
+        CGFloat width = (self.currentIndex + (self.repeats ? 1 : 0)) * self.frame.size.width;
+        [self.scrollView setContentOffset:CGPointMake(width, 0) animated:YES];
+    }
+    // 如果不需要重复，轮播到最后一个自动结束
+    if (!self.repeats && self.currentIndex == self.imageCount - 1) {
+        [self.timer invalidate];
+    }
+}
+
+- (void)contentViewTapAction:(UITapGestureRecognizer *)gr {
+    NSLog(@"当前点击的index = %.2f", self.currentIndex);
+    if (self.tapActionBlock) {
+        self.tapActionBlock(self.currentIndex);
+    }
+}
+
+#pragma mark - UIScrollViewDelegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    self.currentIndex = scrollView.contentOffset.x / self.frame.size.width - (self.repeats ? 1 : 0);
+    // 更新当前需要显示 pageControl 位置
+    self.customPageView.progressIndex = self.currentIndex;
+    //NSLog(@"self.currentIndex:%.2f",self.currentIndex);
+    
+    CGPoint point = CGPointMake(scrollView.frame.size.width, 0);
+    // 判断整数
+    if ((NSInteger)self.currentIndex == self.currentIndex) {
+        if (self.currentIndex == self.imageCount) {
+            point.x = self.frame.size.width;
+            [self.scrollView setContentOffset:point animated:NO];
+        } else if (self.currentIndex == -1) {
+            point.x = self.frame.size.width * self.imageCount;
+            [self.scrollView setContentOffset:point animated:NO];
+        } else {
+            
+        }
+    }
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    [self.timer pauseTimer];
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    [self.timer resumeTimerAfterTimeInterval:self.autoScrollDuration];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSInteger currentIndex = scrollView.contentOffset.x / self.frame.size.width - (self.repeats ? 1 : 0);
+    
+    if (currentIndex == self.imageCount) {
+        currentIndex = 0;
+    } else if (currentIndex == -1) {
+        currentIndex = self.imageCount - 1;
+    }
+    //NSLog(@"手动滚动 = %.2f", currentIndex);
+    if (self.scrollDidEndBlock) {
+        self.scrollDidEndBlock(currentIndex);
+    }
+}
+
+//- (void)dealloc {
+//    NSLog(@"%s", __func__);
+//    [self.timer invalidate];
+//}
 
 @end

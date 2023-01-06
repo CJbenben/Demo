@@ -7,13 +7,11 @@
 //
 
 #import "TXCollectionController.h"
-#import "TXCycleScrollView.h"
 #import "HMCycleScrollView.h"
 
 @interface TXCollectionController ()
 
-//@property (strong, nonatomic) CJCycleScrollView *scrollView;
-@property (nonatomic, strong) TXCycleScrollView *atScrollView;
+@property (nonatomic, strong) HMCycleScrollView *atScrollView;
 @property (nonatomic, strong) HMCycleScrollView *hmScrollView;
 
 @property (nonatomic, strong) NSMutableArray *imageAry;
@@ -24,9 +22,9 @@
 
 - (NSMutableArray *)imageAry {
     if (_imageAry == nil) {
-        _imageAry = [@[@"https://t7.baidu.com/it/u=1956604245,3662848045&fm=193&f=GIF",
-                       @"https://t7.baidu.com/it/u=2529476510,3041785782&fm=193&f=GIF",
-                       @"https://t7.baidu.com/it/u=3569419905,626536365&fm=193&f=GIF"] mutableCopy];
+        _imageAry = [@[@"https://www.zaoxu.com/uploadfile/imgall/020b46f21fbe096b632bf2308902338744eaf8ac04.jpg",
+                       @"https://img95.699pic.com/element/40116/4903.png_860.png",
+                       @"https://img1.baidu.com/it/u=1154565158,60995416&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=600"] mutableCopy];
     }
     return _imageAry;
 }
@@ -36,30 +34,28 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
     
-    CGRect scrollviewF = CGRectMake(0, naviHeight, SCREEN_WIDTH, 160);
-    CGRect frame = CGRectMake(20, 0, SCREEN_WIDTH - 40, 160);
+    CGRect frame = CGRectMake(0, naviHeight, SCREEN_WIDTH, 160);
+    CGRect imageViewF = CGRectMake(20, 0, SCREEN_WIDTH - 40, 160);
     
-    self.atScrollView = [TXCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:2.0];
-    [self.view addSubview:self.atScrollView];
-    
-    self.atScrollView.TapActionBlock = ^(NSInteger pageIndex) {
-        NSLog(@"index = %ld", pageIndex);
-    };
-    
-    
-    scrollviewF = CGRectMake(0, naviHeight+200, SCREEN_WIDTH, 160);
-    self.hmScrollView = [HMCycleScrollView atzucheCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:10.0 imagePaths:self.imageAry animationDuration:2.0];
+    frame = CGRectMake(0, naviHeight+200, SCREEN_WIDTH, 160);
+    self.hmScrollView = [HMCycleScrollView cycleScrollViewFrame:frame imageViewFrame:imageViewF radius:10.0 repeats:YES autoScrollDuration:2.0];
+    self.hmScrollView.imageArray = self.imageAry;
+//    self.hmScrollView.pageControlType = PageControlTypeCustom;
+    self.hmScrollView.pageControlPosition = PageControlPositionBottom;
     [self.view addSubview:self.hmScrollView];
+    
+    
+    self.hmScrollView.tapActionBlock = ^(NSInteger pageIndex) {
+        NSLog(@"当前点击的index = %ld", pageIndex);
+    };
     
     
 }
 
-//- (void)addCJScrollViewDemo {
-//    CGRect scrollviewF = CGRectMake(0, 64 + 20, SCREEN_WIDTH, 220);
-//    CGRect frame = CGRectMake(20, 64 + 20, SCREEN_WIDTH - 40, 220);
-//    self.scrollView = [CJCycleScrollView cjCycleScrollViewFrame:scrollviewF imageViewFrame:frame radius:5.0 imagePaths:self.imageAry animationDuration:2.0];
-//    [self.view addSubview:self.scrollView];
-//}
+- (void)dealloc {
+    [self.hmScrollView.timer invalidate];
+    NSLog(@"%s", __func__);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

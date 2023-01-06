@@ -92,16 +92,16 @@
     }
 }
 
-- (void)setPageControllPostion:(PageControlPostion)pageControllPostion{
-    _pageControllPostion = pageControllPostion;
+- (void)setPageControlPosition:(PageControlPosition)pageControlPosition {
+    _pageControlPosition = pageControlPosition;
     
-    if (_pageControllPostion == PageControlPostionLeft){
+    if (_pageControlPosition == PageControlPositionLeft){
         self.frame = CGRectMake(20, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-    } else if (_pageControllPostion == PageControlPostionRight) {
+    } else if (_pageControlPosition == PageControlPositionRight) {
         self.frame = CGRectMake(SCREEN_WIDTH - 20 - self.frame.size.width, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
-    } else if (_pageControllPostion == PageControlPostionNull){
+    } else if (_pageControlPosition == PageControlPositionNull){
         self.frame = CGRectMake(self.frame.origin.x, SCREEN_HEIGHT, self.frame.size.width, self.frame.size.height);
-    } else if (_pageControllPostion == PageControlPostionTop) {
+    } else if (_pageControlPosition == PageControlPositionTop) {
         self.frame = CGRectMake(self.frame.origin.x, 10, self.frame.size.width, self.frame.size.height);
     } else{
         self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, self.frame.size.width, self.frame.size.height);
@@ -125,7 +125,7 @@
             self.layer.masksToBounds = YES;
             
             [self addSubview:self.progressView];
-        } else {
+        } else if (pageControlType == PageControlTypeSystem) {
             self.pageControl = [self createPageControlCount:pageCount frame:CGRectMake(0, self.height - 14, SCREEN_WIDTH, 16)];
             [self addSubview:self.pageControl];
         }
