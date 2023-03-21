@@ -49,4 +49,28 @@
     }];
 }
 
++ (void)httpRequestWithPOSTWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessDictBlock)successBlock failure:(FailureDictBlock)failureBlock {
+    //AFHTTPSessionManager *manager = [self getManager];
+        
+    AFHTTPSessionManager *sessionManager = [AFHTTPSessionManager manager];
+    sessionManager.requestSerializer  = [AFHTTPRequestSerializer serializer];
+    sessionManager.responseSerializer = [AFJSONResponseSerializer serializer];
+    
+    sessionManager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/plain"];
+    [sessionManager.requestSerializer setValue:@"application/x-www-form-urlencoded;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSLog(@"<-- url --> %@  params --> %@", url, params);
+    
+    /** 没有做缓存处理，需要添加缓存处理 */
+    [sessionManager POST:url parameters:params success:^(NSURLSessionDataTask *task, id responseObject) {
+
+        successBlock(responseObject);
+
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+
+        failureBlock(error);
+
+    }];
+}
+
 @end

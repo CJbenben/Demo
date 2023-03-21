@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4521FADE56669D37A2586FFA /* Pods_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */; };
+		7D0ACB7D29B86AAD00053CC2 /* JDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D0ACB7B29B86AAD00053CC2 /* JDViewController.m */; };
 		7D21BF8624E3938200D9FE51 /* XKBaseScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D21BF8524E3938200D9FE51 /* XKBaseScrollView.m */; };
 		7D21BF8924E393A500D9FE51 /* XKTargetTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D21BF8824E393A500D9FE51 /* XKTargetTableView.m */; };
 		7D301F332930607B0020577D /* UniformTypeIdentifiers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D301F322930607B0020577D /* UniformTypeIdentifiers.framework */; };
@@ -122,6 +123,8 @@
 
 /* Begin PBXFileReference section */
 		69B2EA328EB0A39820DDBEDC /* Pods-Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Demo/Pods-Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		7D0ACB7A29B86AAD00053CC2 /* JDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDViewController.h; sourceTree = "<group>"; };
+		7D0ACB7B29B86AAD00053CC2 /* JDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JDViewController.m; sourceTree = "<group>"; };
 		7D21BF8424E3938200D9FE51 /* XKBaseScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKBaseScrollView.h; sourceTree = "<group>"; };
 		7D21BF8524E3938200D9FE51 /* XKBaseScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XKBaseScrollView.m; sourceTree = "<group>"; };
 		7D21BF8724E393A500D9FE51 /* XKTargetTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XKTargetTableView.h; sourceTree = "<group>"; };
@@ -329,6 +332,15 @@
 				C77D962FD7FD6257FB99A324 /* Pods_Demo.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7D0ACB7629B86A8300053CC2 /* JDDemo */ = {
+			isa = PBXGroup;
+			children = (
+				7D0ACB7A29B86AAD00053CC2 /* JDViewController.h */,
+				7D0ACB7B29B86AAD00053CC2 /* JDViewController.m */,
+			);
+			path = JDDemo;
 			sourceTree = "<group>";
 		};
 		7D21BF8324E3936E00D9FE51 /* Test */ = {
@@ -717,6 +729,7 @@
 		F5E3030D20C13AF3001F11EC /* ProjectDemo */ = {
 			isa = PBXGroup;
 			children = (
+				7D0ACB7629B86A8300053CC2 /* JDDemo */,
 				7DB42AD32790088600C03B6E /* ChildVCDemo */,
 				7DC52ABD265C9BAA005A4624 /* MSDemo */,
 				7DA2FB1625A7F10D001C331E /* TXPageView */,
@@ -1072,6 +1085,7 @@
 				7D8BCD71258AFB9200324367 /* ZJTitleView.m in Sources */,
 				7D857022237A547F0081C236 /* ScrollViewXibViewController.m in Sources */,
 				7D8BCD72258AFB9200324367 /* UIViewController+ZJScrollPageController.m in Sources */,
+				7D0ACB7D29B86AAD00053CC2 /* JDViewController.m in Sources */,
 				7D78D0B1240B873100AD841C /* TXCollectionViewCell.m in Sources */,
 				7DB42AD6279008A900C03B6E /* TXChildDemoViewController.m in Sources */,
 				7D8BCDA4258B02A300324367 /* UILabel+ZJTextAlign.m in Sources */,

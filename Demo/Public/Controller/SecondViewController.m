@@ -91,7 +91,8 @@ static NSString *kJumpClass     = @"kJumpClass";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
-        [self httpRequestWithGET];
+//        [self httpRequestWithGET];
+        [self httpRequestWithPOST];
         return;
     }
     NSDictionary *dict = safeObjectTxAtIndex(self.dataAry, indexPath.row);
@@ -142,6 +143,22 @@ static NSString *kJumpClass     = @"kJumpClass";
         
         NSLog(@"error = %@", error);
 
+    }];
+}
+
+- (void)httpRequestWithPOST {
+    NSString *url = @"https://bizapi.jd.com/api/product/getPageNum";
+    NSMutableDictionary *params = [NSMutableDictionary dictionary];
+    EncodeUnEmptyObjctToDic(params, @"UM98pEfQ720VLPTkc1z19DCMT", @"token");
+    
+    [CJHTTPRequest httpRequestWithPOSTWithUrl:url params:params success:^(id result) {
+        
+        NSLog(@"responseObject = %@", result);
+        
+    } failure:^(NSError *error) {
+        
+        NSLog(@"error = %@", error);
+        
     }];
 }
 

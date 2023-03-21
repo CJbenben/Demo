@@ -15,4 +15,7 @@ typedef void (^FailureDictBlock)(NSError *error);
 
 + (void)httpRequestWithGETWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessDictBlock)successBlock failure:(FailureDictBlock)failureBlock;
 
+
++ (void)httpRequestWithPOSTWithUrl:(NSString *)url params:(NSDictionary *)params success:(SuccessDictBlock)successBlock failure:(FailureDictBlock)failureBlock;
+
 @end
